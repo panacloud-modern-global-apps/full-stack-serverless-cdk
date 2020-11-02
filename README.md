@@ -14,6 +14,22 @@ We expect that Open Source AWS CDK will become the defacto standard for Infrastr
 
 [AWS CDK API Reference](https://docs.aws.amazon.com/cdk/api/latest/docs/aws-construct-library.html)
 
+Alternatives
+
+[Pulumi vs CDK](https://www.pulumi.com/docs/intro/vs/cloud_template_transpilers/)
+
+[Serverless Framework vs CDK](https://www.secjuice.com/aws-cdk-vs-serverless-framework/)
+
+[CloudFormation, Terraform, or CDK? A guide to IaC on AWS](https://acloudguru.com/blog/engineering/cloudformation-terraform-or-cdk-guide-to-iac-on-aws)
+
+[Will AWS CDK replace Terraform and the Serverless Framework?](https://blog.codecentric.de/en/2019/09/aws-cdk-versus-terraform-and-serverless-framework/)
+
+[Amplify vs CDK](https://stackoverflow.com/questions/60087064/aws-cdk-vs-aws-amplify#:~:text=Amplify%20is%20ok%20for%20deploying,deploy%20static%20sites%20with%20CDK.)
+
+[SAM vs CDK](https://aws.amazon.com/cdk/faqs/#:~:text=AWS%20CDK%20offers%20broad%20coverage,Python%2C%20C%23%2C%20and%20Java.&text=If%20you%20prefer%20defining%20your,SAM%20is%20the%20better%20fit.)
+
+
+
 ## Full Stack Serverless
 
 In this repository we are going to cover and learn Full Stack Serverless App Development from this [book](https://www.oreilly.com/library/view/full-stack-serverless/9781492059882/) and build the apps using AWS CDK.

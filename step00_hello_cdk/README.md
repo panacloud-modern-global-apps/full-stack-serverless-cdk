@@ -61,6 +61,9 @@ You'll also find MyFirstBucket (step00hellocdkstack-myfirstbucketb8884501-r3g3as
 https://s3.console.aws.amazon.com/s3/home?region=us-east-2#
 
 
+As per the tutorial now modify the app and distroy it
+
+
 
 
 

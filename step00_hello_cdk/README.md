@@ -1,12 +1,20 @@
 [AWS CDK in TypeScript](https://docs.aws.amazon.com/cdk/latest/guide/work-with-cdk-typescript.html)
 
+[AWS CDK and Typescript: Deploy a static React app to S3](https://medium.com/swlh/aws-cdk-and-typescript-deploy-a-static-react-app-to-s3-df74193e9e3d)
+
 [Signup for a AWS Fee Tier](https://aws.amazon.com/free/)
 
 [Get and setup AWS Credentials](https://docs.aws.amazon.com/toolkit-for-vscode/latest/userguide/aws-credentials.html)
 
 [Create IAM User](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html)
 
+[Install TypeScript](https://www.npmjs.com/package/typescript)
+
+[Install AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)
+
 [Installing the AWS SAM CLI - This is an AWS CLI tool that helps you develop, test, and analyze your serverless applications locally](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)
+
+[Install AWS CDK](https://docs.aws.amazon.com/cdk/latest/guide/work-with-cdk-typescript.html)
 
 [Install Docker to test apps locally](https://docs.docker.com/get-docker/)
 
@@ -17,13 +25,43 @@ npm install -g typescript
 
 npm install -g cdk
 
+
+[Understand the key concepts: app, stacks, constructs, L1, L2, and L3 constructs](https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html)
+
+Config command: AWS access key ID, secret access key, and default region (I selected us-east-2) when prompted
+
+aws configure
+
+[Build a Hello World App](https://docs.aws.amazon.com/cdk/latest/guide/hello_world.html)
+
 mkdir step00_hello_cdk
 
 cd step00_hello_cdk
 
 cdk init app --language typescript
 
-npm install @aws-cdk/aws-s3 @aws-cdk/aws-lambda --save
+cdk ls
+
+npm install @aws-cdk/aws-s3
+
+Edit lib/step00_hello_cdk-stack.ts and add s3 L2 construct
+
+npm run build
+
+cdk synth
+
+cdk deploy
+
+You can go to the AWS CloudFormation console and see that it now lists Step00HelloCdkStack:
+
+https://console.aws.amazon.com/cloudformation/home
+
+You'll also find MyFirstBucket (step00hellocdkstack-myfirstbucketb8884501-r3g3as4wff5f) in the Amazon S3 console.
+
+https://s3.console.aws.amazon.com/s3/home?region=us-east-2#
+
+
+
 
 
 

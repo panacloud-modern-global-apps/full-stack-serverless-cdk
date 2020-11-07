@@ -1,3 +1,5 @@
+[What is AWS CDK?](https://serverless-stack.com/chapters/what-is-aws-cdk.html)
+
 [AWS CDK in TypeScript](https://docs.aws.amazon.com/cdk/latest/guide/work-with-cdk-typescript.html)
 
 [AWS CDK and Typescript: Deploy a static React app to S3](https://medium.com/swlh/aws-cdk-and-typescript-deploy-a-static-react-app-to-s3-df74193e9e3d)

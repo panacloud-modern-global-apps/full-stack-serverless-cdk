@@ -29,6 +29,9 @@ Alternatives
 [SAM vs CDK](https://aws.amazon.com/cdk/faqs/#:~:text=AWS%20CDK%20offers%20broad%20coverage,Python%2C%20C%23%2C%20and%20Java.&text=If%20you%20prefer%20defining%20your,SAM%20is%20the%20better%20fit.)
 
 
+[Awesome CDK](https://github.com/kolomied/awesome-cdk)
+
+
 
 ## Full Stack Serverless
 

@@ -34,28 +34,48 @@ Get the URL from the output and test it using curl or paste the url in browser:
 
 curl https://xxxxxx.execute-api.us-east-2.amazonaws.com/prod/
 
-
-
-
-
-
-
+Now lets learn to run and test Lambdas locally
 
 [Run lambda function locally](https://docs.aws.amazon.com/cdk/latest/guide/sam.html)
 
+Note: Note SAM should be installed and Docker running
+
+cdk synth --no-staging > template.yaml
+
+Find the logical ID for your Lambda function in template.yaml. It will look like HelloHandler2E4FBA4D, where 2E4FBA4D represents an 8-character unique ID that the AWS CDK generates for all resources. The line right after it should look like:
+
+Type: AWS::Lambda::Function
+
+sam local invoke HelloHandler2E4FBA4D --no-event
+
+cdk destroy
+
+Other Reading References:
+
 https://tlakomy.com/run-cdk-lambda-function-locally
 
-https://sanderknape.com/2019/05/building-serverless-applications-aws-cdk/
+Single Stack Project commands to run locally (SAM and Docker installed and Docker running):
 
-https://aws.amazon.com/blogs/devops/building-apps-with-aws-cdk/
+cdk synth --no-staging > template.yaml
 
-https://github.com/aws-samples/cdk-build-bundle-deploy-example
+sam local start-api
 
-https://github.com/aws-samples/aws-cdk-examples/tree/master/typescript
+Multi Stack Project commands to run locally (SAM and Docker installed and Docker running):
 
-https://github.com/aws-samples/aws-cdk-examples
+cdk synth --no-staging
 
-https://aws.amazon.com/blogs/mobile/deploying-a-static-website-with-aws-amplify-and-cdk/
+cd cdk.out
+
+sam local start-api -t {stackname}.template.json
+
+[Running API Gateway locally](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-using-start-api.html)
+
+
+
+
+
+
+
 
 
 

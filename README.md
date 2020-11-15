@@ -66,6 +66,8 @@ Once we have mastered the above technologies we will learn how to develop multi-
 
 [SaaS: Single Tenant vs Multi-Tenant - What's the Difference?](https://digitalguardian.com/blog/saas-single-tenant-vs-multi-tenant-whats-difference)
 
+[[15 Common Software as a Service (SaaS) Examples to Inspire You](https://joshfechter.com/software-service-examples/)
+
 [Serverless SaaS: The next step in the evolution of SaaS](https://www.ctepl.com/resources/serverless-applications-the-next-step-in-the-evolution-of-saas/)
 
 [How can you architect Serverless SaaS Applications on AWS?](https://nordcloud.com/how-can-you-architect-serverless-saas-applications-on-aws/)

@@ -72,6 +72,12 @@ Once we have mastered the above technologies we will learn how to develop multi-
 
 [AWS Serverless SaaS](https://aws.amazon.com/partners/saas-factory/serverless-saas/)
 
+[AWS SaaS Factory Program](https://aws.amazon.com/partners/saas-factory/)
+
+[AWS Partner Network (APN) Blog](https://aws.amazon.com/blogs/apn/tag/saas-factory/)
+
+[Calculating Tenant Costs in SaaS Environments](https://aws.amazon.com/blogs/apn/calculating-tenant-costs-in-saas-environments/)
+
 [APIs are the next big SaaS wave](https://techcrunch.com/2019/09/06/apis-are-the-next-big-saas-wave/)
 
 [API startups are so hot right now](https://techcrunch.com/2020/05/22/api-startups-are-so-hot-right-now/)

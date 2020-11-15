@@ -32,12 +32,29 @@ Alternatives
 [Awesome CDK](https://github.com/kolomied/awesome-cdk)
 
 
+## Event-Driven Architecture
 
-## Full Stack Serverless
+[What is an Event-Driven Architecture?](https://aws.amazon.com/event-driven-architecture/)
 
-In this repository we are going to cover and learn Full Stack Serverless App Development from this [book](https://www.oreilly.com/library/view/full-stack-serverless/9781492059882/) and build the apps using AWS CDK.
+[EventBridge: The key component in Serverless Architectures](https://medium.com/serverless-transformation/eventbridge-the-key-component-in-serverless-architectures-e7d4e60fca2d)
 
-We are also going to learn designing, developing, and deploying advanced serverless applications and API from this [Learning Serverless Book](https://www.oreilly.com/library/view/learning-serverless/9781492057000/) and implement them using AWS CDK.
+[How to Use Amazon EventBridge to Build Decoupled, Event-Driven Architectures](https://pages.awscloud.com/AWS-Learning-Path-How-to-Use-Amazon-EventBridge-to-Build-Decoupled-Event-Driven-Architectures_2020_LP_0001-SRV.html)
+
+[Rethinking Serverless Architectures With Eventbridge](https://blog.thundra.io/rethinking-serverless-architectures-with-eventbridge)
+
+[Architecting Serverless Solutions (Must Do this Course)](https://www.aws.training/Details/eLearning?id=42594)
+
+[Introduction to Messaging for Modern Cloud Architecture](https://aws.amazon.com/blogs/architecture/introduction-to-messaging-for-modern-cloud-architecture/)
+
+[Moving to event-driven architectures](https://www.youtube.com/watch?v=h46IquqjF3E}
+
+[Deep Dive on Amazon EventBridge - AWS Online Tech Talks](https://www.youtube.com/watch?v=28B4L1fnnGM}
+
+[Integrating Amazon EventBridge into your serverless applications](https://aws.amazon.com/blogs/compute/integrating-amazon-eventbridge-into-your-serverless-applications/)
+
+[Rethinking Serverless Architectures With Eventbridge](https://blog.thundra.io/rethinking-serverless-architectures-with-eventbridge)
+
+[Deep Dive on Amazon EventBridge](https://pages.awscloud.com/Deep-Dive-on-Amazon-EventBridge_2019_0919-SRV_OD.html)
 
 ## Learn to Build Multi-Tenant Serverless SaaS API's
 

@@ -1,3 +1,5 @@
+[CDK for beginners](https://levelup.gitconnected.com/aws-cdk-for-beginners-e6c05ad91895)
+
 [Study AWS CDK Workshop follow the TypeScript Path](https://cdkworkshop.com/)
 
 mkdir step01_hello_lambda

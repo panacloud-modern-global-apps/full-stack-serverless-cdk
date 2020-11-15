@@ -1,4 +1,4 @@
-# Learn Full Stack Serverless App Development with CDK in Baby Steps
+# Learn Full Stack Serverless Multi-Tenant SaaS Apps and API Development with CDK in Baby Steps
 
 ## AWS CDK
 
@@ -69,6 +69,8 @@ Once we have mastered the above technologies we will learn how to develop multi-
 [Serverless SaaS: The next step in the evolution of SaaS](https://www.ctepl.com/resources/serverless-applications-the-next-step-in-the-evolution-of-saas/)
 
 [How can you architect Serverless SaaS Applications on AWS?](https://nordcloud.com/how-can-you-architect-serverless-saas-applications-on-aws/)
+
+[AWS Serverless SaaS](https://aws.amazon.com/partners/saas-factory/serverless-saas/)
 
 [APIs are the next big SaaS wave](https://techcrunch.com/2019/09/06/apis-are-the-next-big-saas-wave/)
 

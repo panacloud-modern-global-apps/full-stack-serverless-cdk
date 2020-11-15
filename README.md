@@ -56,9 +56,19 @@ Alternatives
 
 [Deep Dive on Amazon EventBridge](https://pages.awscloud.com/Deep-Dive-on-Amazon-EventBridge_2019_0919-SRV_OD.html)
 
-## Learn to Build Multi-Tenant Serverless SaaS API's
+## Learn to Build Multi-Tenant Serverless SaaS Apps and API's
 
 Once we have mastered the above technologies we will learn how to develop multi-tenanted SaaS API's and applications.
+
+[What is SaaS? Everything you need to know about Software as a Service](https://digitalguardian.com/blog/saas-single-tenant-vs-multi-tenant-whats-difference)
+
+[What is multi-tenancy?](https://whatis.techtarget.com/definition/multi-tenancy)
+
+[SaaS: Single Tenant vs Multi-Tenant - What's the Difference?](https://digitalguardian.com/blog/saas-single-tenant-vs-multi-tenant-whats-difference)
+
+[Serverless SaaS: The next step in the evolution of SaaS](https://www.ctepl.com/resources/serverless-applications-the-next-step-in-the-evolution-of-saas/)
+
+[How can you architect Serverless SaaS Applications on AWS?](https://nordcloud.com/how-can-you-architect-serverless-saas-applications-on-aws/)
 
 [APIs are the next big SaaS wave](https://techcrunch.com/2019/09/06/apis-are-the-next-big-saas-wave/)
 

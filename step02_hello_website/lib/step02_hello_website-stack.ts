@@ -21,6 +21,7 @@ export class Step02HelloWebsiteStack extends cdk.Stack {
       defaultBehavior: { origin: new origins.S3Origin(websiteBucket) },
     });
 
+    // Prints out the web endpoint to the terminal
     new cdk.CfnOutput(this, 'DistributionDomainName', {
       value: distribution.domainName
     })

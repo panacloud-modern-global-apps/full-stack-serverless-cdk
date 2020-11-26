@@ -14,9 +14,9 @@
     "@aws-cdk/assert": "1.72.0",
     "@types/jest": "^26.0.10",
     "@types/node": "10.17.27",
+    "aws-cdk": "1.72.0",
     "jest": "^26.4.2",
     "ts-jest": "^26.2.0",
-    "aws-cdk": "1.72.0",
     "ts-node": "^8.1.0",
     "typescript": "~3.9.7"
   },
@@ -24,6 +24,8 @@
     "@aws-cdk/aws-apigateway": "^1.72.0",
     "@aws-cdk/aws-lambda": "^1.72.0",
     "@aws-cdk/core": "1.72.0",
+    "@types/aws-lambda": "^8.10.64",
+    "aws-lambda": "^1.0.6",
     "source-map-support": "^0.5.16"
   }
 }

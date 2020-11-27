@@ -84,35 +84,28 @@ export { default as wrapRootElement } from "./src/wrap-root-element";
 Now we can freely use all of the `@apollo/client` hooks like `useQuery`. This is the schema that we have deployed with AppSync:
 ```graphql
 # graphql/schema.graphql
-
-type Note {
+type Todo {
   id: ID!
-  name: String!
-  completed: Boolean!
+  title: String!
+  done: Boolean!
 }
 
-input NoteInput {
+input TodoInput {
   id: ID!
-  name: String!
-  completed: Boolean!
-}
-
-input UpdateNoteInput {
-  id: ID!
-  name: String
-  completed: Boolean
+  title: String!
+  done: Boolean!
 }
 
 type Query {
-  getNoteById(noteId: String!): Note
-  listNotes: [Note]
+  getTodos: [Todo]
 }
 
 type Mutation {
-  createNote(note: NoteInput!): Note
-  updateNote(note: UpdateNoteInput!): Note
-  deleteNote(noteId: String!): String
+  addTodo(todo: TodoInput!): Todo
+  updateTodo(todo: TodoInput!): Todo
+  deleteTodo(todoId: String!): String
 }
+
 ```
 
 We can test it by using `listNotes` and other queries in our `index.js` page with Apollo Hooks.

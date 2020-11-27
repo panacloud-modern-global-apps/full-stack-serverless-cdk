@@ -108,4 +108,4 @@ type Mutation {
 
 ```
 
-We can test it by using `listNotes` and other queries in our `index.js` page with Apollo Hooks.
+We can test it by using `getTodos` and other queries in our `index.js` page with Apollo Hooks.

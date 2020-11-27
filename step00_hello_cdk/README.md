@@ -23,48 +23,48 @@
 [Install the Toolkit for VS Code](https://docs.aws.amazon.com/toolkit-for-vscode/latest/userguide/setup-toolkit.html)
 
 
-npm install -g typescript
+At the command line use the command, ***npm install -g typescript***
 
-npm install -g cdk
+
+At the command line use the command, ***npm install -g cdk***
 
 
 [Understand the key concepts: app, stacks, constructs, L1, L2, and L3 constructs](https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html)
 
-Config command: AWS access key ID, secret access key, and default region (I selected us-east-2) when prompted
+At the below Config command (aws configure), when prompted, **input:** * *AWS access key ID, secret access key, and default region (I selected us-east-2)* *.
 
-aws configure
+Run Command: ***aws configure*** . //to configure the AWS config file [More information at this link](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html)
 
 [Build a Hello World App](https://docs.aws.amazon.com/cdk/latest/guide/hello_world.html)
 
-mkdir step00_hello_cdk
+Run the Command: ***mkdir step00_hello_cdk***  // to create a new directory for the "hello world app".
 
-cd step00_hello_cdk
+Run the Command: ***cd step00_hello_cdk*** // to make the "step00_hello_cdk" the current directory. 
 
-cdk init app --language typescript
+Run the Command: ***cdk init app --language typescript*** // to initialize the app, specifying the desired template ("app") and the programming language.
 
-cdk ls
+Run the Command: ***cdk ls*** // to list the stacks in your app.
 
-npm install @aws-cdk/aws-s3
+Run the Command: ***npm install @aws-cdk/aws-s3***  //to install the Amazon S3 package
 
-Edit lib/step00_hello_cdk-stack.ts and add s3 L2 construct
+Edit the file  lib/step00_hello_cdk-stack.ts  and add to it a s3 L2 construct(Bucket).
 
-npm run build
+Run the command: ***npm run build***
 
-cdk synth
+Run the command: ***cdk synth***  // to create AWS CloudFormation template for the app.
 
-cdk deploy
+Run the command:***cdk deploy*** // to deploy the stack using AWS CloudFormation
 
 You can go to the AWS CloudFormation console and see that it now lists Step00HelloCdkStack:
 
 https://console.aws.amazon.com/cloudformation/home
 
-You'll also find MyFirstBucket (step00hellocdkstack-myfirstbucketb8884501-r3g3as4wff5f) in the Amazon S3 console.
+You'll also find MyFirstBucket (step00hellocdkstack-myfirstbucketb8884501-r3g3as4wff5f) in the Amazon S3 console (the last 12 digits would be different from the one listed here).
 
 https://s3.console.aws.amazon.com/s3/home?region=us-east-2#
 
 
-As per the tutorial now modify the app and distroy it
-
+As per the [tutorial](https://docs.aws.amazon.com/cdk/latest/guide/hello_world.html#hello_world_tutorial_destroy) now modify the app and distroy it. **Ensure that the Buckets's RemovalPolicy has been changed to** * *removalPolicy: cdk.RemovalPolicy.DESTROY * *.
 
 
 

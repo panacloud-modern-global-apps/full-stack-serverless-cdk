@@ -46,10 +46,10 @@ import { ApolloClient, InMemoryCache, HttpLink } from "@apollo/client";
 
 export const client = new ApolloClient({
   link: new HttpLink({
-    uri: "GRAPHQL_ENDPOINT",
+    uri: "GRAPHQL_ENDPOINT", // ENTER YOUR GRAPHQL ENDPOINT HERE
     fetch,
     headers: {
-      "x-api-key": "APPSYNC_API_KEY",
+      "x-api-key": "APPSYNC_API_KEY", // ENTER YOUR APPSYNC API KEY HERE
     },
   }),
   cache: new InMemoryCache(),
@@ -108,4 +108,4 @@ type Mutation {
 
 ```
 
-We can test it by using `getTodos` and other queries in our `index.js` page with Apollo Hooks.
+We can test it by using `getTodos` and other queries in our `index.js` page with Apollo Hooks. We can also test `addTodo` by installing `shortId` with `yarn add shortid`.

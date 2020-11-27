@@ -1,41 +1,42 @@
 import React, { useEffect, useState } from "react"
 import { useQuery, gql, useMutation } from "@apollo/client"
+import shortid from "shortid"
 
-const LIST_NOTES = gql`
+const GET_TODOS = gql`
   query {
-    listNotes {
+    getTodos {
       id
-      name
-      completed
+      title
+      done
     }
   }
 `
-const CREATE_NOTE = gql`
-  mutation createNote($note: NoteInput!) {
-    createNote(note: $note) {
+const CREATE_TODO = gql`
+  mutation createTodo($todo: TodoInput!) {
+    addTodo(todo: $todo) {
       id
-      name
-      completed
+      title
+      done
     }
   }
 `
 
 const Index = () => {
-  const [name, setName] = useState("")
-  const { data, loading } = useQuery(LIST_NOTES)
-  const [createNote] = useMutation(CREATE_NOTE)
+  const [title, setTitle] = useState("")
+  const { data, loading } = useQuery(GET_TODOS)
+  const [createNote] = useMutation(CREATE_TODO)
 
   const handleSubmit = async () => {
-    const note = {
-      id: data?.listNotes ? `${data.listNotes.length + 1}` : "1",
-      name,
-      completed: false,
+    const todo = {
+      id: shortid.generate(),
+      title,
+      done: false,
     }
-    console.log("Creating Note:", note)
-    setName("")
+    console.log("Creating Todo:", todo)
+    setTitle("")
     await createNote({
       variables: {
-        note,
+        todo,
       },
     })
   }
@@ -44,15 +45,18 @@ const Index = () => {
     <div>
       {loading && <h1>Loading ...</h1>}
       <label>
-        Note:
-        <input value={name} onChange={({ target }) => setName(target.value)} />
+        Todo:
+        <input
+          value={title}
+          onChange={({ target }) => setTitle(target.value)}
+        />
       </label>
-      <button onClick={() => handleSubmit()}>Create Note</button>
+      <button onClick={() => handleSubmit()}>Create Todo</button>
       {!loading &&
         data &&
-        data.listNotes.map(item => (
-          <div key={item.id}>
-            {item.name} {item.completed ? "DONE" : "NOT COMPLETED"}
+        data.getTodos.map(item => (
+          <div style={{ marginLeft: "1rem", marginTop: "2rem" }} key={item.id}>
+            {item.title} {item.done ? "DONE" : "NOT COMPLETED"}
           </div>
         ))}
     </div>

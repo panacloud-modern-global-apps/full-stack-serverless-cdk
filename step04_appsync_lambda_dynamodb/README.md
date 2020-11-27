@@ -31,6 +31,11 @@ Advanced AppSync Tutorials:
 [Local Mocking and Testing with the Amplify CLI](https://aws.amazon.com/blogs/aws/new-local-mocking-and-testing-with-the-amplify-cli/)
 
 
+## Database:
+
+[aws-dynamodb module](https://docs.aws.amazon.com/cdk/api/latest/docs/aws-dynamodb-readme.html)
+
+npm i @aws-cdk/aws-dynamodb
 
 
 # Welcome to your CDK TypeScript project!

@@ -124,3 +124,5 @@ Once we have mastered the above technologies we will learn how to develop multi-
 
 [Databases that play nice with your serverless backend](https://medium.com/swlh/databases-that-play-nice-with-your-serverless-backend-13eb7dc1e1c)
 
+[CDK Patterns at 20! Let's Walk Through all 20 Serverless Patterns for AWS](https://dev.to/nideveloper/cdk-patterns-at-20-let-s-walk-through-all-20-serverless-patterns-for-aws-d1n)
+

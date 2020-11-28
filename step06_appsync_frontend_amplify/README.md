@@ -1,4 +1,5 @@
 # Connecting to Appsync GraphQL API with AWS Amplify
+Note: The backend CDK code used in this project was taken from step 04. This step only covers on how to integrate Appsync with client-side using Amplify
 
 ## Introduction
 

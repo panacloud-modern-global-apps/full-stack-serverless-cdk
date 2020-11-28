@@ -1,14 +1,9 @@
-# Welcome to your CDK TypeScript project!
+# Integrate AppSync with Lambda as a Datasource
 
-This is a blank project for TypeScript development with CDK.
+## Why AppSync?
+Organizations choose to build APIs with GraphQL because it helps them develop applications faster, by giving front-end developers the ability to query multiple databases, microservices, and APIs with a single GraphQL endpoint.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+AWS AppSync is a fully managed service that makes it easy to develop GraphQL APIs by handling the heavy lifting of securely connecting to data sources like AWS DynamoDB, Lambda, and more. Adding caches to improve performance, subscriptions to support real-time updates, and client-side data stores that keep off-line clients in sync are just as easy. Once deployed, AWS AppSync automatically scales your GraphQL API execution engine up and down to meet API request volumes.
 
-## Useful commands
-
- * `npm run build`   compile typescript to js
- * `npm run watch`   watch for changes and compile
- * `npm run test`    perform the jest unit tests
- * `cdk deploy`      deploy this stack to your default AWS account/region
- * `cdk diff`        compare deployed stack with current state
- * `cdk synth`       emits the synthesized CloudFormation template
+## DataSource As Lambda
+In this project we have used Lambda as a datasource which means our resolver will interact with lambda function for data operations.

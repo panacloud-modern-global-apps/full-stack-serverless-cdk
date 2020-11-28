@@ -10,7 +10,7 @@ export class Step04AppsyncLambdaAsDatasourceStack extends cdk.Stack {
 
     ///APPSYNC API gives you a graphql api with api key
     const api = new appsync.GraphqlApi(this, "GRAPHQL_API", {
-      name: 'cdk-todo-events-driven-api',
+      name: 'cdk-api',
       schema: appsync.Schema.fromAsset('graphql/schema.gql'),       ///Path specified for lambda
       authorizationConfig: {
         defaultAuthorization: {
@@ -35,10 +35,10 @@ export class Step04AppsyncLambdaAsDatasourceStack extends cdk.Stack {
 
     ///Lambda Fucntion
     const lambda_function = new lambda.Function(this, "LambdaFucntion", {
-      runtime: lambda.Runtime.NODEJS_12_X,            ///set runtime environment can be 8, 10, 12
+      runtime: lambda.Runtime.NODEJS_12_X,            ///set nodejs runtime environment
       code: lambda.Code.fromAsset("lambda"),          ///path for lambda function directory
       handler: 'index.handler',                       ///specfic fucntion in specific file
-      timeout: cdk.Duration.seconds(10)               ///Time for function to get break. limit upto 15 mins
+      timeout: cdk.Duration.seconds(10)               ///Time for function to break. limit upto 15 mins
     })
 
 

@@ -23,7 +23,7 @@ export class PiplineBasicStack extends cdk.Stack {
               "nodejs": 12
             },
             commands: [
-              'cd CDK',
+              'cd stepxx_CI_CD_pipeline_update_cdk_template',
               'npm i npm@latest -g',
               'npm install'
             ],
@@ -36,7 +36,7 @@ export class PiplineBasicStack extends cdk.Stack {
           },
         },
         artifacts: {
-          'base-directory': 'CI_CD_pipline_update_cdk_template/dist',      ///outputting our generated JSON CloudFormation files to the dist directory
+          'base-directory': 'stepxx_CI_CD_pipeline_update_cdk_template/dist',      ///outputting our generated JSON CloudFormation files to the dist directory
           files: [
             `${this.stackName}.template.json`,
           ],
@@ -48,7 +48,7 @@ export class PiplineBasicStack extends cdk.Stack {
     });
 
     ///Define a pipeline
-    const pipline = new CodePipeline.Pipeline(this, 'LollyPipeline', {
+    const pipline = new CodePipeline.Pipeline(this, 'CDKPipeline', {
       crossAccountKeys: false,  //Pipeline construct creates an AWS Key Management Service (AWS KMS) which cost $1/month. this will save your $1.
       restartExecutionOnUpdate: true,  //Indicates whether to rerun the AWS CodePipeline pipeline after you update it.
     });

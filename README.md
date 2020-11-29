@@ -1,4 +1,4 @@
-# Learn Full Stack Serverless Multi-Tenant SaaS Apps and API Development with CDK in Baby Steps
+# Learn Full Stack Serverless Apps and API Development with CDK in Baby Steps
 
 ## AWS CDK
 

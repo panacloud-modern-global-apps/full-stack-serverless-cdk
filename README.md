@@ -1,5 +1,11 @@
 # Learn Full Stack Serverless Apps and API Development with CDK in Baby Steps
 
+## Get AWS Account
+
+[GitHub Student Pack](https://education.github.com/pack)
+
+[AWS Free Tier](https://aws.amazon.com/free/)
+
 ## AWS CDK
 
 [AWS CDK](https://github.com/aws/aws-cdk) is an open source software development framework to model and provision your cloud application resources using familiar programming languages. With AWS CDK, you can define your infrastructure as code and provision it through AWS CloudFormation. AWS CDK is available to use in all AWS regions. In this learning repo we will use CDK with TypeScript.

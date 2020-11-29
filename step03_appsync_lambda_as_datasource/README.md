@@ -7,3 +7,47 @@ AWS AppSync is a fully managed service that makes it easy to develop GraphQL API
 
 ## DataSource As Lambda
 In this project we have used Lambda as a datasource which means our resolver will interact with lambda function for data operations.
+
+
+[Building Real-time Serverless APIs with PostgreSQL, CDK, TypeScript, and AWS AppSync](https://aws.amazon.com/blogs/mobile/building-real-time-serverless-apis-with-postgres-cdk-typescript-and-aws-appsync/)
+
+
+mkdir step03_appsync_lambda_as_datasource
+
+cdk init app --language typescript
+
+yarn add @aws-cdk/aws-lambda
+yarn add @aws-cdk/aws-appsync
+
+Installing Bootstrap Stack
+
+cdk bootstrap
+
+Start building on every change
+
+npm run watch
+
+OR
+
+build one time
+
+npm run build
+
+Write a Lambada function in lambda/index.js
+
+cdk deploy
+
+# Welcome to your CDK TypeScript project!
+
+This is a blank project for TypeScript development with CDK.
+
+The `cdk.json` file tells the CDK Toolkit how to execute your app.
+
+## Useful commands
+
+ * `npm run build`   compile typescript to js
+ * `npm run watch`   watch for changes and compile
+ * `npm run test`    perform the jest unit tests
+ * `cdk deploy`      deploy this stack to your default AWS account/region
+ * `cdk diff`        compare deployed stack with current state
+ * `cdk synth`       emits the synthesized CloudFormation template

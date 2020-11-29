@@ -1,99 +1,116 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.com">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby's hello-world starter
-</h1>
+# Connecting to Appsync GraphQL API with AWS Amplify
 
-Kick off your project with this hello-world boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+## Introduction Appsync Subscriptions
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.com/docs/gatsby-starters/)._
+We have already seen how to integrate appsync with apollo client. There is another way to do it using amplify. The advantage of using amplify is that you do not have to define a complex client especially if you are using subscriptions.
+The client-side configuration of a secured appsync is also quit easy to define using this method. A secured Appsync can have various authorization methods. The one we are using in this example is procted by an API-KEY.
 
-## 🚀 Quick start
+[Read more about authentication types](https://docs.aws.amazon.com/appsync/latest/devguide/security.html#aws-appsync-security).
 
-1.  **Create a Gatsby site.**
+The following steps are also mentioned in the Amplify docs. [Click here to read them](https://docs.amplify.aws/lib/graphqlapi/getting-started/q/platform/ios)
 
-    Use the Gatsby CLI to create a new site, specifying the hello-world starter.
 
-    ```shell
-    # create a new Gatsby site using the hello-world starter
-    gatsby new my-hello-world-starter https://github.com/gatsbyjs/gatsby-starter-hello-world
-    ```
+## Preparing Gatsby frontend
 
-1.  **Start developing.**
+### Step 1: Create a gatsby Hello world project
 
-    Navigate into your new site’s directory and start it up.
+```
+gatsby new gatsby-frontend https://github.com/gatsbyjs/gatsby-starter-hello-world
+```
 
-    ```shell
-    cd my-hello-world-starter/
-    gatsby develop
-    ```
+### Step 2: Install the Amplify CLI
 
-1.  **Open the source code and start editing!**
+```
+npm install -g @aws-amplify/cli
+```
 
-    Your site is now running at `http://localhost:8000`!
+### Step 3: Configure Amplify
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.com/tutorial/part-five/#introducing-graphiql)._
+```
+amplify configure
+```
 
-    Open the `my-hello-world-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+### Step 4: Initialize Amplify in your gatsby project. In the root directory of your gatsby project run the following command
 
-## 🧐 What's inside?
+```
+amplify init
+```
 
-A quick look at the top-level files and directories you'll see in a Gatsby project.
+### Step 5: Integrate Amplify with your Appsync by running the following command
 
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
+```
+amplify add codegen --apiId ENTER_YOUR_API_ID
+```
+you can get this id from your AWS Appsync console. 
 
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
+These steps will create a graphql folder and a aws-exports.js file in the src directory of your gatsby project. The graphql folder has all the queries, mutations and subscriptions defined in your schema.
+The aws-exports.js file has looks like this. 
 
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
+```
+const awsmobile = {
+    "aws_project_region": "******ADD YOUR REGION HERE: example (us-east-1) *********",
+    "aws_appsync_graphqlEndpoint": "******ADD YOUR GRAPHQL ENDPOINT HERE*********",
+    "aws_appsync_region": "******ADD YOUR REGION HERE: example (us-east-1) *********",
+    "aws_appsync_authenticationType": "API_KEY",
+    "aws_appsync_apiKey": "********ADD YOUR GRAPHQL API KEY HERE*********"
+};
 
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
 
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
+export default awsmobile;
 
-5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.com/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
+```
+You will have to enter all these parameters to configure Amplify with your Appsync.
 
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.com/docs/gatsby-config/) for more detail).
 
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.com/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
+### Step 6: Create a client to pass the Amplify configuration to all the pages and components in your gatsby project.
 
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.com/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
+```javascript
+// src/amplifyContext/client.tsx
 
-9.  **`LICENSE`**: This Gatsby starter is licensed under the 0BSD license. This means that you can see this file as a placeholder and replace it with your own license.
+import React, { ReactNode } from "react"
+import Amplify from "aws-amplify"
+import awsmobile from "../aws-exports"
 
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
+interface props {
+  children: ReactNode
+}
 
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
+export default function amplifyClient({ children }: props) {
+  Amplify.configure(awsmobile)
 
-12. **`README.md`**: A text file containing useful reference information about your project.
+  return <div>{children}</div>
+}
 
-## 🎓 Learning Gatsby
+```
+### Step 7: Wrap the root element with this client
 
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.com/). Here are some places to start:
+```javascript
+//src/wrappers/wrap-root-element.tsx
 
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.com/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
+import React from "react"
+import AmplifyClient from "../amplifyContext/client"
 
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.com/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
+export default ({ element }) => <AmplifyClient>{element}</AmplifyClient>
 
-## 💫 Deploy
+```
+### Step 7: Export the 'Wrap-root-element' that you made in step 7 from gatsby-browser.js and gatsby-ssr.js files (just like you did in Apollo Client)
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-hello-world)
+### Step 8: Use 'aws-amplify' library to run queries and mutation. Example given below
+```javascript
+import { API } from "aws-amplify";
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/gatsbyjs/gatsby-starter-hello-world)
+ const data = await API.graphql({
+        query: addTodo,
+        variables: {
+          todo: todo,
+        },
+      })
 
-<!-- AUTO-GENERATED-CONTENT:END -->
+```
+
+[Learn more about Amplify](https://docs.amplify.aws/)
+
+[learn more about Appsync CDK](https://docs.aws.amazon.com/cdk/api/latest/docs/aws-appsync-readme.html)
+
+
+

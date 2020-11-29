@@ -15,7 +15,7 @@ pids
 lib-cov
 amplify
 .vscode
-aws-exports.js
+.graphqlconfig.yml
 
 # Coverage directory used by tools like istanbul
 coverage
@@ -81,7 +81,6 @@ amplify/backend/awscloudformation
 build/
 dist/
 node_modules/
-aws-exports.js
 awsconfiguration.json
 amplifyconfiguration.json
 amplify-build-config.json

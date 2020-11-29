@@ -13,28 +13,6 @@ export class AwsCdkStack extends cdk.Stack {
 
     // The code that defines your stack goes here
 
-    ////////////////  deploy webstie  //////////////////////////////////
-
-    // create a s3 bucket 
-    const websiteBucket = new s3.Bucket(this, 'WebsiteBucket', {
-      websiteIndexDocument: 'index.html',
-      publicReadAccess: true
-    })
-    // create a cloudfront distribution 
-    const distribution = new cloudfront.Distribution(this, 'myDist', {
-      defaultBehavior: { origin: new origins.S3Origin(websiteBucket), }
-    });
-    // log domain name
-    new cdk.CfnOutput(this, "DistributionDomainName", {
-      value: `https://${distribution.domainName}`,
-    })
-    // create s3 deployment bucket
-    const websiteDeployment = new s3deploy.BucketDeployment(this, 'DeployWebsite', {
-      sources: [s3deploy.Source.asset(join('__dirname', '/../../', 'gatsby-client/public'))],
-      destinationBucket: websiteBucket,
-      distribution: distribution
-    })
-
     //////////////////////// deploying appsync graphql backend ////////////////////////////////
 
     // Create a new AppSync GraphQL API
@@ -75,23 +53,6 @@ export class AwsCdkStack extends cdk.Stack {
       responseMappingTemplate: MappingTemplate.dynamoDbResultItem(),
     });
 
-    // Mutation Resolver for deleting an exisiting Todo
-    todosDS.createResolver({
-      typeName: 'Mutation',
-      fieldName: 'deleteTodo',
-      requestMappingTemplate: MappingTemplate.dynamoDbDeleteItem('id', 'id'),
-      responseMappingTemplate: MappingTemplate.dynamoDbResultItem(),
-    });
-
-    // Mutation Resolver for updating an exisiting Todo
-    todosDS.createResolver({
-      typeName: 'Mutation',
-      fieldName: 'updateTodo',
-      requestMappingTemplate: MappingTemplate.dynamoDbPutItem(
-        PrimaryKey.partition('id').is('id'),
-        Values.projecting('todo')),
-      responseMappingTemplate: MappingTemplate.dynamoDbResultItem(),
-    });
 
     //logging GraphQL API Endpoint
     new cdk.CfnOutput(this, 'Endpoint', {

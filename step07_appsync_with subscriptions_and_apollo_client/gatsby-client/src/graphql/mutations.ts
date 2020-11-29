@@ -11,21 +11,3 @@ export const addTodo = /* GraphQL */ `
     }
   }
 `;
-export const updateTodo = /* GraphQL */ `
-  mutation UpdateTodo($id: ID!, $todo: TodoInput!) {
-    updateTodo(id: $id, todo: $todo) {
-      id
-      title
-      done
-    }
-  }
-`;
-export const deleteTodo = /* GraphQL */ `
-  mutation DeleteTodo($id: ID!) {
-    deleteTodo(id: $id) {
-      id
-      title
-      done
-    }
-  }
-`;

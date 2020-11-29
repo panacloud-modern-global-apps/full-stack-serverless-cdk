@@ -3,7 +3,7 @@ import * as appsync from '@aws-cdk/aws-appsync';
 import * as ddb from '@aws-cdk/aws-dynamodb';
 import * as lambda from '@aws-cdk/aws-lambda';
 
-export class Step04AppsyncDynamodbStack extends cdk.Stack {
+export class BackendCdkStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
@@ -66,6 +66,11 @@ export class Step04AppsyncDynamodbStack extends cdk.Stack {
     // Prints out the AppSync GraphQL API key to the terminal
     new cdk.CfnOutput(this, "GraphQLAPIKey", {
       value: api.apiKey || ''
+    });
+
+     // Prints out the AppSync GraphQL API ID to the terminal
+     new cdk.CfnOutput(this, "GraphQLAPIID", {
+      value: api.apiId || ''
     });
 
     // Prints out the stack region to the terminal

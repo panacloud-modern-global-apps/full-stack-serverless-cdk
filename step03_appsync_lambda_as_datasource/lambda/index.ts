@@ -10,9 +10,9 @@ type AppSyncEvent = {
 exports.handler = async (event: AppSyncEvent) => {
     switch(event.info.fieldName){
         case "notes":
-            return "Hello World";
+            return "Test Note";
         case "notesByID":
-            return JSON.stringify(event.arguments.id);
+            return event.arguments.id;
         default:
             return null;
     }

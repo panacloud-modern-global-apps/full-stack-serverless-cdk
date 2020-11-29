@@ -1,5 +1,5 @@
 projects:
-  cdk-todos-appsync-api:
+  todosapi:
     schemaPath: src/graphql/schema.json
     includes:
       - src/graphql/**/*.ts
@@ -11,5 +11,8 @@ projects:
         generatedFileName: src/API.ts
         docsFilePath: src/graphql
         region: us-east-1
-        apiId: qawaufvzr5fide37y5qaemcube
+        apiId: ohmktfmzdrbo3etxssjvfj7c6q
         maxDepth: 2
+extensions:
+  amplify:
+    version: 3

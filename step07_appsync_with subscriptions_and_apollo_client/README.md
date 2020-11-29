@@ -2,8 +2,12 @@
 
 ## Introduction Appsync Subscriptions
 
+To subscribe to real-time updates, we’ll use the API category and pass in the subscription we’d like to listen to. Any time a new mutation we are subscribed to happens, the data will be sent to the client application in real-time.
 We have already seen how to integrate appsync with apollo client. There is another way to do it using amplify. The advantage of using amplify is that you do not have to define a complex client especially if you are using subscriptions.
 The client-side configuration of a secured appsync is also quit easy to define using this method. A secured Appsync can have various authorization methods. The one we are using in this example is procted by an API-KEY.
+
+[Read more about subscription here](https://docs.aws.amazon.com/appsync/latest/devguide/real-time-websocket-client.htmly).
+[Also check this article](https://aws.amazon.com/blogs/mobile/building-scalable-graphql-apis-on-aws-with-cdk-and-aws-appsync/)
 
 [Read more about authentication types](https://docs.aws.amazon.com/appsync/latest/devguide/security.html#aws-appsync-security).
 

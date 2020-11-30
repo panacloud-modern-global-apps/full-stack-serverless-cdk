@@ -42,6 +42,7 @@ export class StepxxAppsyncDynamodbAsDatasourceStack extends cdk.Stack {
       },
     });
 
+    ///Attaching Datasource to api
     const db_data_source = api.addDynamoDbDataSource('DataSources', dynoTable);
 
     db_data_source.createResolver({

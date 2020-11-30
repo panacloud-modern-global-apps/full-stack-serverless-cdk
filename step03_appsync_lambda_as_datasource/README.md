@@ -12,36 +12,22 @@ In this project we have used Lambda as a datasource which means our resolver wil
 [Building Real-time Serverless APIs with PostgreSQL, CDK, TypeScript, and AWS AppSync](https://aws.amazon.com/blogs/mobile/building-real-time-serverless-apis-with-postgres-cdk-typescript-and-aws-appsync/)
 
 
-mkdir step03_appsync_lambda_as_datasource
+Note, never print your API Key to the logs in a production system. This was added to make learning AppSync and GraphQL easier. If you want to use this pattern in a production system remove the two cloudformation outputs
 
-cdk init app --language typescript
+## Test After deploy
+1. After CDK Deploy, capture outputs from the log.
+```
+Outputs:
+StepxxAppsyncDynamodbAsDatasourceStack.APIGraphQlURL = https://-------xxxxxxxxxxx.appsync-api.us-east-2.amazonaws.com/graphql
+StepxxAppsyncDynamodbAsDatasourceStack.GraphQLAPIKey = -----------------------------
+```
 
-yarn add @aws-cdk/aws-lambda
-yarn add @aws-cdk/aws-appsync
+2. Setup Postman as outlined in Postman's Using [GraphQL Instructions](https://learning.postman.com/docs/sending-requests/supported-api-frameworks/graphql/)
 
-Installing Bootstrap Stack
+3. Set POST request URL, x-api-key and Content-Type
+x-api-key = 'your API Key'
+Content-Type = application/graphql
 
-cdk bootstrap
-
-Start building on every change
-
-npm run watch
-
-OR
-
-build one time
-
-npm run build
-
-Write a Lambada function in lambda/index.js
-
-cdk deploy
-
-# Welcome to your CDK TypeScript project!
-
-This is a blank project for TypeScript development with CDK.
-
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
 
 ## Useful commands
 

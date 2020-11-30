@@ -1,8 +1,8 @@
 {
-  "name": "stepxx_basic_pipeline",
+  "name": "step01_setup_basic_pipeline",
   "version": "0.1.0",
   "bin": {
-    "stepxx_basic_pipeline": "bin/stepxx_basic_pipeline.js"
+    "step01_setup_basic_pipeline": "bin/step01_setup_basic_pipeline.js"
   },
   "scripts": {
     "build": "tsc",

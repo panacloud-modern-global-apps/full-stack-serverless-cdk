@@ -1,0 +1,467 @@
+{
+  "Resources": {
+    "GRAPHQLAPI0BDC9FAD": {
+      "Type": "AWS::AppSync::GraphQLApi",
+      "Properties": {
+        "AuthenticationType": "API_KEY",
+        "Name": "cdk-api",
+        "XrayEnabled": true
+      },
+      "Metadata": {
+        "aws:cdk:path": "StepxxAppsyncDynamodbAsDatasourceStack/GRAPHQL_API/Resource"
+      }
+    },
+    "GRAPHQLAPISchema03BCA39C": {
+      "Type": "AWS::AppSync::GraphQLSchema",
+      "Properties": {
+        "ApiId": {
+          "Fn::GetAtt": [
+            "GRAPHQLAPI0BDC9FAD",
+            "ApiId"
+          ]
+        },
+        "Definition": "type Note {\n    id: ID!\n    title: String!\n}\n\ntype Query{\n    notes: [Note!]\n}\n\ntype Mutation{\n    createNote(title: String!): Note!\n    deleteNote(id: String!): String!\n    updateNote(id: String!, title: String!): Note!\n}"
+      },
+      "Metadata": {
+        "aws:cdk:path": "StepxxAppsyncDynamodbAsDatasourceStack/GRAPHQL_API/Schema"
+      }
+    },
+    "GRAPHQLAPIDefaultApiKey38D90378": {
+      "Type": "AWS::AppSync::ApiKey",
+      "Properties": {
+        "ApiId": {
+          "Fn::GetAtt": [
+            "GRAPHQLAPI0BDC9FAD",
+            "ApiId"
+          ]
+        },
+        "Expires": 1638255907
+      },
+      "DependsOn": [
+        "GRAPHQLAPISchema03BCA39C"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "StepxxAppsyncDynamodbAsDatasourceStack/GRAPHQL_API/DefaultApiKey"
+      }
+    },
+    "GRAPHQLAPIDataSourcesServiceRoleB696A905": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "appsync.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "StepxxAppsyncDynamodbAsDatasourceStack/GRAPHQL_API/DataSources/ServiceRole/Resource"
+      }
+    },
+    "GRAPHQLAPIDataSourcesServiceRoleDefaultPolicy49C5F4F7": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": [
+                "dynamodb:BatchGetItem",
+                "dynamodb:GetRecords",
+                "dynamodb:GetShardIterator",
+                "dynamodb:Query",
+                "dynamodb:GetItem",
+                "dynamodb:Scan",
+                "dynamodb:BatchWriteItem",
+                "dynamodb:PutItem",
+                "dynamodb:UpdateItem",
+                "dynamodb:DeleteItem"
+              ],
+              "Effect": "Allow",
+              "Resource": [
+                {
+                  "Fn::GetAtt": [
+                    "TableCD117FA1",
+                    "Arn"
+                  ]
+                },
+                {
+                  "Ref": "AWS::NoValue"
+                }
+              ]
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "GRAPHQLAPIDataSourcesServiceRoleDefaultPolicy49C5F4F7",
+        "Roles": [
+          {
+            "Ref": "GRAPHQLAPIDataSourcesServiceRoleB696A905"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "StepxxAppsyncDynamodbAsDatasourceStack/GRAPHQL_API/DataSources/ServiceRole/DefaultPolicy/Resource"
+      }
+    },
+    "GRAPHQLAPIDataSources62D0BBA6": {
+      "Type": "AWS::AppSync::DataSource",
+      "Properties": {
+        "ApiId": {
+          "Fn::GetAtt": [
+            "GRAPHQLAPI0BDC9FAD",
+            "ApiId"
+          ]
+        },
+        "Name": "DataSources",
+        "Type": "AMAZON_DYNAMODB",
+        "DynamoDBConfig": {
+          "AwsRegion": {
+            "Ref": "AWS::Region"
+          },
+          "TableName": {
+            "Ref": "TableCD117FA1"
+          }
+        },
+        "ServiceRoleArn": {
+          "Fn::GetAtt": [
+            "GRAPHQLAPIDataSourcesServiceRoleB696A905",
+            "Arn"
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "StepxxAppsyncDynamodbAsDatasourceStack/GRAPHQL_API/DataSources/Resource"
+      }
+    },
+    "GRAPHQLAPIDataSourcesMutationcreateNoteResolverA46FD3C2": {
+      "Type": "AWS::AppSync::Resolver",
+      "Properties": {
+        "ApiId": {
+          "Fn::GetAtt": [
+            "GRAPHQLAPI0BDC9FAD",
+            "ApiId"
+          ]
+        },
+        "FieldName": "createNote",
+        "TypeName": "Mutation",
+        "DataSourceName": "DataSources",
+        "Kind": "UNIT",
+        "RequestMappingTemplate": "\n      #set($input = $ctx.args)\n      \n      {\n        \"version\": \"2017-02-28\",\n        \"operation\": \"PutItem\",\n        \"key\" : {\n      \"id\" : $util.dynamodb.toDynamoDBJson($util.autoId())\n    },\n        \"attributeValues\": $util.dynamodb.toMapValuesJson($input)\n      }",
+        "ResponseMappingTemplate": "$util.toJson($ctx.result)"
+      },
+      "DependsOn": [
+        "GRAPHQLAPIDataSources62D0BBA6",
+        "GRAPHQLAPISchema03BCA39C"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "StepxxAppsyncDynamodbAsDatasourceStack/GRAPHQL_API/DataSources/MutationcreateNoteResolver/Resource"
+      }
+    },
+    "GRAPHQLAPIDataSourcesQuerynotesResolver8B57EE05": {
+      "Type": "AWS::AppSync::Resolver",
+      "Properties": {
+        "ApiId": {
+          "Fn::GetAtt": [
+            "GRAPHQLAPI0BDC9FAD",
+            "ApiId"
+          ]
+        },
+        "FieldName": "notes",
+        "TypeName": "Query",
+        "DataSourceName": "DataSources",
+        "Kind": "UNIT",
+        "RequestMappingTemplate": "{\"version\" : \"2017-02-28\", \"operation\" : \"Scan\"}",
+        "ResponseMappingTemplate": "$util.toJson($ctx.result.items)"
+      },
+      "DependsOn": [
+        "GRAPHQLAPIDataSources62D0BBA6",
+        "GRAPHQLAPISchema03BCA39C"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "StepxxAppsyncDynamodbAsDatasourceStack/GRAPHQL_API/DataSources/QuerynotesResolver/Resource"
+      }
+    },
+    "GRAPHQLAPIDataSourcesMutationdeleteNoteResolver62974511": {
+      "Type": "AWS::AppSync::Resolver",
+      "Properties": {
+        "ApiId": {
+          "Fn::GetAtt": [
+            "GRAPHQLAPI0BDC9FAD",
+            "ApiId"
+          ]
+        },
+        "FieldName": "deleteNote",
+        "TypeName": "Mutation",
+        "DataSourceName": "DataSources",
+        "Kind": "UNIT",
+        "RequestMappingTemplate": "{\"version\": \"2017-02-28\", \"operation\": \"DeleteItem\", \"key\": {\"id\": $util.dynamodb.toDynamoDBJson($ctx.args.id)}}",
+        "ResponseMappingTemplate": "$util.toJson($ctx.result)"
+      },
+      "DependsOn": [
+        "GRAPHQLAPIDataSources62D0BBA6",
+        "GRAPHQLAPISchema03BCA39C"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "StepxxAppsyncDynamodbAsDatasourceStack/GRAPHQL_API/DataSources/MutationdeleteNoteResolver/Resource"
+      }
+    },
+    "GRAPHQLAPIDataSourcesMutationupdateNoteResolverF6E58D10": {
+      "Type": "AWS::AppSync::Resolver",
+      "Properties": {
+        "ApiId": {
+          "Fn::GetAtt": [
+            "GRAPHQLAPI0BDC9FAD",
+            "ApiId"
+          ]
+        },
+        "FieldName": "updateNote",
+        "TypeName": "Mutation",
+        "DataSourceName": "DataSources",
+        "Kind": "UNIT",
+        "RequestMappingTemplate": "\n      #set($input = $ctx.args)\n      \n      {\n        \"version\": \"2017-02-28\",\n        \"operation\": \"PutItem\",\n        \"key\" : {\n      \"id\" : $util.dynamodb.toDynamoDBJson($ctx.args.id)\n    },\n        \"attributeValues\": $util.dynamodb.toMapValuesJson($input)\n      }",
+        "ResponseMappingTemplate": "$util.toJson($ctx.result)"
+      },
+      "DependsOn": [
+        "GRAPHQLAPIDataSources62D0BBA6",
+        "GRAPHQLAPISchema03BCA39C"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "StepxxAppsyncDynamodbAsDatasourceStack/GRAPHQL_API/DataSources/MutationupdateNoteResolver/Resource"
+      }
+    },
+    "TableCD117FA1": {
+      "Type": "AWS::DynamoDB::Table",
+      "Properties": {
+        "KeySchema": [
+          {
+            "AttributeName": "id",
+            "KeyType": "HASH"
+          }
+        ],
+        "AttributeDefinitions": [
+          {
+            "AttributeName": "id",
+            "AttributeType": "S"
+          }
+        ],
+        "ProvisionedThroughput": {
+          "ReadCapacityUnits": 5,
+          "WriteCapacityUnits": 5
+        }
+      },
+      "UpdateReplacePolicy": "Retain",
+      "DeletionPolicy": "Retain",
+      "Metadata": {
+        "aws:cdk:path": "StepxxAppsyncDynamodbAsDatasourceStack/Table/Resource"
+      }
+    },
+    "CDKMetadata": {
+      "Type": "AWS::CDK::Metadata",
+      "Properties": {
+        "Modules": "aws-cdk=1.73.0,@aws-cdk/assets=1.74.0,@aws-cdk/aws-applicationautoscaling=1.74.0,@aws-cdk/aws-appsync=1.74.0,@aws-cdk/aws-autoscaling-common=1.74.0,@aws-cdk/aws-cloudwatch=1.74.0,@aws-cdk/aws-codeguruprofiler=1.74.0,@aws-cdk/aws-dynamodb=1.74.0,@aws-cdk/aws-ec2=1.74.0,@aws-cdk/aws-events=1.74.0,@aws-cdk/aws-iam=1.74.0,@aws-cdk/aws-kms=1.74.0,@aws-cdk/aws-lambda=1.74.0,@aws-cdk/aws-logs=1.74.0,@aws-cdk/aws-s3=1.74.0,@aws-cdk/aws-s3-assets=1.74.0,@aws-cdk/aws-sqs=1.74.0,@aws-cdk/aws-ssm=1.74.0,@aws-cdk/cloud-assembly-schema=1.74.0,@aws-cdk/core=1.74.0,@aws-cdk/custom-resources=1.74.0,@aws-cdk/cx-api=1.74.0,@aws-cdk/region-info=1.74.0,jsii-runtime=node.js/v12.18.2"
+      },
+      "Metadata": {
+        "aws:cdk:path": "StepxxAppsyncDynamodbAsDatasourceStack/CDKMetadata/Default"
+      },
+      "Condition": "CDKMetadataAvailable"
+    }
+  },
+  "Outputs": {
+    "APIGraphQlURL": {
+      "Value": {
+        "Fn::GetAtt": [
+          "GRAPHQLAPI0BDC9FAD",
+          "GraphQLUrl"
+        ]
+      }
+    },
+    "GraphQLAPIKey": {
+      "Value": {
+        "Fn::GetAtt": [
+          "GRAPHQLAPIDefaultApiKey38D90378",
+          "ApiKey"
+        ]
+      }
+    }
+  },
+  "Conditions": {
+    "CDKMetadataAvailable": {
+      "Fn::Or": [
+        {
+          "Fn::Or": [
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-east-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-northeast-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-northeast-2"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-south-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-southeast-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-southeast-2"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ca-central-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "cn-north-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "cn-northwest-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-central-1"
+              ]
+            }
+          ]
+        },
+        {
+          "Fn::Or": [
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-north-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-west-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-west-2"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-west-3"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "me-south-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "sa-east-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "us-east-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "us-east-2"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "us-west-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "us-west-2"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

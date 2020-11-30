@@ -1,0 +1,350 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree"
+      },
+      "StepxxAppsyncDynamodbAsDatasourceStack": {
+        "id": "StepxxAppsyncDynamodbAsDatasourceStack",
+        "path": "StepxxAppsyncDynamodbAsDatasourceStack",
+        "children": {
+          "GRAPHQL_API": {
+            "id": "GRAPHQL_API",
+            "path": "StepxxAppsyncDynamodbAsDatasourceStack/GRAPHQL_API",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "StepxxAppsyncDynamodbAsDatasourceStack/GRAPHQL_API/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::AppSync::GraphQLApi",
+                  "aws:cdk:cloudformation:props": {
+                    "authenticationType": "API_KEY",
+                    "name": "cdk-api",
+                    "xrayEnabled": true
+                  }
+                }
+              },
+              "Schema": {
+                "id": "Schema",
+                "path": "StepxxAppsyncDynamodbAsDatasourceStack/GRAPHQL_API/Schema",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::AppSync::GraphQLSchema",
+                  "aws:cdk:cloudformation:props": {
+                    "apiId": {
+                      "Fn::GetAtt": [
+                        "GRAPHQLAPI0BDC9FAD",
+                        "ApiId"
+                      ]
+                    },
+                    "definition": "type Note {\n    id: ID!\n    title: String!\n}\n\ntype Query{\n    notes: [Note!]\n}\n\ntype Mutation{\n    createNote(title: String!): Note!\n    deleteNote(id: String!): String!\n    updateNote(id: String!, title: String!): Note!\n}"
+                  }
+                }
+              },
+              "DefaultApiKey": {
+                "id": "DefaultApiKey",
+                "path": "StepxxAppsyncDynamodbAsDatasourceStack/GRAPHQL_API/DefaultApiKey",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::AppSync::ApiKey",
+                  "aws:cdk:cloudformation:props": {
+                    "apiId": {
+                      "Fn::GetAtt": [
+                        "GRAPHQLAPI0BDC9FAD",
+                        "ApiId"
+                      ]
+                    },
+                    "expires": 1638255907
+                  }
+                }
+              },
+              "DataSources": {
+                "id": "DataSources",
+                "path": "StepxxAppsyncDynamodbAsDatasourceStack/GRAPHQL_API/DataSources",
+                "children": {
+                  "ServiceRole": {
+                    "id": "ServiceRole",
+                    "path": "StepxxAppsyncDynamodbAsDatasourceStack/GRAPHQL_API/DataSources/ServiceRole",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "StepxxAppsyncDynamodbAsDatasourceStack/GRAPHQL_API/DataSources/ServiceRole/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                          "aws:cdk:cloudformation:props": {
+                            "assumeRolePolicyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "sts:AssumeRole",
+                                  "Effect": "Allow",
+                                  "Principal": {
+                                    "Service": "appsync.amazonaws.com"
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            }
+                          }
+                        }
+                      },
+                      "DefaultPolicy": {
+                        "id": "DefaultPolicy",
+                        "path": "StepxxAppsyncDynamodbAsDatasourceStack/GRAPHQL_API/DataSources/ServiceRole/DefaultPolicy",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "StepxxAppsyncDynamodbAsDatasourceStack/GRAPHQL_API/DataSources/ServiceRole/DefaultPolicy/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                              "aws:cdk:cloudformation:props": {
+                                "policyDocument": {
+                                  "Statement": [
+                                    {
+                                      "Action": [
+                                        "dynamodb:BatchGetItem",
+                                        "dynamodb:GetRecords",
+                                        "dynamodb:GetShardIterator",
+                                        "dynamodb:Query",
+                                        "dynamodb:GetItem",
+                                        "dynamodb:Scan",
+                                        "dynamodb:BatchWriteItem",
+                                        "dynamodb:PutItem",
+                                        "dynamodb:UpdateItem",
+                                        "dynamodb:DeleteItem"
+                                      ],
+                                      "Effect": "Allow",
+                                      "Resource": [
+                                        {
+                                          "Fn::GetAtt": [
+                                            "TableCD117FA1",
+                                            "Arn"
+                                          ]
+                                        },
+                                        {
+                                          "Ref": "AWS::NoValue"
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "Version": "2012-10-17"
+                                },
+                                "policyName": "GRAPHQLAPIDataSourcesServiceRoleDefaultPolicy49C5F4F7",
+                                "roles": [
+                                  {
+                                    "Ref": "GRAPHQLAPIDataSourcesServiceRoleB696A905"
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "StepxxAppsyncDynamodbAsDatasourceStack/GRAPHQL_API/DataSources/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::AppSync::DataSource",
+                      "aws:cdk:cloudformation:props": {
+                        "apiId": {
+                          "Fn::GetAtt": [
+                            "GRAPHQLAPI0BDC9FAD",
+                            "ApiId"
+                          ]
+                        },
+                        "name": "DataSources",
+                        "type": "AMAZON_DYNAMODB",
+                        "dynamoDbConfig": {
+                          "tableName": {
+                            "Ref": "TableCD117FA1"
+                          },
+                          "awsRegion": {
+                            "Ref": "AWS::Region"
+                          }
+                        },
+                        "serviceRoleArn": {
+                          "Fn::GetAtt": [
+                            "GRAPHQLAPIDataSourcesServiceRoleB696A905",
+                            "Arn"
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  "MutationcreateNoteResolver": {
+                    "id": "MutationcreateNoteResolver",
+                    "path": "StepxxAppsyncDynamodbAsDatasourceStack/GRAPHQL_API/DataSources/MutationcreateNoteResolver",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "StepxxAppsyncDynamodbAsDatasourceStack/GRAPHQL_API/DataSources/MutationcreateNoteResolver/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::AppSync::Resolver",
+                          "aws:cdk:cloudformation:props": {
+                            "apiId": {
+                              "Fn::GetAtt": [
+                                "GRAPHQLAPI0BDC9FAD",
+                                "ApiId"
+                              ]
+                            },
+                            "fieldName": "createNote",
+                            "typeName": "Mutation",
+                            "dataSourceName": "DataSources",
+                            "kind": "UNIT",
+                            "requestMappingTemplate": "\n      #set($input = $ctx.args)\n      \n      {\n        \"version\": \"2017-02-28\",\n        \"operation\": \"PutItem\",\n        \"key\" : {\n      \"id\" : $util.dynamodb.toDynamoDBJson($util.autoId())\n    },\n        \"attributeValues\": $util.dynamodb.toMapValuesJson($input)\n      }",
+                            "responseMappingTemplate": "$util.toJson($ctx.result)"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "QuerynotesResolver": {
+                    "id": "QuerynotesResolver",
+                    "path": "StepxxAppsyncDynamodbAsDatasourceStack/GRAPHQL_API/DataSources/QuerynotesResolver",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "StepxxAppsyncDynamodbAsDatasourceStack/GRAPHQL_API/DataSources/QuerynotesResolver/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::AppSync::Resolver",
+                          "aws:cdk:cloudformation:props": {
+                            "apiId": {
+                              "Fn::GetAtt": [
+                                "GRAPHQLAPI0BDC9FAD",
+                                "ApiId"
+                              ]
+                            },
+                            "fieldName": "notes",
+                            "typeName": "Query",
+                            "dataSourceName": "DataSources",
+                            "kind": "UNIT",
+                            "requestMappingTemplate": "{\"version\" : \"2017-02-28\", \"operation\" : \"Scan\"}",
+                            "responseMappingTemplate": "$util.toJson($ctx.result.items)"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "MutationdeleteNoteResolver": {
+                    "id": "MutationdeleteNoteResolver",
+                    "path": "StepxxAppsyncDynamodbAsDatasourceStack/GRAPHQL_API/DataSources/MutationdeleteNoteResolver",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "StepxxAppsyncDynamodbAsDatasourceStack/GRAPHQL_API/DataSources/MutationdeleteNoteResolver/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::AppSync::Resolver",
+                          "aws:cdk:cloudformation:props": {
+                            "apiId": {
+                              "Fn::GetAtt": [
+                                "GRAPHQLAPI0BDC9FAD",
+                                "ApiId"
+                              ]
+                            },
+                            "fieldName": "deleteNote",
+                            "typeName": "Mutation",
+                            "dataSourceName": "DataSources",
+                            "kind": "UNIT",
+                            "requestMappingTemplate": "{\"version\": \"2017-02-28\", \"operation\": \"DeleteItem\", \"key\": {\"id\": $util.dynamodb.toDynamoDBJson($ctx.args.id)}}",
+                            "responseMappingTemplate": "$util.toJson($ctx.result)"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "MutationupdateNoteResolver": {
+                    "id": "MutationupdateNoteResolver",
+                    "path": "StepxxAppsyncDynamodbAsDatasourceStack/GRAPHQL_API/DataSources/MutationupdateNoteResolver",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "StepxxAppsyncDynamodbAsDatasourceStack/GRAPHQL_API/DataSources/MutationupdateNoteResolver/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::AppSync::Resolver",
+                          "aws:cdk:cloudformation:props": {
+                            "apiId": {
+                              "Fn::GetAtt": [
+                                "GRAPHQLAPI0BDC9FAD",
+                                "ApiId"
+                              ]
+                            },
+                            "fieldName": "updateNote",
+                            "typeName": "Mutation",
+                            "dataSourceName": "DataSources",
+                            "kind": "UNIT",
+                            "requestMappingTemplate": "\n      #set($input = $ctx.args)\n      \n      {\n        \"version\": \"2017-02-28\",\n        \"operation\": \"PutItem\",\n        \"key\" : {\n      \"id\" : $util.dynamodb.toDynamoDBJson($ctx.args.id)\n    },\n        \"attributeValues\": $util.dynamodb.toMapValuesJson($input)\n      }",
+                            "responseMappingTemplate": "$util.toJson($ctx.result)"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "APIGraphQlURL": {
+            "id": "APIGraphQlURL",
+            "path": "StepxxAppsyncDynamodbAsDatasourceStack/APIGraphQlURL"
+          },
+          "GraphQLAPIKey": {
+            "id": "GraphQLAPIKey",
+            "path": "StepxxAppsyncDynamodbAsDatasourceStack/GraphQLAPIKey"
+          },
+          "Table": {
+            "id": "Table",
+            "path": "StepxxAppsyncDynamodbAsDatasourceStack/Table",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "StepxxAppsyncDynamodbAsDatasourceStack/Table/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::DynamoDB::Table",
+                  "aws:cdk:cloudformation:props": {
+                    "keySchema": [
+                      {
+                        "attributeName": "id",
+                        "keyType": "HASH"
+                      }
+                    ],
+                    "attributeDefinitions": [
+                      {
+                        "attributeName": "id",
+                        "attributeType": "S"
+                      }
+                    ],
+                    "provisionedThroughput": {
+                      "readCapacityUnits": 5,
+                      "writeCapacityUnits": 5
+                    }
+                  }
+                }
+              },
+              "ScalingRole": {
+                "id": "ScalingRole",
+                "path": "StepxxAppsyncDynamodbAsDatasourceStack/Table/ScalingRole"
+              }
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "StepxxAppsyncDynamodbAsDatasourceStack/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "StepxxAppsyncDynamodbAsDatasourceStack/CDKMetadata/Default"
+              },
+              "Condition": {
+                "id": "Condition",
+                "path": "StepxxAppsyncDynamodbAsDatasourceStack/CDKMetadata/Condition"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

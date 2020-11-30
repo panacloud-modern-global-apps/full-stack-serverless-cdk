@@ -47,11 +47,6 @@ export class StepxxAppsyncDynamodbDatasourceVtlStack extends cdk.Stack {
     const db_data_source = api.addDynamoDbDataSource('DataSources', dynoTable);
 
 
-    ///our args object will be like  {id: "sddc", title: "note"}
-    ///$ctx and $context are both same it's just two ways to access context
-    ///The template definition version. 2017-02-28 and 2018-05-29 are currently supported. This value is required.
-
-
     db_data_source.createResolver({
       typeName: "Mutation",
       fieldName: "createNote",

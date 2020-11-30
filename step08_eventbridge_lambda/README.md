@@ -152,3 +152,24 @@ curl -d '{"country":"IN"}' -H 'Content-Type: application/json' https://YOUR_API_
 
 curl -d '{"country":"PK"}' -H 'Content-Type: application/json' https://YOUR_API_ENDPOINT
 ```
+
+## Extra: Working with Custom Event Busses.
+
+You can also create custom event busses instead of using the default event bus. Based on this snippet from the docs we can see that we should just use the default event bus for simple use cases unless we want custom permissions or require more than 100 rules for our application:
+
+>Each event bus in your account can have up to 100 EventBridge rules associated with it, so if your account has many rules, you might want to create custom event buses to associate with some of the rules for your custom application events. Another reason to create custom event buses is to apply different permissions to different event buses. When you set permissions on an event bus, you can specify which other accounts or entire organizations can send events to the event bus.
+
+There are 2 kinds of custom event busses. One is a compeletely custom bus where we send our custom events and control permissions. The other type is an event bus used to integrate with AWS SaaS partners like datadog.  
+When using `aws-cdk` inorder to define an event bus we simply create a new EventBus and give it a name. If we give it a SourceName then it will be considered a SaaS partner event bus. [Event Bus cdk construct docs](https://docs.aws.amazon.com/cdk/api/latest/docs/@aws-cdk_aws-events.EventBus.html)
+
+```typescript
+// creating a custom event bus
+new events.EventBus(this, 'myEventBus', {
+  eventBusName: 'custom-event-bus'
+})
+
+// creating a partner event bus
+new events.EventBus(this, 'myEventBus', {
+  eventSourceName: 'PARTNER_SOURCE_NAME'
+})
+```

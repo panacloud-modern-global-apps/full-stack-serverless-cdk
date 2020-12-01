@@ -1,6 +1,6 @@
 # How to deploy a lambda function with single layer using CDK
 
-In this example you will learn, that how to simply deloy a lambda function with single lambda layer using CDK, which is very easy to do.
+In this example you will learn, that [how to simply deloy a lambda function with single lambda layer](https://www.youtube.com/watch?v=-r4GJlkdJo0 "how to simply deloy a lambda function with single lambda") using CDK, which is very easy to do.
 
 ### Step 1: Setup a CDK directory
 `cdk init app --language typescript`
@@ -25,9 +25,10 @@ exports.handler = async (event: any, context: any) => {
 ### Step4: Setup Lambda Layer
 Create a new folder as **lambda-layer** in the cdk root dir and add new folder as **nodejs** inside **lambda-layer**. 
 Inside **nodejs** run the following commands.
-`npm init -y`
-`npm install axios`
-> **Note:** Make sure that the folder **nodejs** that you have created, that name should be "nodejs" because during deployment this folder will be converted into zip file and uploaded to the aws so when your lambda will call this layer its name should be "nodejs" as you are working in nodejs environment, otherwise if you named it randomly the layer will not called by the lambda function and will result in error. Like wise if you are using python environment so instead of "nodejs" you will make "python" folder with having all python dependencies.
+- `npm init -y`
+- `npm install axios`
+
+> **Note:** Make sure that the folder **nodejs** that you have created, that name should be "nodejs" because during deployment this folder will be added into zip file and uploaded to the aws so when your lambda will try to call any module which is not available in it's root directory then your lambda will try to extract that module from "nodejs" which is present in your attached layer and as we are working in nodejs environment this format will be required, otherwise if you named it randomly your lambda will generate an error. Like wise if you are using python environment so instead of "nodejs" you will make "python" folder with having all python dependencies.
 
 ### Step5: Setup Your CDK Stack
 ```javascript
@@ -36,7 +37,7 @@ Inside **nodejs** run the following commands.
 import * as cdk from '@aws-cdk/core';
 import * as lambda from '@aws-cdk/aws-lambda';
 
-export class stack extends cdk.Stack {
+export class Stack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
@@ -57,5 +58,9 @@ export class stack extends cdk.Stack {
 ```
 ### Step6: Lets deploy
 After completing the above steps run the following commands to deploy
-`npm run build`
-`cdk deploy`
+- `npm run build`
+- `cdk deploy`
+
+### Step7: Test Your Lambda
+Now at last if every things done according to the steps above, just go to your lambda console and test you lambda.
+[How to test a lambda function in aws console](https://www.youtube.com/watch?v=seaBeltaKhw&feature=youtu.be&t=310 "How to test a lambda function in aws console")

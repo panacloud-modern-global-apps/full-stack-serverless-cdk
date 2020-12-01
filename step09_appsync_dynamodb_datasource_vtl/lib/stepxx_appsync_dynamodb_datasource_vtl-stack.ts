@@ -36,7 +36,7 @@ export class StepxxAppsyncDynamodbDatasourceVtlStack extends cdk.Stack {
 
 
     ///Defining a DynamoDB Table
-    const dynoTable = new ddb.Table(this, 'Table', {
+    const dynamoDBTable = new ddb.Table(this, 'Table', {
       partitionKey: {
         name: 'id',
         type: ddb.AttributeType.STRING,
@@ -44,7 +44,7 @@ export class StepxxAppsyncDynamodbDatasourceVtlStack extends cdk.Stack {
     });
 
     ///Attaching Datasource to api
-    const db_data_source = api.addDynamoDbDataSource('DataSources', dynoTable);
+    const db_data_source = api.addDynamoDbDataSource('DataSources', dynamoDBTable);
 
 
     db_data_source.createResolver({

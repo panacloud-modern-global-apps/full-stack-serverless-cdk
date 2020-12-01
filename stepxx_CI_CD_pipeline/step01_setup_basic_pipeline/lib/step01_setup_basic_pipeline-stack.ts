@@ -11,9 +11,6 @@ export class Step01SetupBasicPipelineStack extends cdk.Stack {
     // Artifact from source stage
     const sourceOutput = new CodePipeline.Artifact();
 
-    // Artifact from build stage
-    const CDKOutput = new CodePipeline.Artifact();
-
     const pipline = new CodePipeline.Pipeline(this, 'CDKPipeline', {
      crossAccountKeys: false,  //Pipeline construct creates an AWS Key Management Service (AWS KMS) which cost $1/month. this will save your $1.
      restartExecutionOnUpdate: true,  //Indicates whether to rerun the AWS CodePipeline pipeline after you update it.
@@ -34,5 +31,6 @@ export class Step01SetupBasicPipelineStack extends cdk.Stack {
        }),
      ],
    })
+
   }
 }

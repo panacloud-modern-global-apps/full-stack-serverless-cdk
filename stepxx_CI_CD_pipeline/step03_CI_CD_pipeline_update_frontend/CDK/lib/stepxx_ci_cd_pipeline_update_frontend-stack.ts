@@ -66,7 +66,7 @@ export class StepxxCiCdPipelineUpdateFrontendStack extends cdk.Stack {
           },
         },
         artifacts: {
-          'base-directory': 'stepxx_CI_CD_pipeline_update_frontend/frontend/public',   ///outputting our generated Gatsby Build files to the public directory
+          'base-directory': './stepxx_CI_CD_pipeline_update_frontend/frontend/public',   ///outputting our generated Gatsby Build files to the public directory
           "files": [
             '**/*'
           ]
@@ -84,7 +84,7 @@ export class StepxxCiCdPipelineUpdateFrontendStack extends cdk.Stack {
     s3Build.addToRolePolicy(policy);
 
     ///Define a pipeline
-    const pipline = new CodePipeline.Pipeline(this, 'GatsbyPipeline', {
+    const pipeline = new CodePipeline.Pipeline(this, 'GatsbyPipeline', {
       crossAccountKeys: false,  //Pipeline construct creates an AWS Key Management Service (AWS KMS) which cost $1/month. this will save your $1.
       restartExecutionOnUpdate: true,  //Indicates whether to rerun the AWS CodePipeline pipeline after you update it.
     });
@@ -92,7 +92,7 @@ export class StepxxCiCdPipelineUpdateFrontendStack extends cdk.Stack {
     ///Adding stages to pipeline
 
     //First Stage Source
-    pipline.addStage({
+    pipeline.addStage({
       stageName: 'Source',
       actions: [
         new CodePipelineAction.GitHubSourceAction({
@@ -106,7 +106,7 @@ export class StepxxCiCdPipelineUpdateFrontendStack extends cdk.Stack {
       ],
     })
 
-    pipline.addStage({
+    pipeline.addStage({
       stageName: 'Build',
       actions: [
         new CodePipelineAction.CodeBuildAction({
@@ -118,7 +118,7 @@ export class StepxxCiCdPipelineUpdateFrontendStack extends cdk.Stack {
       ],
     })
 
-    pipline.addStage({
+    pipeline.addStage({
       stageName: 'Deploy',
       actions: [
         new CodePipelineAction.S3DeployAction({

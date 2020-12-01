@@ -36,7 +36,7 @@ export class PiplineBasicStack extends cdk.Stack {
           },
         },
         artifacts: {
-          'base-directory': 'stepxx_CI_CD_pipeline_update_cdk_template/dist',      ///outputting our generated JSON CloudFormation files to the dist directory
+          'base-directory': './stepxx_CI_CD_pipeline_update_cdk_template/dist',      ///outputting our generated JSON CloudFormation files to the dist directory
           files: [
             `${this.stackName}.template.json`,
           ],

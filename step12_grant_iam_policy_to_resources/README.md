@@ -1,8 +1,8 @@
-# Welcome to your CDK TypeScript project!
+# Granting IAM policies to Resources
+You manage access in AWS by creating policies and attaching them to IAM identities (users, groups of users, or roles) or AWS resources. A policy is an object in AWS that, when associated with an identity or resource, defines their permissions. AWS evaluates these policies when an IAM principal (user or role) makes a request. Permissions in the policies determine whether the request is allowed or denied.
 
-This is a blank project for TypeScript development with CDK.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+[AWS Identity and Access Management Construct Library](https://docs.aws.amazon.com/cdk/api/latest/docs/aws-iam-readme.html)
 
 ## Useful commands
 

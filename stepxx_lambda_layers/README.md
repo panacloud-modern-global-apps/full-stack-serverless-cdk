@@ -11,5 +11,7 @@ A function can use up to 5 layers at a time.
 
 - [AWS Lambda Layers with Node JS](https://www.youtube.com/watch?v=-r4GJlkdJo0 "AWS Lambda Layers with Node JS")
 
+- [How to use layers with Lambda functions?](https://www.youtube.com/watch?v=i12H4cUFudU "How to use layers with Lambda functions?")
+
 - [Lambda Layers | Theory and Demo with Code](https://www.youtube.com/watch?v=stovPJCVXcw "Lambda Layers | Theory and Demo with Code")
 

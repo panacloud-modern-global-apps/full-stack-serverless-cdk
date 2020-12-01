@@ -1,0 +1,28 @@
+{
+  "name": "example01_lambda_with_multiple_layers",
+  "version": "0.1.0",
+  "bin": {
+    "example01_lambda_with_multiple_layers": "bin/example01_lambda_with_multiple_layers.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest",
+    "cdk": "cdk"
+  },
+  "devDependencies": {
+    "@aws-cdk/assert": "1.74.0",
+    "@types/jest": "^26.0.10",
+    "@types/node": "10.17.27",
+    "aws-cdk": "1.74.0",
+    "jest": "^26.4.2",
+    "ts-jest": "^26.2.0",
+    "ts-node": "^8.1.0",
+    "typescript": "~3.9.7"
+  },
+  "dependencies": {
+    "@aws-cdk/aws-lambda": "^1.74.0",
+    "@aws-cdk/core": "1.74.0",
+    "source-map-support": "^0.5.16"
+  }
+}

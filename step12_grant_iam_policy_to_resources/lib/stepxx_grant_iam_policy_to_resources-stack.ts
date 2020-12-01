@@ -1,5 +1,5 @@
 import * as cdk from '@aws-cdk/core';
-import { PolicyStatement } from '@aws-cdk/aws-iam';
+import { Effect, PolicyStatement, Role, ServicePrincipal } from '@aws-cdk/aws-iam';
 import * as appsync from '@aws-cdk/aws-appsync';
 import * as ddb from '@aws-cdk/aws-dynamodb';
 import * as lambda from '@aws-cdk/aws-lambda';
@@ -43,23 +43,32 @@ export class StepxxGrantIamPolicyToResourcesStack extends cdk.Stack {
       },
     });
 
-     ///Lambda Fucntion
-     const lambda_function = new lambda.Function(this, "LambdaFucntion", {
+    ///create a specific role for Lambda function
+    const role = new Role(this, 'LambdaRole', {
+      assumedBy: new ServicePrincipal('lambda.amazonaws.com'),
+    });
+
+    ///Attaching DynamoDb access to policy
+    const policy = new PolicyStatement({
+      effect: Effect.ALLOW,
+      actions: ['dynamodb:*'],
+      resources: ['*']
+    });
+
+    //granting IAM permissions to role
+    role.addToPolicy(policy);
+
+    ///Lambda Fucntion
+    const lambda_function = new lambda.Function(this, "LambdaFucntion", {
       runtime: lambda.Runtime.NODEJS_12_X,            ///set nodejs runtime environment
       code: lambda.Code.fromAsset("lambda"),          ///path for lambda function directory
       handler: 'index.handler',                       ///specfic fucntion in specific file
-      timeout: cdk.Duration.seconds(10)               ///Time for function to break. limit upto 15 mins
+      timeout: cdk.Duration.seconds(10),              ///Time for function to break. limit upto 15 mins
+      role: role,                                     ///Defining role to Lambda
+      environment : {                                 ///Setting Environment Variables
+        "TABLE": dynamoDBTable.tableName
+      }
     })
-
-    ///Attaching IAM Policy to access dynamodb in lambda function
-    const policy = new PolicyStatement();
-    policy.addActions('dynamodb:*');
-    policy.addResources('*');
-
-    //granting IAM permissions to lambda
-    lambda_function.addToRolePolicy(policy);
-
-    lambda_function.addEnvironment('TABLE', dynamoDBTable.tableName);
 
     const lambda_data_source = api.addLambdaDataSource("LamdaDataSource", lambda_function);
 

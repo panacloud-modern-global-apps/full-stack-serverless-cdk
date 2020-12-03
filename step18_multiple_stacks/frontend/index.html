@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S3 Front End</title>
+    <style>
+        .container {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: larger;
+        }
+
+        .container>button {
+            font-size: inherit;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .name {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <button onclick="generateName()">Generate Name</button>
+        <span class="name"></span>
+    </div>
+
+    <script>
+        const generateName = async () => {
+            const nameSpan = document.querySelector('.name');
+            nameSpan.innerHTML = 'Loading....'
+            const result = await fetch("< your lambda API >")
+            const data = await result.json();
+            console.log(data);
+            nameSpan.innerHTML = data.randomName;
+        }
+    </script>
+
+</body>
+
+</html>

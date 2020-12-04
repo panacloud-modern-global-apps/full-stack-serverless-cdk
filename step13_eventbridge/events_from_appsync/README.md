@@ -196,3 +196,14 @@ rule.addTarget(new targets.LambdaFunction(echoLambda));
 2. Go to the AppSync Console.
 3. Run the createEvent Mutation.
 4. Observe that the lambda logs will have a new entry.
+
+This is what the mutation response looks like in the appsync console:
+![appsync-response](appsync-response.png)
+
+This is what you should see in the cloudwatch console logs:
+![lambda-logs](lambda-console.png)
+
+## Cleanup
+```
+cdk destroy
+```

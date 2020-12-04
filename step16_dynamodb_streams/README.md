@@ -13,3 +13,6 @@ There are 4 options regarding what information is stored in the stream. This is 
 2. NEW_IMAGE
 3. OLD_IMAGE
 4. NEW_AND_OLD_IMAGES
+
+
+## Implementation

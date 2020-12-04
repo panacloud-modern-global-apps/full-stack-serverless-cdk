@@ -1,0 +1,243 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DynamoDB Table Created 1`] = `
+Object {
+  "Parameters": Object {
+    "AssetParameters8579fdd339a0b4b233269e2a10fe0383b747bf73715b4565bc5c576e7d024c6dArtifactHash4B0A8DC4": Object {
+      "Description": "Artifact hash for asset \\"8579fdd339a0b4b233269e2a10fe0383b747bf73715b4565bc5c576e7d024c6d\\"",
+      "Type": "String",
+    },
+    "AssetParameters8579fdd339a0b4b233269e2a10fe0383b747bf73715b4565bc5c576e7d024c6dS3Bucket70440D32": Object {
+      "Description": "S3 bucket for asset \\"8579fdd339a0b4b233269e2a10fe0383b747bf73715b4565bc5c576e7d024c6d\\"",
+      "Type": "String",
+    },
+    "AssetParameters8579fdd339a0b4b233269e2a10fe0383b747bf73715b4565bc5c576e7d024c6dS3VersionKeyE1929222": Object {
+      "Description": "S3 key for asset version \\"8579fdd339a0b4b233269e2a10fe0383b747bf73715b4565bc5c576e7d024c6d\\"",
+      "Type": "String",
+    },
+  },
+  "Resources": Object {
+    "MyTestConstructHitCounterHandler17241061": Object {
+      "DependsOn": Array [
+        "MyTestConstructHitCounterHandlerServiceRoleDefaultPolicy8F2C3785",
+        "MyTestConstructHitCounterHandlerServiceRoleD0F1215D",
+      ],
+      "Properties": Object {
+        "Code": Object {
+          "S3Bucket": Object {
+            "Ref": "AssetParameters8579fdd339a0b4b233269e2a10fe0383b747bf73715b4565bc5c576e7d024c6dS3Bucket70440D32",
+          },
+          "S3Key": Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                Object {
+                  "Fn::Select": Array [
+                    0,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParameters8579fdd339a0b4b233269e2a10fe0383b747bf73715b4565bc5c576e7d024c6dS3VersionKeyE1929222",
+                        },
+                      ],
+                    },
+                  ],
+                },
+                Object {
+                  "Fn::Select": Array [
+                    1,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParameters8579fdd339a0b4b233269e2a10fe0383b747bf73715b4565bc5c576e7d024c6dS3VersionKeyE1929222",
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            ],
+          },
+        },
+        "Environment": Object {
+          "Variables": Object {
+            "DOWNSTREAM_FUNCTION_NAME": Object {
+              "Ref": "TestFunction22AD90FC",
+            },
+            "HITS_TABLE_NAME": Object {
+              "Ref": "MyTestConstructHits24A357F0",
+            },
+          },
+        },
+        "Handler": "hitcounter.handler",
+        "Role": Object {
+          "Fn::GetAtt": Array [
+            "MyTestConstructHitCounterHandlerServiceRoleD0F1215D",
+            "Arn",
+          ],
+        },
+        "Runtime": "nodejs10.x",
+      },
+      "Type": "AWS::Lambda::Function",
+    },
+    "MyTestConstructHitCounterHandlerServiceRoleD0F1215D": Object {
+      "Properties": Object {
+        "AssumeRolePolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": Object {
+                "Service": "lambda.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "ManagedPolicyArns": Array [
+          Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                "arn:",
+                Object {
+                  "Ref": "AWS::Partition",
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+              ],
+            ],
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Role",
+    },
+    "MyTestConstructHitCounterHandlerServiceRoleDefaultPolicy8F2C3785": Object {
+      "Properties": Object {
+        "PolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": Array [
+                "dynamodb:BatchGetItem",
+                "dynamodb:GetRecords",
+                "dynamodb:GetShardIterator",
+                "dynamodb:Query",
+                "dynamodb:GetItem",
+                "dynamodb:Scan",
+                "dynamodb:BatchWriteItem",
+                "dynamodb:PutItem",
+                "dynamodb:UpdateItem",
+                "dynamodb:DeleteItem",
+              ],
+              "Effect": "Allow",
+              "Resource": Array [
+                Object {
+                  "Fn::GetAtt": Array [
+                    "MyTestConstructHits24A357F0",
+                    "Arn",
+                  ],
+                },
+                Object {
+                  "Ref": "AWS::NoValue",
+                },
+              ],
+            },
+            Object {
+              "Action": "lambda:InvokeFunction",
+              "Effect": "Allow",
+              "Resource": Object {
+                "Fn::GetAtt": Array [
+                  "TestFunction22AD90FC",
+                  "Arn",
+                ],
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "PolicyName": "MyTestConstructHitCounterHandlerServiceRoleDefaultPolicy8F2C3785",
+        "Roles": Array [
+          Object {
+            "Ref": "MyTestConstructHitCounterHandlerServiceRoleD0F1215D",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Policy",
+    },
+    "MyTestConstructHits24A357F0": Object {
+      "DeletionPolicy": "Retain",
+      "Properties": Object {
+        "AttributeDefinitions": Array [
+          Object {
+            "AttributeName": "path",
+            "AttributeType": "S",
+          },
+        ],
+        "KeySchema": Array [
+          Object {
+            "AttributeName": "path",
+            "KeyType": "HASH",
+          },
+        ],
+        "ProvisionedThroughput": Object {
+          "ReadCapacityUnits": 5,
+          "WriteCapacityUnits": 5,
+        },
+      },
+      "Type": "AWS::DynamoDB::Table",
+      "UpdateReplacePolicy": "Retain",
+    },
+    "TestFunction22AD90FC": Object {
+      "DependsOn": Array [
+        "TestFunctionServiceRole6ABD93C7",
+      ],
+      "Properties": Object {
+        "Code": Object {
+          "ZipFile": "test",
+        },
+        "Handler": "lambda.handler",
+        "Role": Object {
+          "Fn::GetAtt": Array [
+            "TestFunctionServiceRole6ABD93C7",
+            "Arn",
+          ],
+        },
+        "Runtime": "nodejs10.x",
+      },
+      "Type": "AWS::Lambda::Function",
+    },
+    "TestFunctionServiceRole6ABD93C7": Object {
+      "Properties": Object {
+        "AssumeRolePolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": Object {
+                "Service": "lambda.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "ManagedPolicyArns": Array [
+          Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                "arn:",
+                Object {
+                  "Ref": "AWS::Partition",
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+              ],
+            ],
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Role",
+    },
+  },
+}
+`;

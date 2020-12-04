@@ -1,4 +1,20 @@
-# Learn Full Stack Serverless Multi-Tenant SaaS Apps and API Development with CDK in Baby Steps
+# Learn Full Stack Serverless Apps and API Development with CDK in Baby Steps
+
+## Get AWS Account
+
+[GitHub Student Pack](https://education.github.com/pack)
+
+[AWS Free Tier](https://aws.amazon.com/free/)
+
+Class Videos
+
+[Overview Class Video in English on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225155745305611)
+
+[Overview Class Video in English on YouTube](https://www.youtube.com/watch?v=bnTCwunqhMc)
+
+[Overview Class Video in Urdu on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225164884934096)
+
+[Overview Class Video in Urdu on YouTube](https://www.youtube.com/watch?v=JhFiu-krGZI)
 
 ## AWS CDK
 
@@ -59,70 +75,4 @@ Alternatives
 [Rethinking Serverless Architectures With Eventbridge](https://blog.thundra.io/rethinking-serverless-architectures-with-eventbridge)
 
 [Deep Dive on Amazon EventBridge](https://pages.awscloud.com/Deep-Dive-on-Amazon-EventBridge_2019_0919-SRV_OD.html)
-
-## Learn to Build Multi-Tenant Serverless SaaS Apps and API's
-
-Once we have mastered the above technologies we will learn how to develop multi-tenanted SaaS API's and applications.
-
-[What is SaaS? Everything you need to know about Software as a Service](https://digitalguardian.com/blog/saas-single-tenant-vs-multi-tenant-whats-difference)
-
-[What is multi-tenancy?](https://whatis.techtarget.com/definition/multi-tenancy)
-
-[SaaS: Single Tenant vs Multi-Tenant - What's the Difference?](https://digitalguardian.com/blog/saas-single-tenant-vs-multi-tenant-whats-difference)
-
-[[15 Common Software as a Service (SaaS) Examples to Inspire You](https://joshfechter.com/software-service-examples/)
-
-[Serverless SaaS: The next step in the evolution of SaaS](https://www.ctepl.com/resources/serverless-applications-the-next-step-in-the-evolution-of-saas/)
-
-[How can you architect Serverless SaaS Applications on AWS?](https://nordcloud.com/how-can-you-architect-serverless-saas-applications-on-aws/)
-
-[AWS Serverless SaaS](https://aws.amazon.com/partners/saas-factory/serverless-saas/)
-
-[AWS SaaS Factory Program](https://aws.amazon.com/partners/saas-factory/)
-
-[AWS Partner Network (APN) Blog](https://aws.amazon.com/blogs/apn/tag/saas-factory/)
-
-[Calculating Tenant Costs in SaaS Environments](https://aws.amazon.com/blogs/apn/calculating-tenant-costs-in-saas-environments/)
-
-[APIs are the next big SaaS wave](https://techcrunch.com/2019/09/06/apis-are-the-next-big-saas-wave/)
-
-[API startups are so hot right now](https://techcrunch.com/2020/05/22/api-startups-are-so-hot-right-now/)
-
-[The Evolution of APIs: Past, Present and the Future](https://blog.api.rakuten.net/evolution-of-apis/)
-
-[Jeff Lawson on API startups, picking a market and getting dissed by VCs](https://techcrunch.com/2020/09/01/jeff-lawson-on-api-startups-picking-a-market-and-getting-dissed-by-vcs/)
-
-[Why Developers Are Fueling The Next $1 Trillion Software Wave](https://www.forbes.com/sites/glennsolomon/2020/06/23/why-developers-are-fueling-the-next-1-trillion-software-wave/#1bdf885a1a31)
-
-[Example API](https://techcrunch.com/2020/09/30/travelperk-launches-an-open-api-platform-to-extend-its-work-trip-saas/)
-
-[SaaS Interfaces & APIs](https://apprenda.com/library/software-on-demand/saas-interfaces-apis/)
-
-[3 sets of APIs your SaaS platform needs](https://www.infoworld.com/article/3014636/3-sets-of-api-your-saas-platform-needs.html)
-
-[AWS Serverless SaaS](https://aws.amazon.com/partners/saas-factory/serverless-saas/)
-
-[How can you architect Serverless SaaS Applications on AWS?](https://nordcloud.com/how-can-you-architect-serverless-saas-applications-on-aws/)
-
-[SaaS Solutions on AWS](https://d0.awsstatic.com/whitepapers/saas-solutions-on-aws-final.pdf)
-
-[How to build a SaaS application](https://medium.com/@IAMVISH/how-to-build-a-saas-application-series-1-5-post-1-overview-cf0b03d6b6ce)
-
-[Calculating Tenant Costs in SaaS Environments](https://aws.amazon.com/blogs/apn/calculating-tenant-costs-in-saas-environments/)
-
-[AWS re:Invent 2017: GPS: The Ultimate View of Tenant Consumption](https://www.youtube.com/watch?v=X2SgoAl1vK8)
-
-[AWS re:Invent 2018: Deconstructing SaaS: Building Multi-Tenant Solutions on AWS](https://www.youtube.com/watch?v=mwQ5lipGTBI)
-
-[AWS re:Invent 2019: Serverless SaaS deep dive: Building serverless SaaS on AWS](https://www.youtube.com/watch?v=egskuX3YYO4)
-
-[Calculating SaaS Cost Per Tenant: A PoC Implementation in an AWS Kubernetes Environment](https://aws.amazon.com/blogs/apn/calculating-saas-cost-per-tenant-a-poc-implementation-in-an-aws-kubernetes-environment/)
-
-[Multi tenant Architecture SaaS Application on AWS](https://www.clickittech.com/saas/multi-tenant-architecture/)
-
-[Building Serverless SaaS with Lambda layers](https://github.com/aws-samples/aws-serverless-saas-layers)
-
-[Databases that play nice with your serverless backend](https://medium.com/swlh/databases-that-play-nice-with-your-serverless-backend-13eb7dc1e1c)
-
-[CDK Patterns at 20! Let's Walk Through all 20 Serverless Patterns for AWS](https://dev.to/nideveloper/cdk-patterns-at-20-let-s-walk-through-all-20-serverless-patterns-for-aws-d1n)
 

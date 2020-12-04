@@ -7,3 +7,33 @@ AWS AppSync is a fully managed service that makes it easy to develop GraphQL API
 
 ## DataSource As Lambda
 In this project we have used Lambda as a datasource which means our resolver will interact with lambda function for data operations.
+
+
+[Building Real-time Serverless APIs with PostgreSQL, CDK, TypeScript, and AWS AppSync](https://aws.amazon.com/blogs/mobile/building-real-time-serverless-apis-with-postgres-cdk-typescript-and-aws-appsync/)
+
+
+Note, never print your API Key to the logs in a production system. This was added to make learning AppSync and GraphQL easier. If you want to use this pattern in a production system remove the two cloudformation outputs
+
+## Test After deploy
+1. After CDK Deploy, capture outputs from the log.
+```
+Outputs:
+StepxxAppsyncDynamodbAsDatasourceStack.APIGraphQlURL = https://-------xxxxxxxxxxx.appsync-api.us-east-2.amazonaws.com/graphql
+StepxxAppsyncDynamodbAsDatasourceStack.GraphQLAPIKey = -----------------------------
+```
+
+2. Setup Postman as outlined in Postman's Using [GraphQL Instructions](https://learning.postman.com/docs/sending-requests/supported-api-frameworks/graphql/)
+
+3. Set POST request URL, x-api-key and Content-Type
+    - x-api-key = 'your API Key'
+    - Content-Type = application/graphql
+
+
+## Useful commands
+
+ * `npm run build`   compile typescript to js
+ * `npm run watch`   watch for changes and compile
+ * `npm run test`    perform the jest unit tests
+ * `cdk deploy`      deploy this stack to your default AWS account/region
+ * `cdk diff`        compare deployed stack with current state
+ * `cdk synth`       emits the synthesized CloudFormation template

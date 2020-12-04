@@ -13,7 +13,8 @@ export class Step02HelloWebsiteStack extends cdk.Stack {
     const websiteBucket = new s3.Bucket(this, 'WebsiteBucket', 
     {
       websiteIndexDocument: 'index.html',
-      publicReadAccess: true
+      publicReadAccess: true,
+      versioned: true     ///bucket versioning
     }
     );
 

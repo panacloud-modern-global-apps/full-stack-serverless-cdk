@@ -65,6 +65,10 @@ https://s3.console.aws.amazon.com/s3/home?region=us-east-2#
 
 As per the tutorial now modify the app and distroy it
 
+[Step 00 Class Video in English on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225191381716499)
+
+[Step 00 Class Video in English on YouTube](https://www.youtube.com/watch?v=UpuVx8c0-lA)
+
 
 
 

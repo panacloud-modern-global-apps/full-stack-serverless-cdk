@@ -1,5 +1,7 @@
 # Integrate AppSync with Lambda as a Datasource
 
+![alt text](https://github.com/panacloud-modern-global-apps/full-stack-serverless-cdk/blob/main/step03_appsync_lambda_as_datasource/img/img1.png)
+
 ## Why AppSync?
 Organizations choose to build APIs with GraphQL because it helps them develop applications faster, by giving front-end developers the ability to query multiple databases, microservices, and APIs with a single GraphQL endpoint.
 

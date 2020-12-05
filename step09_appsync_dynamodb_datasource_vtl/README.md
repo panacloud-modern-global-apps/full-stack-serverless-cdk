@@ -1,5 +1,7 @@
 # Integrate AppSync with DynamoDB as a Datasource
 
+![alt text](https://github.com/panacloud-modern-global-apps/full-stack-serverless-cdk/blob/main/step08_appsync_dynamodb_as_datasource_mappingtemplate_methods/img/appsync_dynamodb.png)
+
 ## Why AppSync?
 Organizations choose to build APIs with GraphQL because it helps them develop applications faster, by giving front-end developers the ability to query multiple databases, microservices, and APIs with a single GraphQL endpoint.
 

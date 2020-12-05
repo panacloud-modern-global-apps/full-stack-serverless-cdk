@@ -1,5 +1,8 @@
 ## Theory and Concepts:
 
+![alt text](https://github.com/panacloud-modern-global-apps/full-stack-serverless-cdk/blob/main/step04_appsync_lambda_dynamodb/img/dynamodb_appsync.png)
+
+
 [The Power of Serverless GraphQL with AWS AppSync](https://serverless.pub/the-power-of-serverless-graphql-with-appsync/)
 
 [AWS AppSync - The Ultimate Guide](https://www.serverless.com/aws-appsync)

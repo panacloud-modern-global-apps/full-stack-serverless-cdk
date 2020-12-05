@@ -1,40 +1,135 @@
+
 [CDK for beginners](https://levelup.gitconnected.com/aws-cdk-for-beginners-e6c05ad91895)
 
 [Study AWS CDK Workshop follow the TypeScript Path](https://cdkworkshop.com/)
 
+
+
+# Steps to compile the code
+
+## step 1 
+make a new folder for your cdk project
+
+```
 mkdir step01_hello_lambda
+```
 
+## step 2
+intialize your cdk project in typescript by running the following command
+
+```
 cdk init app --language typescript
+```
 
-Installing Bootstrap Stack
+## step 3
+run the following command to build your ts files in real-time. This process needs to keep running in the background so it is best if you run it in a seperate terminal
 
+```
+npm run watch
+```
+
+## step 4
+Initialize your lambda function 
+
+```
+  const hello = new lambda.Function(this, "HelloHandler", {
+      runtime: lambda.Runtime.NODEJS_10_X,
+      code: lambda.Code.fromAsset("lambda"),
+      handler: "hello.handler",
+    });
+
+```
+
+## step 5
+add the handler code for your lambda in lambda/hello.ts
+```
+import { APIGatewayProxyEvent, APIGatewayProxyResult, Context } from 'aws-lambda';
+
+export async function handler(event: APIGatewayProxyEvent, context: Context): Promise<APIGatewayProxyResult> {
+  console.log("request:", JSON.stringify(event, undefined, 2));
+
+  return {
+    statusCode: 200,
+    headers: { "Content-Type": "text/plain" },
+    body: `Hello, CDK! You've hit ${event.path}\n`
+  };
+}
+```
+
+
+## step 6
+Installing Bootstrap Stack. 
 For Lambda functions we will need to do [bootstrapping](https://docs.aws.amazon.com/cdk/latest/guide/bootstrapping.html) becuase they require [assets](https://docs.aws.amazon.com/cdk/latest/guide/assets.html) i.e. handler code that will be bundleded with the CDK library etc. and stored in S3 bootstraped bucket:
 
+```
 cdk bootstrap
+```
 
-npm run watch
 
-[Now follow the Hello Lambda Workshop Chapter](https://cdkworkshop.com/20-typescript/30-hello-cdk/200-lambda.html)
+## Step 7 (optional)
 
-Write a Lambada function in lambda/hello.js
+Run the following command to see the cloud formation template of your cdk code.
 
-Add your lambda construct in lib/step01_hello_lambda-stack.ts
+```
+cdk synth
+```
 
+## Step 8 (optional)
+
+Run the following command to see the difference between the new changes that you just made and the code that has already been deployed on the cloud.
+```
+cdk diff
+```
+
+
+## Step 9 
+
+Run the following command to deploy your code to the cloud. 
+
+```
 cdk deploy
+```
+
+if you did not run "npm run watch" in the step 4 then you need to build the project before deployment by running the folliwng command. npm run build will also compile typescript files of the lambda function
+
+```
+npm run build && cdk deploy
+```
+
+## step 10
 
 Now test the function in AWS Lambda Console (make sure you are in the correct region):
-
 https://console.aws.amazon.com/lambda/home#/functions
 
-Next step is to add an API Gateway in front of our function. 
 
-npm install @aws-cdk/aws-apigateway
+## step 11
 
-cdk deploy 
+Next step is to add an API Gateway in front of our function. Install the dependency: npm install @aws-cdk/aws-apigateway
+
+```
+new apigw.LambdaRestApi(this, "Endpoint", {
+      handler: hello,
+    });
+```
+
+
+## step 12
+
+deploy again 
+
+```
+cdk deploy
+```
+
+## step 13
 
 Get the URL from the output and test it using curl or paste the url in browser:
 
 curl https://xxxxxx.execute-api.us-east-2.amazonaws.com/prod/
+
+
+# steps to test the lambda function locally
+
 
 Now lets learn to run and test Lambdas locally
 

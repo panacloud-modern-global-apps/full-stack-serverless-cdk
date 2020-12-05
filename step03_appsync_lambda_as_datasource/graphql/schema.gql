@@ -1,4 +1,4 @@
 type Query {
-  notes: String!
+  notes: [String]
   notesByID(id: String!): String!
 }

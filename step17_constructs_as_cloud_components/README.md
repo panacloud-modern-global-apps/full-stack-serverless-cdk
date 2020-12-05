@@ -21,6 +21,8 @@ You can read further details of creating custom constructs from the [AWS Docs](h
 We create a directory to store our custom construct and create this notifyBucket Construct.
 
 ```typescript
+// constructs/notifyBucket.ts
+
 export interface NotifyingBucketProps {
   prefix?: string;
 }

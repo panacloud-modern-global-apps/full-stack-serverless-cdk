@@ -56,3 +56,9 @@ const testBucket = new NotifyingBucket(this, "notifyingTestBucket", {
 ## Resources:
 
 [You can view different cloud components made from cdk-constructs in this github repo.](https://github.com/cloudcomponents/cdk-constructs)
+
+## Cleanup
+
+```
+cdk destroy
+```

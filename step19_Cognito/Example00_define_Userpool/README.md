@@ -18,6 +18,8 @@ A user pool is a user directory in Amazon Cognito. With a user pool, your users 
 
 [Coginto CDK](https://docs.aws.amazon.com/cdk/api/latest/docs/aws-cognito-readme.html)
 
+[User Pool CDK Contructs](https://docs.aws.amazon.com/cdk/api/latest/docs/@aws-cdk_aws-cognito.UserPool.html)
+
 ## Useful commands
 
  * `npm run build`   compile typescript to js

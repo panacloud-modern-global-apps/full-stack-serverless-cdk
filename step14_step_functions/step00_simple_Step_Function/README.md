@@ -20,3 +20,73 @@ note: To test your step function go to the step-functions console and start the 
 
 
 # Code explanation
+
+## step 1
+
+We created two lambda functions.
+
+```javascript
+  // this function adds data to the dynamoDB table
+
+    const addData = new lambda.Function(this, "addData", {
+      runtime: lambda.Runtime.NODEJS_10_X, // execution environment
+      code: lambda.Code.fromAsset("lambda"), // code loaded from "lambda" directory
+      handler: "addData.handler",
+    });
+
+    // this function logs the status of the operation
+
+    const echoStatus = new lambda.Function(this, "echoStatus", {
+      runtime: lambda.Runtime.NODEJS_10_X, // execution environment
+      code: lambda.Code.fromAsset("lambda"), // code loaded from "lambda" directory
+      handler: "echoStatus.handler",
+    });
+```
+
+The "addData" function adds an entry in the dynamodb and "echoStatus" logs the data it recieves. You can view the code of lambda handlers in the "lambda" directory.
+
+## step 2
+
+Then we declared those lambda functions as tasks for the step function. A Task in step functions represents some work that needs to be done.
+
+```javascript
+
+    const firstStep = new stepFunctionTasks.LambdaInvoke(
+      this,
+      "Invoke addData lambda",
+      {
+        lambdaFunction: addData,
+      }
+    );
+
+    const secondStep = new stepFunctionTasks.LambdaInvoke(
+      this,
+      "Invoke echoStatus lambda",
+      {
+        lambdaFunction: echoStatus,
+        inputPath: "$.Payload",
+      }
+    );
+```
+
+## step 3
+
+Then we created a chain for the step function. Chain defines the sequence of execution. In this example the chain executes "addData" function before the "echoStatus" function.
+
+```javascript
+// creating chain to define the sequence of execution
+
+    const chain = stepFunctions.Chain.start(firstStep).next(secondStep);
+```
+
+## step 4
+
+Then we created our step function or our state machine and referenced our chain in it.
+
+```javascript
+// create a state machine
+
+    new stepFunctions.StateMachine(this, "simpleStateMachine", {
+      definition: chain,
+    });
+```

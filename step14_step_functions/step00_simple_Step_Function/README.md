@@ -1,14 +1,22 @@
-# Welcome to your CDK TypeScript project!
+# Overview of concepts
 
-This is a blank project for TypeScript development with CDK.
+This project implements a very simple step function that executes 2 lambda functions in a sequence as shown below
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+>State-machine flow diagram:
 
-## Useful commands
+>![State-machine flow diagram](imgs/simpleStepFunction.png)  
 
- * `npm run build`   compile typescript to js
- * `npm run watch`   watch for changes and compile
- * `npm run test`    perform the jest unit tests
- * `cdk deploy`      deploy this stack to your default AWS account/region
- * `cdk diff`        compare deployed stack with current state
- * `cdk synth`       emits the synthesized CloudFormation template
+The first lambda functions puts an item in the DynamoDb and returns { operationSuccessful: true } if the data was added successfully or { operationSuccessful: false } if the data was not added successfully.
+
+The second lambda takes the expression returned from the first lambda "{ operationSuccessful: .... }" and logs the whether the operation was successful or not.
+
+The image below shows how the output from the first lambda function was transferred to the second lambda function in its input by the step function.
+
+>State-machine passing states:
+
+>![State-machine passing states](imgs/simpleStepFunction_states.png)  
+
+note: To test your step function go to the step-functions console and start the execution for your step function.For this example, you can enter anything in the starting input state as we are not utilizing it in our step function. However in a real-world application the initial starting state would mostly come from the event-bridge in the form of an event.
+
+
+# Code explanation

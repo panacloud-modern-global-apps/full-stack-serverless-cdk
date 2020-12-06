@@ -25,7 +25,7 @@ Amazon CloudWatch aggregates statistics according to the period length that you 
 # Alarms
 You can use an alarm to automatically initiate actions on your behalf. An alarm watches a single metric over a specified time period, and performs one or more specified actions, based on the value of the metric relative to a threshold over time. The action is a notification sent to an Amazon SNS topic or an Auto Scaling policy. You can also add alarms to dashboards.
 
-# Cloudwatch Dashboards
+# Dashboards
 Amazon CloudWatch dashboards are customizable home pages in the CloudWatch console that you can use to monitor your resources in a single view, even those resources that are spread across different Regions. You can use CloudWatch dashboards to create customized views of the metrics and alarms for your AWS resources.
 
 [AWS Cloudwatch Overview](https://aws.amazon.com/cloudwatch/)

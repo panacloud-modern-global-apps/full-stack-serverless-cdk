@@ -28,6 +28,9 @@ You can use an alarm to automatically initiate actions on your behalf. An alarm 
 # Dashboards
 Amazon CloudWatch dashboards are customizable home pages in the CloudWatch console that you can use to monitor your resources in a single view, even those resources that are spread across different Regions. You can use CloudWatch dashboards to create customized views of the metrics and alarms for your AWS resources.
 
+# SNS
+Amazon Simple Notification Service (Amazon SNS) is a fully managed messaging service for both application-to-application (A2A) and application-to-person (A2P) communication.
+
 [AWS Cloudwatch Overview](https://aws.amazon.com/cloudwatch/)
 
 [AWS Cloudwatch User Guide](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html)
@@ -41,3 +44,11 @@ Amazon CloudWatch dashboards are customizable home pages in the CloudWatch conso
 [Set a CloudWatch Alarm](https://docs.aws.amazon.com/cdk/latest/guide/how_to_set_cw_alarm.html)
 
 [CloudWatch Dashboards Using AWS CDK](https://medium.com/poka-techblog/cloudwatch-dashboards-as-code-the-right-way-using-aws-cdk-1453309c5481)
+
+[SNS Overview](https://aws.amazon.com/sns/?whats-new-cards.sort-by=item.additionalFields.postDateTime&whats-new-cards.sort-order=desc)
+
+[SNS CDK](https://docs.aws.amazon.com/cdk/api/latest/docs/aws-sns-readme.html)
+
+[SNS Subscriptions CDK](https://docs.aws.amazon.com/cdk/api/latest/docs/aws-sns-subscriptions-readme.html)
+
+

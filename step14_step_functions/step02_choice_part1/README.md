@@ -39,6 +39,8 @@ note: To test your step function go to the step-functions console and start the 
 
 ## step 1
 
+We created a lambda function called "addData"
+
 ```javascript
 
     const addData = new lambda.Function(this, "addData", {

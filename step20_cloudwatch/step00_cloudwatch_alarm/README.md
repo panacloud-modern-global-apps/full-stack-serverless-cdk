@@ -1,6 +1,6 @@
 # How to Set a cloudwatch alarm using CDK
 
-In this step you will learn how to set a cloudwatch alarm usi CDK.
+In this step you will learn how to set a cloudwatch alarm using CDK.
 
 ### Step 1: Setup a CDK directory
 `cdk init app --language typescript`
@@ -97,20 +97,80 @@ export class Stack extends cdk.Stack {
 }
 ```
 ### Step5: Add a Method to build Metric Object
-Add the following snippet of code.This take metric name,namespace,dimensions and unit etc as input and returns a metric object.
+Add the following snippet of code.This take metric name,namespace,dimensions and unit etc as input and returns a metric object.Metric objects represent a metric that is emitted by AWS services or your own application, such as CPUUsage, FailureCount or Bandwidth.
 
 ```javascript
 
  private buildMetric(metricName: string, namespace: string, dimensions: any, unit: cloudwatch.Unit, label: string, stat = 'avg', period = 900): cloudwatch.Metric {
     return new cloudwatch.Metric({
-      metricName,
-      namespace: namespace,
-      dimensions: dimensions,
-      unit: unit,
-      label: label,
-      statistic: stat,
-      period: cdk.Duration.seconds(period)
+      metricName, //Name of this metric.
+      namespace: namespace, //Namespace of this metric.
+      dimensions: dimensions, //Dimensions of this metric.
+      unit: unit, //Unit of the metric.
+      label: label, //Label for this metric when added to a Graph in a Dashboard.
+      statistic: stat, //Statistic of this metric.
+      period: cdk.Duration.seconds(period) //Aggregation period of this metric.
     });
+
+```
+### Step6: Add a Method to call buildMetric
+Add the following snippet of code.This take metricName,apiId and label as input and calls buildMetric.
+
+```javascript
+
+private metricForApiGw(apiId: string, metricName: string, label: string, stat = 'avg'): cloudwatch.Metric {
+    let dimensions = {
+      ApiId: apiId
+    };
+    return this.buildMetric(metricName, 'AWS/ApiGateway', dimensions, cloudwatch.Unit.COUNT, label, stat);
+  }
+
+
+```
+### Step7: Add a Math Expression
+Add the following snippet of code.We will do metric math here.Metric math enables you to query multiple CloudWatch metrics and use math expressions to create new time series based on these metrics. You can visualize the resulting time series on the CloudWatch console and add them to dashboards. Using AWS Lambda metrics as an example, you could divide the Errors metric by the Invocations metric to get an error rate. Then add the resulting time series to a graph on your CloudWatch dashboard.
+
+```javascript
+
+ let apiGateway4xxErrorPercentage = new cloudwatch.MathExpression({
+      expression: 'm1/m2*100', //The expression defining the metric.
+      label: '% API Gateway 4xx Errors', Label for this metric when added to a Graph.
+      usingMetrics: {
+        m1: this.metricForApiGw(api.httpApiId, '4XXError', '4XX Errors', 'sum'),
+        m2: this.metricForApiGw(api.httpApiId, 'Count', '# Requests', 'sum'),
+      }, //The metrics used in the expression
+      period: cdk.Duration.minutes(5) //Aggregation period of this metric.
+    });
+
+```
+### Step8: Add a Math Expression
+Add the following snippet of code.We will do metric math here.Metric math enables you to query multiple CloudWatch metrics and use math expressions to create new time series based on these metrics. You can visualize the resulting time series on the CloudWatch console and add them to dashboards. Using AWS Lambda metrics as an example, you could divide the Errors metric by the Invocations metric to get an error rate. Then add the resulting time series to a graph on your CloudWatch dashboard.
+
+```javascript
+
+ let apiGateway4xxErrorPercentage = new cloudwatch.MathExpression({
+      expression: 'm1/m2*100', //The expression defining the metric.
+      label: '% API Gateway 4xx Errors', Label for this metric when added to a Graph.
+      usingMetrics: {
+        m1: this.metricForApiGw(api.httpApiId, '4XXError', '4XX Errors', 'sum'),
+        m2: this.metricForApiGw(api.httpApiId, 'Count', '# Requests', 'sum'),
+      }, //The metrics used in the expression
+      period: cdk.Duration.minutes(5) //Aggregation period of this metric.
+    });
+
+```
+
+### Step9: Add an Alarm
+Add the following snippet of code.This will add an alarm on apiGateway4xxErrorPercentage metric.
+
+```javascript
+
+ new cloudwatch.Alarm(this, 'API Gateway 4XX Errors > 1%', {
+      metric: apiGateway4xxErrorPercentage, //The metric to add the alarm on.
+      threshold: 1, //The value against which the specified statistic is compared.
+      evaluationPeriods: 6, //The number of periods over which data is compared to the specified threshold.
+      treatMissingData: cloudwatch.TreatMissingData.NOT_BREACHING //Sets how this alarm is to handle missing data points.
+    })
 
 ```
 

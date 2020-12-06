@@ -1,6 +1,6 @@
 # How to Set a cloudwatch alarm using CDK
 
-This step will add a cloudwatch alarm on a mertic.
+This step will add a cloudwatch alarm on a mertic.You can view an alarm in AWS cloudwatch alarm pannel after deploying the code.
 
 >![Cloudwatch Alarm](img/cloudwatchAlarm.png)  
 

@@ -1,5 +1,8 @@
 # Eventbridge and Lambdas
-
+## Dependencies:
+```
+npm i @aws-cdk/aws-events @aws-cdk/aws-events-targets @aws-cdk/aws-lambda @aws-cdk/aws-apigateway
+```
 ## Introduction
 
 Eventbridge plays the role of an _event router_.

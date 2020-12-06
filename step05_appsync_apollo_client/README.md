@@ -14,7 +14,7 @@ That means our AppSync backend will only respond to graphql requests that have a
 
 ## Creating the Backend API
 
-We will be using the same Appsync + Dynamodb backend that we saw in step04.
+**We will be using the same Appsync + Dynamodb backend that we saw in step04.**
 
 ## Preparing Gatsby frontend
 

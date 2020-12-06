@@ -68,6 +68,7 @@ Then we declared those lambda functions as tasks for the step function. A Task i
       }
     );
 ```
+Note that we have also defined an inputPath for the second lambda function. Input and output paths are optional parameters that are used to filter out the required keys from the state object. Like in this example we only want "Payload" as an input instead of the entire Json state for our "echoStatus" function.
 
 ## step 3
 

@@ -2,6 +2,8 @@
 
 In this step you will learn how to set a cloudwatch alarm using CDK.
 
+# Code Explanation
+
 ### Step 1: Setup a CDK directory
 `cdk init app --language typescript`
 

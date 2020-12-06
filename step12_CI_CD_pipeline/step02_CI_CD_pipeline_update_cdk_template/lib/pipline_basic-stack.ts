@@ -23,8 +23,8 @@ export class PiplineBasicStack extends cdk.Stack {
               "nodejs": 12
             },
             commands: [
-              'cd stepxx_CI_CD_pipeline_update_cdk_template',
-              'npm i npm@latest -g',
+              'cd step12_CI_CD_pipeline',
+              'cd step02_CI_CD_pipeline_update_cdk_template',
               'npm install'
             ],
           },
@@ -36,7 +36,7 @@ export class PiplineBasicStack extends cdk.Stack {
           },
         },
         artifacts: {
-          'base-directory': './stepxx_CI_CD_pipeline_update_cdk_template/dist',      ///outputting our generated JSON CloudFormation files to the dist directory
+          'base-directory': './step12_CI_CD_pipeline/step02_CI_CD_pipeline_update_cdk_template/dist',      ///outputting our generated JSON CloudFormation files to the dist directory
           files: [
             `${this.stackName}.template.json`,
           ],
@@ -61,9 +61,9 @@ export class PiplineBasicStack extends cdk.Stack {
       actions: [
         new CodePipelineAction.GitHubSourceAction({
           actionName: 'Checkout',
-          owner: 'github-username',
-          repo: "github-repo-name",
-          oauthToken: cdk.SecretValue.secretsManager('GITHUB_TOKEN'), ///create token on github and save it on aws secret manager
+          owner: 'panacloud-modern-global-apps',
+          repo: "full-stack-serverless-cdk",
+          oauthToken: cdk.SecretValue.secretsManager('GITHUB_TOKEN_AWS_SOURCE'), ///create token on github and save it on aws secret manager
           output: sourceOutput,                                       ///Output will save in the sourceOutput Artifact
           branch: "master",                                           ///Branch of your repo
         }),

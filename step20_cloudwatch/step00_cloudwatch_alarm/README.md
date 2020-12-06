@@ -2,7 +2,7 @@
 
 This step will add a cloudwatch alarm on a mertic.
 
->![Cloudwatch Alarm]()  
+>![Cloudwatch Alarm](img/cloudwatchAlarm.png)  
 
 
 

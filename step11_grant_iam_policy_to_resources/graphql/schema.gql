@@ -1,14 +1,12 @@
-type Note {
+type Data {
     id: ID!
-    title: String!
+    entry: String!
 }
 
 type Query{
-    notes: [Note!]
+    allData: [Data]
 }
 
 type Mutation{
-    createNote(title: String!): Note!
-    deleteNote(id: String!): String!
-    updateNote(id: String!, title: String!): Note!
+    createData(entry: String!): Data!
 }

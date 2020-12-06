@@ -51,7 +51,7 @@ export class StepxxGrantIamPolicyToResourcesStack extends cdk.Stack {
     ///Attaching DynamoDb access to policy
     const policy = new PolicyStatement({
       effect: Effect.ALLOW,
-      actions: ['dynamodb:*'],
+      actions: ['dynamodb:*', "logs:*"],
       resources: ['*']
     });
 
@@ -67,7 +67,7 @@ export class StepxxGrantIamPolicyToResourcesStack extends cdk.Stack {
       role: role,                                     ///Defining role to Lambda
       environment : {                                 ///Setting Environment Variables
         "TABLE": dynamoDBTable.tableName
-      }
+      },
     })
 
     const lambda_data_source = api.addLambdaDataSource("LamdaDataSource", lambda_function);
@@ -76,7 +76,7 @@ export class StepxxGrantIamPolicyToResourcesStack extends cdk.Stack {
     ////NOTE: No need to write response Mapping Template for it if you also want to customize the response then you can write response Mapping Template.
     lambda_data_source.createResolver({
       typeName: "Mutation",
-      fieldName: "createNote",
+      fieldName: "createData",
       requestMappingTemplate: appsync.MappingTemplate.fromString(`
           $util.qr($context.arguments.put("id", $util.defaultIfNull($ctx.arguments.id, $util.autoId())))
         {

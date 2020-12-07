@@ -130,50 +130,127 @@ private metricForApiGw(apiId: string, metricName: string, label: string, stat = 
 
 
 ```
-### Step7: Add a Math Expression
+### Step7: Add a Method to build Dashboard Widget
+Add the following snippet of code.This take widgetName and metrics as input and creates a widget.
+
+```javascript
+
+  private buildGraphWidget(widgetName: string, metrics: IMetric[]): GraphWidget {
+    return new GraphWidget({
+      title: widgetName, //Title for the widget.
+      left: metrics,//This will display metrics on left vertical axis.
+      width: 8 //The amount of horizontal grid units the widget will take up.
+    });
+  }
+
+```
+### Step8: Add Math Expressions
 Add the following snippet of code.We will do metric math here.Metric math enables you to query multiple CloudWatch metrics and use math expressions to create new time series based on these metrics. You can visualize the resulting time series on the CloudWatch console and add them to dashboards. Using AWS Lambda metrics as an example, you could divide the Errors metric by the Invocations metric to get an error rate. Then add the resulting time series to a graph on your CloudWatch dashboard.
 
 ```javascript
 
- let apiGateway4xxErrorPercentage = new cloudwatch.MathExpression({
-      expression: 'm1/m2*100', //The expression defining the metric.
-      label: '% API Gateway 4xx Errors', Label for this metric when added to a Graph.
+let apiGateway4xxErrorPercentage = new cloudwatch.MathExpression({
+      expression: 'm1/m2*100',
+      label: '% API Gateway 4xx Errors',
       usingMetrics: {
         m1: this.metricForApiGw(api.httpApiId, '4XXError', '4XX Errors', 'sum'),
         m2: this.metricForApiGw(api.httpApiId, 'Count', '# Requests', 'sum'),
-      }, //The metrics used in the expression
-      period: cdk.Duration.minutes(5) //Aggregation period of this metric.
+      },
+      period: cdk.Duration.minutes(5)
     });
 
-```
-### Step8: Add a Math Expression
-Add the following snippet of code.We will do metric math here.Metric math enables you to query multiple CloudWatch metrics and use math expressions to create new time series based on these metrics. You can visualize the resulting time series on the CloudWatch console and add them to dashboards. Using AWS Lambda metrics as an example, you could divide the Errors metric by the Invocations metric to get an error rate. Then add the resulting time series to a graph on your CloudWatch dashboard.
-
-```javascript
-
- let apiGateway4xxErrorPercentage = new cloudwatch.MathExpression({
-      expression: 'm1/m2*100', //The expression defining the metric.
-      label: '% API Gateway 4xx Errors', Label for this metric when added to a Graph.
+    // Gather the % of lambda invocations that error in past 5 mins
+    let dynamoLambdaErrorPercentage = new cloudwatch.MathExpression({
+      expression: 'e / i * 100',
+      label: '% of invocations that errored, last 5 mins',
       usingMetrics: {
-        m1: this.metricForApiGw(api.httpApiId, '4XXError', '4XX Errors', 'sum'),
-        m2: this.metricForApiGw(api.httpApiId, 'Count', '# Requests', 'sum'),
-      }, //The metrics used in the expression
-      period: cdk.Duration.minutes(5) //Aggregation period of this metric.
+        i: dynamoLambda.metric("Invocations", { statistic: 'sum' }),
+        e: dynamoLambda.metric("Errors", { statistic: 'sum' }),
+      },
+      period: cdk.Duration.minutes(5)
     });
+
+    // note: throttled requests are not counted in total num of invocations
+    let dynamoLambdaThrottledPercentage = new cloudwatch.MathExpression({
+      expression: 't / (i + t) * 100',
+      label: '% of throttled requests, last 30 mins',
+      usingMetrics: {
+        i: dynamoLambda.metric("Invocations", { statistic: 'sum' }),
+        t: dynamoLambda.metric("Throttles", { statistic: 'sum' }),
+      },
+      period: cdk.Duration.minutes(5)
+    });
+
+    // I think usererrors are at an account level rather than a table level so merging
+    // these two metrics until I can get a definitive answer. I think usererrors
+    // will always show as 0 when scoped to a table so this is still effectively
+    // a system errors count
+    let dynamoDBTotalErrors = new cloudwatch.MathExpression({
+      expression: 'm1 + m2',
+      label: 'DynamoDB Errors',
+      usingMetrics: {
+        m1: table.metricUserErrors(),
+        m2: table.metricSystemErrorsForOperations(),
+      },
+      period: cdk.Duration.minutes(5)
+    });
+
+    // Rather than have 2 alerts, let's create one aggregate metric
+    let dynamoDBThrottles = new cloudwatch.MathExpression({
+      expression: 'm1 + m2',
+      label: 'DynamoDB Throttles',
+      usingMetrics: {
+        m1: table.metric('ReadThrottleEvents', { statistic: 'sum' }),
+        m2: table.metric('WriteThrottleEvents', { statistic: 'sum' }),
+      },
+      period: cdk.Duration.minutes(5)
+    });
+
+
 
 ```
 
-### Step9: Add an Alarm
-Add the following snippet of code.This will add an alarm on apiGateway4xxErrorPercentage metric.
+### Step9: Create a Dashboard
+Add the following snippet of code.This will create a dashboard.We can add a lot of widgets in the dashboard.
 
 ```javascript
 
- new cloudwatch.Alarm(this, 'API Gateway 4XX Errors > 1%', {
-      metric: apiGateway4xxErrorPercentage, //The metric to add the alarm on.
-      threshold: 1, //The value against which the specified statistic is compared.
-      evaluationPeriods: 6, //The number of periods over which data is compared to the specified threshold.
-      treatMissingData: cloudwatch.TreatMissingData.NOT_BREACHING //Sets how this alarm is to handle missing data points.
-    })
+    new cloudwatch.Dashboard(this, 'CloudWatchDashBoard').addWidgets(
+      this.buildGraphWidget('Requests', [
+        this.metricForApiGw(api.httpApiId, 'Count', '# Requests', 'sum')
+      ]),
+      this.buildGraphWidget('API GW Latency', [
+        this.metricForApiGw(api.httpApiId, 'Latency', 'API Latency p50', 'p50'),
+        this.metricForApiGw(api.httpApiId, 'Latency', 'API Latency p90', 'p90'),
+        this.metricForApiGw(api.httpApiId, 'Latency', 'API Latency p99', 'p99')
+      ], true),
+      this.buildGraphWidget('API GW Errors', [
+        this.metricForApiGw(api.httpApiId, '4XXError', '4XX Errors', 'sum'),
+        this.metricForApiGw(api.httpApiId, '5XXError', '5XX Errors', 'sum')
+      ], true),
+      this.buildGraphWidget('Dynamo Lambda Error %', [dynamoLambdaErrorPercentage]),
+      this.buildGraphWidget('Dynamo Lambda Duration', [
+        dynamoLambda.metricDuration({ statistic: "p50" }),
+        dynamoLambda.metricDuration({ statistic: "p90" }),
+        dynamoLambda.metricDuration({ statistic: "p99" })
+      ], true),
+      this.buildGraphWidget('Dynamo Lambda Throttle %', [dynamoLambdaThrottledPercentage]),
+      this.buildGraphWidget('DynamoDB Latency', [
+        table.metricSuccessfulRequestLatency({ dimensions: { "TableName": table.tableName, "Operation": "GetItem" } }),
+        table.metricSuccessfulRequestLatency({ dimensions: { "TableName": table.tableName, "Operation": "UpdateItem" } }),
+        table.metricSuccessfulRequestLatency({ dimensions: { "TableName": table.tableName, "Operation": "PutItem" } }),
+        table.metricSuccessfulRequestLatency({ dimensions: { "TableName": table.tableName, "Operation": "DeleteItem" } }),
+        table.metricSuccessfulRequestLatency({ dimensions: { "TableName": table.tableName, "Operation": "Query" } }),
+      ], true),
+      this.buildGraphWidget('DynamoDB Consumed Read/Write Units', [
+        table.metric('ConsumedReadCapacityUnits'),
+        table.metric('ConsumedWriteCapacityUnits')
+      ], false),
+      this.buildGraphWidget('DynamoDB Throttles', [
+        table.metric('ReadThrottleEvents', { statistic: 'sum' }),
+        table.metric('WriteThrottleEvents', { statistic: 'sum' })
+      ], true)
+    )
 
 ```
 

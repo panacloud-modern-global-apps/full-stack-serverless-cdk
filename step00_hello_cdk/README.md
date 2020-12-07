@@ -69,6 +69,10 @@ As per the tutorial now modify the app and distroy it
 
 [Step 00 Class Video in English on YouTube](https://www.youtube.com/watch?v=UpuVx8c0-lA)
 
+[Step 00 Class Video in Urdu on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225203759985948)
+
+[Step 00 Class Video in Urdu on YouTube](https://www.youtube.com/watch?v=xWF-LCTnSy4)
+
 
 
 

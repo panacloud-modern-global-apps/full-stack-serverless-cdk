@@ -1,6 +1,7 @@
 # Cloudwatch Dashboard CDK
 
-In this step we will create a custom cloudwatch dashboard.Dashboards are set of Widgets stored server-side which can be accessed quickly from the AWS console. Available widgets are graphs of a metric over time, the current value of a metric, or a static piece of Markdown which explains what the graphs mean.
+In this step we will create a custom cloudwatch dashboard.Dashboards are set of Widgets stored server-side which can be accessed quickly from the AWS console. Available widgets are graphs of a metric over time, the current value of a metric, or a static piece of Markdown which explains what the graphs mean.c.You can view a Dashboard in AWS cloudwatch dashboard pannel after deploying the code.
+>![Cloudwatch Dashboard](img/cloudwatchDashboard.jpeg)  
 
 # Code Explanation
 

@@ -4,6 +4,14 @@ This step will add a cloudwatch alarm on a mertic exactly like the last step.In 
 
 # Code Explanation
 
+### Step0: Install following dependencies
+
+`npm i @aws-cdk/aws-cloudwatch-actions`
+
+`npm i @aws-cdk/aws-sns`
+
+`npm i @aws-cdk/aws-sns-subscriptions`
+
 ### Step 1: Create SNS topic 
 Add an SNS Topic.Various subscriptions can be added to the topic by calling the .addSubscription(...) method on the topic. It accepts a subscription object, default implementations of which can be found in the @aws-cdk/aws-sns-subscriptions package.Add an Email Subscription to your topic:
 

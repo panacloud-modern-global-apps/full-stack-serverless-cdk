@@ -149,24 +149,8 @@ Add the following snippet of code.We will do metric math here.Metric math enable
     });
 
 ```
-### Step8: Add a Math Expression
-Add the following snippet of code.We will do metric math here.Metric math enables you to query multiple CloudWatch metrics and use math expressions to create new time series based on these metrics. You can visualize the resulting time series on the CloudWatch console and add them to dashboards. Using AWS Lambda metrics as an example, you could divide the Errors metric by the Invocations metric to get an error rate. Then add the resulting time series to a graph on your CloudWatch dashboard.
 
-```javascript
-
- let apiGateway4xxErrorPercentage = new cloudwatch.MathExpression({
-      expression: 'm1/m2*100', //The expression defining the metric.
-      label: '% API Gateway 4xx Errors', Label for this metric when added to a Graph.
-      usingMetrics: {
-        m1: this.metricForApiGw(api.httpApiId, '4XXError', '4XX Errors', 'sum'),
-        m2: this.metricForApiGw(api.httpApiId, 'Count', '# Requests', 'sum'),
-      }, //The metrics used in the expression
-      period: cdk.Duration.minutes(5) //Aggregation period of this metric.
-    });
-
-```
-
-### Step9: Add an Alarm
+### Step8: Add an Alarm
 Add the following snippet of code.This will add an alarm on apiGateway4xxErrorPercentage metric.
 
 ```javascript

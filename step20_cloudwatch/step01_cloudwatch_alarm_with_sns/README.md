@@ -11,7 +11,7 @@ Add an SNS Topic.Various subscriptions can be added to the topic by calling the 
 
   const errorTopic = new sns.Topic(this, 'errorTopic');
     errorTopic.addSubscription(
-      new subscriptions.EmailSubscription('xyz@email.com'),
+      new subscriptions.EmailSubscription('xyz@email.com'), //Add your email here
     );
     
 ```

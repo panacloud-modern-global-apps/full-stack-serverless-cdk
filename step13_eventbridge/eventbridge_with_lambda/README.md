@@ -4,6 +4,10 @@
 
 ![alt text](https://github.com/panacloud-modern-global-apps/full-stack-serverless-cdk/blob/main/step13_eventbridge/eventbridge.png)
 
+## Dependencies:
+```
+npm i @aws-cdk/aws-events @aws-cdk/aws-events-targets @aws-cdk/aws-lambda @aws-cdk/aws-apigateway
+```
 ## Introduction
 
 Eventbridge plays the role of an _event router_.

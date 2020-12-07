@@ -10,28 +10,28 @@ export class Step04ParallelStack extends cdk.Stack {
       result: stepFunctions.Result.fromObject({
         message: "hello parallel branch 1",
       }),
-      resultPath: "$.output.parallel_branch_1",
+      resultPath: "$.parallel_branch_1",
     });
 
     const parallelBranch2 = new stepFunctions.Pass(this, "parallelBranch2", {
       result: stepFunctions.Result.fromObject({
         message: "hello parallel branch 2",
       }),
-      resultPath: "$.output.parallel_branch_2",
+      resultPath: "$.parallel_branch_2",
     });
 
     const parallelBranch3 = new stepFunctions.Pass(this, "parallelBranch3", {
       result: stepFunctions.Result.fromObject({
         message: "hello parallel branch 3",
       }),
-      resultPath: "$.output.parallel_branch_3",
+      resultPath: "$.parallel_branch_3",
     });
 
     const failureBranch = new stepFunctions.Pass(this, "failureBranch", {
       result: stepFunctions.Result.fromObject({
         message: "hello failure branch",
       }),
-      resultPath: "$.output.failure_branch",
+      resultPath: "$.failure_branch",
     });
 
     const success = new stepFunctions.Succeed(this, "successBranch");

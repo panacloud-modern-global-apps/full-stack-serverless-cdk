@@ -1,4 +1,8 @@
 # DynamoDB Streams
+## Dependencies:
+```
+npm i @aws-cdk/aws-dynamodb @aws-cdk/aws-lambda @aws-cdk/aws-sqs @aws-cdk/aws-lambda-event-sources
+```
 
 ## Sources
 

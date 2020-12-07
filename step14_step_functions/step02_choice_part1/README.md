@@ -20,6 +20,8 @@ Reaching a Succeed state terminates the state machine execution with a succesful
 
 Reaching a Fail state terminates the state machine execution with a failure status. The fail state should report the reason for the failure.
 
+## State Logs
+
 The image below shows how the output from the lambda function was transferred to the Choice state in its input by the step function.
 
 >State-machine passing states:

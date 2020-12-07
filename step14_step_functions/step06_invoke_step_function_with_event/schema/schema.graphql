@@ -1,0 +1,11 @@
+type Event {
+  result: String
+}
+
+type Query {
+  getEvent: [Event]
+}
+
+type Mutation {
+  createEvent(event: String!): Event
+}

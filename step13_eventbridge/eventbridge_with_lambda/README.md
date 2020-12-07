@@ -1,6 +1,6 @@
 # Eventbridge and Lambdas
 
-## Architechture
+## Architecture
 
 ![alt text](https://github.com/panacloud-modern-global-apps/full-stack-serverless-cdk/blob/main/step13_eventbridge/eventbridge.png)
 

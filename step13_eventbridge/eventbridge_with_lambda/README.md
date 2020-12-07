@@ -1,5 +1,9 @@
 # Eventbridge and Lambdas
 
+## Architechture
+
+![alt text](https://github.com/panacloud-modern-global-apps/full-stack-serverless-cdk/blob/main/step13_eventbridge/eventbridge.png)
+
 ## Introduction
 
 Eventbridge plays the role of an _event router_.

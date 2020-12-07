@@ -1,4 +1,8 @@
 # Sending Events to Eventbridge from AppSync GraphQL APIs
+## Dependencies
+```
+npm i @aws-cdk/aws-lambda @aws-cdk/aws-events @aws-cdk/aws-appsync @aws-cdk/aws-events-targets
+```
 
 ## Introduction
 

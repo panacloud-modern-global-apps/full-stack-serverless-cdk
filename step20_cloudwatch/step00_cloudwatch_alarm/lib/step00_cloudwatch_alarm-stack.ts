@@ -66,41 +66,6 @@ export class Step00CloudwatchAlarmStack extends cdk.Stack {
       treatMissingData: cloudwatch.TreatMissingData.NOT_BREACHING
     })
 
-    // 5xx are internal server errors so we want 0 of these
-    new cloudwatch.Alarm(this, 'API Gateway 5XX Errors > 0', {
-      metric: this.metricForApiGw(api.httpApiId, '5XXError', '5XX Errors', 'p99'),
-      threshold: 0,
-      period: cdk.Duration.minutes(5),
-      evaluationPeriods: 6,
-      datapointsToAlarm: 1,
-      treatMissingData: cloudwatch.TreatMissingData.NOT_BREACHING
-    })
-
-    new cloudwatch.Alarm(this, 'API p99 latency alarm >= 1s', {
-      metric: this.metricForApiGw(api.httpApiId, 'Latency', 'API GW Latency', 'p99'),
-      threshold: 1000,
-      period: cdk.Duration.minutes(5),
-      evaluationPeriods: 6,
-      datapointsToAlarm: 1,
-      treatMissingData: cloudwatch.TreatMissingData.NOT_BREACHING
-    })
-
-    // Lambda
-
-
-    // 1% of Lambda invocations taking longer than 1 second
-    new cloudwatch.Alarm(this, 'Dynamo Lambda p99 Long Duration (>1s)', {
-      metric: dynamoLambda.metricDuration(),
-      period: cdk.Duration.minutes(5),
-      threshold: 1000,
-      evaluationPeriods: 6,
-      datapointsToAlarm: 1,
-      statistic: "p99",
-      treatMissingData: cloudwatch.TreatMissingData.NOT_BREACHING
-    })
-
-
-
 
     new cdk.CfnOutput(this, 'HTTP API Url', {
       value: api.url ?? 'Something went wrong with the deploy'

@@ -25,7 +25,7 @@
 
 npm install -g typescript
 
-npm install -g cdk
+npm install -g aws-cdk
 
 
 [Understand the key concepts: app, stacks, constructs, L1, L2, and L3 constructs](https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html)

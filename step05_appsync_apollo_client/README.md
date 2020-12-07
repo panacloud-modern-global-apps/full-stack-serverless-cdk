@@ -12,6 +12,10 @@ authorizationType: appsync.AuthorizationType.API_KEY;
 
 That means our AppSync backend will only respond to graphql requests that have a valid `API_KEY`. You can read about the different [types of authorization supported by AppSync](https://docs.aws.amazon.com/appsync/latest/devguide/security.html#aws-appsync-security).
 
+## Creating the Backend API
+
+**We will be using the same Appsync + Dynamodb backend that we saw in step04.**
+
 ## Preparing Gatsby frontend
 
 ### Hello world starter

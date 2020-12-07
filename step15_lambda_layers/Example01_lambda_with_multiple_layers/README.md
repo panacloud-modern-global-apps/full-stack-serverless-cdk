@@ -99,3 +99,9 @@ After completing the above steps run the following commands to deploy
 ### Step7: Test Your Lambda
 Now at last if every things done according to the steps above, just go to your lambda console and test you lambda.
 [How to test a lambda function in aws console](https://www.youtube.com/watch?v=seaBeltaKhw&feature=youtu.be&t=310 "How to test a lambda function in aws console")
+
+ 
+Your can also check the lambda layers in your aws console. Go to your **Code** tab scroll down and you can see the lambda layer
+![img](https://github.com/panacloud-modern-global-apps/full-stack-serverless-cdk/blob/main/step15_lambda_layers/Example01_lambda_with_multiple_layers/images/img1.JPG?raw=true)
+       
+![img](https://github.com/panacloud-modern-global-apps/full-stack-serverless-cdk/blob/main/step15_lambda_layers/Example01_lambda_with_multiple_layers/images/img2.JPG?raw=true)

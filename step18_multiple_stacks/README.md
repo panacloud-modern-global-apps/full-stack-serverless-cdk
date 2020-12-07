@@ -90,6 +90,8 @@ In our front-end stack we will use a simple index.html file to deploy on cloudfr
 
 </html>
 ```
+> ####  **NOTE**
+   In the above HTML code at line # 41 there is a string inside fetch `"< your lambda API >"` you have to replace it with your backend rest API which you will get in the coming step.
 
 ### Step 5: Setup the frontend and backend stack
 Write this code inside your **lib/stact.ts**
@@ -166,6 +168,10 @@ new BackEnd(app, 'BackEndStack');
 ```
 
 ### Step 6: Lets deploy
-After completing the above steps run the following commands to deploy
-- `npm run build`
-- `cdk deploy --all`
+- Before deployment run  `npm run build` in your cdk root directory.
+
+- After completing the above steps, now first you have to deploy your backend stack. To deploy the backend stack run `cdk deploy BackEndStack`. After deployment you will get a restapi endpoint in your console to access your lambda, which looks something like this `Outputs:
+BackEndStack.DistributionDomainName = https://dpiuy6ggai1qv.cloudfront.net`. Copy this API, go to  **frontend/index.html** and replace this `"< your lambda API >"` with the backend API.
+
+- Now you can deploy both the stacks by running this command `cdk deploy --all` or you can simply deploy your frontend by running this command `cdk deploy FrontEndStack`. Once your frontend stack deployed, you will get output like this `Outputs:
+FrontEndStack.DistributionDomainName = https://d1n3jxrnp6pe1v.cloudfront.net`. You can access your frontend by this url.

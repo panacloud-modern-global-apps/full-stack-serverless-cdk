@@ -16,25 +16,16 @@ export class StepxxCiCdPipelineUpdateFrontendStack extends cdk.Stack {
     
     //Deploy Gatsby on s3 bucket
     const myBucket = new s3.Bucket(this, "GATSBYbuckets", {
-      versioned: true,
-      publicReadAccess: false,
-      removalPolicy: cdk.RemovalPolicy.DESTROY,        
-      websiteIndexDocument: "index.html",
-      websiteErrorDocument: "404.html",
-      accessControl: s3.BucketAccessControl.PRIVATE,
+      versioned: true,       
+      websiteIndexDocument: "index.html"
     });
 
-    const originAccessIdentity = new cloudfront.OriginAccessIdentity(this, 'OriginAccessIdentity'); 
-    myBucket.grantRead(originAccessIdentity); 
-
     const dist = new cloudfront.Distribution(this, 'myDistribution', {
-      defaultBehavior: { origin: new origins.S3Origin(myBucket, {
-        originAccessIdentity: originAccessIdentity
-      }) },
+      defaultBehavior: { origin: new origins.S3Origin(myBucket) }
     });
 
     new s3Deployment.BucketDeployment(this, "deployStaticWebsite", {
-      sources: [s3Deployment.Source.asset("../frontend/public")],
+      sources: [s3Deployment.Source.asset("../client/public")],
       destinationBucket: myBucket,
       distribution: dist
     });

@@ -54,7 +54,7 @@ export class Step03AppsyncLambdaAsDatasourceStack extends cdk.Stack {
 
     lambda_data_source.createResolver({
       typeName: "Query",
-      fieldName: "notesByID"
+      fieldName: "customNote"
     })
 
   }

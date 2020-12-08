@@ -1,4 +1,4 @@
 type Query {
   notes: [String]
-  notesByID(id: String!): String!
+  customNote(title: String!): String!
 }

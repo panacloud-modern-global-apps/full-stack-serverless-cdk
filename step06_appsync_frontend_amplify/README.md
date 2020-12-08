@@ -19,7 +19,7 @@ The following steps are also mentioned in the Amplify docs. [Click here to read 
 gatsby new gatsby-frontend https://github.com/gatsbyjs/gatsby-starter-hello-world
 ```
 
-### Step 2: Install the Amplify CLImahi ve
+### Step 2: Install the Amplify CLI
 
 ```
 npm install -g @aws-amplify/cli

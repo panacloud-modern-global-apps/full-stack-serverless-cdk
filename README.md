@@ -2,9 +2,12 @@
 
 ## Get AWS Account
 
-[GitHub Student Pack](https://education.github.com/pack)
+[AWS Educate](https://aws.amazon.com/education/awseducate/)
 
 [AWS Free Tier](https://aws.amazon.com/free/)
+
+[GitHub Student Pack](https://education.github.com/pack)
+
 
 Class Videos
 

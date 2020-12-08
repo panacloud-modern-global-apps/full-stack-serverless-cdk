@@ -311,4 +311,3 @@ Jest has told us that the memory size attribute is added. To accept the new snap
 `npm test -- -u`
 
 Now we can run the test again and see that it passes.
-

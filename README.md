@@ -27,6 +27,14 @@ Class Videos
 
 [Step 00 Class Video in Urdu on YouTube](https://www.youtube.com/watch?v=xWF-LCTnSy4)
 
+[Step 01 and 02 Class Video in English on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225216995316823)
+
+[Step 01 and 02 Class Video in English on YouTube](https://www.youtube.com/watch?v=JpLNn3_GbIc)
+
+[Step 01 and 02 Class Video in Urdu on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225226138185389)
+
+[Step 01 and 02 Class Video in Urdu on YouTube](https://www.youtube.com/watch?v=IJBowlCR7fk)
+
 ## AWS CDK
 
 [AWS CDK](https://github.com/aws/aws-cdk) is an open source software development framework to model and provision your cloud application resources using familiar programming languages. With AWS CDK, you can define your infrastructure as code and provision it through AWS CloudFormation. AWS CDK is available to use in all AWS regions. In this learning repo we will use CDK with TypeScript.

@@ -21,8 +21,6 @@ To create an image from an AWS base image for Lambda
 3. Use a text editor to create a new Dockerfile. 
 
 
-
-
 ```Dockerfile
 #Dockerfile
 
@@ -46,6 +44,7 @@ docker build -t hello-world .
 ```
 aws ecr get-login-password --region "us-east-1" | docker login --username AWS --password-stdin "123456789012".dkr.ecr."us-east-1".amazonaws.com    
 ```
+Change only highlighted fields i.e `region` and `account number` also *remove the double quotes* from the command
 
 6. Tag your image to match your repository name, and deploy the image to Amazon ECR using the docker push command. 
 ```

@@ -3,7 +3,7 @@ type AppSyncEvent = {
         fieldName: string
     }
     arguments: {
-        id: string
+        title: string
     }
 }
 
@@ -15,8 +15,8 @@ const notesArray = ["note1", "note2", "note3"]
     switch(event.info.fieldName){
         case "notes":
             return notesArray;
-        case "notesByID":
-            return event.arguments.id;
+        case "customNote":
+            return event.arguments.title;
         default:
             return null;
     }

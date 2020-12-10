@@ -12,17 +12,11 @@ export class FrontEnd extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-
-    const websiteBucket = new s3.Bucket(this, 'WebsiteBucket',
-      {
-        websiteIndexDocument: 'index.html',
-        publicReadAccess: true,
-        versioned: true     ///bucket versioning
-      }
-    );
+    const websiteBucket = new s3.Bucket(this, 'WebsiteBucket');
 
     const distribution = new cloudfront.Distribution(this, 'myDist', {
-      defaultBehavior: { origin: new origins.S3Origin(websiteBucket) },
+      defaultRootObject: "index.html",
+      defaultBehavior: { origin: new origins.S3Origin(websiteBucket,), },
     });
 
     // Prints out the web endpoint to the terminal

@@ -167,11 +167,15 @@ sam local start-api -t {stackname}.template.json
 
 [Running API Gateway locally](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-using-start-api.html)
 
+Class Videos:
 
+[Step 01 and 02 Class Video in English on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225216995316823)
 
+[Step 01 and 02 Class Video in English on YouTube](https://www.youtube.com/watch?v=JpLNn3_GbIc)
 
+[Step 01 and 02 Class Video in Urdu on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225226138185389)
 
-
+[Step 01 and 02 Class Video in Urdu on YouTube](https://www.youtube.com/watch?v=IJBowlCR7fk)
 
 
 

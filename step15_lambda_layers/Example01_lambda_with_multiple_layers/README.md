@@ -34,7 +34,7 @@ exports.handler = async (event: any, context: any) => {
     }
 }
 ```
-> **Note:** Make sure do not add any dependencies which is imported in the lambda code. We will add these dependencies with the help of lambda layers which we will cover in the next step.
+> **Note:** Make sure do not add any dependencies which is imported in the lambda code. We will add these dependencies with the help of lambda layers which we will cover in the next step. One more thing that you have noticed `const random_name = require('/opt/randomName');` in this line that why we importing from `'/opt/randomName'`? This is because any file you are importing from the lambda layer, it will be available inside `opt`. 
 
 ### Step4: Setup Lambda Layer
 Create a new folder as **lambda-layers** in the cdk root directory and inside that create two new folders as **http** and **nameGenerator**. After that create **nodejs** folder inside both the **http** and **nameGenerator** folders and do the following steps.
@@ -102,6 +102,6 @@ Now at last if every things done according to the steps above, just go to your l
 
  
 Your can also check the lambda layers in your aws console. Go to your **Code** tab scroll down and you can see the lambda layer
-![img](https://github.com/panacloud-modern-global-apps/full-stack-serverless-cdk/blob/main/step15_lambda_layers/Example01_lambda_with_multiple_layers/images/img1.JPG?raw=true)
+![img](images/img1.jpg)
        
-![img](https://github.com/panacloud-modern-global-apps/full-stack-serverless-cdk/blob/main/step15_lambda_layers/Example01_lambda_with_multiple_layers/images/img2.JPG?raw=true)
+![img](images/img2.jpg)

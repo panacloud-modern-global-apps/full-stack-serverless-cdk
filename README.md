@@ -2,9 +2,12 @@
 
 ## Get AWS Account
 
-[GitHub Student Pack](https://education.github.com/pack)
+[AWS Educate](https://aws.amazon.com/education/awseducate/)
 
 [AWS Free Tier](https://aws.amazon.com/free/)
+
+[GitHub Student Pack](https://education.github.com/pack)
+
 
 Class Videos
 
@@ -23,6 +26,14 @@ Class Videos
 [Step 00 Class Video in Urdu on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225203759985948)
 
 [Step 00 Class Video in Urdu on YouTube](https://www.youtube.com/watch?v=xWF-LCTnSy4)
+
+[Step 01 and 02 Class Video in English on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225216995316823)
+
+[Step 01 and 02 Class Video in English on YouTube](https://www.youtube.com/watch?v=JpLNn3_GbIc)
+
+[Step 01 and 02 Class Video in Urdu on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225226138185389)
+
+[Step 01 and 02 Class Video in Urdu on YouTube](https://www.youtube.com/watch?v=IJBowlCR7fk)
 
 ## AWS CDK
 

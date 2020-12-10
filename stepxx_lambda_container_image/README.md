@@ -44,7 +44,7 @@ docker build -t hello-world .
 ```
 5. Authenticate the Docker CLI to your Amazon ECR registry.
 ```
-aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 123456789012.dkr.ecr.us-east-1.amazonaws.com    
+aws ecr get-login-password --region "us-east-1" | docker login --username AWS --password-stdin "123456789012".dkr.ecr."us-east-1".amazonaws.com    
 ```
 
 6. Tag your image to match your repository name, and deploy the image to Amazon ECR using the docker push command. 

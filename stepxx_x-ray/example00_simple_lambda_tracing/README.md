@@ -1,6 +1,6 @@
 ## Introduction
 
-In this example, I am going to create a simple lambda function and Invoke it from aws lambda console to see its traces on X-Ray to find out how is my Lambda doing.
+In this example, we are going to create a simple lambda function and Invoke it from aws lambda console so our Lambda function send trace data to X-Ray, and X-Ray processes the data to generate a service map and searchable trace summaries.
 
 ## Step 1
 
@@ -52,7 +52,7 @@ cdk deploy
 
 ## Step 4
 
-1. Open your [AWS Lambda Console](https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions).
+1. Open your [AWS Lambda Console](https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions)(make sure you are in the correct region).
 2. Select the function which we created above.
 3. Configure test event.
 4. Test it multiple times to get multiple traces on X-Ray.
@@ -71,6 +71,6 @@ By selecting one of the nodes provides you more details about the service from h
 
 #### Select any trace by its ID to view more details about it.
 
-![traces](imgs/traces.png)
+![traces](imgs/traces.PNG)
 
 #### this screen shows you more detailed timeline about each of these segments in your application

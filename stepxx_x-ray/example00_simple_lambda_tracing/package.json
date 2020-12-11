@@ -1,8 +1,8 @@
 {
-  "name": "step00_x-ray_with_lambda",
+  "name": "example00_simple_lambda_tracing",
   "version": "0.1.0",
   "bin": {
-    "step00_x-ray_with_lambda": "bin/step00_x-ray_with_lambda.js"
+    "example00_simple_lambda_tracing": "bin/example00_simple_lambda_tracing.js"
   },
   "scripts": {
     "build": "tsc",
@@ -21,10 +21,7 @@
     "typescript": "~3.9.7"
   },
   "dependencies": {
-    "@aws-cdk/aws-lambda": "^1.77.0",
     "@aws-cdk/core": "1.75.0",
-    "@types/aws-lambda": "^8.10.66",
-    "aws-sdk": "^2.808.0",
     "source-map-support": "^0.5.16"
   }
 }

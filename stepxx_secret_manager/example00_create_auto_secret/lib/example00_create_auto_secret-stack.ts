@@ -23,7 +23,6 @@ export class Example00CreateAutoSecretStack extends cdk.Stack {
       environment: {
         EXAMPLE_SECRET_KEY: `${
           secretsmanager.Secret.fromSecretAttributes(this, "ExampleSecretKey", {
-            // replace with actual ARN for the secret key
             secretArn: secret.secretArn,
           }).secretValue
         }`

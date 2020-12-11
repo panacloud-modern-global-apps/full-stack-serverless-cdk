@@ -2,7 +2,6 @@ import * as cdk from '@aws-cdk/core';
 import * as iam from '@aws-cdk/aws-iam';
 import * as lambda from '@aws-cdk/aws-lambda';
 import * as secretsmanager from '@aws-cdk/aws-secretsmanager';
-import * as path from 'path';
 
 export class Example01RotateSecretWithLambdaStack extends cdk.Stack {
 

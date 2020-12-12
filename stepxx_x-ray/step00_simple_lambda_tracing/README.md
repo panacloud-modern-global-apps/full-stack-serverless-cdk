@@ -1,6 +1,6 @@
 ## Introduction
 
-In this example, we are going to create a simple lambda function and Invoke it from aws lambda console so our Lambda function send trace data to X-Ray, and X-Ray processes the data to generate a service map and searchable trace summaries.
+In this Step, we are going to create a simple lambda function and Invoke it from aws lambda console so our Lambda function send trace data to X-Ray, and X-Ray processes the data to generate a service map and searchable trace summaries.
 
 ## Step 1
 

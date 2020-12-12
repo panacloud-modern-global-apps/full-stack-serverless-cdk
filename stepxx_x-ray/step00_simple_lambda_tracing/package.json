@@ -1,8 +1,8 @@
 {
-  "name": "example00_simple_lambda_tracing",
+  "name": "step00_simple_lambda_tracing",
   "version": "0.1.0",
   "bin": {
-    "example00_simple_lambda_tracing": "bin/example00_simple_lambda_tracing.js"
+    "step00_simple_lambda_tracing": "bin/step00_simple_lambda_tracing.js"
   },
   "scripts": {
     "build": "tsc",

@@ -48,12 +48,13 @@ In the above code, we imported `aws-xray-sdk-core` and create a variable that us
 - Go to the `Monitoring` tab on you function select `View traces in X-Ray` it will redirect you to X-Ray Traces.
 - Select one of the most recent traces to see detailed trace data resulting from our recent test activity.
 - Here you can see the trace shows additional details about the S3 service since we configured our code to report that information. in this case, an access denied error is being reported
+  ![trace s3 error](/imgs/s3TraceError.png)
 
 #### In Our case lambda does not have permission to access S3 bucket.
 
 ## Step 4
 
-let's the attach S3 readonly policy to our lambda function with the help of CDK. to do that we have to install IAM package,`npm install @aws-cdk/aws-iam` then update the CDK stack code with the following
+let's attach the S3 readonly policy to our lambda function with the help of CDK. to do that we have to install IAM package,`npm install @aws-cdk/aws-iam` then update the CDK stack code with the following
 
 ```typescript
 // lib/step01_lambda_with_s3_tracing-stack.ts
@@ -83,8 +84,8 @@ new lambda.Function(this, "lambda-s3-x-ray-tracing", {
 });
 ```
 
-#### Now Deploy the stack and test the function again.
+#### Now Deploy the stack.
 
 ## Step 5
 
-Now test the function again and check its most recent trace and you will find that the error resolved and everything should work fine.
+Test the function again and check its most recent trace and you will find that the error resolved and everything should work fine.

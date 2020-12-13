@@ -24,24 +24,24 @@ export class InvokeLambdaOnReceiveingMailStack extends cdk.Stack {
     })
 
     // creating instance for taking email input while deployment
-    const emailAddress = new cdk.CfnParameter(this, 'emailParam',{
-      type: 'String', description:"Write your recipient email: "
+    const emailAddress = new cdk.CfnParameter(this, 'emailParam', {
+      type: 'String', description: "Write your recipient email"
     });
 
     // Adding a rule inside a rule set
     ruleSet.addRule('INVOKE_LAMBDA_RULE', {
       recipients: [emailAddress.valueAsString], // if no recipients than the action will be called on any incoming mail addresses of verified domains
-            actions: [
+      actions: [
         new actions.Lambda({ // defining an action to call when receive email on given recipients
           function: actionLambda,
           invocationType: actions.LambdaInvocationType.EVENT,
         }),
-      ], 
+      ],
       scanEnabled: true, // Enable spam and virus scanning
     })
 
 
-    
+
 
   }
 }

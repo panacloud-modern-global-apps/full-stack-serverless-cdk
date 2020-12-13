@@ -24,6 +24,7 @@ export class InvokeLambdaOnReceiveingMailStack extends cdk.Stack {
     })
 
     // creating instance for taking email input while deployment
+    // ref https://docs.aws.amazon.com/cdk/latest/guide/parameters.html
     const emailAddress = new cdk.CfnParameter(this, 'emailParam', {
       type: 'String', description: "Write your recipient email"
     });

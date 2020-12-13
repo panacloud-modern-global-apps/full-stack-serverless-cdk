@@ -1,14 +1,10 @@
-# Welcome to your CDK TypeScript project!
+# Lambda Destinations as Different Destinations
 
-This is a blank project for TypeScript development with CDK.
+This project combines Lambda Destinations with Destinations as SNS and Lambda to show you that with defining Success and Failure of lambda  will redirect the events to the specific destination.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+An important point about Lambda Destinations is that they have to be executed asynchronously which is why the lambda is invoked via SNS in this pattern.
 
-## Useful commands
+## Architechture
 
- * `npm run build`   compile typescript to js
- * `npm run watch`   watch for changes and compile
- * `npm run test`    perform the jest unit tests
- * `cdk deploy`      deploy this stack to your default AWS account/region
- * `cdk diff`        compare deployed stack with current state
- * `cdk synth`       emits the synthesized CloudFormation template
+![alt text](https://github.com/panacloud-modern-global-apps/full-stack-serverless-cdk/blob/main/stepxx_lambda_destination/example01_lambda_destination_with_different_destinations/img/lambda-sns.png)
+

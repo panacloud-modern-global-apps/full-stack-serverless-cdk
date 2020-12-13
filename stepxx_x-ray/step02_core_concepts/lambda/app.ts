@@ -10,17 +10,20 @@ const uuidv4 = () => {
     return v.toString(16);
   });
 };
-exports.handler = (event: APIGatewayEvent) => {
+
+exports.handler = async (event: APIGatewayEvent) => {
   const segment = AWSXRay.getSegment();
   // created new subSegment named GenerateId
   const subSegment = segment?.addNewSubsegment("GenerateId");
 
   const id = uuidv4();
   const name = "Jhon";
+  const company = "panacloud";
 
   // Adding Annotations to our subsegments
   subSegment?.addAnnotation("userId", id);
   subSegment?.addAnnotation("userName", name);
+  subSegment?.addAnnotation("userCompany", company);
 
   subSegment?.close();
 
@@ -28,19 +31,22 @@ exports.handler = (event: APIGatewayEvent) => {
   const s3 = AWSXRay.captureAWSClient(new AWS.S3());
 
   //this function lists all the s3 buckets
-  s3.listBuckets((err, data) => {
-    if (data) {
-      console.log("Success", data.Buckets);
-    } else {
-      console.log("Error", err);
-    }
-  }).promise();
+  await s3
+    .listBuckets((err, data) => {
+      if (data) {
+        console.log("Success", data.Buckets);
+      } else {
+        console.log("Error", err);
+      }
+    })
+    .promise();
 
   return {
     statusCode: 200,
     body: {
       userId: id,
       userName: name,
+      userCompany: company,
     },
   };
 };

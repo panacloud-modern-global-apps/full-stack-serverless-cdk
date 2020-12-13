@@ -6,3 +6,15 @@ An important point about Lambda Destinations is that they have to be executed as
 ## Architechture
 
 ![alt text](https://github.com/panacloud-modern-global-apps/full-stack-serverless-cdk/blob/main/stepxx_lambda_destination/example00_lambda_destination_event_bridge/img/lambda-destination.png)
+
+## When Lambda Destination will invoke
+
+Lambda destination will be only invoke as a result of any invocation through Asynchronous Behaviours
+
+![alt text](https://github.com/panacloud-modern-global-apps/full-stack-serverless-cdk/blob/main/stepxx_lambda_destination/example00_lambda_destination_event_bridge/img/destinations.png)
+
+## How To Test Pattern
+
+After you deploy this pattern you will have an API Gateway with one endpoint. You can test using curl or postman and check the cloudwatch events for invocation tests.
+
+

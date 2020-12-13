@@ -99,4 +99,4 @@ After completing the above steps run the following commands to deploy
 Now its time to test that your lambda should be called when you received an email on **info@example.com**. To test it you can use any of the free mailing service like **Gmail**, **Yahoo** or any one you like and send an email to **info@example.com** from your email address. 
 
 Once you have send the email, you can now go to your lambda console and check the log inside **CloudWatch** logs.
-![](images/img1.jpg)
+![](images/img1.JPG)

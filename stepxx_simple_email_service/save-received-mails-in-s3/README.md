@@ -1,4 +1,4 @@
-# Calling Lambda When Receiveing Emails On Verified Domain
+# Saving Received Emails In Amazon S3 On Verified Domain
 
 In this example of CDK deployment we will take a look at [how to receive emails on Amazon email server](https://www.youtube.com/watch?v=2fWj3EKYalg&feature=youtu.be&t=735). For a complete list of Regions where email receiving is supported, see [Amazon Simple Email Service endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/ses.html) in the AWS General Reference. Currently AWS is supporting email receiving support in three regions **us-east-1**, **us-west-2** and **eu-west-1**. To receive an email through SES we have to consider the following things:
 
@@ -108,8 +108,12 @@ You will see by default your **default-rule-set** is already activated, so you h
 <br>
 
 ### Step6: Test Your Rule
-Now its time to test that your lambda should be called when you received an email on **info@example.com**. To test it you can use any of the free mailing service like **Gmail**, **Yahoo** or any one you like and send an email to **info@example.com** from your email address. In my case I'm using **Gmail**.![](images/img7.JPG)
+Now its time to test that your S3 bucked should have the email saved when you received an email on **info@example.com**. To test it you can use any of the free mailing service like **Gmail**, **Yahoo** or any one you like and send an email to **info@example.com** from your email address. In my case I'm using **Gmail**.![](images/img7.JPG)
 
 <br>
 
 After sending email to your verified domain, go to the S3 console and select your S3 bucket where you will find the received email inside `emails/`. ![](images/img1.JPG) Download the email file in your system and open with. I'm using Windows so I'm openning it with **Notepad**.![](images/img6.JPG)
+
+<br>
+
+> **NOTE:** if your are destroying your stack with `cdk destroy` command than make sure that you have disabled your rule set otherwire you will get an error.

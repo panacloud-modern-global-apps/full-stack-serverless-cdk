@@ -40,7 +40,7 @@ export class SendingEmailUsingSesAndLambdaStack extends cdk.Stack {
 
     // logging api endpoint
     new cdk.CfnOutput(this, 'Send email endpoint', {
-      value: `${api.url}/sendmail`
+      value: `${api.url}sendmail`
     });
   }
 }

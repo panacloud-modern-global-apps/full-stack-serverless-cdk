@@ -102,6 +102,6 @@ Now at last if every things done according to the steps above, just go to your l
 
  
 Your can also check the lambda layers in your aws console. Go to your **Code** tab scroll down and you can see the lambda layer
-![img](images/img1.jpg)
+![img](images/img1.JPG)
        
-![img](images/img2.jpg)
+![img](images/img2.JPG)

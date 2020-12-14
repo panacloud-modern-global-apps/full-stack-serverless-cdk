@@ -9,7 +9,7 @@ export class SaveReceivedMailsInS3Stack extends cdk.Stack {
 
     // The code that defines your stack goes here
 
-    // creating a new bucket
+    // creating a new bucket to save emails
     const bucket = new s3.Bucket(this, 'Bucket');
 
     // creating a new rule set

@@ -95,8 +95,29 @@ After completing the above steps run the following commands to deploy
 
 <br>
 
-### Step5: Test Your Rule
+### Step5: Activate The Rule Set
+Now go to your SES console. Click on the **Rule Sets** tab.
+You will see by default your **default-rule-set** is already activated, so you have to disable it first, than activate your new rule set which you have created with CDK deployment.
+
+- First disable your **default-rule-set**.![](images/img2.JPG)
+<br>
+
+- Than activate your new rule set.![](images/img3.JPG)
+<br>
+
+- Now you can view the active rule set.![](images/img4.JPG)
+<br>
+
+- You can see your rule set is active now.![](images/img5.JPG)
+
+<br>
+
+### Step6: Test Your Rule
 Now its time to test that your lambda should be called when you received an email on **info@example.com**. To test it you can use any of the free mailing service like **Gmail**, **Yahoo** or any one you like and send an email to **info@example.com** from your email address. 
 
 Once you have send the email, you can now go to your lambda console and check the log inside **CloudWatch** logs.
 ![](images/img1.JPG)
+
+<br>
+
+> **NOTE:** if your are destroying your stack with `cdk destroy` command than make sure that you have disabled your rule set otherwire you will get an error.

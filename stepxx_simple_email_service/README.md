@@ -9,4 +9,4 @@
 
 - [How to Verify Your Domain in AWS SES](https://www.youtube.com/watch?v=j8izLCTBIwg)
 
-- [How can I use SES to receive emails and store them?](https://www.youtube.com/watch?v=nxXIpPZzMd0&t=308s)
+- [How can you use SES to receive emails and store them?](https://www.youtube.com/watch?v=nxXIpPZzMd0&t=308s)

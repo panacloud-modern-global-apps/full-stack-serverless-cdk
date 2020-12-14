@@ -1,14 +1,20 @@
-# Welcome to your CDK TypeScript project!
+# Lambda Destinations as Event Bridge
 
-This is a blank project for TypeScript development with CDK.
+This project combines Lambda Destinations with Amazon EventBridge to show you that with EventBridge rules you can decouple your components in an event driven architecture and by combining it with lambda destinations you can strip out EventBridge specific code from your lambda functions themselves and decouple further.
+An important point about Lambda Destinations is that they have to be executed asynchronously which is why the lambda is invoked via SNS in this pattern.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+## Architechture
 
-## Useful commands
+![alt text](https://github.com/panacloud-modern-global-apps/full-stack-serverless-cdk/blob/main/stepxx_lambda_destination/example00_lambda_destination_event_bridge/img/lambda-destination.png)
 
- * `npm run build`   compile typescript to js
- * `npm run watch`   watch for changes and compile
- * `npm run test`    perform the jest unit tests
- * `cdk deploy`      deploy this stack to your default AWS account/region
- * `cdk diff`        compare deployed stack with current state
- * `cdk synth`       emits the synthesized CloudFormation template
+## When Lambda Destination will invoke
+
+Lambda destination will be only invoke as a result of any invocation through Asynchronous Behaviours
+
+![alt text](https://github.com/panacloud-modern-global-apps/full-stack-serverless-cdk/blob/main/stepxx_lambda_destination/example00_lambda_destination_event_bridge/img/destinations.png)
+
+## How To Test Pattern
+
+After you deploy this pattern you will have an API Gateway with one endpoint. You can test using curl or postman and check the cloudwatch events for invocation tests.
+
+

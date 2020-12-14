@@ -1,4 +1,4 @@
-# Calling Lambda When Receiveing Emails On Verified Domain
+# Saving Received Emails In Amazon S3 On Verified Domain
 
 In this example of CDK deployment we will take a look at [how to receive emails on Amazon email server](https://www.youtube.com/watch?v=2fWj3EKYalg&feature=youtu.be&t=735). For a complete list of Regions where email receiving is supported, see [Amazon Simple Email Service endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/ses.html) in the AWS General Reference. Currently AWS is supporting email receiving support in three regions **us-east-1**, **us-west-2** and **eu-west-1**. To receive an email through SES we have to consider the following things:
 
@@ -16,7 +16,7 @@ If you have your own domain than learn [how to verify your domain on AWS SES](ht
 <br>
 
 ### Step2: Install The Following Dependencies
-`npm install @aws-cdk/aws-lambda @aws-cdk/aws-ses @aws-cdk/aws-ses-actions`
+`npm install @aws-cdk/aws-s3 @aws-cdk/aws-ses @aws-cdk/aws-ses-actions`
 
 <br>
 
@@ -34,14 +34,14 @@ const ruleSet = new ses.ReceiptRuleSet(this, 'RuleSet', {
 
 <br>
 
-In this example we will use lambda as an action when receive email on verified email address. Add the code below inside your **lib/stact.ts**.
+In this example we will use Amazon S3 as an action when receive email on verified email address. Add the code below inside your **lib/stact.ts**.
 
 ```javascript
 // lib/stack.ts
 import * as cdk from '@aws-cdk/core';
-import * as lambda from '@aws-cdk/aws-lambda';
-import * as actions from '@aws-cdk/aws-ses-actions';
+import * as s3 from '@aws-cdk/aws-s3';
 import * as ses from '@aws-cdk/aws-ses';
+import * as actions from '@aws-cdk/aws-ses-actions';
 
 export class Stack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
@@ -49,40 +49,35 @@ export class Stack extends cdk.Stack {
 
     // The code that defines your stack goes here
 
-    // Setting a lambda function which will be called on receiveing email
-    const actionLambda = new lambda.Function(this, 'SES_ACTION_LAMBDA', {
-      code: lambda.Code.fromInline(
-        `exports.handler = (event)=>{ console.log("EVENT ==>> ",JSON.stringify(event)) }`
-      ),
-      runtime: lambda.Runtime.NODEJS_12_X,
-      handler: 'index.handler',
-    })
+    // creating a new bucket to save emails
+    const bucket = new s3.Bucket(this, 'Bucket');
 
     // creating a new rule set
     const ruleSet = new ses.ReceiptRuleSet(this, 'RuleSet', {
-      receiptRuleSetName: 'calling-lambda-rule-set',
+      receiptRuleSetName: 'saving-email-rule-set',
     })
 
-    // creating instance for taking email input when deploying stack
+    // creating instance for taking email input while deployment
+    // ref https://docs.aws.amazon.com/cdk/latest/guide/parameters.html
     const emailAddress = new cdk.CfnParameter(this, 'emailParam', {
-      type: 'String', description: "Write your recipient email: "
+      type: 'String', description: "Write your recipient email"
     });
 
     // Adding a rule inside a rule set
     ruleSet.addRule('INVOKE_LAMBDA_RULE', {
       recipients: [emailAddress.valueAsString], // if no recipients than the action will be called on any incoming mail addresses of verified domains
       actions: [
-        new actions.Lambda({ // defining an action to call when receive email on given recipients
-          function: actionLambda,
-          invocationType: actions.LambdaInvocationType.EVENT,
-        }),
+        new actions.S3({
+          bucket,
+          objectKeyPrefix: 'emails/', // will save all emails inside emails directory
+        })
       ],
       scanEnabled: true, // Enable spam and virus scanning
     })
 
+
   }
 }
-
 ```
 
 <br>
@@ -113,10 +108,11 @@ You will see by default your **default-rule-set** is already activated, so you h
 <br>
 
 ### Step6: Test Your Rule
-Now its time to test that your lambda should be called when you received an email on **info@example.com**. To test it you can use any of the free mailing service like **Gmail**, **Yahoo** or any one you like and send an email to **info@example.com** from your email address. 
+Now its time to test that your S3 bucked should have the email saved when you received an email on **info@example.com**. To test it you can use any of the free mailing service like **Gmail**, **Yahoo** or any one you like and send an email to **info@example.com** from your email address. In my case I'm using **Gmail**.![](images/img7.JPG)
 
-Once you have send the email, you can now go to your lambda console and check the log inside **CloudWatch** logs.
-![](images/img1.JPG)
+<br>
+
+After sending email to your verified domain, go to the S3 console and select your S3 bucket where you will find the received email inside `emails/`. ![](images/img1.JPG) Download the email file in your system and open with. I'm using Windows so I'm openning it with **Notepad**.![](images/img6.JPG)
 
 <br>
 

@@ -1,5 +1,5 @@
 # Sending Email Using SES And Lambda
-In this example we are going to take a look at how to create a restfull end point to send an email, which is pretty straightforward with CDK. To do so we need a Lambda function, an Apigateway and an IAM role to allow access of SES to the Lambda.
+In this example we are going to take a look at how to create a restful endpoint to send an email, which is pretty straightforward with CDK. To do so we need a Lambda function, an Apigateway and an IAM role to allow access of SES to the Lambda.
 
 - [How to send an email with Amazon SES and Serverless - tutorial
 ](https://www.youtube.com/watch?v=4o6GCiUX8Xk)
@@ -18,7 +18,7 @@ In this example we are going to take a look at how to create a restfull end poin
 <br>
 
 ### Step3: Setup Lambda Function
-In our example we are using `aws-sdk` to send the email from SES so we need to import it inside your lambda function. Create a new folder as lambda-fns in the cdk root dir and add a file as lambda.ts.
+In our example we are using `aws-sdk` to send the email from SES, so we need to import it inside your lambda function. Create a new folder as **lambda-fns** in the cdk root directory and add a file as **lambda.ts** inside it.
 
 ```javascript
 // lambda-fns/lambda.ts
@@ -142,7 +142,7 @@ export class Stack extends cdk.Stack {
       .addMethod("POST", new apigw.LambdaIntegration(emailSender))
 
 
-    // logging api endpoint
+    // logging API endpoint
     new cdk.CfnOutput(this, 'Send email endpoint', {
       value: `${api.url}sendmail`
     });
@@ -157,27 +157,27 @@ export class Stack extends cdk.Stack {
 After completing the above steps run the following commands to deploy:
 - `npm run build`
 - `cdk deploy`
-> **NOTE**: after deployment you will get a **Sendemailendpoint** printed in your terminal which will be you actual endpoint for sending email.
+> **NOTE**: after deployment you will get a **Sendemailendpoint** printed in your terminal which will be you actual API for sending emails.
 
 <br>
 
 ### Step6: Verify The Email
 To send email from SES you have to verify your email first which you want to use to send emails. 
 
-- First go your **AWS Simple Email Service** console.
+- First go to your **AWS Simple Email Service** console.
 
 - Go to **Email Addressess** Tab.![](images/img3.JPG)
 
 - Click on **Verify a New Email Address** button.![](images/img4.JPG)
 
-- Write you email in the input field and click on **Verify This Email Address**
+- Write you email in the input field and click on **Verify This Email Address** button.
+
+- After that you will get a verfication email. In my case as I'm using Gmail, so I received my email at **Gmail**. ![](images/img6.JPG)
 
 <br>
 
 ### Step7: Testing Endpoint
 To test the endpoint I'm using [Postman](https://www.postman.com/).
-
-<br>
 
 - #### Request
 ![](images/img1.JPG)
@@ -192,4 +192,4 @@ To test the endpoint I'm using [Postman](https://www.postman.com/).
 - #### Email Response
 ![](images/img5.JPG)
 
-> **NOTE:** If you do not received any email in your **Inbox** than you can find your email inside the **SPAM** tab.
+> **NOTE:** If you do not received any email in your **Inbox** than maybe you have received your email inside **SPAM** tab.

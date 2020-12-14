@@ -2,7 +2,7 @@
 
 ## Introduction
 
-SQS is a very important service for **Event driven architecture**. This fulfills the role of a **messaging system**. We will send our events or messages to the SQS queue and it will have a consumer that `pulls` messages from that queue and processes them, this can be done in batches. This way SQS is able to store our events in the form of a queue. 
+SQS is a very important service for **Event driven architecture**. It is usually a key component of our **messaging system**. We will send our events or messages to the SQS queue and it will have a consumer that `pulls` messages from that queue and processes them, this can be done in batches. This way SQS is able to store our events in the form of a queue. 
 
 <!-- This will look very similar to **eventbridge** where we also have a central bus where we send our messages but in this case those messages can only be processed by one single consumer at a time. -->
 

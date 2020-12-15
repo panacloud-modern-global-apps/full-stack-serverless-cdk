@@ -92,7 +92,7 @@ aws ecr get-login-password --region "us-east-1" | docker login --username AWS --
 
 Change only highlighted fields i.e `region` and `account number` also *remove the double quotes* from the command
 
-## Step 9
+## Step 7
 
 Now build the project and deploy it by using command `cdk deploy` then what will happen is
 

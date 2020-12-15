@@ -82,6 +82,25 @@ import * as lambda from '@aws-cdk/aws-lambda';
 
 required repository name is given as asset.repository and in props , the tag is the tag of image in repository of ECR.
 
+## Step 6
+
+Authenticate the Docker CLI to your Amazon ECR registry.
+
+```bash
+aws ecr get-login-password --region "us-east-1" | docker login --username AWS --password-stdin "123456789012".dkr.ecr."us-east-1".amazonaws.com
+```
+
+Change only highlighted fields i.e `region` and `account number` also *remove the double quotes* from the command
+
+## Step 9
+
+Now build the project and deploy it by using command `cdk deploy` then what will happen is
+
+- It will first find the Dockerfile from the directory which is provided in lambda function in our case it is `ecr-lambda`
+- Then it will build the image and deploy it on AWS ecr (by default it will make a private repo)
+- and then the uploaded image will be use by our lambda function
+
+Also check [Amazon Elastic Container Registry pricing](https://aws.amazon.com/ecr/pricing/)
 
 # Welcome to your CDK TypeScript project!
 

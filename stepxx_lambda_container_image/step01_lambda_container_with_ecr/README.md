@@ -57,7 +57,7 @@ FROM public.ecr.aws/lambda/nodejs:12
 The Dockerfile is adding the source code (app.js) and the files describing the package and the dependencies (package.json and package-lock.json) to the base image. Then, run npm to install the dependencies. I set the CMD to the function handler.
 
 
-## step 4 pushing image to ECR
+## Step 4 pushing image to ECR
 
 ```typescript  
 import { DockerImageAsset } from '@aws-cdk/aws-ecr-assets';
@@ -68,7 +68,7 @@ import { DockerImageAsset } from '@aws-cdk/aws-ecr-assets';
 
 In directory we give the name of our image folder which is 'ecr-lambda' here to push the image to the ECR , so we then pull out the image from ecr and use to make our container lambda.
 
-## step 5 pulling image from ECR
+## Step 5 pulling image from ECR
 
 ```typescript  
 import * as lambda from '@aws-cdk/aws-lambda';

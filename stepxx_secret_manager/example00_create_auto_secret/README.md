@@ -1,14 +1,23 @@
-# Welcome to your CDK TypeScript project!
+# Create a new Secret in a Stack
 
-This is a blank project for TypeScript development with CDK.
+## Code Overview
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+In order to have SecretsManager generate a new secret value automatically, you can get started with the following:
 
-## Useful commands
+```javascript
+    const secret = new secretsmanager.Secret(this, 'Secret')
+```
 
- * `npm run build`   compile typescript to js
- * `npm run watch`   watch for changes and compile
- * `npm run test`    perform the jest unit tests
- * `cdk deploy`      deploy this stack to your default AWS account/region
- * `cdk diff`        compare deployed stack with current state
- * `cdk synth`       emits the synthesized CloudFormation template
+Create a role and grant a role permission to use that secret
+
+```javascript
+    const role = new iam.Role(this, 'LambdaRole', {
+      assumedBy: new iam.ServicePrincipal('lambda.amazonaws.com'),
+    });
+
+    secret.grantRead(role);
+```
+
+Now you can use this secret in your lambda function.
+
+If you need to use a pre-existing secret, the recommended way is to manually provision the secret in AWS SecretsManager and use the Secret.fromSecretArn or Secret.fromSecretAttributes method to make it available in your CDK Application.

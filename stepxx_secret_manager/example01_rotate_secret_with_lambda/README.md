@@ -6,13 +6,76 @@ In software practice it is pretty common to create some secret and use for diffe
 
 Lambda would be called 4 times for each Step value. For current implementation only first step would be used createSecret. And within implementation newly generated secret would be set with AWSCURRENT version. This would effectively change label for existing key to AWSPREVIOUS.
 
+## Code Overview
 
+```javascript
+     const secret = new secretsmanager.Secret(this, 'Secret', {
+      description: "My Secret",
+      secretName: 'example-secret',
+      generateSecretString: {
+        secretStringTemplate: JSON.stringify({}),
+        generateStringKey: "SecretKey",
+      }
+    });
+```
 
-## Useful commands
+1. Secret - would create new secret value using name secretName. And by Providing generateSecretString it would generate initial json structure with one additional key using value from SecretKey. In secretStringTemplate specified just empty json '{}' so initially secret would looks like this:
 
- * `npm run build`   compile typescript to js
- * `npm run watch`   watch for changes and compile
- * `npm run test`    perform the jest unit tests
- * `cdk deploy`      deploy this stack to your default AWS account/region
- * `cdk diff`        compare deployed stack with current state
- * `cdk synth`       emits the synthesized CloudFormation template
+```
+    {
+        "SecretKey":"<some random string>" 
+    }
+```
+
+2. But immediately after keys rotation Lambda resource created, it would be executed and receive value from function implementation:
+
+```
+    {"keyInSecret":"d2a74cd6fa4162ec6eccf75fdf281745a9ca3a8c5f7c736937b9ef360b56c7ef"}
+```
+
+3. Function (LambdaSecretRotate) would represent attached rotation lambda with implementation from directory ./lambda. Except pretty common attributes few environment variables passed into:
+
+```
+    environment: {
+        REGION: cdk.Stack.of(this).region,
+        SECRET_NAME: "example-secret",
+        KEY_IN_SECRET_NAME: "SecretKey"
+    }
+```
+
+4. To determine what key to update and what key within SecretString json to update.
+
+- `RotationSchedule` Would instruct to use specified Lambda and run it every 24 hours
+
+- Necessary roles to allow SecretsManager to call Lambda and Lambda to update secret value
+
+```
+    secret.grantRead(lambdaFunc);
+    lambdaFunc.grantInvoke(new iam.ServicePrincipal('secretsmanager.amazonaws.com'))
+    lambdaFunc.addToRolePolicy(new iam.PolicyStatement({
+      resources: [secret.secretArn],
+      actions: ['secretsmanager:PutSecretValue']
+    }));
+```
+
+5. 
+
+`handler` function has one useful processing attached to `createSecret` Step. Within it generated new secret using randomBytes(32).toString('hex') (ps. Secret length would be 64). Then it saved into SECRET_NAME with AWSCURRENT version which would make it available for use.
+
+```
+    export async function handler(event: Event) {
+        if (event.Step === 'createSecret') {
+            await secretsManager
+                .putSecretValue({
+                    SecretId: secretName,
+                    SecretString: JSON.stringify({
+                        [keyInSecret]: randomBytes(32).toString('hex')
+                    }),
+                    VersionStages: ['AWSCURRENT']
+                })
+                .promise()
+        }
+    }
+```
+
+When CDK application deployed secret my-secret-name-here would be available immediately with some randomly generated value. After some short period of time Lambda would be executed and secret would receive final structure.

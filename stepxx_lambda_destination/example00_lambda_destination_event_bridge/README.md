@@ -84,7 +84,36 @@ This destination lambda will return the data on complete execution along with so
 ## Step4
 
 This event rule will match on success execution of lambda.
-Note: Lambda destination return a large object of events in which `responsePayload` has the data will be return by the actual lambda.
+Note: Lambda destination return a large json response in which `responsePayload` has the data that will be return by the actual lambda.
+```
+{
+    "version": "1.0",
+    "timestamp": "2019-11-14T18:16:05.568Z",
+    "requestContext": {
+        "requestId": "e4b46cbf-b738-xmpl-8880-a18cdf61200e",
+        "functionArn": "arn:aws:lambda:us-east-2:123456789012:function:my-function:$LATEST",
+        "condition": "RetriesExhausted",
+        "approximateInvokeCount": 3
+    },
+    "requestPayload": {
+        "ORDER_IDS": [
+            "9e07af03-ce31-4ff3-xmpl-36dce652cb4f",
+            "637de236-e7b2-464e-xmpl-baf57f86bb53",
+            "a81ddca6-2c35-45c7-xmpl-c3a03a31ed15"
+        ]
+    },
+    "responseContext": {
+        "statusCode": 200,
+        "executedVersion": "$LATEST",
+        "functionError": "Unhandled"
+    },
+    "responsePayload": {
+        source: 'event-success',
+        "action": 'data',
+        "data": "Hello world"
+    }
+}
+```
 
 ```javascript
     const successLambda = new lambda.Function(this, 'SuccesserLambdaHandler', {

@@ -27,7 +27,7 @@ export class Example01LambdaDestinationWithDifferentDestinationsStack extends cd
       runtime: lambda.Runtime.NODEJS_12_X,
       code: lambda.Code.fromAsset('lambda'),
       handler: 'destined.handler',
-      retryAttempts: 0,
+      retryAttempts: 1,                                                           ///if fail it will retry again
       onSuccess: new destinations.SnsDestination(myTopic),                        ///ONSUCCESS of lambda
       onFailure: new destinations.LambdaDestination(failLambda)                   ///ONFailure of lambda
     });

@@ -1,0 +1,27 @@
+type Event {
+  result: String
+}
+
+type TimeSlot {
+    id: ID!
+    from: String!
+    to: String!
+    isBooked: Boolean!
+}
+
+input InputTimeSlot {
+    from: String!
+    to: String!
+    isBooked: Boolean!
+}
+
+type Query {
+  getTimeSlots: [TimeSlot]
+}
+
+type Mutation {
+  addTimeSlot(timeSlot: InputTimeSlot!): Event
+  deleteTimeSlot(id: ID!): Event
+  bookTimeSlot(id: ID!): Event
+  cancelBooking(id: ID!): Event
+}

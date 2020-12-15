@@ -71,20 +71,20 @@ export class AwsCdkStack extends cdk.Stack {
       responseMappingTemplate: appsync.MappingTemplate.dynamoDbResultList(),
     });
     /* Mutation */
-    ["addTimeSlot", "deleteTimeSlot", "bookTimeSlot", "cancelBooking"]
-      .forEach((mutation) => {
-        let details = `\\\"id\\\": \\\"$ctx.args.id\\\"`;
-        if (mutation === 'addTimeSlot') {
-          details = `\\\"to\\\":\\\"$ctx.args.timeSlot.to\\\", \\\"from\\\":\\\"$ctx.args.timeSlot.from\\\", \\\"isBooked\\\":$ctx.args.timeSlot.isBooked`
-        }
+    const mutations = ["addTimeSlot", "deleteTimeSlot", "bookTimeSlot", "cancelBooking", "cancelAllBooking"]
+    mutations.forEach((mut) => {
+      let details = `\\\"id\\\": \\\"$ctx.args.id\\\"`;
+      if (mut === 'addTimeSlot') {
+        details = `\\\"to\\\":\\\"$ctx.args.timeSlot.to\\\", \\\"from\\\":\\\"$ctx.args.timeSlot.from\\\", \\\"isBooked\\\":$ctx.args.timeSlot.isBooked`
+      }
 
-        httpEventTriggerDS.createResolver({
-          typeName: "Mutation",
-          fieldName: mutation,
-          requestMappingTemplate: appsync.MappingTemplate.fromString(requestTemplate(details, mutation)),
-          responseMappingTemplate: appsync.MappingTemplate.fromString(responseTemplate()),
-        });
+      httpEventTriggerDS.createResolver({
+        typeName: "Mutation",
+        fieldName: mut,
+        requestMappingTemplate: appsync.MappingTemplate.fromString(requestTemplate(details, mut)),
+        responseMappingTemplate: appsync.MappingTemplate.fromString(responseTemplate()),
       });
+    });
 
 
     ////////// Creating Event Consumer handler and defining rules
@@ -94,19 +94,19 @@ export class AwsCdkStack extends cdk.Stack {
       handler: 'eventConsumer.handler',
       environment: {
         DYNAMO_TABLE_NAME: RestaurantAppTable.tableName,
-      }
+      },
+      timeout: cdk.Duration.seconds(10)
     });
     const eventConsumerRules = new events.Rule(this, "eventConsumerLambdaRule", {
       eventPattern: {
         source: [EVENT_SOURCE],
-        detailType: ["addTimeSlot", "deleteTimeSlot", "bookTimeSlot", "cancelBooking"],
+        detailType: [...mutations,],
       },
     });
     eventConsumerRules.addTarget(new eventsTargets.LambdaFunction(eventConsumerLambda));
     
     // Giving Table access to event consumer lambda
     RestaurantAppTable.grantReadWriteData(eventConsumerLambda);
-
 
 
     // Log GraphQL API Endpoint

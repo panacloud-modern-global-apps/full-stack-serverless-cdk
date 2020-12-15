@@ -24,4 +24,5 @@ type Mutation {
   deleteTimeSlot(id: ID!): Event
   bookTimeSlot(id: ID!): Event
   cancelBooking(id: ID!): Event
+  cancelAllBooking: Event
 }

@@ -35,7 +35,7 @@ Lambda would be called 4 times for each Step value. For current implementation o
 
 3. Function (LambdaSecretRotate) would represent attached rotation lambda with implementation from directory ./lambda. Except pretty common attributes few environment variables passed into:
 
-```
+``` javascript
     environment: {
         REGION: cdk.Stack.of(this).region,
         SECRET_NAME: "example-secret",
@@ -49,7 +49,7 @@ Lambda would be called 4 times for each Step value. For current implementation o
 
 - Necessary roles to allow SecretsManager to call Lambda and Lambda to update secret value
 
-```
+``` javascript
     secret.grantRead(lambdaFunc);
     lambdaFunc.grantInvoke(new iam.ServicePrincipal('secretsmanager.amazonaws.com'))
     lambdaFunc.addToRolePolicy(new iam.PolicyStatement({
@@ -62,7 +62,7 @@ Lambda would be called 4 times for each Step value. For current implementation o
 
 `handler` function has one useful processing attached to `createSecret` Step. Within it generated new secret using randomBytes(32).toString('hex') (ps. Secret length would be 64). Then it saved into SECRET_NAME with AWSCURRENT version which would make it available for use.
 
-```
+``` javascript
     export async function handler(event: Event) {
         if (event.Step === 'createSecret') {
             await secretsManager

@@ -6,8 +6,8 @@ import * as eventsTargets from '@aws-cdk/aws-events-targets';
 import * as lambda from '@aws-cdk/aws-lambda';
 import * as sns from '@aws-cdk/aws-sns';
 import * as snsSubscriptions from '@aws-cdk/aws-sns-subscriptions';
-import * as stepfunctions from '@aws-cdk/aws-stepfunctions';
-import * as stepfunctionsTasks from '@aws-cdk/aws-stepfunctions-tasks';
+import * as stepFunctions from '@aws-cdk/aws-stepfunctions';
+import * as stepFunctionsTasks from '@aws-cdk/aws-stepfunctions-tasks';
 import { requestTemplate, responseTemplate, EVENT_SOURCE } from '../utils/appsync-request-response';
 
 export class AwsCdkStack extends cdk.Stack {
@@ -72,6 +72,7 @@ export class AwsCdkStack extends cdk.Stack {
     });
     /* Mutation */
     const mutations = ["addTimeSlot", "deleteTimeSlot", "bookTimeSlot", "cancelBooking", "cancelAllBooking"]
+
     mutations.forEach((mut) => {
       let details = `\\\"id\\\": \\\"$ctx.args.id\\\"`;
       if (mut === 'addTimeSlot') {
@@ -87,26 +88,59 @@ export class AwsCdkStack extends cdk.Stack {
     });
 
 
-    ////////// Creating Event Consumer handler and defining rules
-    const eventConsumerLambda = new lambda.Function(this, 'EventConsumer', {
+    ////////// Creating Lambda handler ////////////////////////
+    /* lambda 1 */
+    const dynamoHandlerLambda = new lambda.Function(this, 'Dynamo_Handler', {
       code: lambda.Code.fromAsset('lambda-fns'),
       runtime: lambda.Runtime.NODEJS_12_X,
-      handler: 'eventConsumer.handler',
+      handler: 'dynamoHandler.handler',
       environment: {
         DYNAMO_TABLE_NAME: RestaurantAppTable.tableName,
       },
       timeout: cdk.Duration.seconds(10)
     });
-    const eventConsumerRules = new events.Rule(this, "eventConsumerLambdaRule", {
+    // Giving Table access to dynamoHandlerLambda
+    RestaurantAppTable.grantReadWriteData(dynamoHandlerLambda);
+
+    /* lambda 2 */
+    const snsHanlderLambda = new lambda.Function(this, 'SNS_Hanlder', {
+      code: lambda.Code.fromAsset('lambda-fns'),
+      runtime: lambda.Runtime.NODEJS_12_X,
+      handler: 'snsHandler.handler',
+      timeout: cdk.Duration.seconds(10)
+    });
+
+    //////////////// Creating Steps of StepFunctions //////////////////////////
+    /* Step 1 */
+    const firstStep = new stepFunctionsTasks.LambdaInvoke(this, "Dynamo_Handler_Lambda",
+      { lambdaFunction: dynamoHandlerLambda, }
+    );
+    /* Step 2 */
+    const secondStep = new stepFunctionsTasks.LambdaInvoke(this, "SNS_Hanlder_Lambda", {
+      lambdaFunction: snsHanlderLambda,
+      inputPath: "$.Payload"
+    });
+
+    // creating chain to define the sequence of execution
+    const stf_chain = stepFunctions.Chain
+      .start(firstStep)
+      .next(secondStep);
+
+    // create a state machine
+    const stateMachine = new stepFunctions.StateMachine(this, 'StateMachine', {
+      definition: stf_chain
+    })
+
+
+    ////////// Creating rule to invoke step function on event ///////////////////////
+    const eventConsumerRules = new events.Rule(this, "eventConsumerRule", {
       eventPattern: {
         source: [EVENT_SOURCE],
         detailType: [...mutations,],
       },
+      targets: [new eventsTargets.SfnStateMachine(stateMachine)]
     });
-    eventConsumerRules.addTarget(new eventsTargets.LambdaFunction(eventConsumerLambda));
-    
-    // Giving Table access to event consumer lambda
-    RestaurantAppTable.grantReadWriteData(eventConsumerLambda);
+    // eventConsumerRules.addTarget(new eventsTargets.SfnStateMachine(stateMachine));
 
 
     // Log GraphQL API Endpoint

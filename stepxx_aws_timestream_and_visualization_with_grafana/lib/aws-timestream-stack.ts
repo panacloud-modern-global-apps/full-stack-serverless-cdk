@@ -42,5 +42,7 @@ export class AwsTimestreamStack extends cdk.Stack {
       'timestream:WriteRecords'
     );
     policy.addResources('*');
+
+    TSlambda.addToRolePolicy(policy)
   }
 }

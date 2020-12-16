@@ -7,7 +7,6 @@ type TimeSlot {
     from: String!
     to: String!
     isBooked: Boolean!
-    userName: String
 }
 
 input InputTimeSlot {

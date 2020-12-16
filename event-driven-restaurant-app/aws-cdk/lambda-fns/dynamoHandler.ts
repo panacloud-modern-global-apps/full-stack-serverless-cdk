@@ -5,10 +5,15 @@ import * as AWS from 'aws-sdk';
 const dynamoClient = new AWS.DynamoDB.DocumentClient();
 const TABLE_NAME = process.env.DYNAMO_TABLE_NAME as string;
 
+export type PayloadType = {
+    operationSuccessful: boolean,
+    SnsMessage?: string,
+}
 
 export const handler = async (event: EventBridgeEvent<string, any>, context: Context) => {
 
     console.log(JSON.stringify(event, null, 2));
+    const returningPayload: PayloadType = { operationSuccessful: true };
 
     try {
         //////////////  adding new time slot /////////////////////////
@@ -45,6 +50,8 @@ export const handler = async (event: EventBridgeEvent<string, any>, context: Con
 
             };
             await dynamoClient.update(params).promise();
+            // adding sns message
+            returningPayload.SnsMessage = 'Request of booking timeSlot';
         }
 
         //////////////  canceling booked time slot /////////////////////////
@@ -59,6 +66,8 @@ export const handler = async (event: EventBridgeEvent<string, any>, context: Con
 
             };
             await dynamoClient.update(params).promise();
+            // adding sns message
+            returningPayload.SnsMessage = 'Request of canceling timeSlot';
         }
 
         //////////////  canceling all booked time slots /////////////////////////
@@ -80,11 +89,12 @@ export const handler = async (event: EventBridgeEvent<string, any>, context: Con
             })
         }
 
-        return { operationSuccessful: true };
+        return returningPayload;
 
     } catch (error) {
         console.log("ERROR ====>", error);
-        return { operationSuccessful: false };
+        returningPayload.operationSuccessful = false;
+        return returningPayload;
 
     }
 

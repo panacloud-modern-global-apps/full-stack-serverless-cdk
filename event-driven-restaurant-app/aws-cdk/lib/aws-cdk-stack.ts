@@ -87,8 +87,22 @@ export class AwsCdkStack extends cdk.Stack {
       });
     });
 
+    //////////////////////// creating SNS topic /////////////////////////////////
+    const snsTopic = new sns.Topic(this, "BookingRequest");
+    // Adding SNS subscribers
+    /* subscriber 1 */
+    ////////////// // ref https://docs.aws.amazon.com/cdk/latest/guide/parameters.html
+    const email = new cdk.CfnParameter(this, 'emailParam', { type: 'String' }) // taking input
+    snsTopic.addSubscription(
+      new snsSubscriptions.EmailSubscription(email.valueAsString)
+    );
+    /* subscriber 2 */
+    const phoneNo = new cdk.CfnParameter(this, 'phoneNoParam', { type: 'String' }) // taking input
+    snsTopic.addSubscription(
+      new snsSubscriptions.SmsSubscription(phoneNo.valueAsString)
+    );
 
-    ////////// Creating Lambda handler ////////////////////////
+    ////////////////////////////// Creating Lambda handler ////////////////////////
     /* lambda 1 */
     const dynamoHandlerLambda = new lambda.Function(this, 'Dynamo_Handler', {
       code: lambda.Code.fromAsset('lambda-fns'),
@@ -107,8 +121,14 @@ export class AwsCdkStack extends cdk.Stack {
       code: lambda.Code.fromAsset('lambda-fns'),
       runtime: lambda.Runtime.NODEJS_12_X,
       handler: 'snsHandler.handler',
+      environment: {
+        SNS_TOPIC_ARN: snsTopic.topicArn
+      },
       timeout: cdk.Duration.seconds(10)
     });
+    // Giving access to publish message
+    snsTopic.grantPublish(snsHanlderLambda);
+
 
     //////////////// Creating Steps of StepFunctions //////////////////////////
     /* Step 1 */

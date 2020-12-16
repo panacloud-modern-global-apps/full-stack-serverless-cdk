@@ -1,14 +1,57 @@
-# Welcome to your CDK TypeScript project!
+# Subscribing SMS to an SNS topic
 
-This is a blank project for TypeScript development with CDK.
+## Code Explanation
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+### Creating an SNS topic
 
-## Useful commands
+```javascript
 
- * `npm run build`   compile typescript to js
- * `npm run watch`   watch for changes and compile
- * `npm run test`    perform the jest unit tests
- * `cdk deploy`      deploy this stack to your default AWS account/region
- * `cdk diff`        compare deployed stack with current state
- * `cdk synth`       emits the synthesized CloudFormation template
+      // create an SNS topic
+    const myTopic = new sns.Topic(this, "MyTopic");
+    
+```
+
+
+### Creating a dead letter queue
+
+We are using SQS to create a dead letter queue. The dead letter queue can be used in with SNS to store all the failed messages and perform some action on them.
+
+```javascript
+
+ // create a dead letter queue
+
+    const dlQueue = new sqs.Queue(this, "DeadLetterQueue", {
+      queueName: "MySubscription_DLQ",
+      retentionPeriod: cdk.Duration.days(14),
+    });
+
+
+```
+
+### Subscribing SMS to the topic
+
+Enter your number in the "SmsSubscription(...)" method (shown below).
+
+The filter policy here sets a rule that only those messages would be recieved by the subscribed number that have a "message attribute" named "test" with a value of greater than 100
+
+```javascript
+ 
+   // subscribe SMS number to the topic
+    myTopic.addSubscription(
+      new subscriptions.SmsSubscription("+92XXXXXXXXXX", {
+        deadLetterQueue: dlQueue,
+        filterPolicy: {
+          test: sns.SubscriptionFilter.numericFilter({
+            greaterThan: 100
+          }),
+        },
+      })
+    );
+```
+
+
+## Usage
+
+After deploying the code you can start publishing messages from the SNS console. Be mindful of the filer policy that we applied. You will have to add a message attribue named "test" with a value of greater than 100, otherwise, you would not be able to recieve the messages on your number.
+
+You can change the filter policy and play around with it to understand it better. There are many different filters that you can apply. You can find them in the documentations.

@@ -5,6 +5,7 @@ import * as events from '@aws-cdk/aws-events';
 import * as eventsTargets from '@aws-cdk/aws-events-targets';
 import * as lambda from '@aws-cdk/aws-lambda';
 import * as sns from '@aws-cdk/aws-sns';
+import * as iam from '@aws-cdk/aws-iam';
 import * as snsSubscriptions from '@aws-cdk/aws-sns-subscriptions';
 import * as stepFunctions from '@aws-cdk/aws-stepfunctions';
 import * as stepFunctionsTasks from '@aws-cdk/aws-stepfunctions-tasks';
@@ -87,8 +88,22 @@ export class AwsCdkStack extends cdk.Stack {
       });
     });
 
+    //////////////////////// creating SNS topic /////////////////////////////////
+    const snsTopic = new sns.Topic(this, "BookingRequest");
+    // Adding SNS subscribers
+    /* subscriber 1 */
+    ////////////// // ref https://docs.aws.amazon.com/cdk/latest/guide/parameters.html
+    const email = new cdk.CfnParameter(this, 'emailParam', { type: 'String' }) // taking input
+    snsTopic.addSubscription(
+      new snsSubscriptions.EmailSubscription(email.valueAsString)
+    );
+    /* subscriber 2 */
+    const phoneNoParam = new cdk.CfnParameter(this, 'phoneNoParam', { type: 'String' }) // taking input
+    // snsTopic.addSubscription(
+    //   new snsSubscriptions.SmsSubscription(phoneNoParam.valueAsString)
+    // );
 
-    ////////// Creating Lambda handler ////////////////////////
+    ////////////////////////////// Creating Lambda handler ////////////////////////
     /* lambda 1 */
     const dynamoHandlerLambda = new lambda.Function(this, 'Dynamo_Handler', {
       code: lambda.Code.fromAsset('lambda-fns'),
@@ -103,11 +118,28 @@ export class AwsCdkStack extends cdk.Stack {
     RestaurantAppTable.grantReadWriteData(dynamoHandlerLambda);
 
     /* lambda 2 */
+    // creating role for giving sns:publish access to lambda
+    const role = new iam.Role(this, 'LambdaRole', {
+      assumedBy: new iam.ServicePrincipal('lambda.amazonaws.com'),
+    });
+    const policy = new iam.PolicyStatement({
+      effect: iam.Effect.ALLOW,
+      actions: ["SNS:Publish", "logs:*"],
+      resources: ['*']
+    });
+    role.addToPolicy(policy);
+
+    // creating lambda
     const snsHanlderLambda = new lambda.Function(this, 'SNS_Hanlder', {
       code: lambda.Code.fromAsset('lambda-fns'),
       runtime: lambda.Runtime.NODEJS_12_X,
       handler: 'snsHandler.handler',
-      timeout: cdk.Duration.seconds(10)
+      environment: {
+        SNS_TOPIC_ARN: snsTopic.topicArn,
+        PHONE_NUMBER: phoneNoParam.valueAsString
+      },
+      timeout: cdk.Duration.seconds(10),
+      role: role,
     });
 
     //////////////// Creating Steps of StepFunctions //////////////////////////

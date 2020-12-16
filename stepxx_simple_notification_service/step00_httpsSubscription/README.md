@@ -72,4 +72,16 @@ We have not added any filter policies or dead letter queues in this step. We hav
 ```
 
 
+## Usage
 
+When you will deploy the given code, the SNS would send a subscription link to the subscribed HTTPS endpoint. You will have to open that link once to complete the subscription process and start recieving the messages from SNS topic.
+
+Your lambda function would recieve the subscription link and you would be able to find it in the logs (because we are logging all the events from our lambda function)
+
+
+>subscription url:
+
+>![subcription url](imgs/subscription_url.png)  
+
+
+After clicking this link you can start publishing messages from your SNS console and you would be able to see the recieved messages in the lambda function's cloud watch logs

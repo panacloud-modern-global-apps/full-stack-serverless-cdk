@@ -40,6 +40,16 @@ Advanced AppSync Tutorials:
 
 npm i @aws-cdk/aws-dynamodb
 
+[Step 04 and 05 Class Video in English on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225276797051829)
+
+[Step 04 and 05 Class Video in English on YouTube](https://www.youtube.com/watch?v=lbkrSIM_x_Y)
+
+[Step 04 and 05 Class Video in Urdu on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225286889784141)
+
+[Step 04 and 05 Class Video in Urdu on YouTube](https://www.youtube.com/watch?v=FVHkJRo4TdI)
+
+
+
 
 # Welcome to your CDK TypeScript project!
 

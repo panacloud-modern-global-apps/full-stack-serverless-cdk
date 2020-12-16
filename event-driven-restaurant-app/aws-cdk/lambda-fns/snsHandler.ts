@@ -7,20 +7,28 @@ const sns = new SNS();
 export const handler = async (event: PayloadType, context: Context) => {
     console.log(JSON.stringify(event, null, 2));
 
-    // if (event.SnsMessage) {
-    //     sns.publish({
-    //         TopicArn: process.env.SNS_TOPIC_ARN,
-    //         Message: event.SnsMessage,
-    //     }, function (err, data) {
-    //         if (err) {
-    //             console.error('ERROR Publishing To SNS ====>', JSON.stringify(err, null, 2));
-    //             throw new Error(err.message)
-    //         } else {
-    //             console.info('message published to SNS');
-    //         }
-    //     }
-    //     )
-    // }
+    try {
+        if (event.SnsMessage) {
+            // sending message to TOPIC ARN
+            await sns.publish({
+                TopicArn: process.env.SNS_TOPIC_ARN,
+                Message: event.SnsMessage,
+            }).promise()
+            console.log('message published');
+
+            // sending message to Phone Number
+            await sns.publish({
+                Message: event.SnsMessage,
+                PhoneNumber: process.env.PHONE_NUMBER,
+            }).promise()
+            console.log('message sent to Phone.no:',process.env.PHONE_NUMBER);
+
+        }
+    }
+    catch (err) {
+        console.error('ERROR Publishing To SNS ====>', JSON.stringify(err, null, 2));
+        throw new Error(err.message)
+    }
 
 
 

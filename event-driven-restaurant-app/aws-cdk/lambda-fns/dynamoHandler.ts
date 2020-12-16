@@ -47,7 +47,6 @@ export const handler = async (event: EventBridgeEvent<string, any>, context: Con
                     ":booking": true
                 },
                 ReturnValues: "UPDATED_NEW" // NONE | ALL_OLD | UPDATED_OLD | ALL_NEW | UPDATED_NEW,
-
             };
             await dynamoClient.update(params).promise();
             // adding sns message

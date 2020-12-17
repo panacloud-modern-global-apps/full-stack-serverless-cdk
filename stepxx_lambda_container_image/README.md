@@ -54,3 +54,11 @@ docker push 123456789012.dkr.ecr.us-east-1.amazonaws.com/hello-world:latest
 
 ## Article link
 [Creating Lambda container images](https://docs.aws.amazon.com/lambda/latest/dg/images-create.html)
+
+
+## Advantages 
+
+- Utilize existing container tooling
+- Create image with what you need - faster start up time 
+- Perform local testing with runtime interface emulator 
+- 10 GB package size deployment compare to 50 MB zip deployment

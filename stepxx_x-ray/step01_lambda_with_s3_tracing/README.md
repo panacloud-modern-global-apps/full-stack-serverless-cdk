@@ -48,7 +48,7 @@ In the above code, we imported `aws-xray-sdk-core` and create a variable that us
 - Go to the `Monitoring` tab on you function select `View traces in X-Ray` it will redirect you to X-Ray Traces.
 - Select one of the most recent traces to see detailed trace data resulting from our recent test activity.
 - Here you can see the trace shows additional details about the S3 service since we configured our code to report that information. in this case, an access denied error is being reported
-  ![trace s3 error](/imgs/s3TraceError.png)
+  ![trace s3 error](imgs/s3TraceError.png)
 
 #### In Our case lambda does not have permission to access S3 bucket.
 

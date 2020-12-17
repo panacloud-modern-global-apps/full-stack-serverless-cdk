@@ -148,9 +148,9 @@ We have added three annotations above `userId`, `userName`, and `userCompany` no
 
 You can see more details about each segment or subsegment by clicking on it. in our case, we can see annotations data by clicking on our subsegment i.e `GenerateId`.
 
-![subsegment](imgs/subsegment.png)
+![subsegment](imgs/annotations.png)
 
-We can use these annotations to filter trace data, for example, let's filter to see all traces for a specific userCompany value. to do that, AWS X-Ray service provided us a search bar. In my case I need only those traces whose userCompany value is "panacloud" so I have to write filter expression i.e `annotation.userComapny="panacloud"` on a search bar and hit enter now it will show me only those traces whose userCompany value is "panacloud"
+We can use these annotations to filter trace data, for example, let's filter to see all traces for a specific userCompany value. to do that, AWS X-Ray service provided us a search bar. In my case I need only those traces whose userCompany value is "panacloud" so I have to write filter expression i.e `annotation.userCompany="panacloud"` on a search bar and hit enter now it will show me only those traces whose userCompany value is "panacloud"
 
 #### Notice that we have a button on the left of the search bar which is on `Default` we can create Groups and change Groups from there to see filtered data.
 

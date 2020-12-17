@@ -108,12 +108,8 @@ Create frontend of your website in my case, I created `website` folder in my roo
 
 Now build the project and deploy it on cloudformation
 
+
 ## Step 4
-
-Domain Name System is the phonebook of the internet. The general purpose of a nameserver is to translate domain names to IP addresses. So when you type in `panacloud.com` in your browser, first there will be a request to a DNS server to obtain the site's IP address. Using the Route 53 DNS service from AWS you can configure your domain's DNS records or even buy a new domain there. 
-
-
-## Step 5
 **Note**: If you have other services attached to your domain - like email or subdomains - those will stop working after changing nameservers. So unless you know what you are doing I suggest creating a new domain to play with AWS - you can get a free domain on [freenom.com](https://www.freenom.com/). It is possible to retain all existing services but it requires different configuration.
 
 1. Now after creating a new domain, go back to the AWS route 53 service. On the Hosted zones main page click on your domain (which you’ve just created).
@@ -123,6 +119,8 @@ Domain Name System is the phonebook of the internet. The general purpose of a na
 
 3. On the new tab go to your domain registrar in my case, it's `freenom.com`, So I headed there and from My domains I selected Manage Domain. You have to find an option to set custom nameservers, and provide nameservers for your domain listed in Route 53.
 ![NameserversSettings](imgs/nameserverSetting.png)
+
+After that, my app is available at `panacloud.tk`
 
 
 ## Note

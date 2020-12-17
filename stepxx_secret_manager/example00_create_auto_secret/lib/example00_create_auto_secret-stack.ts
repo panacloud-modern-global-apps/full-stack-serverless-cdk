@@ -9,17 +9,18 @@ export class Example00CreateAutoSecretStack extends cdk.Stack {
 
     // The code that defines your stack goes here
 
-    const role = new iam.Role(this, 'LambdaRole', {
-      assumedBy: new iam.ServicePrincipal('lambda.amazonaws.com'),
-    });
+    // const role = new iam.Role(this, 'LambdaRole', {
+    //   assumedBy: new iam.ServicePrincipal('lambda.amazonaws.com'),
+    // });
+
+
 
     const secret = new secretsmanager.Secret(this, 'Secret');  // SecretsManager generate a new secret value automatically
-    secret.grantRead(role);
 
     const lambdaFn = new lambda.Function(this, `ExampleLambdaAssetFn`, {
       code: lambda.Code.fromInline('exports.handler = function(event, ctx, cb) { console.log("SECRET_KEY", process.env.EXAMPLE_SECRET_KEY); return cb(null, "hi"); }'),
       runtime: lambda.Runtime.NODEJS_12_X,
-      role: role,
+      // role: role,
       environment: {
         EXAMPLE_SECRET_KEY: `${
           secretsmanager.Secret.fromSecretAttributes(this, "ExampleSecretKey", {

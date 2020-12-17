@@ -1,0 +1,14 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 7
+    },
+    "auditLog": "/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/client/amplify/logs/.log-audit/log-audit-amplify.json",
+    "files": [
+        {
+            "date": 1607979496951,
+            "name": "/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/client/amplify/logs/amplify-cli-2020-12-15.log",
+            "hash": "bc9a3f52e144a1e2437cab5ce3e9c004"
+        }
+    ]
+}

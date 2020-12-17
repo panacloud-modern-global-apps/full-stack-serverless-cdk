@@ -1,0 +1,318 @@
+{
+  "version": "7.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "Example04UserpoolWithIdentityPoolStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "Example04UserpoolWithIdentityPoolStack.template.json"
+      },
+      "metadata": {
+        "/Example04UserpoolWithIdentityPoolStack/chat-app-user-pool/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "chatappuserpoolDA57E69E",
+            "trace": [
+              "new UserPool (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/@aws-cdk/aws-cognito/lib/user-pool.ts:734:22)",
+              "new Example04UserpoolWithIdentityPoolStack (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/lib/example04_userpool_with_identity_pool-stack.ts:26:22)",
+              "Object.<anonymous> (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/bin/example04_userpool_with_identity_pool.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1138:30)",
+              "Module.m._compile (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1158:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:986:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:879:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "main (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1138:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1158:10)",
+              "Module.load (internal/modules/cjs/loader.js:986:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:879:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Example04UserpoolWithIdentityPoolStack/UserPoolClient/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UserPoolClient2F5918F7",
+            "trace": [
+              "new UserPoolClient (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/@aws-cdk/aws-cognito/lib/user-pool-client.ts:325:22)",
+              "new Example04UserpoolWithIdentityPoolStack (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/lib/example04_userpool_with_identity_pool-stack.ts:46:28)",
+              "Object.<anonymous> (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/bin/example04_userpool_with_identity_pool.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1138:30)",
+              "Module.m._compile (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1158:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:986:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:879:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "main (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1138:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1158:10)",
+              "Module.load (internal/modules/cjs/loader.js:986:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:879:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Example04UserpoolWithIdentityPoolStack/IdentityPool": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "IdentityPool",
+            "trace": [
+              "new Example04UserpoolWithIdentityPoolStack (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/lib/example04_userpool_with_identity_pool-stack.ts:50:26)",
+              "Object.<anonymous> (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/bin/example04_userpool_with_identity_pool.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1138:30)",
+              "Module.m._compile (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1158:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:986:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:879:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "main (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1138:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1158:10)",
+              "Module.load (internal/modules/cjs/loader.js:986:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:879:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Example04UserpoolWithIdentityPoolStack/CognitoDefaultAuthenticatedRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CognitoDefaultAuthenticatedRoleC5D5C31E",
+            "trace": [
+              "new Role (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/@aws-cdk/aws-iam/lib/role.ts:327:18)",
+              "new Example04UserpoolWithIdentityPoolStack (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/lib/example04_userpool_with_identity_pool-stack.ts:60:18)",
+              "Object.<anonymous> (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/bin/example04_userpool_with_identity_pool.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1138:30)",
+              "Module.m._compile (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1158:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:986:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:879:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "main (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1138:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1158:10)",
+              "Module.load (internal/modules/cjs/loader.js:986:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:879:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Example04UserpoolWithIdentityPoolStack/CognitoDefaultAuthenticatedRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CognitoDefaultAuthenticatedRoleDefaultPolicy4C5EB799",
+            "trace": [
+              "new Policy (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/@aws-cdk/aws-iam/lib/policy.ts:154:22)",
+              "Role.addToPrincipalPolicy (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/@aws-cdk/aws-iam/lib/role.ts:368:28)",
+              "Role.addToPolicy (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/@aws-cdk/aws-iam/lib/role.ts:376:17)",
+              "new Example04UserpoolWithIdentityPoolStack (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/lib/example04_userpool_with_identity_pool-stack.ts:75:10)",
+              "Object.<anonymous> (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/bin/example04_userpool_with_identity_pool.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1138:30)",
+              "Module.m._compile (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1158:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:986:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:879:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "main (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1138:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1158:10)",
+              "Module.load (internal/modules/cjs/loader.js:986:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:879:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Example04UserpoolWithIdentityPoolStack/IdentityPoolRoleAttachment": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "IdentityPoolRoleAttachment",
+            "trace": [
+              "new Example04UserpoolWithIdentityPoolStack (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/lib/example04_userpool_with_identity_pool-stack.ts:87:5)",
+              "Object.<anonymous> (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/bin/example04_userpool_with_identity_pool.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1138:30)",
+              "Module.m._compile (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1158:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:986:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:879:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "main (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1138:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1158:10)",
+              "Module.load (internal/modules/cjs/loader.js:986:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:879:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Example04UserpoolWithIdentityPoolStack/UserPoolId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UserPoolId",
+            "trace": [
+              "new Example04UserpoolWithIdentityPoolStack (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/lib/example04_userpool_with_identity_pool-stack.ts:97:5)",
+              "Object.<anonymous> (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/bin/example04_userpool_with_identity_pool.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1138:30)",
+              "Module.m._compile (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1158:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:986:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:879:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "main (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1138:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1158:10)",
+              "Module.load (internal/modules/cjs/loader.js:986:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:879:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Example04UserpoolWithIdentityPoolStack/IdentityPoolId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "IdentityPoolId",
+            "trace": [
+              "new Example04UserpoolWithIdentityPoolStack (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/lib/example04_userpool_with_identity_pool-stack.ts:101:5)",
+              "Object.<anonymous> (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/bin/example04_userpool_with_identity_pool.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1138:30)",
+              "Module.m._compile (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1158:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:986:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:879:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "main (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1138:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1158:10)",
+              "Module.load (internal/modules/cjs/loader.js:986:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:879:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Example04UserpoolWithIdentityPoolStack/UserPoolClientId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UserPoolClientId",
+            "trace": [
+              "new Example04UserpoolWithIdentityPoolStack (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/lib/example04_userpool_with_identity_pool-stack.ts:105:5)",
+              "Object.<anonymous> (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/bin/example04_userpool_with_identity_pool.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1138:30)",
+              "Module.m._compile (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1158:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:986:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:879:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "main (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1138:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1158:10)",
+              "Module.load (internal/modules/cjs/loader.js:986:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:879:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Example04UserpoolWithIdentityPoolStack/userPoolProviderName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "userPoolProviderName",
+            "trace": [
+              "new Example04UserpoolWithIdentityPoolStack (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/lib/example04_userpool_with_identity_pool-stack.ts:109:5)",
+              "Object.<anonymous> (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/bin/example04_userpool_with_identity_pool.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1138:30)",
+              "Module.m._compile (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1158:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:986:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:879:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "main (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1138:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1158:10)",
+              "Module.load (internal/modules/cjs/loader.js:986:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:879:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Example04UserpoolWithIdentityPoolStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata",
+            "trace": [
+              "new MetadataResource (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/@aws-cdk/core/lib/private/metadata-resource.ts:51:24)",
+              "/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/@aws-cdk/core/lib/private/synthesis.ts:140:5",
+              "visit (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/@aws-cdk/core/lib/private/synthesis.ts:200:5)",
+              "visit (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/@aws-cdk/core/lib/private/synthesis.ts:196:5)",
+              "injectMetadataResources (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/@aws-cdk/core/lib/private/synthesis.ts:131:3)",
+              "Object.synthesize (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/@aws-cdk/core/lib/private/synthesis.ts:18:3)",
+              "App.synth (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/@aws-cdk/core/lib/stage.ts:188:23)",
+              "process.<anonymous> (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/@aws-cdk/core/lib/app.ts:123:45)",
+              "Object.onceWrapper (events.js:422:26)",
+              "process.emit (events.js:315:20)",
+              "process.EventEmitter.emit (domain.js:482:12)",
+              "process.emit (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/source-map-support/source-map-support.js:495:21)",
+              "process.topLevelDomainCallback (domain.js:137:15)"
+            ]
+          }
+        ],
+        "/Example04UserpoolWithIdentityPoolStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable",
+            "trace": [
+              "new MetadataResource (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/@aws-cdk/core/lib/private/metadata-resource.ts:60:27)",
+              "/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/@aws-cdk/core/lib/private/synthesis.ts:140:5",
+              "visit (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/@aws-cdk/core/lib/private/synthesis.ts:200:5)",
+              "visit (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/@aws-cdk/core/lib/private/synthesis.ts:196:5)",
+              "injectMetadataResources (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/@aws-cdk/core/lib/private/synthesis.ts:131:3)",
+              "Object.synthesize (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/@aws-cdk/core/lib/private/synthesis.ts:18:3)",
+              "App.synth (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/@aws-cdk/core/lib/stage.ts:188:23)",
+              "process.<anonymous> (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/@aws-cdk/core/lib/app.ts:123:45)",
+              "Object.onceWrapper (events.js:422:26)",
+              "process.emit (events.js:315:20)",
+              "process.EventEmitter.emit (domain.js:482:12)",
+              "process.emit (/home/uzairbangee/Development/Jamstack/full-stack-serverless-cdk/step19_Cognito/Examplexx_adding_identity_pool/cdk/node_modules/source-map-support/source-map-support.js:495:21)",
+              "process.topLevelDomainCallback (domain.js:137:15)"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

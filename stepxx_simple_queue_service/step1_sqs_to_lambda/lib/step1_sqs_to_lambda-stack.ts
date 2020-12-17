@@ -13,7 +13,7 @@ export class Step1SqsToLambdaStack extends cdk.Stack {
       runtime: lambda.Runtime.NODEJS_12_X,
       code: lambda.Code.fromAsset(path.join(__dirname, "/../", "lambda")),
       handler: "index.handler",
-      reservedConcurrentExecutions: 1, // only have 1 invocation at a time.
+      reservedConcurrentExecutions: 5, // only have 5 invocations at a time, having this <5 has a problem?
     });
 
     const queue = new sqs.Queue(this, "testQueue", {

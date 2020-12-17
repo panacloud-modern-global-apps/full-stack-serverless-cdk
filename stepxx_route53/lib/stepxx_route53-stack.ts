@@ -12,7 +12,6 @@ export class StepxxRoute53Stack extends cdk.Stack {
     super(scope, id, props);
 
 // create a bucket to upload your app files
-
 const websiteBucket = new s3.Bucket(this, "WebsiteBucket", {
   versioned: true,
 });
@@ -41,17 +40,22 @@ new s3deploy.BucketDeployment(this, "DeployWebsite", {
   distribution,
   distributionPaths: ["/*"],
 });
+
+//creating hosted zone for our domain
 const myZone= new route53.PublicHostedZone(this, 'HostedZone', {
   zoneName: 'panacloud.tk',
 
 
 });
+
+// Adding AAAA(ipv6) record
 new route53.AaaaRecord(this, 'Alias', {
   zone: myZone,
   target: route53.RecordTarget.fromAlias(new targets.CloudFrontTarget(distribution)),
 
 });
 
+// Adding A(ipv4) record
 new route53.ARecord(this, 'AliasA', {
   zone: myZone,
   target: route53.RecordTarget.fromAlias(new targets.CloudFrontTarget(distribution)),

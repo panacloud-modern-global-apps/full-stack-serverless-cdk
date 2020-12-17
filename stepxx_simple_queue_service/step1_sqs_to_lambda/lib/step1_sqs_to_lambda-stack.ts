@@ -11,8 +11,9 @@ export class Step1SqsToLambdaStack extends cdk.Stack {
 
     const sqsLambda = new lambda.Function(this, "sqsLambda", {
       runtime: lambda.Runtime.NODEJS_12_X,
-      code: lambda.Code.fromAsset(path.join(__dirname,'/../', "lambda")),
+      code: lambda.Code.fromAsset(path.join(__dirname, "/../", "lambda")),
       handler: "index.handler",
+      reservedConcurrentExecutions: 1, // only have 1 invocation at a time.
     });
 
     const queue = new sqs.Queue(this, "testQueue", {

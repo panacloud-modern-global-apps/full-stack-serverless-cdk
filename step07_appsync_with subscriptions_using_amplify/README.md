@@ -65,6 +65,7 @@ export default awsmobile;
 ```
 You will have to enter all these parameters to configure Amplify with your Appsync.
 
+NOTE: YOU CAN SKIP STEPS 3, 4 and 5, BUT IN THIS CASE YOU WOULD HAVE TO MAKE  "aws-exports.js" FILE MANUALLY AND YOU WOULD NOT BE ABLE TO RUN "amplify add codegen --apiId ENTER_YOUR_API_ID", THEREFORE YOU WOULD HAVE TO DEFINE YOUR QUERIES, MUTATIONS AND SUBSCRIPTIONS MANUALLY (AMPLIFY WOULD NOT CREATE THEM FOR YOU)
 
 ### Step 6: Create a client to pass the Amplify configuration to all the pages and components in your gatsby project.
 

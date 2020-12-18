@@ -27,7 +27,7 @@ Grafana which is a multi-platform open source analytics and interactive visualiz
     npm i @aws-cdk/aws-lambda @aws-cdk/aws-apigateway @aws-cdk/aws-timestream aws-sdk
 ```
 
-## step 2
+## Step 2
 
 - Create Timestream DB, TS Table, Lambda and API for Lambda integration, here's the code
 
@@ -59,7 +59,7 @@ const api = new apigateway.RestApi(this, 'TSApi', {
 });
 ```
 
-## step 3
+## Step 3
 
 make a folder **lambda-fns** in it.
 
@@ -89,7 +89,7 @@ writeClient = new AWS.TimestreamWrite({
 [link for SDK clinet](https://docs.aws.amazon.com/timestream/latest/developerguide/getting-started.node-js.code-sample.create-a-client-for-crud-operations-and-for-writing-data-into-timestream.html)
 
 
-## step 4 Installing Grafana
+## Step 4 Installing Grafana
 
 Link for installing Grafana [grafana](https://grafana.com/get)
 
@@ -105,7 +105,7 @@ for timestream plugin
 grafana-cli plugins install grafana-timestream-datasource
 ```
 
-## step 5 Visualizing with Grafana
+## Step 5 Visualizing with Grafana
 
 Now we can start to visualize the data we have created in Timestream
 

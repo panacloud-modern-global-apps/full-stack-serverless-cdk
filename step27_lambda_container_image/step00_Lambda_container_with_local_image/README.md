@@ -70,7 +70,7 @@ The Dockerfile is adding the source code (app.js) and the files describing the p
 I use the [Docker CLI](https://docs.docker.com/engine/reference/commandline/cli/) to build the random-letter container image locally
 
 ```bash
-$ docker build -t random-word.
+$ docker build -t random-word .
 ```
 
 ## Step 5

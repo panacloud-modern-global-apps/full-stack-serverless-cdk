@@ -59,6 +59,38 @@ const api = new apigateway.RestApi(this, 'TSApi', {
 });
 ```
 
+## Step 4
+
+Giving lambda acces to write records in TSTable, we need to make an iam policy to give lambda the access.
+
+```typescript
+const policy = new iam.PolicyStatement();
+policy.addActions('timestream:DescribeEndpoints', 'timestream:WriteRecords');
+policy.addResources('*');
+```
+
+Here I've made the policy and added actions of 'timestream:WriteRecords', 'timestream:WriteRecords'
+
+- DescribeEndpoints returns a list of available endpoints to make Timestream API calls against. This API is available through both Write and Query.
+
+- WriteRecords write your records to the TSTable.
+
+You can also give,
+
+```typescript
+policy.addActions('timestream:*');
+```
+
+By 'timestream:\*' you add all actions on this resource.
+
+Now,
+
+```typescript
+TSlambda.addToRolePolicy(policy);
+```
+
+add the poicy to the lambda to give the rights.
+
 ## Step 3
 
 make a folder **lambda-fns** in it.
@@ -67,7 +99,7 @@ make a folder **lambda-fns** in it.
 
 - Make simple Node.js Lambda function for putting constant data into Timestream Table Each time it is invoked
 
--Now whenever you invoke the Lambda by apigateway lambda integration it'll add the constant data in lambda into the TS Table
+-Now whenever you invoke the Lambda by apigateway lambda integration, it'll add the constant data from lambda into the TS Table
 
 ### NOTE
 
@@ -86,8 +118,8 @@ writeClient = new AWS.TimestreamWrite({
   },
 });
 ```
-[link for SDK clinet](https://docs.aws.amazon.com/timestream/latest/developerguide/getting-started.node-js.code-sample.create-a-client-for-crud-operations-and-for-writing-data-into-timestream.html)
 
+[link for SDK clinet](https://docs.aws.amazon.com/timestream/latest/developerguide/getting-started.node-js.code-sample.create-a-client-for-crud-operations-and-for-writing-data-into-timestream.html)
 
 ## Step 4 Installing Grafana
 
@@ -114,7 +146,6 @@ sudo service grafana-server start
 ```
 
 go to localhost:3000 and login as username: admin , password: admin, and make the credentials as per your requirement
-
 
 Select Add Data Source -> Timstream -> access & Secret key , add your credentials , select your DB and DBTable and start visualising with your grafana service.
 

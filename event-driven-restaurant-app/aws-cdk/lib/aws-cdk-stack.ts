@@ -9,6 +9,7 @@ import * as iam from '@aws-cdk/aws-iam';
 import * as snsSubscriptions from '@aws-cdk/aws-sns-subscriptions';
 import * as stepFunctions from '@aws-cdk/aws-stepfunctions';
 import * as stepFunctionsTasks from '@aws-cdk/aws-stepfunctions-tasks';
+import * as cognito from "@aws-cdk/aws-cognito"
 import { requestTemplate, responseTemplate, EVENT_SOURCE } from '../utils/appsync-request-response';
 
 export class AwsCdkStack extends cdk.Stack {
@@ -17,16 +18,37 @@ export class AwsCdkStack extends cdk.Stack {
 
     // The code that defines your stack goes here
 
+    //////////////////////// creating User Pool /////////////////////////////////
+    const userPool = new cognito.UserPool(this, "userPool-Amplify", {
+      selfSignUpEnabled: true,
+      accountRecovery: cognito.AccountRecovery.EMAIL_ONLY,
+      userVerification: {
+        emailStyle: cognito.VerificationEmailStyle.CODE,
+      },
+      autoVerify: { email: true, },
+      standardAttributes: {
+        email: {
+          required: true,
+          mutable: true,
+        },
+        phoneNumber: {
+          required: true,
+          mutable: true
+        }
+      },
+    })
+    const userPoolClient = new cognito.UserPoolClient(this, "userPoolClient-Amplify", {
+      userPool,
+    })
+
     // Appsync API
     const api = new appsync.GraphqlApi(this, "Api", {
       name: "appsyncEventbridgeAPI",
       schema: appsync.Schema.fromAsset("utils/schema.gql"),
       authorizationConfig: {
         defaultAuthorization: {
-          authorizationType: appsync.AuthorizationType.API_KEY,
-          apiKeyConfig: {
-            expires: cdk.Expiration.after(cdk.Duration.days(365)),
-          },
+          userPoolConfig: { userPool },
+          authorizationType: appsync.AuthorizationType.USER_POOL,
         },
       },
       logConfig: { fieldLogLevel: appsync.FieldLogLevel.ALL },
@@ -35,6 +57,7 @@ export class AwsCdkStack extends cdk.Stack {
 
     // Create new DynamoDB Table for Todos
     const RestaurantAppTable = new dynamodb.Table(this, 'RestaurantAppTable', {
+      billingMode: dynamodb.BillingMode.PAY_PER_REQUEST,
       partitionKey: {
         name: 'id',
         type: dynamodb.AttributeType.STRING,
@@ -46,6 +69,12 @@ export class AwsCdkStack extends cdk.Stack {
 
     // DynamoDB as a Datasource for the Graphql API.
     const restaurantTimeSlotsDS = api.addDynamoDbDataSource('RestaurantTimeSlots', RestaurantAppTable);
+
+    // No Datasource for the Graphql API
+    const appsyncNoDS = api.addNoneDataSource("noDataSource", {
+      name: "noDataSource",
+      description: "Does not save incoming data anywhere",
+    });
 
     // HTTP as Datasource for the Graphql API
     const httpEventTriggerDS = api.addHttpDataSource(
@@ -72,12 +101,15 @@ export class AwsCdkStack extends cdk.Stack {
       responseMappingTemplate: appsync.MappingTemplate.dynamoDbResultList(),
     });
     /* Mutation */
-    const mutations = ["addTimeSlot", "deleteTimeSlot", "bookTimeSlot", "cancelBooking", "cancelAllBooking"]
+    const mutations = ["addTimeSlot", "deleteTimeSlot", "bookTimeSlot", "addBookingRequest", "deleteBookingRequest", "cancelBooking", "resetAllBookings"]
 
     mutations.forEach((mut) => {
       let details = `\\\"id\\\": \\\"$ctx.args.id\\\"`;
+
       if (mut === 'addTimeSlot') {
-        details = `\\\"to\\\":\\\"$ctx.args.timeSlot.to\\\", \\\"from\\\":\\\"$ctx.args.timeSlot.from\\\", \\\"isBooked\\\":$ctx.args.timeSlot.isBooked`
+        details = `\\\"from\\\":\\\"$ctx.args.timeSlot.from\\\", \\\"to\\\":\\\"$ctx.args.timeSlot.to\\\"`
+      } else if (mut === "addBookingRequest") {
+        details = `\\\"id\\\":\\\"$ctx.args.id\\\", \\\"userName\\\":\\\"$ctx.args.userName\\\"`
       }
 
       httpEventTriggerDS.createResolver({
@@ -86,6 +118,18 @@ export class AwsCdkStack extends cdk.Stack {
         requestMappingTemplate: appsync.MappingTemplate.fromString(requestTemplate(details, mut)),
         responseMappingTemplate: appsync.MappingTemplate.fromString(responseTemplate()),
       });
+    });
+    /* Mutation also for Subscription */
+    appsyncNoDS.createResolver({
+      typeName: "Mutation",
+      fieldName: "generateAction",
+      requestMappingTemplate: appsync.MappingTemplate.fromString(`{
+        "version" : "2017-02-28",
+        "payload": $util.toJson($context.arguments)
+        }`),
+      responseMappingTemplate: appsync.MappingTemplate.fromString(
+        "$util.toJson($context.result)"
+      ),
     });
 
     //////////////////////// creating SNS topic /////////////////////////////////
@@ -184,6 +228,14 @@ export class AwsCdkStack extends cdk.Stack {
     new cdk.CfnOutput(this, 'Graphql_API_Key', {
       value: api.apiKey || "api key not found"
     });
+
+    new cdk.CfnOutput(this, "UserPoolId", {
+      value: userPool.userPoolId,
+    })
+
+    new cdk.CfnOutput(this, "UserPoolClientId", {
+      value: userPoolClient.userPoolClientId,
+    })
 
   }
 }

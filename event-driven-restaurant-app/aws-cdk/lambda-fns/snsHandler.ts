@@ -7,6 +7,10 @@ const sns = new SNS();
 export const handler = async (event: PayloadType, context: Context) => {
     console.log(JSON.stringify(event, null, 2));
 
+    if (event.operationSuccessful) {
+        return { message: "operation not successful" }
+    }
+
     try {
         if (event.SnsMessage) {
             // sending message to TOPIC ARN
@@ -21,7 +25,7 @@ export const handler = async (event: PayloadType, context: Context) => {
                 Message: event.SnsMessage,
                 PhoneNumber: process.env.PHONE_NUMBER,
             }).promise()
-            console.log('message sent to Phone.no:',process.env.PHONE_NUMBER);
+            console.log('message sent to Phone.no:', process.env.PHONE_NUMBER);
 
         }
     }
@@ -30,6 +34,6 @@ export const handler = async (event: PayloadType, context: Context) => {
         throw new Error(err.message)
     }
 
-
+    return { message: "operation successful" }
 
 }

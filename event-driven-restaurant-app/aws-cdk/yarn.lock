@@ -235,7 +235,7 @@
     "@aws-cdk/core" "1.78.0"
     constructs "^3.2.0"
 
-"@aws-cdk/aws-cognito@1.78.0":
+"@aws-cdk/aws-cognito@1.78.0", "@aws-cdk/aws-cognito@^1.78.0":
   version "1.78.0"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-cognito/-/aws-cognito-1.78.0.tgz#da72351a0af6d8c7ab0946609929b361ca8df15b"
   integrity sha512-PcBR1tlFtjqw4MPxI980yBX2xVH5YMGfdLlLZ2JnQ9YdbsVNyLEV1rPrQEypSRplPbqwEuioBI8Q9FMnNY2TGw==

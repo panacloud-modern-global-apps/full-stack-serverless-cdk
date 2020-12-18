@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "@aws-cdk/aws-appsync": "^1.78.0",
+    "@aws-cdk/aws-cognito": "^1.78.0",
     "@aws-cdk/aws-dynamodb": "^1.78.0",
     "@aws-cdk/aws-events": "^1.78.0",
     "@aws-cdk/aws-events-targets": "^1.78.0",

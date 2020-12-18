@@ -21,7 +21,7 @@ export const handler = async (event: EventBridgeEvent<string, any>, context: Con
             // console.log("detail===>", JSON.stringify(event.detail, null, 2));
             const params = {
                 TableName: TABLE_NAME,
-                Item: { id: randomBytes(16).toString("hex"), ...event.detail },
+                Item: { id: randomBytes(16).toString("hex"), ...event.detail, isBooked: false },
             }
             await dynamoClient.put(params).promise();
         }
@@ -38,13 +38,59 @@ export const handler = async (event: EventBridgeEvent<string, any>, context: Con
 
         //////////////  booking time slot /////////////////////////
         else if (event["detail-type"] === "bookTimeSlot") {
+            // geting the time slot by id
+            const data = await dynamoClient.get({
+                TableName: TABLE_NAME,
+                Key: { id: event.detail.id },
+                AttributesToGet: ["isBookingRequested", "bookingRequestBy"]
+            }).promise();
+
+            // if the time slot has a booking request than booked for that user
+            if (data.Item?.isBookingRequested) {
+                const params = {
+                    TableName: TABLE_NAME,
+                    Key: { "id": event.detail.id },
+                    UpdateExpression: "set isBooked = :_isBooked, bookedBy = :_bookedBy, isBookingRequested = :_isBookingRequested, bookingRequestBy = :_bookingRequestBy",
+                    ExpressionAttributeValues: {
+                        ":_isBooked": true,
+                        ":_bookedBy": data.Item?.bookingRequestBy, // userName
+                        ":_isBookingRequested": false,
+                        ":_bookingRequestBy": ""
+                    },
+                    ReturnValues: "UPDATED_NEW" // NONE | ALL_OLD | UPDATED_OLD | ALL_NEW | UPDATED_NEW,
+                };
+                await dynamoClient.update(params).promise();
+                // adding sns message
+                returningPayload.SnsMessage = 'Request of booking timeSlot';
+            }
+        }
+
+        //////////////  adding booking time slot request /////////////////////////
+        else if (event["detail-type"] === "addBookingRequest") {
             const params = {
                 TableName: TABLE_NAME,
                 Key: { "id": event.detail.id },
-                UpdateExpression: "set #isBooked = :booking",
-                ExpressionAttributeNames: { '#isBooked': 'isBooked' },
+                UpdateExpression: "set isBookingRequested = :booleanValue, bookingRequestBy = :userName",
                 ExpressionAttributeValues: {
-                    ":booking": true
+                    ":booleanValue": true,
+                    ":userName": event.detail.userName
+                },
+                ReturnValues: "UPDATED_NEW" // NONE | ALL_OLD | UPDATED_OLD | ALL_NEW | UPDATED_NEW,
+            };
+            await dynamoClient.update(params).promise();
+            // adding sns message
+            returningPayload.SnsMessage = 'Request of booking timeSlot';
+        }
+
+        //////////////  deleting booking time slot request /////////////////////////
+        else if (event["detail-type"] === "deleteBookingRequest") {
+            const params = {
+                TableName: TABLE_NAME,
+                Key: { "id": event.detail.id },
+                UpdateExpression: "set isBookingRequested = :booleanValue, bookingRequestBy = :userName",
+                ExpressionAttributeValues: {
+                    ":booleanValue": false,
+                    ":userName": ''
                 },
                 ReturnValues: "UPDATED_NEW" // NONE | ALL_OLD | UPDATED_OLD | ALL_NEW | UPDATED_NEW,
             };
@@ -58,11 +104,12 @@ export const handler = async (event: EventBridgeEvent<string, any>, context: Con
             const params = {
                 TableName: TABLE_NAME,
                 Key: { "id": event.detail.id },
-                UpdateExpression: "set #isBooked = :booking",
-                ExpressionAttributeNames: { '#isBooked': 'isBooked' },
-                ExpressionAttributeValues: { ":booking": false },
+                UpdateExpression: "set isBooked = :_isBooked, bookedBy = :_bookedBy",
+                ExpressionAttributeValues: {
+                    ":_isBooked": false,
+                    ":_bookedBy": "",
+                },
                 ReturnValues: "UPDATED_NEW" // NONE | ALL_OLD | UPDATED_OLD | ALL_NEW | UPDATED_NEW,
-
             };
             await dynamoClient.update(params).promise();
             // adding sns message
@@ -70,7 +117,7 @@ export const handler = async (event: EventBridgeEvent<string, any>, context: Con
         }
 
         //////////////  canceling all booked time slots /////////////////////////
-        else if (event["detail-type"] === "cancelAllBooking") {
+        else if (event["detail-type"] === "resetAllBookings") {
 
             const data = await dynamoClient.scan({ TableName: TABLE_NAME }).promise()
 
@@ -79,15 +126,20 @@ export const handler = async (event: EventBridgeEvent<string, any>, context: Con
                 const params = {
                     TableName: TABLE_NAME,
                     Key: { "id": id },
-                    UpdateExpression: "set #isBooked = :booking",
-                    ExpressionAttributeNames: { '#isBooked': 'isBooked' },
-                    ExpressionAttributeValues: { ":booking": false },
+                    UpdateExpression: "set isBooked = :_isBooked, bookedBy = :_bookedBy, isBookingRequested = :_isBookingRequested, bookingRequestBy = :_bookingRequestBy",
+                    ExpressionAttributeValues: {
+                        ":_isBooked": false,
+                        ":_bookedBy": "",
+                        ":_isBookingRequested": false,
+                        ":_bookingRequestBy": ""
+                    },
                     ReturnValues: "NONE" // NONE | ALL_OLD | UPDATED_OLD | ALL_NEW | UPDATED_NEW,
                 };
                 await dynamoClient.update(params).promise();
             })
         }
 
+        //////////////////////////////////  Returning Final Response ///////////////////////////////////////
         return returningPayload;
 
     } catch (error) {

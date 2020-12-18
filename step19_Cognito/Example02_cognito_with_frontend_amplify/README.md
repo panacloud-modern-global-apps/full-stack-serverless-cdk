@@ -1,6 +1,8 @@
 # Authentication with Amplify
 
-The Amplify Framework uses Amazon Cognito as the main authentication provider. Amazon Cognito is a robust user directory service that handles user registration, authentication, account recovery & other operations. In this tutorial, you’ll learn how to add authentication to your application using Amazon Cognito and username/password login.
+The Amplify Framework uses Amazon Cognito as the main authentication provider. Amazon Cognito is a robust user directory service that handles user registration, authentication, account recovery & other operations. 
+
+Amplify makes it very easy to use your user pool that you defined in your cdk stack.
 
 
 There are two ways to add authentication capabilities to your application.

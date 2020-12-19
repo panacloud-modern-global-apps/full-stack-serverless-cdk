@@ -6,6 +6,9 @@ export const getTimeSlots = /* GraphQL */ `
       from
       to
       isBooked
+      isBookingRequested
+      bookingRequestBy
+      bookedBy
     }
   }
 `;

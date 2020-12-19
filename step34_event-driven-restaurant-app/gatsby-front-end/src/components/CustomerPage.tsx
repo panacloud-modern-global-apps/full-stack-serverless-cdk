@@ -10,6 +10,9 @@ interface TimeSlot {
     from: string
     to: string
     isBooked: boolean
+    isBookingRequested: boolean
+    bookedBy: string
+    bookingRequestBy: string
 }
 interface incomingData {
     data: {
@@ -22,22 +25,25 @@ type Action = "ACCEPT_BOOKING" | "REJECT_BOOKING" | "REQUEST_BOOKING"
 
 const CustomerPage: FC<{ user: CognitoUser }> = ({ user }) => {
     const [timeSlots, setTimeSlots] = useState<TimeSlot[]>([])
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
     const subscription = API.graphql(graphqlOperation(onGenerateAction)) as any;
 
+    console.log(timeSlots);
+
     const getAllTimeSlots = async () => {
+        setLoading(true);
         try {
             const data = await API.graphql({ query: getTimeSlots, }) as incomingData
             setTimeSlots(data.data.getTimeSlots);
             setLoading(false);
-        } catch (e) { console.log("ERROR in get time slot querry", e) }
+        } catch (e) { console.log("ERROR in get time slot querry", e); setLoading(false); }
     }
 
     const handleGenerateAction = async (action: Action, timeSlotId: string) => {
         try {
             const data = await API.graphql({
                 query: generateAction,
-                variables: { action, timeSlotId, userName: user.username },
+                variables: { timeSlotId, userName: user.username, action },
             })
         } catch (e) { console.log("ERROR in generate action mutation", e) }
     }
@@ -48,6 +54,7 @@ const CustomerPage: FC<{ user: CognitoUser }> = ({ user }) => {
                 query: addBookingRequest,
                 variables: { id, userName: user.username },
             })
+            getAllTimeSlots();
             handleGenerateAction("REQUEST_BOOKING", id);
         } catch (e) { console.log("ERROR in addBookingRequest mutation", e) }
     }
@@ -56,6 +63,7 @@ const CustomerPage: FC<{ user: CognitoUser }> = ({ user }) => {
         subscription.subscribe({
             next: (status) => {   // when mutation will run the next will trigger
                 console.log("New SUBSCRIPTION ==> ", status.value.data);
+                getAllTimeSlots();
             },
         })
     }
@@ -77,12 +85,28 @@ const CustomerPage: FC<{ user: CognitoUser }> = ({ user }) => {
                         <span style={{ background: `${timeSlot.isBooked ? "red" : "green"}`, color: 'white' }} >
                             {timeSlot.from} - {timeSlot.to}
                         </span>
-
-                        <button
-                            onClick={() => { handleBookingRequest(timeSlot.id) }}
-                        >
-                            Book Time Slot
-                        </button>
+                        {
+                            !timeSlot.isBooked ?
+                            (timeSlot && timeSlot.isBookingRequested
+                            ?
+                            <button
+                                disabled={true}
+                            >
+                                Already Requested
+                            </button>
+                            :
+                            <button
+                                onClick={() => { handleBookingRequest(timeSlot.id) }}
+                            >
+                                Book Time Slot
+                            </button>)
+                            :
+                            <button
+                                disabled={true}
+                            >
+                                Booked
+                            </button>
+                        }
                     </div>
                 ))
             }

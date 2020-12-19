@@ -41,6 +41,11 @@ export class AwsCdkStack extends cdk.Stack {
       userPool,
     })
 
+    new cognito.CfnUserPoolGroup(this, "AdminsGroup", {
+      groupName: 'admins',
+      userPoolId: userPool.userPoolId,
+    });
+
     // Appsync API
     const api = new appsync.GraphqlApi(this, "Api", {
       name: "appsyncEventbridgeAPI",
@@ -100,6 +105,7 @@ export class AwsCdkStack extends cdk.Stack {
       requestMappingTemplate: appsync.MappingTemplate.dynamoDbScanTable(),
       responseMappingTemplate: appsync.MappingTemplate.dynamoDbResultList(),
     });
+
     /* Mutation */
     const mutations = ["addTimeSlot", "deleteTimeSlot", "bookTimeSlot", "addBookingRequest", "deleteBookingRequest", "cancelBooking", "resetAllBookings"]
 

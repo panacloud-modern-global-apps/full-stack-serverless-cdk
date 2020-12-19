@@ -48,7 +48,7 @@ export class Example03GoogleLoginCognitoStack extends cdk.Stack {
 
     const domain = userPool.addDomain("domain", {
       cognitoDomain: {
-        domainPrefix: "eru-test-pool",
+        domainPrefix: "DOMAIN-PREFIX",
       },
     });
 
@@ -64,7 +64,6 @@ export class Example03GoogleLoginCognitoStack extends cdk.Stack {
 
     new cdk.CfnOutput(this, "domain", {
       value: domain.domainName,
-      exportName: "domain",
     });
   }
 }

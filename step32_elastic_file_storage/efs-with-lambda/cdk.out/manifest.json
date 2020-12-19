@@ -1,0 +1,1378 @@
+{
+  "version": "7.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "StepEfsWithLambdaStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "StepEfsWithLambdaStack.template.json"
+      },
+      "metadata": {
+        "/StepEfsWithLambdaStack": [
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.32bfdff99c6e358f7f5e923e80d64fa6d3d90d187a3c9ebb45f2d6eaa4a803e6",
+              "id": "32bfdff99c6e358f7f5e923e80d64fa6d3d90d187a3c9ebb45f2d6eaa4a803e6",
+              "packaging": "zip",
+              "sourceHash": "32bfdff99c6e358f7f5e923e80d64fa6d3d90d187a3c9ebb45f2d6eaa4a803e6",
+              "s3BucketParameter": "AssetParameters32bfdff99c6e358f7f5e923e80d64fa6d3d90d187a3c9ebb45f2d6eaa4a803e6S3BucketB3699850",
+              "s3KeyParameter": "AssetParameters32bfdff99c6e358f7f5e923e80d64fa6d3d90d187a3c9ebb45f2d6eaa4a803e6S3VersionKey65064AB7",
+              "artifactHashParameter": "AssetParameters32bfdff99c6e358f7f5e923e80d64fa6d3d90d187a3c9ebb45f2d6eaa4a803e6ArtifactHashF2B8B14C"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/core/lib/construct-compat.ts:431:92)",
+              "LegacyStackSynthesizer.doAddFileAsset (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:163:23)",
+              "LegacyStackSynthesizer.addFileAsset (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:74:19)",
+              "StepEfsWithLambdaStack.addFileAsset (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/core/lib/stack.ts:651:29)",
+              "LegacyStackSynthesizer.addFileAsset (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:78:25)",
+              "new Asset (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:147:40)",
+              "AssetCode.bind (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-lambda/lib/code.ts:247:20)",
+              "new Function (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-lambda/lib/function.ts:564:29)",
+              "new StepEfsWithLambdaStack (/home/tanzeeltasleem/step-efs-with-lambda/lib/step-efs-with-lambda-stack.ts:33:23)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/bin/step-efs-with-lambda.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Module.m._compile (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "main (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "/usr/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/StepEfsWithLambdaStack/Vpc/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Vpc8378EB38",
+            "trace": [
+              "new Vpc (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1190:21)",
+              "new StepEfsWithLambdaStack (/home/tanzeeltasleem/step-efs-with-lambda/lib/step-efs-with-lambda-stack.ts:12:19)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/bin/step-efs-with-lambda.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Module.m._compile (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "main (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "/usr/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/StepEfsWithLambdaStack/Vpc/PublicSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPublicSubnet1Subnet5C2D37C4",
+            "trace": [
+              "new Subnet (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1524:20)",
+              "new PublicSubnet (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1739:5)",
+              "/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1370:32",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1352:28)",
+              "Vpc.createSubnets (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1347:12)",
+              "new Vpc (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1219:10)",
+              "new StepEfsWithLambdaStack (/home/tanzeeltasleem/step-efs-with-lambda/lib/step-efs-with-lambda-stack.ts:12:19)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/bin/step-efs-with-lambda.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Module.m._compile (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "main (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "/usr/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/StepEfsWithLambdaStack/Vpc/PublicSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPublicSubnet1RouteTable6C95E38E",
+            "trace": [
+              "new Subnet (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1542:19)",
+              "new PublicSubnet (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1739:5)",
+              "/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1370:32",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1352:28)",
+              "Vpc.createSubnets (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1347:12)",
+              "new Vpc (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1219:10)",
+              "new StepEfsWithLambdaStack (/home/tanzeeltasleem/step-efs-with-lambda/lib/step-efs-with-lambda-stack.ts:12:19)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/bin/step-efs-with-lambda.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Module.m._compile (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "main (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "/usr/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/StepEfsWithLambdaStack/Vpc/PublicSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPublicSubnet1RouteTableAssociation97140677",
+            "trace": [
+              "new Subnet (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1548:5)",
+              "new PublicSubnet (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1739:5)",
+              "/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1370:32",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1352:28)",
+              "Vpc.createSubnets (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1347:12)",
+              "new Vpc (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1219:10)",
+              "new StepEfsWithLambdaStack (/home/tanzeeltasleem/step-efs-with-lambda/lib/step-efs-with-lambda-stack.ts:12:19)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/bin/step-efs-with-lambda.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Module.m._compile (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "main (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "/usr/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/StepEfsWithLambdaStack/Vpc/PublicSubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPublicSubnet1DefaultRoute3DA9E72A",
+            "trace": [
+              "PublicSubnet.addDefaultInternetRoute (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1564:19)",
+              "/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1238:22",
+              "Array.forEach (<anonymous>)",
+              "new Vpc (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1237:46)",
+              "new StepEfsWithLambdaStack (/home/tanzeeltasleem/step-efs-with-lambda/lib/step-efs-with-lambda-stack.ts:12:19)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/bin/step-efs-with-lambda.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Module.m._compile (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "main (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "/usr/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/StepEfsWithLambdaStack/Vpc/PublicSubnet1/EIP": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPublicSubnet1EIPD7E02669",
+            "trace": [
+              "PublicSubnet.addNatGateway (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1751:21)",
+              "NatGatewayProvider.configureNat (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/nat.ts:173:27)",
+              "Vpc.createNatGateways (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1322:14)",
+              "new Vpc (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1244:14)",
+              "new StepEfsWithLambdaStack (/home/tanzeeltasleem/step-efs-with-lambda/lib/step-efs-with-lambda-stack.ts:12:19)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/bin/step-efs-with-lambda.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Module.m._compile (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "main (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "/usr/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/StepEfsWithLambdaStack/Vpc/PublicSubnet1/NATGateway": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPublicSubnet1NATGateway4D7517AA",
+            "trace": [
+              "PublicSubnet.addNatGateway (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1749:17)",
+              "NatGatewayProvider.configureNat (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/nat.ts:173:27)",
+              "Vpc.createNatGateways (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1322:14)",
+              "new Vpc (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1244:14)",
+              "new StepEfsWithLambdaStack (/home/tanzeeltasleem/step-efs-with-lambda/lib/step-efs-with-lambda-stack.ts:12:19)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/bin/step-efs-with-lambda.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Module.m._compile (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "main (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "/usr/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/StepEfsWithLambdaStack/Vpc/PublicSubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPublicSubnet2Subnet691E08A3",
+            "trace": [
+              "new Subnet (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1524:20)",
+              "new PublicSubnet (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1739:5)",
+              "/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1370:32",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1352:28)",
+              "Vpc.createSubnets (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1347:12)",
+              "new Vpc (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1219:10)",
+              "new StepEfsWithLambdaStack (/home/tanzeeltasleem/step-efs-with-lambda/lib/step-efs-with-lambda-stack.ts:12:19)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/bin/step-efs-with-lambda.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Module.m._compile (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "main (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "/usr/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/StepEfsWithLambdaStack/Vpc/PublicSubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPublicSubnet2RouteTable94F7E489",
+            "trace": [
+              "new Subnet (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1542:19)",
+              "new PublicSubnet (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1739:5)",
+              "/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1370:32",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1352:28)",
+              "Vpc.createSubnets (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1347:12)",
+              "new Vpc (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1219:10)",
+              "new StepEfsWithLambdaStack (/home/tanzeeltasleem/step-efs-with-lambda/lib/step-efs-with-lambda-stack.ts:12:19)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/bin/step-efs-with-lambda.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Module.m._compile (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "main (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "/usr/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/StepEfsWithLambdaStack/Vpc/PublicSubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPublicSubnet2RouteTableAssociationDD5762D8",
+            "trace": [
+              "new Subnet (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1548:5)",
+              "new PublicSubnet (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1739:5)",
+              "/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1370:32",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1352:28)",
+              "Vpc.createSubnets (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1347:12)",
+              "new Vpc (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1219:10)",
+              "new StepEfsWithLambdaStack (/home/tanzeeltasleem/step-efs-with-lambda/lib/step-efs-with-lambda-stack.ts:12:19)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/bin/step-efs-with-lambda.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Module.m._compile (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "main (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "/usr/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/StepEfsWithLambdaStack/Vpc/PublicSubnet2/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPublicSubnet2DefaultRoute97F91067",
+            "trace": [
+              "PublicSubnet.addDefaultInternetRoute (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1564:19)",
+              "/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1238:22",
+              "Array.forEach (<anonymous>)",
+              "new Vpc (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1237:46)",
+              "new StepEfsWithLambdaStack (/home/tanzeeltasleem/step-efs-with-lambda/lib/step-efs-with-lambda-stack.ts:12:19)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/bin/step-efs-with-lambda.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Module.m._compile (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "main (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "/usr/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/StepEfsWithLambdaStack/Vpc/PublicSubnet2/EIP": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPublicSubnet2EIP3C605A87",
+            "trace": [
+              "PublicSubnet.addNatGateway (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1751:21)",
+              "NatGatewayProvider.configureNat (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/nat.ts:173:27)",
+              "Vpc.createNatGateways (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1322:14)",
+              "new Vpc (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1244:14)",
+              "new StepEfsWithLambdaStack (/home/tanzeeltasleem/step-efs-with-lambda/lib/step-efs-with-lambda-stack.ts:12:19)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/bin/step-efs-with-lambda.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Module.m._compile (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "main (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "/usr/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/StepEfsWithLambdaStack/Vpc/PublicSubnet2/NATGateway": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPublicSubnet2NATGateway9182C01D",
+            "trace": [
+              "PublicSubnet.addNatGateway (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1749:17)",
+              "NatGatewayProvider.configureNat (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/nat.ts:173:27)",
+              "Vpc.createNatGateways (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1322:14)",
+              "new Vpc (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1244:14)",
+              "new StepEfsWithLambdaStack (/home/tanzeeltasleem/step-efs-with-lambda/lib/step-efs-with-lambda-stack.ts:12:19)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/bin/step-efs-with-lambda.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Module.m._compile (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "main (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "/usr/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/StepEfsWithLambdaStack/Vpc/PrivateSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPrivateSubnet1Subnet536B997A",
+            "trace": [
+              "new Subnet (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1524:20)",
+              "new PrivateSubnet (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1777:5)",
+              "/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1375:33",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1352:28)",
+              "Vpc.createSubnets (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1347:12)",
+              "new Vpc (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1219:10)",
+              "new StepEfsWithLambdaStack (/home/tanzeeltasleem/step-efs-with-lambda/lib/step-efs-with-lambda-stack.ts:12:19)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/bin/step-efs-with-lambda.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Module.m._compile (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "main (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "/usr/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/StepEfsWithLambdaStack/Vpc/PrivateSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPrivateSubnet1RouteTableB2C5B500",
+            "trace": [
+              "new Subnet (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1542:19)",
+              "new PrivateSubnet (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1777:5)",
+              "/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1375:33",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1352:28)",
+              "Vpc.createSubnets (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1347:12)",
+              "new Vpc (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1219:10)",
+              "new StepEfsWithLambdaStack (/home/tanzeeltasleem/step-efs-with-lambda/lib/step-efs-with-lambda-stack.ts:12:19)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/bin/step-efs-with-lambda.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Module.m._compile (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "main (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "/usr/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/StepEfsWithLambdaStack/Vpc/PrivateSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPrivateSubnet1RouteTableAssociation70C59FA6",
+            "trace": [
+              "new Subnet (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1548:5)",
+              "new PrivateSubnet (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1777:5)",
+              "/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1375:33",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1352:28)",
+              "Vpc.createSubnets (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1347:12)",
+              "new Vpc (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1219:10)",
+              "new StepEfsWithLambdaStack (/home/tanzeeltasleem/step-efs-with-lambda/lib/step-efs-with-lambda-stack.ts:12:19)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/bin/step-efs-with-lambda.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Module.m._compile (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "main (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "/usr/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/StepEfsWithLambdaStack/Vpc/PrivateSubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPrivateSubnet1DefaultRouteBE02A9ED",
+            "trace": [
+              "PrivateSubnet.addRoute (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1610:19)",
+              "NatGatewayProvider.configureSubnet (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/nat.ts:186:12)",
+              "NatGatewayProvider.configureNat (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/nat.ts:179:12)",
+              "Vpc.createNatGateways (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1322:14)",
+              "new Vpc (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1244:14)",
+              "new StepEfsWithLambdaStack (/home/tanzeeltasleem/step-efs-with-lambda/lib/step-efs-with-lambda-stack.ts:12:19)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/bin/step-efs-with-lambda.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Module.m._compile (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "main (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "/usr/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/StepEfsWithLambdaStack/Vpc/PrivateSubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPrivateSubnet2Subnet3788AAA1",
+            "trace": [
+              "new Subnet (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1524:20)",
+              "new PrivateSubnet (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1777:5)",
+              "/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1375:33",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1352:28)",
+              "Vpc.createSubnets (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1347:12)",
+              "new Vpc (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1219:10)",
+              "new StepEfsWithLambdaStack (/home/tanzeeltasleem/step-efs-with-lambda/lib/step-efs-with-lambda-stack.ts:12:19)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/bin/step-efs-with-lambda.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Module.m._compile (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "main (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "/usr/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/StepEfsWithLambdaStack/Vpc/PrivateSubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPrivateSubnet2RouteTableA678073B",
+            "trace": [
+              "new Subnet (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1542:19)",
+              "new PrivateSubnet (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1777:5)",
+              "/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1375:33",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1352:28)",
+              "Vpc.createSubnets (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1347:12)",
+              "new Vpc (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1219:10)",
+              "new StepEfsWithLambdaStack (/home/tanzeeltasleem/step-efs-with-lambda/lib/step-efs-with-lambda-stack.ts:12:19)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/bin/step-efs-with-lambda.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Module.m._compile (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "main (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "/usr/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/StepEfsWithLambdaStack/Vpc/PrivateSubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPrivateSubnet2RouteTableAssociationA89CAD56",
+            "trace": [
+              "new Subnet (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1548:5)",
+              "new PrivateSubnet (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1777:5)",
+              "/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1375:33",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1352:28)",
+              "Vpc.createSubnets (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1347:12)",
+              "new Vpc (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1219:10)",
+              "new StepEfsWithLambdaStack (/home/tanzeeltasleem/step-efs-with-lambda/lib/step-efs-with-lambda-stack.ts:12:19)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/bin/step-efs-with-lambda.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Module.m._compile (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "main (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "/usr/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/StepEfsWithLambdaStack/Vpc/PrivateSubnet2/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPrivateSubnet2DefaultRoute060D2087",
+            "trace": [
+              "PrivateSubnet.addRoute (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1610:19)",
+              "NatGatewayProvider.configureSubnet (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/nat.ts:186:12)",
+              "NatGatewayProvider.configureNat (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/nat.ts:179:12)",
+              "Vpc.createNatGateways (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1322:14)",
+              "new Vpc (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1244:14)",
+              "new StepEfsWithLambdaStack (/home/tanzeeltasleem/step-efs-with-lambda/lib/step-efs-with-lambda-stack.ts:12:19)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/bin/step-efs-with-lambda.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Module.m._compile (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "main (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "/usr/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/StepEfsWithLambdaStack/Vpc/IGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcIGWD7BA715C",
+            "trace": [
+              "new Vpc (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1226:19)",
+              "new StepEfsWithLambdaStack (/home/tanzeeltasleem/step-efs-with-lambda/lib/step-efs-with-lambda-stack.ts:12:19)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/bin/step-efs-with-lambda.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Module.m._compile (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "main (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "/usr/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/StepEfsWithLambdaStack/Vpc/VPCGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcVPCGWBF912B6E",
+            "trace": [
+              "new Vpc (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1232:19)",
+              "new StepEfsWithLambdaStack (/home/tanzeeltasleem/step-efs-with-lambda/lib/step-efs-with-lambda-stack.ts:12:19)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/bin/step-efs-with-lambda.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Module.m._compile (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "main (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "/usr/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/StepEfsWithLambdaStack/lambdaEfsFileSystem/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "lambdaEfsFileSystemE3027A40",
+            "trace": [
+              "new FileSystem (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-efs/lib/efs-file-system.ts:245:24)",
+              "new StepEfsWithLambdaStack (/home/tanzeeltasleem/step-efs-with-lambda/lib/step-efs-with-lambda-stack.ts:16:24)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/bin/step-efs-with-lambda.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Module.m._compile (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "main (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "/usr/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/StepEfsWithLambdaStack/lambdaEfsFileSystem/EfsSecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "lambdaEfsFileSystemEfsSecurityGroup4E25F4EF",
+            "trace": [
+              "new SecurityGroup (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-efs/node_modules/@aws-cdk/aws-ec2/lib/security-group.ts:395:26)",
+              "new FileSystem (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-efs/lib/efs-file-system.ts:259:51)",
+              "new StepEfsWithLambdaStack (/home/tanzeeltasleem/step-efs-with-lambda/lib/step-efs-with-lambda-stack.ts:16:24)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/bin/step-efs-with-lambda.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Module.m._compile (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "main (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "/usr/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/StepEfsWithLambdaStack/lambdaEfsFileSystem/EfsSecurityGroup/from StepEfsWithLambdaStackefsLambdaFunctionSecurityGroup89107635:2049": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "lambdaEfsFileSystemEfsSecurityGroupfromStepEfsWithLambdaStackefsLambdaFunctionSecurityGroup891076352049FFA57C0F",
+            "trace": [
+              "SecurityGroup.addIngressRule (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-efs/node_modules/@aws-cdk/aws-ec2/lib/security-group.ts:88:7)",
+              "SecurityGroup.addIngressRule (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-efs/node_modules/@aws-cdk/aws-ec2/lib/security-group.ts:412:13)",
+              "/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-efs/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:154:23",
+              "ReactiveList.forEachAndForever (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-lambda/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:267:7)",
+              "/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-efs/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:153:45",
+              "ReactiveList.forEachAndForever (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-efs/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:267:7)",
+              "Connections.allowFrom (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-efs/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:152:26)",
+              "Connections.allowDefaultPortFrom (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-efs/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:203:10)",
+              "Function.configureVpc (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-lambda/lib/function.ts:876:45)",
+              "new Function (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-lambda/lib/function.ts:620:23)",
+              "new StepEfsWithLambdaStack (/home/tanzeeltasleem/step-efs-with-lambda/lib/step-efs-with-lambda-stack.ts:33:23)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/bin/step-efs-with-lambda.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Module.m._compile (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "main (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "/usr/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/StepEfsWithLambdaStack/lambdaEfsFileSystem/EfsMountTarget1": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "lambdaEfsFileSystemEfsMountTarget1EEF1356D",
+            "trace": [
+              "/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-efs/lib/efs-file-system.ts:274:27",
+              "Array.forEach (<anonymous>)",
+              "new FileSystem (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-efs/lib/efs-file-system.ts:273:23)",
+              "new StepEfsWithLambdaStack (/home/tanzeeltasleem/step-efs-with-lambda/lib/step-efs-with-lambda-stack.ts:16:24)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/bin/step-efs-with-lambda.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Module.m._compile (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "main (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "/usr/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/StepEfsWithLambdaStack/lambdaEfsFileSystem/EfsMountTarget2": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "lambdaEfsFileSystemEfsMountTarget2FACC31EB",
+            "trace": [
+              "/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-efs/lib/efs-file-system.ts:274:27",
+              "Array.forEach (<anonymous>)",
+              "new FileSystem (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-efs/lib/efs-file-system.ts:273:23)",
+              "new StepEfsWithLambdaStack (/home/tanzeeltasleem/step-efs-with-lambda/lib/step-efs-with-lambda-stack.ts:16:24)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/bin/step-efs-with-lambda.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Module.m._compile (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "main (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "/usr/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/StepEfsWithLambdaStack/lambdaEfsFileSystem/AccessPoint/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "lambdaEfsFileSystemAccessPointBC696AB0",
+            "trace": [
+              "new AccessPoint (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-efs/lib/access-point.ts:204:22)",
+              "FileSystem.addAccessPoint (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-efs/lib/efs-file-system.ts:290:12)",
+              "new StepEfsWithLambdaStack (/home/tanzeeltasleem/step-efs-with-lambda/lib/step-efs-with-lambda-stack.ts:20:36)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/bin/step-efs-with-lambda.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Module.m._compile (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "main (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "/usr/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/StepEfsWithLambdaStack/efsLambdaFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "efsLambdaFunctionServiceRole7C103DEA",
+            "trace": [
+              "new Role (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-iam/lib/role.ts:327:18)",
+              "new Function (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-lambda/lib/function.ts:544:31)",
+              "new StepEfsWithLambdaStack (/home/tanzeeltasleem/step-efs-with-lambda/lib/step-efs-with-lambda-stack.ts:33:23)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/bin/step-efs-with-lambda.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Module.m._compile (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "main (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "/usr/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/StepEfsWithLambdaStack/efsLambdaFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "efsLambdaFunctionServiceRoleDefaultPolicyAD830756",
+            "trace": [
+              "new Policy (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-iam/lib/policy.ts:154:22)",
+              "Role.addToPrincipalPolicy (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-iam/lib/role.ts:368:28)",
+              "Role.addToPolicy (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-iam/lib/role.ts:376:17)",
+              "/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-lambda/lib/function.ts:555:22",
+              "Array.forEach (<anonymous>)",
+              "new Function (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-lambda/lib/function.ts:554:25)",
+              "new StepEfsWithLambdaStack (/home/tanzeeltasleem/step-efs-with-lambda/lib/step-efs-with-lambda-stack.ts:33:23)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/bin/step-efs-with-lambda.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Module.m._compile (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "main (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "/usr/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/StepEfsWithLambdaStack/efsLambdaFunction/SecurityGroup": [
+          {
+            "type": "aws:cdk:warning",
+            "data": "Ignoring Egress rule since 'allowAllOutbound' is set to true; To add customize rules, set allowAllOutbound=false on the SecurityGroup",
+            "trace": [
+              "Annotations.addMessage (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-lambda/node_modules/@aws-cdk/core/lib/annotations.ts:92:25)",
+              "Annotations.addWarning (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-lambda/node_modules/@aws-cdk/core/lib/annotations.ts:31:10)",
+              "SecurityGroup.addEgressRule (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-lambda/node_modules/@aws-cdk/aws-ec2/lib/security-group.ts:432:28)",
+              "/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-lambda/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:131:23",
+              "ReactiveList.forEachAndForever (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-efs/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:267:7)",
+              "/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-lambda/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:130:45",
+              "ReactiveList.forEachAndForever (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-lambda/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:267:7)",
+              "Connections.allowTo (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-lambda/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:129:26)",
+              "Connections.allowFrom (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-efs/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:161:25)",
+              "Connections.allowDefaultPortFrom (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-efs/node_modules/@aws-cdk/aws-ec2/lib/connections.ts:203:10)",
+              "Function.configureVpc (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-lambda/lib/function.ts:876:45)",
+              "new Function (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-lambda/lib/function.ts:620:23)",
+              "new StepEfsWithLambdaStack (/home/tanzeeltasleem/step-efs-with-lambda/lib/step-efs-with-lambda-stack.ts:33:23)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/bin/step-efs-with-lambda.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Module.m._compile (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "main (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "/usr/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/StepEfsWithLambdaStack/efsLambdaFunction/SecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "efsLambdaFunctionSecurityGroup5DBE1069",
+            "trace": [
+              "new SecurityGroup (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-lambda/node_modules/@aws-cdk/aws-ec2/lib/security-group.ts:395:26)",
+              "Function.configureVpc (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-lambda/lib/function.ts:864:52)",
+              "new Function (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-lambda/lib/function.ts:620:23)",
+              "new StepEfsWithLambdaStack (/home/tanzeeltasleem/step-efs-with-lambda/lib/step-efs-with-lambda-stack.ts:33:23)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/bin/step-efs-with-lambda.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Module.m._compile (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "main (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "/usr/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/StepEfsWithLambdaStack/efsLambdaFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "efsLambdaFunctionACCEBA5E",
+            "trace": [
+              "new Function (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-lambda/lib/function.ts:600:35)",
+              "new StepEfsWithLambdaStack (/home/tanzeeltasleem/step-efs-with-lambda/lib/step-efs-with-lambda-stack.ts:33:23)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/bin/step-efs-with-lambda.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Module.m._compile (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "main (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "/usr/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/StepEfsWithLambdaStack/AssetParameters/32bfdff99c6e358f7f5e923e80d64fa6d3d90d187a3c9ebb45f2d6eaa4a803e6/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters32bfdff99c6e358f7f5e923e80d64fa6d3d90d187a3c9ebb45f2d6eaa4a803e6S3BucketB3699850",
+            "trace": [
+              "new FileAssetParameters (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:16:32)",
+              "LegacyStackSynthesizer.doAddFileAsset (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:150:16)",
+              "LegacyStackSynthesizer.addFileAsset (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:74:19)",
+              "StepEfsWithLambdaStack.addFileAsset (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/core/lib/stack.ts:651:29)",
+              "LegacyStackSynthesizer.addFileAsset (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:78:25)",
+              "new Asset (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:147:40)",
+              "AssetCode.bind (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-lambda/lib/code.ts:247:20)",
+              "new Function (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-lambda/lib/function.ts:564:29)",
+              "new StepEfsWithLambdaStack (/home/tanzeeltasleem/step-efs-with-lambda/lib/step-efs-with-lambda-stack.ts:33:23)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/bin/step-efs-with-lambda.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Module.m._compile (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "main (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "/usr/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/StepEfsWithLambdaStack/AssetParameters/32bfdff99c6e358f7f5e923e80d64fa6d3d90d187a3c9ebb45f2d6eaa4a803e6/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters32bfdff99c6e358f7f5e923e80d64fa6d3d90d187a3c9ebb45f2d6eaa4a803e6S3VersionKey65064AB7",
+            "trace": [
+              "new FileAssetParameters (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:21:31)",
+              "LegacyStackSynthesizer.doAddFileAsset (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:150:16)",
+              "LegacyStackSynthesizer.addFileAsset (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:74:19)",
+              "StepEfsWithLambdaStack.addFileAsset (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/core/lib/stack.ts:651:29)",
+              "LegacyStackSynthesizer.addFileAsset (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:78:25)",
+              "new Asset (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:147:40)",
+              "AssetCode.bind (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-lambda/lib/code.ts:247:20)",
+              "new Function (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-lambda/lib/function.ts:564:29)",
+              "new StepEfsWithLambdaStack (/home/tanzeeltasleem/step-efs-with-lambda/lib/step-efs-with-lambda-stack.ts:33:23)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/bin/step-efs-with-lambda.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Module.m._compile (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "main (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "/usr/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/StepEfsWithLambdaStack/AssetParameters/32bfdff99c6e358f7f5e923e80d64fa6d3d90d187a3c9ebb45f2d6eaa4a803e6/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters32bfdff99c6e358f7f5e923e80d64fa6d3d90d187a3c9ebb45f2d6eaa4a803e6ArtifactHashF2B8B14C",
+            "trace": [
+              "new FileAssetParameters (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:26:34)",
+              "LegacyStackSynthesizer.doAddFileAsset (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:150:16)",
+              "LegacyStackSynthesizer.addFileAsset (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:74:19)",
+              "StepEfsWithLambdaStack.addFileAsset (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/core/lib/stack.ts:651:29)",
+              "LegacyStackSynthesizer.addFileAsset (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:78:25)",
+              "new Asset (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:147:40)",
+              "AssetCode.bind (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-lambda/lib/code.ts:247:20)",
+              "new Function (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-lambda/lib/function.ts:564:29)",
+              "new StepEfsWithLambdaStack (/home/tanzeeltasleem/step-efs-with-lambda/lib/step-efs-with-lambda-stack.ts:33:23)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/bin/step-efs-with-lambda.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Module.m._compile (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "main (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "/usr/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/StepEfsWithLambdaStack/Endpoint/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EndpointEEF1FD8F",
+            "trace": [
+              "new HttpApi (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-apigatewayv2/lib/http/api.ts:305:22)",
+              "new StepEfsWithLambdaStack (/home/tanzeeltasleem/step-efs-with-lambda/lib/step-efs-with-lambda-stack.ts:41:15)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/bin/step-efs-with-lambda.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Module.m._compile (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "main (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "/usr/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/StepEfsWithLambdaStack/Endpoint/DefaultRoute/StepEfsWithLambdaStackEndpointDefaultRouteD91A53CC-Permission": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EndpointDefaultRouteStepEfsWithLambdaStackEndpointDefaultRouteD91A53CCPermission2ADC6561",
+            "trace": [
+              "Function.addPermission (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-lambda/lib/function-base.ts:245:5)",
+              "LambdaProxyIntegration.bind (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-apigatewayv2-integrations/lib/http/lambda.ts:39:24)",
+              "new HttpRoute (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-apigatewayv2/lib/http/route.ts:123:38)",
+              "new HttpApi (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-apigatewayv2/lib/http/api.ts:310:7)",
+              "new StepEfsWithLambdaStack (/home/tanzeeltasleem/step-efs-with-lambda/lib/step-efs-with-lambda-stack.ts:41:15)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/bin/step-efs-with-lambda.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Module.m._compile (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "main (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "/usr/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/StepEfsWithLambdaStack/Endpoint/DefaultRoute/DefaultRoute-Integration/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EndpointDefaultRouteDefaultRouteIntegration4584A785",
+            "trace": [
+              "new HttpIntegration (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-apigatewayv2/lib/http/integration.ts:136:19)",
+              "new HttpRoute (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-apigatewayv2/lib/http/route.ts:128:25)",
+              "new HttpApi (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-apigatewayv2/lib/http/api.ts:310:7)",
+              "new StepEfsWithLambdaStack (/home/tanzeeltasleem/step-efs-with-lambda/lib/step-efs-with-lambda-stack.ts:41:15)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/bin/step-efs-with-lambda.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Module.m._compile (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "main (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "/usr/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/StepEfsWithLambdaStack/Endpoint/DefaultRoute/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EndpointDefaultRouteB7B22F2B",
+            "trace": [
+              "new HttpRoute (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-apigatewayv2/lib/http/route.ts:144:19)",
+              "new HttpApi (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-apigatewayv2/lib/http/api.ts:310:7)",
+              "new StepEfsWithLambdaStack (/home/tanzeeltasleem/step-efs-with-lambda/lib/step-efs-with-lambda-stack.ts:41:15)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/bin/step-efs-with-lambda.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Module.m._compile (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "main (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "/usr/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/StepEfsWithLambdaStack/Endpoint/DefaultStage/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EndpointDefaultStage0AD21F27",
+            "trace": [
+              "new HttpStage (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-apigatewayv2/lib/http/stage.ts:92:5)",
+              "new HttpApi (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/aws-apigatewayv2/lib/http/api.ts:318:27)",
+              "new StepEfsWithLambdaStack (/home/tanzeeltasleem/step-efs-with-lambda/lib/step-efs-with-lambda-stack.ts:41:15)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/bin/step-efs-with-lambda.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Module.m._compile (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "main (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "/usr/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/StepEfsWithLambdaStack/HTTP API Url": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HTTPAPIUrl",
+            "trace": [
+              "new StepEfsWithLambdaStack (/home/tanzeeltasleem/step-efs-with-lambda/lib/step-efs-with-lambda-stack.ts:47:5)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/bin/step-efs-with-lambda.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Module.m._compile (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "main (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:999:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)",
+              "Module.load (internal/modules/cjs/loader.js:863:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:708:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
+              "/usr/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/StepEfsWithLambdaStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata",
+            "trace": [
+              "new MetadataResource (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/core/lib/private/metadata-resource.ts:51:24)",
+              "/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/core/lib/private/synthesis.ts:140:5",
+              "visit (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/core/lib/private/synthesis.ts:200:5)",
+              "visit (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/core/lib/private/synthesis.ts:196:5)",
+              "injectMetadataResources (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/core/lib/private/synthesis.ts:131:3)",
+              "Object.synthesize (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/core/lib/private/synthesis.ts:18:3)",
+              "App.synth (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/core/lib/stage.ts:188:23)",
+              "process.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/core/lib/app.ts:123:45)",
+              "Object.onceWrapper (events.js:421:26)",
+              "process.emit (events.js:314:20)",
+              "process.EventEmitter.emit (domain.js:483:12)",
+              "process.emit (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/source-map-support/source-map-support.js:495:21)"
+            ]
+          }
+        ],
+        "/StepEfsWithLambdaStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable",
+            "trace": [
+              "new MetadataResource (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/core/lib/private/metadata-resource.ts:60:27)",
+              "/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/core/lib/private/synthesis.ts:140:5",
+              "visit (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/core/lib/private/synthesis.ts:200:5)",
+              "visit (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/core/lib/private/synthesis.ts:196:5)",
+              "injectMetadataResources (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/core/lib/private/synthesis.ts:131:3)",
+              "Object.synthesize (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/core/lib/private/synthesis.ts:18:3)",
+              "App.synth (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/core/lib/stage.ts:188:23)",
+              "process.<anonymous> (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/@aws-cdk/core/lib/app.ts:123:45)",
+              "Object.onceWrapper (events.js:421:26)",
+              "process.emit (events.js:314:20)",
+              "process.EventEmitter.emit (domain.js:483:12)",
+              "process.emit (/home/tanzeeltasleem/step-efs-with-lambda/node_modules/source-map-support/source-map-support.js:495:21)"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

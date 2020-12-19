@@ -109,13 +109,18 @@ export default ({ element }) => <AmplifyClient>{element}</AmplifyClient>
 ```javascript
 import { API } from "aws-amplify";
 
- const data = await API.graphql({
+// queries
+const data = await API.graphql({ query: getTodos, })
+
+// mutations
+const data = await API.graphql({
         query: addTodo,
         variables: {
           todo: todo,
         },
       })
 
+// subscriptions
 const subscription = API.graphql(graphqlOperation(onAddTodo));
 
 function handleSubscription() {

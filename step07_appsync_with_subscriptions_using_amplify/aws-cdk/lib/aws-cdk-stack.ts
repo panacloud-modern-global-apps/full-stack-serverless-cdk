@@ -1,18 +1,6 @@
 import * as cdk from "@aws-cdk/core";
-import {
-  CfnApiKey,
-  MappingTemplate,
-  GraphqlApi,
-  PrimaryKey,
-  Values,
-  Schema,
-  FieldLogLevel,
-} from "@aws-cdk/aws-appsync";
-import { AttributeType, Table } from "@aws-cdk/aws-dynamodb";
-import * as cloudfront from "@aws-cdk/aws-cloudfront";
-import * as origins from "@aws-cdk/aws-cloudfront-origins";
-import * as s3 from "@aws-cdk/aws-s3";
-import * as s3deploy from "@aws-cdk/aws-s3-deployment";
+import { GraphqlApi, Schema, FieldLogLevel } from "@aws-cdk/aws-appsync";
+import { AttributeType, Table, BillingMode } from "@aws-cdk/aws-dynamodb";
 import { join } from "path";
 import * as lambda from "@aws-cdk/aws-lambda";
 
@@ -37,6 +25,7 @@ export class AwsCdkStack extends cdk.Stack {
 
     // Create new DynamoDB Table for Todos
     const todosTable = new Table(this, "TodosTable", {
+      billingMode: BillingMode.PAY_PER_REQUEST,
       partitionKey: {
         name: "id",
         type: AttributeType.STRING,
@@ -46,13 +35,18 @@ export class AwsCdkStack extends cdk.Stack {
     // created lambda
     const todosLambda = new lambda.Function(this, "AppsyncLambda", {
       runtime: lambda.Runtime.NODEJS_12_X,
+      code: lambda.Code.fromAsset("lambda"),
       handler: "main.handler",
-      code: lambda.Code.fromAsset("functions"),
       memorySize: 1024,
     });
+    todosLambda.addEnvironment('TODOS_TABLE', todosTable.tableName);
+
+    // giving permissions of dynamodb table to lambda
+    todosTable.grantReadWriteData(todosLambda);
 
     // added lambda as a datasource for appsync
     const lambdaDs = api.addLambdaDataSource("lambdaDatasource", todosLambda);
+
 
     // resolvers
     lambdaDs.createResolver({

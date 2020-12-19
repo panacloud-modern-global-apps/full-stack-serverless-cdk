@@ -115,5 +115,9 @@ import { API } from "aws-amplify"
 
 [learn more about Appsync CDK](https://docs.aws.amazon.com/cdk/api/latest/docs/aws-appsync-readme.html)
 
+[Step 06 and 07 Class Video in English on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225312535665272)
+
+[Step 06 and 07 class Video in English on YouTube](https://www.youtube.com/watch?v=6hBaplgwE8s)
+
 
 

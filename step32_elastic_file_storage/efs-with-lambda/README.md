@@ -20,8 +20,7 @@ Amazon EFS is a fully managed, elastic, shared file system designed to be consum
 
 - install following dependencies
 
-````npm i aws-cdk/aws-efs aws-cdk/aws-ec2 aws-cdk/aws-lambda aws-cdk/aws-efs @aws-cdk/aws-apigatewayv2
-   @aws-cdk/aws-apigatewayv2-integrations```
+`npm i aws-cdk/aws-efs aws-cdk/aws-ec2 aws-cdk/aws-lambda aws-cdk aws-efs @aws-cdk/aws-apigatewayv2 @aws-cdk/aws-apigatewayv2-integrations`
 
 ```typescript
 const myVpc = new ec2.Vpc(this, "Vpc", {
@@ -30,7 +29,7 @@ const myVpc = new ec2.Vpc(this, "Vpc", {
 const fileSystem = new efs.FileSystem(this, "lambdaEfsFileSystem", {
   vpc: myVpc,
 });
-````
+```
 
 Amazon Virtual Private Cloud (Amazon VPC) is a service that lets you launch AWS resources in a logically isolated virtual network that you define. You have complete control over your virtual networking environment, including selection of your own IP address range, creation of subnets, and configuration of route tables and network gateways.
 
@@ -97,7 +96,8 @@ exports.handler = async (event: any) => {
   }
 };
 ```
-```typescript 
+
+````typescript
  const createMessage = async (message: string) => {
   try {
     await fs.appendFile(MSG_FILE_PATH, message + "\n");
@@ -114,8 +114,9 @@ exports.handler = async (event: any) => {
     console.log("error in getting messages", error);
   }
 };
-```
-```typescript 
+````
+
+```typescript
 const deleteMessages = async () => {
   console.log("delete all messages");
   try {
@@ -125,6 +126,7 @@ const deleteMessages = async () => {
   }
 };
 ```
+
 #### Step 4 (Creating an API)
 
 ```typescript

@@ -41,6 +41,9 @@ export class Example03GoogleLoginCognitoStack extends cdk.Stack {
 
     const userPoolClient = new cognito.UserPoolClient(this, "amplifyClient", {
       userPool,
+      oAuth: {
+        callbackUrls: ["http://localhost:8000/"], // This is what user will be redirected to with the code upon signin.
+      },
     });
 
     const domain = userPool.addDomain("domain", {
@@ -58,6 +61,7 @@ export class Example03GoogleLoginCognitoStack extends cdk.Stack {
     new cdk.CfnOutput(this, "aws_user_pools_id", {
       value: userPool.userPoolId,
     });
+
     new cdk.CfnOutput(this, "domain", {
       value: domain.domainName,
       exportName: "domain",

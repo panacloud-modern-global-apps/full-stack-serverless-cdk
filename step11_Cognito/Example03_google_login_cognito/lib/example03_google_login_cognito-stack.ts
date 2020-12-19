@@ -1,7 +1,7 @@
 import * as cdk from "@aws-cdk/core";
 import * as cognito from "@aws-cdk/aws-cognito";
 
-export class Example06GoogleLoginCognitoStack extends cdk.Stack {
+export class Example03GoogleLoginCognitoStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 

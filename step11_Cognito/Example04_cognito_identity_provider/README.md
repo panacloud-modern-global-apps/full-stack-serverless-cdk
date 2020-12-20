@@ -108,3 +108,33 @@ The user be redirected to this url after they have logged in.
       redirectUri: `http://localhost:8000/login/`, // must be a URL configured under 'callbackUrls' with the client
     });
 ```
+
+
+## Checking configuration in the cognito console
+
+You can see our full domain in the image below. Our signin/login page is configured on this domain
+
+![domain_console](imgs/domain.png)
+
+
+The image below shows our App client settings that we did from cdk. Click on the link highlighted in red to see your login/singup page
+
+![app_client_console](imgs/app_client_settings.png)
+
+
+This is how your login/signup page looks like. If you look at the url (highlighted in red), you will see that you have to enter some query parameters with your hosted domain to open the login/signup page
+
+The standardized login/signup url on your domain should look like this
+
+`${domainUrl}/login?client_id=${clientId}&response_type=code&scope=${scopes}&redirect_uri=${loginRedirectUri}`
+
+![domain_console](imgs/domain_login_page.png)
+
+
+
+When you will login, it should take you to the login redirect url that we configured in our cdk. In this example it is set to gatsby's local host. So you would need to run the front-end part of this example to see everything wworking.
+
+
+# Front-end code explanation
+
+

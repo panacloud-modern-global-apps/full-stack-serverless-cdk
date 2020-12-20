@@ -18,11 +18,12 @@ Amazon EFS is a fully managed, elastic, shared file system designed to be consum
 
 - Create a cdk project using this command `npm i cdk init app --language=typescript`
 
-- install following dependencies
-
-`npm i aws-cdk/aws-efs aws-cdk/aws-ec2 aws-cdk/aws-lambda aws-cdk aws-efs @aws-cdk/aws-apigatewayv2 @aws-cdk/aws-apigatewayv2-integrations`
+- install following dependencies `npm i aws-cdk/aws-efs aws-cdk/aws-ec2 aws-cdk/aws-lambda aws-cdk aws-efs @aws-cdk/aws-apigatewayv2 @aws-cdk/aws-apigatewayv2-integrations`
 
 ```typescript
+import * as efs from "@aws-cdk/aws-efs";
+import * as ec2 from "@aws-cdk/aws-ec2";
+
 const myVpc = new ec2.Vpc(this, "Vpc", {
   maxAzs: 2,
 });
@@ -62,6 +63,8 @@ To give Lambda functions access to the file system, we need to create EFS access
 #### Step 3 (Creating a Lambda Function)
 
 ```typescript
+import * as lambda from "@aws-cdk/aws-lambda";
+
 const efsLambda = new lambda.Function(this, "efsLambdaFunction", {
   runtime: lambda.Runtime.NODEJS_12_X,
   code: lambda.Code.fromAsset("lambda"),
@@ -74,6 +77,10 @@ const efsLambda = new lambda.Function(this, "efsLambdaFunction", {
 This sample allows the lambda function to mount the Amazon EFS access point to /mnt/msg in the runtime environment and access the filesystem with the POSIX identity defined in posixUser.
 
 #### Step 4 (lambda Function Code)
+
+- Create a directory name lambda in root.
+
+- In lambda directory create a file with a (msg.ts) name.
 
 ```typescript
 const fs = require("fs").promises;
@@ -97,24 +104,33 @@ exports.handler = async (event: any) => {
 };
 ```
 
-````typescript
- const createMessage = async (message: string) => {
+In this lambda function, fs(file System) library from nodejs is used to interact with EFS . We didn't use any AWS-SDKs to interact with EFS because in Step 3 we mount the function local Storage with EFS.
+
+In the handler, we don't have a route for every method so, we just destructure the (HTTP) request method from the event and doing some cases depending on the method. When (GET) request is made from an API gateway we call (getMessage) function whose responsibility is to get all the messages from file . If we have a (POST) request we add a new message in a file that is coming in the event body then display all the messages and if we get (DELETE) request we delete all the messages.
+
+```typescript
+const createMessage = async (message: string) => {
   try {
     await fs.appendFile(MSG_FILE_PATH, message + "\n");
   } catch (error) {
     console.log("error in creating msg", error);
   }
-};```
+};
+```
+
+This function is Asynchronously append data to a file, creating the file if it does not yet exist.
 
 ```typescript
- const getMessages = async () => {
+const getMessages = async () => {
   try {
     return await fs.readFile(MSG_FILE_PATH, "utf8");
   } catch (error) {
     console.log("error in getting messages", error);
   }
 };
-````
+```
+
+This function Asynchronously reads the entire contents of a file.
 
 ```typescript
 const deleteMessages = async () => {
@@ -127,7 +143,9 @@ const deleteMessages = async () => {
 };
 ```
 
-#### Step 4 (Creating an API)
+This function Asynchronously removes a file
+
+#### Step 5 (Creating an API)
 
 ```typescript
 const api = new apigw.HttpApi(this, "Endpoint", {
@@ -138,7 +156,3 @@ const api = new apigw.HttpApi(this, "Endpoint", {
 ```
 
 Lambda integrations enable integrating an HTTP API route with a Lambda function. When a client invokes the route, the API Gateway service forwards the request to the Lambda function and returns the function's response to the client.
-
-<!-- To connect an EFS file system with a Lambda function, you use an EFS access point, an application-specific entry point into an EFS file system that includes the operating system user and group to use when accessing the file system, file system permissions, and can limit access to a specific path in the file system. This helps keeping file system configuration decoupled from the application code.
-
-You can access the same EFS file system from multiple functions, using the same or different access points. For example, using different EFS access points, each Lambda function can access different paths in a file system, or use different file system permissions. -->

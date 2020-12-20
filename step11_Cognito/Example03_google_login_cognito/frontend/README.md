@@ -13,7 +13,7 @@ npm i @aws-amplify/ui-react aws-amplify
 
 ## Implementation
 
-We will be communicating with Cognito by using Amplify. We will need to configure Amplify by filling in the `aws-exports.js` file with our credentials:
+We will be communicating with Cognito by using Amplify. We will need to configure Amplify by filling in the `aws-exports.js` file with our credentials (enter http://localhost:8000 if testing frontend locally) and make sure that this is the same as what was entered in the callback url when deploying the cdk, otherwise you will face a redirect mismatch error.:
 
 ```javascript
 // aws-exports.js;
@@ -28,8 +28,8 @@ const awsmobile = {
   oauth: {
     domain: "ENTER_COGNITO_DOMAIN", // ENTER COGNITO DOMAIN
     scope: ["phone", "email", "openid", "profile"],
-    redirectSignIn: "SITE_TO_REDIRECT_AFTER_SIGNIN", // ENTER YOUR SITE
-    redirectSignOut: "SITE_TO_REDIRECT_AFTER_SIGNOUT", // ENTER YOUR SITE
+    redirectSignIn: "SITE_TO_REDIRECT_AFTER_SIGNIN", // ENTER YOUR SITE (enter http://localhost:8000 if testing frontend locally)
+    redirectSignOut: "SITE_TO_REDIRECT_AFTER_SIGNOUT", // ENTER YOUR SITE (enter http://localhost:8000 if testing frontend locally)
     responseType: "code",
   },
   federationTarget: "COGNITO_USER_POOLS",

@@ -40,7 +40,15 @@ export class Step19PinpointStack extends cdk.Stack {
       name: "PinpointInPractice",
     });
 
-    
+    //  Enable Email Channel to send emails 
+    const emailChannel = new pinpoint.CfnEmailChannel(this , "PinpointEmailCh" , {
+      applicationId : 'PROJECT_ID',
+      enabled : true,
+      fromAddress : 'EMAIL_ADDRESS',
+      // The Amazon Resource Name (ARN) of the identity, verified with Amazon Simple Email Service (Amazon SES), 
+      // that you want to use when you send email through the channel.
+      identity : "IDENTITY"
+    })
 
     // lambda function
     const Lambda = new lambda.Function(this, "Pinpoint-In-Pracitce", {

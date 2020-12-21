@@ -27,11 +27,20 @@ role.addToPolicy(
 );
 ```
 
-Create a Pinpoint project
+Create a Pinpoint project and also enable Email channel to send emails.
 
 ```javascript
 const pinpointProject = new pinpoint.CfnApp(this, "project", {
   name: "PinpointInPractice",
+});
+//  Enable Email Channel to send emails
+const emailChannel = new pinpoint.CfnEmailChannel(this, "PinpointEmailCh", {
+  applicationId: "APP_ID",
+  enabled: true,
+  fromAddress: "EMAIL_ADDRESS",
+  // The Amazon Resource Name (ARN) of the identity, verified with Amazon Simple Email Service (Amazon SES),
+  // that you want to use when you send email through the channel.
+  identity: "IDENTITY",
 });
 ```
 

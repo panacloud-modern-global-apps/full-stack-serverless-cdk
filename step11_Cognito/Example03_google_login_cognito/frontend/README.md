@@ -1,48 +1,71 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby minimal starter
-</h1>
+# Gatsby + Amplify Cognito with Google Signin.
 
-## 🚀 Quick start
+## Dependencies:
 
-1.  **Create a Gatsby site.**
+```
+npm i @aws-amplify/ui-react aws-amplify
+```
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+## Sources:
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
+- [Amplify Client Config](https://docs.amplify.aws/lib/client-configuration/configuring-amplify-categories/q/platform/js)
+- [Amplify Hub](https://docs.amplify.aws/lib/utilities/hub/q/platform/js)
 
-2.  **Start developing.**
+## Implementation
 
-    Navigate into your new site’s directory and start it up.
+We will be communicating with Cognito by using Amplify. We will need to configure Amplify by filling in the `aws-exports.js` file with our credentials (enter http://localhost:8000 if testing frontend locally) and make sure that this is the same as what was entered in the callback url when deploying the cdk, otherwise you will face a redirect mismatch error.:
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+```javascript
+// aws-exports.js;
 
-3.  **Open the code and start customizing!**
+/* eslint-disable */
 
-    Your site is now running at http://localhost:8000!
+const awsmobile = {
+  aws_project_region: "eu-west-1", // ENTER YOUR REGION
+  aws_cognito_region: "eu-west-1", // ENTER YOUR REGION
+  aws_user_pools_id: "ENTER_USER_POOL_ID", // ENTER YOUR USER POOL ID
+  aws_user_pools_web_client_id: "ENTER_USER_POOL_APP_CLIENT_ID", // ENTER YOUR CLIENT ID
+  oauth: {
+    domain: "ENTER_COGNITO_DOMAIN", // ENTER COGNITO DOMAIN
+    scope: ["phone", "email", "openid", "profile"],
+    redirectSignIn: "SITE_TO_REDIRECT_AFTER_SIGNIN", // ENTER YOUR SITE (enter http://localhost:8000 if testing frontend locally)
+    redirectSignOut: "SITE_TO_REDIRECT_AFTER_SIGNOUT", // ENTER YOUR SITE (enter http://localhost:8000 if testing frontend locally)
+    responseType: "code",
+  },
+  federationTarget: "COGNITO_USER_POOLS",
+};
 
-    Edit `src/pages/index.js` to see your site update in real-time!
+export default awsmobile;
+```
 
-4.  **Learn more**
+Since we only have one page for demonstrating the Google signin we will just import the Amplify Library in the index page and configure it there. The usual way to do this in a gatsby app would be to create a wrapper with context and configure it there.
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+So in index.js we will be using the `Hub` Provided by Amplify. You can read about it from the [AWS Docs](https://docs.amplify.aws/lib/utilities/hub/q/platform/js). It is like a basic pub sub where we can listen for amplify events. Here we are listening on the `auth` channel.
 
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+```javascript
+import Amplify, { Auth, Hub } from "aws-amplify";
 
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+Hub.listen("auth", ({ payload: { event, data } }) => {
+  switch (event) {
+    case "signIn":
+    case "cognitoHostedUI":
+      getUser().then((userData) => setUser(userData));
+      break;
+    case "signOut":
+      setUser(null);
+      break;
+    case "signIn_failure":
+    case "cognitoHostedUI_failure":
+      console.log("Sign in failure", data);
+      break;
+  }
+});
+```
 
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+And we can render a button that links us to the google signin by using `Auth.federatedSignIn({provider : "Google"})`. If we leave this empty by not specifying a provider like: `Auth.federatedSignIn()` then we will be redirected to the base cognito login form where we can use any other way of logging in like our default cognito userpool etc.
 
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+```jsx
+<button onClick={() => Auth.federatedSignIn({ provider: "Google" })}>
+  Sign In with Google
+</button>
+```

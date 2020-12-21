@@ -13,8 +13,8 @@ const awsmobile = {
             "openid",
             "profile"
         ],
-        "redirectSignIn": "SITE_TO_REDIRECT_AFTER_SIGNIN", // ENTER YOUR SITE
-        "redirectSignOut": "SITE_TO_REDIRECT_AFTER_SIGNOUT", // ENTER YOUR SITE
+        "redirectSignIn": "SITE_TO_REDIRECT_AFTER_SIGNIN", // ENTER YOUR SITE (enter http://localhost:8000 if testing frontend locally) 
+        "redirectSignOut": "SITE_TO_REDIRECT_AFTER_SIGNOUT", // ENTER YOUR SITE (enter http://localhost:8000 if testing frontend locally) 
         "responseType": "code"
     },
     "federationTarget": "COGNITO_USER_POOLS"

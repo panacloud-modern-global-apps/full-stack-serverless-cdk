@@ -8,6 +8,6 @@ You can connect with customers over channels like email, SMS, push, or voice. Am
 
 ## Useful Links
 
-[AWS Pinpoint](https://aws.amazon.com/pinpoint/)
-[AWS Pinpoint CDK Documatation](https://docs.aws.amazon.com/cdk/api/latest/docs/aws-pinpoint-readme.html)
-[AWS Pinpoint API reference](https://docs.aws.amazon.com/pinpoint/latest/apireference/welcome.html)
+[AWS Pinpoint](https://aws.amazon.com/pinpoint/) <br />
+[AWS Pinpoint CDK Documatation](https://docs.aws.amazon.com/cdk/api/latest/docs/aws-pinpoint-readme.html) <br /> 
+[AWS Pinpoint API reference](https://docs.aws.amazon.com/pinpoint/latest/apireference/welcome.html) <br />

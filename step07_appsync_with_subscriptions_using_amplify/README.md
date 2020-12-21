@@ -98,20 +98,45 @@ import AmplifyClient from "../amplifyContext/client"
 export default ({ element }) => <AmplifyClient>{element}</AmplifyClient>
 
 ```
-### Step 7: Export the 'Wrap-root-element' that you made in step 7 from gatsby-browser.js and gatsby-ssr.js files (just like you did in Apollo Client)
+<br>
 
-### Step 8: Use 'aws-amplify' library to run queries and mutation. Example given below
+### Step 8: Export the 'Wrap-root-element' that you made in step 7 from gatsby-browser.js and gatsby-ssr.js files (just like you did in Apollo Client)
+
+<br>
+<br>
+
+### Step 9: Use 'aws-amplify' library to run queries, mutations and subscriptions. Example given below
 ```javascript
 import { API } from "aws-amplify";
 
- const data = await API.graphql({
+// queries
+const data = await API.graphql({ query: getTodos, })
+
+// mutations
+const data = await API.graphql({
         query: addTodo,
         variables: {
           todo: todo,
         },
       })
 
+// subscriptions
+const subscription = API.graphql(graphqlOperation(onAddTodo));
+
+function handleSubscription() {
+    subscription.subscribe({
+      next: (status) => {   // when mutation will run the next will trigger
+        console.log("New SUBSCRIPTION ==> ", status.value.data);
+      },
+    })
+  }
+
+useEffect(() => {
+    handleSubscription(); // will make a subscription connection for the first time
+  }, [])
+
 ```
+
 
 [Learn more about Amplify](https://docs.amplify.aws/)
 

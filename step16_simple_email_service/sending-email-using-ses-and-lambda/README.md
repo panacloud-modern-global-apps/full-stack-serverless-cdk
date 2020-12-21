@@ -100,6 +100,8 @@ const Responses = {
 <br>
 
 ### Step4: Setup Your CDK Stack
+Now to use SES service in the lambda funciton we have to give IAM role to our lambda function to allow the permissions of `"ses:SendEmail"` and ` "ses:SendRawEmail"` which you can see in the code below.
+
 ```javascript
 // lib/stack.ts
 import * as cdk from '@aws-cdk/core';
@@ -157,7 +159,7 @@ export class Stack extends cdk.Stack {
 After completing the above steps run the following commands to deploy:
 - `npm run build`
 - `cdk deploy`
-> **NOTE**: after deployment you will get a **Sendemailendpoint** printed in your terminal which will be you actual API for sending emails.
+> **NOTE**: after deployment you will get a **Sendemailendpoint** printed in your terminal which will be your actual API for sending emails.
 
 <br>
 

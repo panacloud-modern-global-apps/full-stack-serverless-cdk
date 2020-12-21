@@ -51,6 +51,14 @@ Class Videos
 
 [Step 04 and 05 Class Video in Urdu on YouTube](https://www.youtube.com/watch?v=FVHkJRo4TdI)
 
+[Step 06 and 07 Class Video in English on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225312535665272)
+
+[Step 06 and 07 class Video in English on YouTube](https://www.youtube.com/watch?v=6hBaplgwE8s)
+
+[Step 06 and 07 class Video in Urdu on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225319812407186)
+
+[Step 06 and 07 class Video in Urdu on YouTube](https://www.youtube.com/watch?v=paHnI88zXSQ)
+
 
 ## AWS CDK
 

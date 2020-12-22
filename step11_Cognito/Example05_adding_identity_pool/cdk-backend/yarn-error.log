@@ -1,0 +1,59 @@
+Arguments: 
+  /usr/bin/node /usr/local/bin/yarn
+
+PATH: 
+  /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  12.18.2
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: connect ECONNREFUSED 192.168.22.35:443
+      at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1135:16)
+
+npm manifest: 
+  {
+    "name": "example04_userpool_with_identity_pool",
+    "version": "0.1.0",
+    "bin": {
+      "example04_userpool_with_identity_pool": "bin/example04_userpool_with_identity_pool.js"
+    },
+    "scripts": {
+      "build": "tsc",
+      "watch": "tsc -w",
+      "test": "jest",
+      "cdk": "cdk"
+    },
+    "devDependencies": {
+      "@aws-cdk/assert": "1.76.0",
+      "@types/jest": "^26.0.10",
+      "@types/node": "10.17.27",
+      "jest": "^26.4.2",
+      "ts-jest": "^26.2.0",
+      "aws-cdk": "1.76.0",
+      "ts-node": "^9.0.0",
+      "typescript": "~3.9.7"
+    },
+    "dependencies": {
+      "@aws-cdk/core": "1.76.0",
+      "@aws-cdk/aws-appsync": "1.76.0",
+      "@aws-cdk/aws-dynamodb": "1.76.0",
+      "@aws-cdk/aws-iam": "1.76.0",
+      "@aws-cdk/aws-lambda": "1.76.0",
+      "@aws-cdk/aws-logs": "1.76.0",
+      "@aws-cdk/aws-s3": "1.76.0",
+      "source-map-support": "^0.5.16"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

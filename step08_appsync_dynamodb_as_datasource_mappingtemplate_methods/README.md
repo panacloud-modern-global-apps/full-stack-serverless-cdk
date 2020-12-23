@@ -38,6 +38,11 @@ StepxxAppsyncDynamodbAsDatasourceStack.GraphQLAPIKey = -------------------------
 
 [Step 08, 09, and 10 class Video in English on YouTube](https://www.youtube.com/watch?v=DkMpDT-gsMk)
 
+[Step 08, 09, and 10 class Video in Urdu on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225347091729152)
+
+[Step 08, 09, and 10 class Video in Urdu on YouTube](https://www.youtube.com/watch?v=lpKaoZ4yAiE)
+
+
 
 
 ## Useful commands

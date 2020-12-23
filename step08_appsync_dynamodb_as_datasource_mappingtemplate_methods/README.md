@@ -34,6 +34,11 @@ StepxxAppsyncDynamodbAsDatasourceStack.GraphQLAPIKey = -------------------------
     - x-api-key = 'your API Key'
     - Content-Type = application/graphql
 
+[Step 08, 09, and 10 class Video in English on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225337767976064)
+
+[Step 08, 09, and 10 class Video in English on YouTube](https://www.youtube.com/watch?v=DkMpDT-gsMk)
+
+
 
 ## Useful commands
 

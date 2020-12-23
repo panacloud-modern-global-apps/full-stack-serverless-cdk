@@ -1,27 +1,27 @@
 import * as cdk from '@aws-cdk/core';
-import * as appsync from '@aws-cdk/aws-appsync';
-import * as ddb from '@aws-cdk/aws-dynamodb';
-import * as lambda from '@aws-cdk/aws-lambda';
-import * as s3 from '@aws-cdk/aws-s3'
-import * as s3Deployment from '@aws-cdk/aws-s3-deployment'
-import * as cloudfront from '@aws-cdk/aws-cloudfront';
-import * as origins from '@aws-cdk/aws-cloudfront-origins';
-import { EventBus, Rule, RuleTargetInput, EventField } from '@aws-cdk/aws-events';
-import * as targets from '@aws-cdk/aws-events-targets'
-import { PolicyStatement } from '@aws-cdk/aws-iam';
-import * as sns from '@aws-cdk/aws-sns';
-import * as s3Notifications from '@aws-cdk/aws-s3-notifications';
-import * as snsSubscriptions from '@aws-cdk/aws-sns-subscriptions';
-import * as sqs from "@aws-cdk/aws-sqs";
-import * as destinations from "@aws-cdk/aws-lambda-destinations";
 import * as cognito from '@aws-cdk/aws-cognito';
 import * as iam from "@aws-cdk/aws-iam";
+import * as s3 from "@aws-cdk/aws-s3";
 
 export class Example04UserpoolWithIdentityPoolStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
     // The code that defines your stack goes here
+
+    // const bucket = new s3.Bucket(this, "new_bucket", {
+    //   bucketName: "upload-bucket"
+    // })
+
+    const bucket = new s3.Bucket(this, "Uploads", {
+      cors: [
+        {
+          allowedOrigins: ["*"],
+          allowedHeaders: ["*"],
+          allowedMethods: [s3.HttpMethods.GET, s3.HttpMethods.PUT, s3.HttpMethods.POST, s3.HttpMethods.DELETE, s3.HttpMethods.HEAD],
+        },
+      ],
+    });
 
     const userPool = new cognito.UserPool(this, 'chat-app-user-pool', {
       selfSignUpEnabled: true,
@@ -72,18 +72,20 @@ export class Example04UserpoolWithIdentityPoolStack extends cdk.Stack {
       ),
     });
 
+    ///Attach particular role to identity pool
     role.addToPolicy(
         new iam.PolicyStatement({
             effect: iam.Effect.ALLOW,
             actions: [
-            "mobileanalytics:PutEvents",
-            "cognito-sync:*",
-            "cognito-identity:*",
+              "mobileanalytics:PutEvents",
+              "cognito-sync:*",
+              "cognito-identity:*",
             ],
             resources: ["*"],
         })
     );
-
+    
+    ///Attach particular role to identity pool
     new cognito.CfnIdentityPoolRoleAttachment(
         this,
         "IdentityPoolRoleAttachment",
@@ -91,6 +93,17 @@ export class Example04UserpoolWithIdentityPoolStack extends cdk.Stack {
           identityPoolId: identityPool.ref,
           roles: { authenticated: role.roleArn },
         }
+    );
+
+    role.addToPolicy(
+      // IAM policy granting users permission to a specific folder in the S3 bucket
+      new iam.PolicyStatement({
+        actions: ["s3:*"],
+        effect: iam.Effect.ALLOW,
+        resources: [
+          bucket.bucketArn + "/private/${cognito-identity.amazonaws.com:sub}/*",
+        ],
+      })
     );
 
     
@@ -108,6 +121,14 @@ export class Example04UserpoolWithIdentityPoolStack extends cdk.Stack {
 
     new cdk.CfnOutput(this, "userPoolProviderName", {
       value: userPool.userPoolProviderName
+    });
+
+    new cdk.CfnOutput(this, "Ref", {
+      value: identityPool.ref
+    });
+
+    new cdk.CfnOutput(this, "bucketName", {
+      value: bucket.bucketName
     });
 
 

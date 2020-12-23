@@ -23,23 +23,11 @@
   "dependencies": {
     "@aws-cdk/core": "1.76.0",
     "@aws-cdk/aws-appsync": "1.76.0",
-    "@aws-cdk/aws-cloudfront": "1.76.0",
-    "@aws-cdk/aws-cloudfront-origins": "1.76.0",
     "@aws-cdk/aws-dynamodb": "1.76.0",
-    "@aws-cdk/aws-events": "1.76.0",
-    "@aws-cdk/aws-events-targets": "1.76.0",
     "@aws-cdk/aws-iam": "1.76.0",
     "@aws-cdk/aws-lambda": "1.76.0",
     "@aws-cdk/aws-logs": "1.76.0",
     "@aws-cdk/aws-s3": "1.76.0",
-    "@aws-cdk/aws-s3-deployment": "1.76.0",
-    "@aws-cdk/aws-sqs": "1.76.0",
-    "@aws-cdk/aws-s3-notifications": "1.76.0",
-    "@aws-cdk/aws-sns": "1.76.0",
-    "@aws-cdk/aws-sns-subscriptions": "1.76.0",
-    "@aws-cdk/aws-stepfunctions": "1.76.0",
-    "@aws-cdk/aws-lambda-destinations": "1.76.0",
-    "@aws-cdk/aws-stepfunctions-tasks": "1.76.0",
     "source-map-support": "^0.5.16"
   }
 }

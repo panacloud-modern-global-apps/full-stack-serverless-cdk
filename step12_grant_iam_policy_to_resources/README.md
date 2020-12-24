@@ -1,6 +1,6 @@
 # Granting IAM policies to Resources
 
-![alt text](https://github.com/panacloud-modern-global-apps/full-stack-serverless-cdk/blob/main/step11_grant_iam_policy_to_resources/img/iam.png)
+![alt text](img/iam.png)
 
 You manage access in AWS by creating policies and attaching them to IAM identities (users, groups of users, or roles) or AWS resources. A policy is an object in AWS that, when associated with an identity or resource, defines their permissions. AWS evaluates these policies when an IAM principal (user or role) makes a request. Permissions in the policies determine whether the request is allowed or denied.
 

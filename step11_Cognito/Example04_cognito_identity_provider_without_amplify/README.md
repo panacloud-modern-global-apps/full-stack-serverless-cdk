@@ -137,4 +137,124 @@ When you will login, it should take you to the login redirect url that we config
 
 # Front-end code explanation
 
+In the previous example we saw how to use hosted UI using amplify. In this example we will do everything manually on the front-end. You can find the details of the all the steps in this (link)[https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-userpools-server-contract-reference.html]
 
+We have crreated a configuration file in src directory that has all the parameters that would needed in our pages. The config file looks like this
+
+```javascript
+
+const config = {
+  domainUrl: "https://my-awesome-app.auth.us-east-1.amazoncognito.com",
+  clientId: "p86uqs26d1sm2257tqsjsjpfe",
+  loginRedirectUri: "http://localhost:8000/dashboard",
+  grant_type: "authorization_code",
+  logoutUri: "http://localhost:8000",
+  clientSecret: "19oee6ldbcb5g2baj8s4uchd22vs970rel1jfjmtslvsi88eqr6t",
+}
+
+export default config
+
+
+```
+
+
+We have two pages on our front-end (index.tsx and dashboard.tsx). Index.tsx has a signin button. When you click on that sign-in button, it redirects you to the login page of our hosted UI as discussed above. The code for the index page is given below.
+
+```javascript
+
+import React from "react"
+import config from "../config"
+
+export default function Home() {
+  return (
+    <div>
+      <h1>Home</h1>
+      <button
+        onClick={() => {
+          window.location.href = `${config.domainUrl}/login?client_id=${config.clientId}&response_type=code&scope=email+openid&redirect_uri=${config.loginRedirectUri}`
+        }}
+      >
+        Login
+      </button>
+    </div>
+  )
+}
+
+
+```
+
+
+When you login from the hosted UI, it redirects you to the "dashboard" page of our application (because we have passed the url of our dashboard page in the login callback url).
+The important thing to note here is that, the hosted UI also sends an addition query parameter to the dashboard page as shown below. This query parameter is a special code that would allow us to fetch the user tokens and details.
+
+
+![code_from_hosted_UI](imgs/code_from_hosted_ui.png)
+
+
+We then retrieve that code and pass to the (TOKEN ENDPOINT)[https://docs.aws.amazon.com/cognito/latest/developerguide/token-endpoint.html] to retrieve the user tokens. We have implemented this in the following function
+
+```javascript
+
+
+  function fetchTokens() {
+    const authData = btoa(`${config.clientId}:${config.clientSecret}`)
+
+    const requestOptions = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        Authorization: `Basic ${authData}`,
+      },
+    }
+    fetch(
+      `${config.domainUrl}/oauth2/token?grant_type=${config.grant_type}&code=${code}&client_id=${config.clientId}&redirect_uri=${config.loginRedirectUri}`,
+      requestOptions
+    )
+      .then(response => response.json())
+      .then(data => {
+        sessionStorage.setItem("access_token", data.access_token)
+
+        fetchUserDetails(data.access_token)
+      })
+  }
+
+```
+
+The above functions returns us some user tokens and then we can use the access token to retrieve the user information from the (USERINFO ENDPOINT)[https://docs.aws.amazon.com/cognito/latest/developerguide/userinfo-endpoint.html]. This has been implemented in the function shown below.
+
+```javascript
+
+ function fetchUserDetails(accessToken: string) {
+    const requestOptions = {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    }
+    fetch(`${config.domainUrl}/oauth2/userInfo`, requestOptions)
+      .then(response => response.json())
+      .then(data => {
+        console.log(data)
+
+        if (!!data.username) {
+          setUser(data)
+        } else {
+          setUser(null)
+        }
+      })
+  }
+
+```
+
+
+Finally, for signing out, we have added a button that redirects the user to the logout callback url (our index.tsx page) when user clicks on it
+
+```javascript
+
+ const logout = () => {
+    window.location.href = `${config.domainUrl}/logout?client_id=${config.clientId}&logout_uri=${config.logoutUri}`
+
+    sessionStorage.removeItem("access_token")
+  }
+
+```

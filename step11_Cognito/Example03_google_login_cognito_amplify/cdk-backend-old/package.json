@@ -1,5 +1,5 @@
 {
-  "name": "cdk-backend",
+  "name": "example03_google_login_cognito",
   "version": "0.1.0",
   "bin": {
     "cdk-backend": "bin/cdk-backend.js"

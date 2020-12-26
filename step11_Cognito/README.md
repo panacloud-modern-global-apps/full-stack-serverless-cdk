@@ -41,3 +41,7 @@ For information about Amazon Cognito identity pools region availability, see [AW
 
 
 For more information on how to use AWS Cognito with AWS CDK [click here](https://docs.aws.amazon.com/cdk/api/latest/docs/aws-cognito-readme.html)
+
+[Step 11 Video in English on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225372583806438)
+
+[Step 11 Video in English on YouTube](https://www.youtube.com/watch?v=vC33wJ6DfjQ)

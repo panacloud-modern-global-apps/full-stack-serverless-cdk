@@ -34,14 +34,26 @@ function App() {
   }
 
   return (
-    <main>
-      <p>User: {user ? JSON.stringify(user.username) : 'None'}</p>
+
+
+    <main style={{ display: "grid", placeItems: "center", height: "100%" }}>
+
       {user ? (
-        <button onClick={() => Auth.signOut()}>Sign Out</button>
+        <div>
+          <button onClick={() => Auth.signOut()}><h1>Sign out</h1></button>
+          <h1>User Data object:</h1>
+          <div style={{ width: "700px", height: "70vh", overflow: "scroll" }}>
+            <pre>User: {JSON.stringify(user, null, 2)}</pre>
+          </div>
+        </div>
       ) : (
-          <button onClick={() => Auth.federatedSignIn({ provider: "Google" })}>Sign In with Google</button>
+          <div>
+            <h1>No User Logged In.</h1>
+            <button onClick={() => Auth.federatedSignIn({ provider: "Google" })}>Sign In with Google</button>
+          </div>
         )}
     </main>
+
   );
 }
 

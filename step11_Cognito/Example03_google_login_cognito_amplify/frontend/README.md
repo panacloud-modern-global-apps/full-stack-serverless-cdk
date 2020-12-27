@@ -21,15 +21,15 @@ We will be communicating with Cognito by using Amplify. We will need to configur
 /* eslint-disable */
 
 const awsmobile = {
-  aws_project_region: "eu-west-1", // ENTER YOUR REGION
-  aws_cognito_region: "eu-west-1", // ENTER YOUR REGION
-  aws_user_pools_id: "ENTER_USER_POOL_ID", // ENTER YOUR USER POOL ID
-  aws_user_pools_web_client_id: "ENTER_USER_POOL_APP_CLIENT_ID", // ENTER YOUR CLIENT ID
+  aws_project_region: "eu-west-1", // REGION
+  aws_cognito_region: "eu-west-1", // REGION
+  aws_user_pools_id: "eu-west-1_xluFXgOKm", // ENTER YOUR USER POOL ID
+  aws_user_pools_web_client_id: "1uiqf76uo9d9nesqq6s5ix92lm", // ENTER YOUR CLIENT ID
   oauth: {
-    domain: "ENTER_COGNITO_DOMAIN", // ENTER COGNITO DOMAIN
+    domain: "eru-test-pool.auth.eu-west-1.amazoncognito.com", // ENTER YOUR COGNITO DOMAIN LIKE: eru-test-pool.auth.eu-west-1.amazoncognito.com here 'eru-test-pool' is the domainPrefix I had set in the backend.
     scope: ["phone", "email", "openid", "profile"],
-    redirectSignIn: "SITE_TO_REDIRECT_AFTER_SIGNIN", // ENTER YOUR SITE (enter http://localhost:8000 if testing frontend locally)
-    redirectSignOut: "SITE_TO_REDIRECT_AFTER_SIGNOUT", // ENTER YOUR SITE (enter http://localhost:8000 if testing frontend locally)
+    redirectSignIn: "http://localhost:8000/", // ENTER YOUR SITE (enter http://localhost:8000 if testing frontend locally)
+    redirectSignOut: "http://localhost:8000/", // ENTER YOUR SITE (enter http://localhost:8000 if testing frontend locally)
     responseType: "code",
   },
   federationTarget: "COGNITO_USER_POOLS",

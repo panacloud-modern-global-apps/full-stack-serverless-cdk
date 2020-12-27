@@ -71,6 +71,11 @@ Class Videos
 
 [Step 11 Video in English on YouTube](https://www.youtube.com/watch?v=vC33wJ6DfjQ)
 
+[Step 11 Video in Urdu on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225381665553476)
+
+[Step 11 Video in Urdu on YouTube](https://www.youtube.com/watch?v=BXIWIUkl2tM)
+
+
 
 ## AWS CDK
 

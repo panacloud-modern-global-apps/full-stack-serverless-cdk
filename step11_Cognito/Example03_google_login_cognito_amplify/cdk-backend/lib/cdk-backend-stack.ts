@@ -27,8 +27,9 @@ export class CdkBackendStack extends cdk.Stack {
       "googleProvider",
       {
         userPool: userPool,
-        clientId: "ENTER_THE_GOOGLE_CLIENT_ID",
-        clientSecret: "ENTER_THE_GOOGLE_CLIENT_SECRET",
+        clientId:
+          "xxxxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com", // Google Client id
+        clientSecret: "xxxxxx123123xxxxxxxxxxxxxx", // Google Client Secret
         attributeMapping: {
           email: cognito.ProviderAttribute.GOOGLE_EMAIL,
           givenName: cognito.ProviderAttribute.GOOGLE_GIVEN_NAME,
@@ -42,13 +43,14 @@ export class CdkBackendStack extends cdk.Stack {
     const userPoolClient = new cognito.UserPoolClient(this, "amplifyClient", {
       userPool,
       oAuth: {
-        callbackUrls: ["http://localhost:8000/"], // This is what user will be redirected to with the code upon signin.
+        callbackUrls: ["http://localhost:8000/"], // This is what user is allowed to be redirected to with the code upon signin. this can be a list of urls.
+        logoutUrls: ["http://localhost:8000/"], // This is what user is allowed to be redirected to after signout. this can be a list of urls.
       },
     });
 
     const domain = userPool.addDomain("domain", {
       cognitoDomain: {
-        domainPrefix: "DOMAIN-PREFIX",
+        domainPrefix: "eru-test-pool", // SET YOUR OWN Domain PREFIX HERE
       },
     });
 

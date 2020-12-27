@@ -6,6 +6,13 @@
 npm i @aws-cdk/aws-cognito
 ```
 
+## Quick-Start
+
+1. Set domains in google dev console.
+2. Copy client id, client secret, domain prefix to cdk.
+3. cdk deploy, copy the outputs to frontend. **Note: the redirect urls that you specify in the frontend MUST BE INCLUDED in the list of allowed urls that you specified in the backend userpool client oAuth object.**
+4. `gatsby develop`
+
 ## Sources
 
 - [Google Developer Console](https://console.developers.google.com/)
@@ -50,7 +57,8 @@ Next we will be setting up the client. This will provide us with the credentials
 const userPoolClient = new cognito.UserPoolClient(this, "amplifyClient", {
   userPool,
   oAuth: {
-    callbackUrls: ["http://localhost:8000/"], // This is what user will be redirected to with the code upon signin.
+    callbackUrls: ["http://localhost:8000/"], // This is what user is allowed to be redirected to with the code upon signin. this can be a list of urls.
+    logoutUrls: ["http://localhost:8000/"], // This is what user is allowed to be redirected to after signout. this can be a list of urls.
   },
 });
 ```

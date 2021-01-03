@@ -82,9 +82,13 @@
 [Step 11 Part 2 Video in English on YouTube](https://www.youtube.com/watch?v=2y0QrhvRMew)
 
 
-Step 11 Part 2 Video in Urdu on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225407400396831)
+[Step 11 Part 2 Video in Urdu on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225407400396831)
 
 [Step 11 Part 2 Video in Urdu on YouTube](https://www.youtube.com/watch?v=Qdk95pExTaY)
+
+[Step 12 Video in English on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225434631997604)
+
+[Step 12 Video in English on YouTube](https://www.youtube.com/watch?v=geV-TV7kTgE)
 
 
 

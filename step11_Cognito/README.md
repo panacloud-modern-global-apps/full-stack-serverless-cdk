@@ -49,3 +49,12 @@ For more information on how to use AWS Cognito with AWS CDK [click here](https:/
 [Step 11 Video in Urdu on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225381665553476)
 
 [Step 11 Video in Urdu on YouTube](https://www.youtube.com/watch?v=BXIWIUkl2tM)
+
+[Step 11 Part 2 Video in English on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225399426157480)
+
+[Step 11 Part 2 Video in English on YouTube](https://www.youtube.com/watch?v=2y0QrhvRMew)
+
+Step 11 Part 2 Video in Urdu on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225407400396831)
+
+[Step 11 Part 2 Video in Urdu on YouTube](https://www.youtube.com/watch?v=Qdk95pExTaY)
+

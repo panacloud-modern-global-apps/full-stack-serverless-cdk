@@ -39,6 +39,11 @@ Assigning role to lambda function
 
 [AWS Identity and Access Management Construct Library](https://docs.aws.amazon.com/cdk/api/latest/docs/aws-iam-readme.html)
 
+[Step 12 Video in English on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225434631997604)
+
+[Step 12 Video in English on YouTube](https://www.youtube.com/watch?v=geV-TV7kTgE)
+
+
 ## Useful commands
 
  * `npm run build`   compile typescript to js

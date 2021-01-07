@@ -44,6 +44,12 @@ Assigning role to lambda function
 [Step 12 Video in English on YouTube](https://www.youtube.com/watch?v=geV-TV7kTgE)
 
 
+[Step 12 Video in Urdu on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225444019552287)
+
+[Step 12 Video in Urdu on YouTube](https://www.youtube.com/watch?v=AHam583oT7c)
+
+
+
 ## Useful commands
 
  * `npm run build`   compile typescript to js

@@ -103,6 +103,10 @@
 
 [Step 13 Video in Urdu on YouTube](https://www.youtube.com/watch?v=9t_mhAn108Q)
 
+[Step 14 Video in English on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225509036897680)
+
+[Step 14 Video in English on YouTube](https://www.youtube.com/watch?v=7IwnB6yT0lU)
+
 
 
 

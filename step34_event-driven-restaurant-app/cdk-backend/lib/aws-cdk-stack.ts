@@ -142,16 +142,16 @@ export class AwsCdkStack extends cdk.Stack {
     const snsTopic = new sns.Topic(this, "BookingRequest");
     // Adding SNS subscribers
     /* subscriber 1 */
-    ////////////// // ref https://docs.aws.amazon.com/cdk/latest/guide/parameters.html
+    // ref https://docs.aws.amazon.com/cdk/latest/guide/parameters.html
     const email = new cdk.CfnParameter(this, 'emailParam', { type: 'String' }) // taking input
     snsTopic.addSubscription(
       new snsSubscriptions.EmailSubscription(email.valueAsString)
     );
     /* subscriber 2 */
     const phoneNoParam = new cdk.CfnParameter(this, 'phoneNoParam', { type: 'String' }) // taking input
-    // snsTopic.addSubscription(
-    //   new snsSubscriptions.SmsSubscription(phoneNoParam.valueAsString)
-    // );
+    snsTopic.addSubscription(
+      new snsSubscriptions.SmsSubscription(phoneNoParam.valueAsString)
+    );
 
     ////////////////////////////// Creating Lambda handler ////////////////////////
     /* lambda 1 */
@@ -209,30 +209,25 @@ export class AwsCdkStack extends cdk.Stack {
       .next(secondStep);
 
     // create a state machine
-    const stateMachine = new stepFunctions.StateMachine(this, 'StateMachine', {
-      definition: stf_chain
-    })
+    const stateMachine = new stepFunctions.StateMachine(this, 'StateMachine',
+      {
+        definition: stf_chain
+      })
 
 
     ////////// Creating rule to invoke step function on event ///////////////////////
-    const eventConsumerRules = new events.Rule(this, "eventConsumerRule", {
+    new events.Rule(this, "eventConsumerRule", {
       eventPattern: {
         source: [EVENT_SOURCE],
         detailType: [...mutations,],
       },
       targets: [new eventsTargets.SfnStateMachine(stateMachine)]
     });
-    // eventConsumerRules.addTarget(new eventsTargets.SfnStateMachine(stateMachine));
 
 
     // Log GraphQL API Endpoint
     new cdk.CfnOutput(this, 'Graphql_Endpoint', {
       value: api.graphqlUrl
-    });
-
-    // Log API Key
-    new cdk.CfnOutput(this, 'Graphql_API_Key', {
-      value: api.apiKey || "api key not found"
     });
 
     new cdk.CfnOutput(this, "UserPoolId", {

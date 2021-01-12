@@ -1,8 +1,8 @@
 # Welcome to your CDK TypeScript project!
 
-This is a blank project for TypeScript development with CDK.
+To deploy this stack install all the dependencies by running `npm install`. For deployment run `npm run build` and `cdk deploy --parameters emailParam=<your email address> --parameters phoneNoParam=<your phone number>`.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+After deployment you will get `Graphql_Endpoint`, `UserPoolId` and `UserPoolClientId` in your CLI, which will be required for our [frontend](../frontend) application.
 
 ## Useful commands
 

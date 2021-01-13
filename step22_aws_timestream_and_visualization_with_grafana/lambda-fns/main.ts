@@ -58,8 +58,27 @@ exports.handler = async (event: any) => {
       };
 
       await writeClient.writeRecords(params).promise();
+
+      return {
+        "isBase64Encoded" : true,
+        "statusCode": 200,
+        "headers": { 
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*'
+        },
+        "body": "Saved"
+      }
     }
   } catch (err) {
     console.log(err);
+    return {
+      "isBase64Encoded" : false,
+      "statusCode": 422,
+      "headers": { 
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+      },
+      "body": "Failed"
+    }
   }
 };

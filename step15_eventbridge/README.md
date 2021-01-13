@@ -178,3 +178,7 @@ new events.EventBus(this, 'myEventBus', {
 
 Also be mindful of whether you need to generate custom events or if you can accomplish the same task with AWS's state change events due to this pricing model:
 ![eventbridge-pricing](https://i.imgur.com/DnWWJ6Z.png)
+
+[Step 15 Video in English on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225545010436996)
+
+[Step 15 Video in English on YouTube](https://www.youtube.com/watch?v=jrUDwrgBCqg)

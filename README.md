@@ -107,6 +107,14 @@
 
 [Step 14 Video in English on YouTube](https://www.youtube.com/watch?v=7IwnB6yT0lU)
 
+[Step 14 Video in Urdu on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225524262878320)
+
+[Step 14 Video in Urdu on YouTube](https://www.youtube.com/watch?v=JTDRS1u3924)
+
+[Step 15 Video in English on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225545010436996)
+
+[Step 15 Video in English on YouTube](https://www.youtube.com/watch?v=jrUDwrgBCqg)
+
 
 
 

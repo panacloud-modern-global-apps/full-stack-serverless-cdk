@@ -127,6 +127,8 @@
 
 [AWS CDK](https://github.com/aws/aws-cdk) is an open source software development framework to model and provision your cloud application resources using familiar programming languages. With AWS CDK, you can define your infrastructure as code and provision it through AWS CloudFormation. AWS CDK is available to use in all AWS regions. In this learning repo we will use CDK with TypeScript.
 
+[CDK Primer](https://www.aws.training/Details/Curriculum?id=64511)
+
 [Why Amazon Is Bullish on AWS Cloud Development Kit](https://www.datacenterknowledge.com/amazon/why-amazon-bullish-aws-cloud-development-kit)
 
 [What is the AWS CDK?](https://docs.aws.amazon.com/cdk/latest/guide/home.html)

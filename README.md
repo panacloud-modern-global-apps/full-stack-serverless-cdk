@@ -1,6 +1,10 @@
 # Learn Full Stack Serverless Apps and API Development with CDK in Baby Steps
 
-[Part of Panacloud Bootcamp 2020](https://panacloud.github.io/bootcamp-2020/)
+[Repo is Part of Panacloud Bootcamp 2020](https://panacloud.github.io/bootcamp-2020/)
+
+[The Serverless Future of Supercharged Applications](https://containerjournal.com/topics/container-ecosystems/the-serverless-future-of-supercharged-applications/)
+
+[The impact of serverless on the future of cloud technology](https://cio.economictimes.indiatimes.com/news/cloud-computing/the-impact-of-serverless-on-the-future-of-cloud-technology/77275273)
 
 "In a recent informal poll, more than 66% of developers chose AWS CDK as their technology of choice for building serverless applications on AWS."
 [The CDK Patterns open source journey](https://aws.amazon.com/blogs/opensource/the-cdk-patterns-open-source-journey/)

@@ -10,3 +10,11 @@
 - [How to Verify Your Domain in AWS SES](https://www.youtube.com/watch?v=j8izLCTBIwg)
 
 - [How can you use SES to receive emails and store them?](https://www.youtube.com/watch?v=nxXIpPZzMd0&t=308s)
+
+[Step 16 Video in English on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225576641907763)
+
+[Step 16 Video in English on YouTube](https://www.youtube.com/watch?v=CPFYfPbSTUo)
+
+[Step 16 Video in Urdu on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225585267523398)
+
+[Step 16 Video in Urdu on YouTube](https://www.youtube.com/watch?v=jnym0CaBgkk)

@@ -176,6 +176,8 @@ Alternatives
 
 [What is an Event-Driven Architecture?](https://aws.amazon.com/event-driven-architecture/)
 
+[Operating Lambda: Design principles in event-driven architectures – Part 2](https://aws.amazon.com/blogs/compute/operating-lambda-design-principles-in-event-driven-architectures-part-2/)
+
 [BUILDING EVENT-DRIVEN ARCHITECTURES WORKSHOP ON AWS](https://event-driven-architecture.workshop.aws/)
 
 [10 Things Serverless Architects Should Know](https://aws.amazon.com/blogs/architecture/ten-things-serverless-architects-should-know/)

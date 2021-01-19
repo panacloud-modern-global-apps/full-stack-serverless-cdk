@@ -134,6 +134,11 @@
 
 [Step 16 Video in Urdu on YouTube](https://www.youtube.com/watch?v=jnym0CaBgkk)
 
+[Step 17 and 18 Video in English on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225602951765493)
+
+[Step 17 and 18 Video in English on YouTube](https://www.youtube.com/watch?v=pHTtY_o-WO0)
+
+
 
 
 

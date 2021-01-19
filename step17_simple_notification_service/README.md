@@ -111,3 +111,10 @@ codeCommitRepository.onCommit(new targets.SnsTopic(myTopic));
 ```
 
 This will result in adding a target to the event rule and will also modify the topic resource policy to allow CloudWatch events to publish to the topic.
+
+
+[Step 17 and 18 Video in English on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225602951765493)
+
+[Step 17 and 18 Video in English on YouTube](https://www.youtube.com/watch?v=pHTtY_o-WO0)
+
+

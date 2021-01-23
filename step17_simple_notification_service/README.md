@@ -117,4 +117,8 @@ This will result in adding a target to the event rule and will also modify the t
 
 [Step 17 and 18 Video in English on YouTube](https://www.youtube.com/watch?v=pHTtY_o-WO0)
 
+[Step 17 and 18 Video in Urdu on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225612202036744)
+
+[Step 17 and 18 Video in Urdu on YouTube](https://www.youtube.com/watch?v=BHDnDA1rzZY)
+
 

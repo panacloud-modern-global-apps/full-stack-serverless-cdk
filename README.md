@@ -146,6 +146,11 @@
 
 [Step 19 Video in English on YouTube](https://www.youtube.com/watch?v=C46KqvvImnA)
 
+[Step 19 Video in Urdu on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225650154145523)
+
+[Step 19 Video in Urdu on YouTube](https://www.youtube.com/watch?v=MHgNzf2OAPc)
+
+
 
 
 

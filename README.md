@@ -142,6 +142,10 @@
 
 [Step 17 and 18 Video in Urdu on YouTube](https://www.youtube.com/watch?v=BHDnDA1rzZY)
 
+[Step 19 Video in English on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225636344840299)
+
+[Step 19 Video in English on YouTube](https://www.youtube.com/watch?v=C46KqvvImnA)
+
 
 
 

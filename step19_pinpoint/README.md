@@ -6,8 +6,14 @@ Amazon Pinpoint is a flexible and scalable outbound and inbound marketing commun
 
 You can connect with customers over channels like email, SMS, push, or voice. Amazon Pinpoint is easy to set up, easy to use, and is flexible for all marketing communication scenarios. Amazon Pinpoint can grow with you and scales globally to billions of messages per day across channels.
 
+[Step 19 Video in English on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225636344840299)
+
+[Step 19 Video in English on YouTube](https://www.youtube.com/watch?v=C46KqvvImnA)
+
 ## Useful Links
 
 [AWS Pinpoint](https://aws.amazon.com/pinpoint/) <br />
 [AWS Pinpoint CDK Documatation](https://docs.aws.amazon.com/cdk/api/latest/docs/aws-pinpoint-readme.html) <br /> 
 [AWS Pinpoint API reference](https://docs.aws.amazon.com/pinpoint/latest/apireference/welcome.html) <br />
+
+

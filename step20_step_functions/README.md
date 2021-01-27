@@ -22,5 +22,9 @@ a reliable roll-back and error handling functionality then step functions are th
 Step functions act as a state machine that allows you to pass information between lambdas and define their sequence. You can also run lambda functions based on some logical expressions like if-else.
 Additionally, it also allows you to easily define roll-back paths and error handling.
 
+[Step 20 Video in English on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225683635182528)
+
+[Step 20 Video in English on YouTube](https://www.youtube.com/watch?v=0gk3dYhwuJc)
+
 
 

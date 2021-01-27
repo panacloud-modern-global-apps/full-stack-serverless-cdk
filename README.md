@@ -150,6 +150,10 @@
 
 [Step 19 Video in Urdu on YouTube](https://www.youtube.com/watch?v=MHgNzf2OAPc)
 
+[Step 20 Video in English on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225683635182528)
+
+[Step 20 Video in English on YouTube](https://www.youtube.com/watch?v=0gk3dYhwuJc)
+
 
 
 

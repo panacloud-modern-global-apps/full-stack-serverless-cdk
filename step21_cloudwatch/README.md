@@ -45,6 +45,15 @@ Amazon CloudWatch dashboards are customizable home pages in the CloudWatch conso
 
 [CloudWatch Dashboards Using AWS CDK](https://medium.com/poka-techblog/cloudwatch-dashboards-as-code-the-right-way-using-aws-cdk-1453309c5481)
 
+[Step 21 Video in English on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225731558780588)
+
+[Step 21 Video in English on YouTube](https://www.youtube.com/watch?v=R5ChiA-o5QY)
+
+[Step 21 Video in Urdu on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225741135820008)
+
+[Step 21 Video in Urdu on YouTube](https://www.youtube.com/watch?v=c7hJn9KxqDE)
+
+
 
 ## SNS
 Amazon Simple Notification Service (Amazon SNS) is a fully managed messaging service for both application-to-application (A2A) and application-to-person (A2P) communication.

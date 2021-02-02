@@ -149,6 +149,12 @@ go to localhost:3000 and login as username: admin , password: admin, and make th
 
 Select Add Data Source -> Timstream -> access & Secret key , add your credentials , select your DB and DBTable and start visualising with your grafana service.
 
+
+[Step 22 Video in English on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225763251372883)
+
+[Step 22 Video in English on YouTube](https://www.youtube.com/watch?v=6kwKtE8d9dc)
+
+
 # Welcome to your CDK TypeScript project!
 
 This is a blank project for TypeScript development with CDK.

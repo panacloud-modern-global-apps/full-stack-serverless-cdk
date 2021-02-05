@@ -1,0 +1,18 @@
+{
+  "name": "lambda",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-cdk/aws-secretsmanager": "^1.87.1",
+    "serverless-mysql": "^1.5.4"
+  },
+  "devDependencies": {
+    "@types/mysql": "^2.15.17"
+  }
+}

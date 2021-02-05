@@ -1,0 +1,994 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree"
+      },
+      "BackStack": {
+        "id": "BackStack",
+        "path": "BackStack",
+        "children": {
+          "myrdsvpc": {
+            "id": "myrdsvpc",
+            "path": "BackStack/myrdsvpc",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "BackStack/myrdsvpc/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::VPC",
+                  "aws:cdk:cloudformation:props": {
+                    "cidrBlock": "10.0.0.0/16",
+                    "enableDnsHostnames": true,
+                    "enableDnsSupport": true,
+                    "instanceTenancy": "default",
+                    "tags": [
+                      {
+                        "key": "Name",
+                        "value": "BackStack/myrdsvpc"
+                      }
+                    ]
+                  }
+                }
+              },
+              "PublicSubnet1": {
+                "id": "PublicSubnet1",
+                "path": "BackStack/myrdsvpc/PublicSubnet1",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "BackStack/myrdsvpc/PublicSubnet1/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "cidrBlock": "10.0.0.0/18",
+                        "vpcId": {
+                          "Ref": "myrdsvpc32DA0298"
+                        },
+                        "availabilityZone": {
+                          "Fn::Select": [
+                            0,
+                            {
+                              "Fn::GetAZs": ""
+                            }
+                          ]
+                        },
+                        "mapPublicIpOnLaunch": true,
+                        "tags": [
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "Public"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Public"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "BackStack/myrdsvpc/PublicSubnet1"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "BackStack/myrdsvpc/PublicSubnet1/Acl"
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "BackStack/myrdsvpc/PublicSubnet1/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "myrdsvpc32DA0298"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "BackStack/myrdsvpc/PublicSubnet1"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "BackStack/myrdsvpc/PublicSubnet1/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "myrdsvpcPublicSubnet1RouteTableDB7818CE"
+                        },
+                        "subnetId": {
+                          "Ref": "myrdsvpcPublicSubnet1SubnetA2146ADD"
+                        }
+                      }
+                    }
+                  },
+                  "DefaultRoute": {
+                    "id": "DefaultRoute",
+                    "path": "BackStack/myrdsvpc/PublicSubnet1/DefaultRoute",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "myrdsvpcPublicSubnet1RouteTableDB7818CE"
+                        },
+                        "destinationCidrBlock": "0.0.0.0/0",
+                        "gatewayId": {
+                          "Ref": "myrdsvpcIGWB6C64E3E"
+                        }
+                      }
+                    }
+                  },
+                  "EIP": {
+                    "id": "EIP",
+                    "path": "BackStack/myrdsvpc/PublicSubnet1/EIP",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::EIP",
+                      "aws:cdk:cloudformation:props": {
+                        "domain": "vpc",
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "BackStack/myrdsvpc/PublicSubnet1"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "NATGateway": {
+                    "id": "NATGateway",
+                    "path": "BackStack/myrdsvpc/PublicSubnet1/NATGateway",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::NatGateway",
+                      "aws:cdk:cloudformation:props": {
+                        "allocationId": {
+                          "Fn::GetAtt": [
+                            "myrdsvpcPublicSubnet1EIPC55EF77D",
+                            "AllocationId"
+                          ]
+                        },
+                        "subnetId": {
+                          "Ref": "myrdsvpcPublicSubnet1SubnetA2146ADD"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "BackStack/myrdsvpc/PublicSubnet1"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              "PublicSubnet2": {
+                "id": "PublicSubnet2",
+                "path": "BackStack/myrdsvpc/PublicSubnet2",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "BackStack/myrdsvpc/PublicSubnet2/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "cidrBlock": "10.0.64.0/18",
+                        "vpcId": {
+                          "Ref": "myrdsvpc32DA0298"
+                        },
+                        "availabilityZone": {
+                          "Fn::Select": [
+                            1,
+                            {
+                              "Fn::GetAZs": ""
+                            }
+                          ]
+                        },
+                        "mapPublicIpOnLaunch": true,
+                        "tags": [
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "Public"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Public"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "BackStack/myrdsvpc/PublicSubnet2"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "BackStack/myrdsvpc/PublicSubnet2/Acl"
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "BackStack/myrdsvpc/PublicSubnet2/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "myrdsvpc32DA0298"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "BackStack/myrdsvpc/PublicSubnet2"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "BackStack/myrdsvpc/PublicSubnet2/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "myrdsvpcPublicSubnet2RouteTable7AA099AA"
+                        },
+                        "subnetId": {
+                          "Ref": "myrdsvpcPublicSubnet2Subnet60DD4A42"
+                        }
+                      }
+                    }
+                  },
+                  "DefaultRoute": {
+                    "id": "DefaultRoute",
+                    "path": "BackStack/myrdsvpc/PublicSubnet2/DefaultRoute",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "myrdsvpcPublicSubnet2RouteTable7AA099AA"
+                        },
+                        "destinationCidrBlock": "0.0.0.0/0",
+                        "gatewayId": {
+                          "Ref": "myrdsvpcIGWB6C64E3E"
+                        }
+                      }
+                    }
+                  },
+                  "EIP": {
+                    "id": "EIP",
+                    "path": "BackStack/myrdsvpc/PublicSubnet2/EIP",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::EIP",
+                      "aws:cdk:cloudformation:props": {
+                        "domain": "vpc",
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "BackStack/myrdsvpc/PublicSubnet2"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "NATGateway": {
+                    "id": "NATGateway",
+                    "path": "BackStack/myrdsvpc/PublicSubnet2/NATGateway",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::NatGateway",
+                      "aws:cdk:cloudformation:props": {
+                        "allocationId": {
+                          "Fn::GetAtt": [
+                            "myrdsvpcPublicSubnet2EIP20417D70",
+                            "AllocationId"
+                          ]
+                        },
+                        "subnetId": {
+                          "Ref": "myrdsvpcPublicSubnet2Subnet60DD4A42"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "BackStack/myrdsvpc/PublicSubnet2"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              "PrivateSubnet1": {
+                "id": "PrivateSubnet1",
+                "path": "BackStack/myrdsvpc/PrivateSubnet1",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "BackStack/myrdsvpc/PrivateSubnet1/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "cidrBlock": "10.0.128.0/18",
+                        "vpcId": {
+                          "Ref": "myrdsvpc32DA0298"
+                        },
+                        "availabilityZone": {
+                          "Fn::Select": [
+                            0,
+                            {
+                              "Fn::GetAZs": ""
+                            }
+                          ]
+                        },
+                        "mapPublicIpOnLaunch": false,
+                        "tags": [
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "Private"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Private"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "BackStack/myrdsvpc/PrivateSubnet1"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "BackStack/myrdsvpc/PrivateSubnet1/Acl"
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "BackStack/myrdsvpc/PrivateSubnet1/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "myrdsvpc32DA0298"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "BackStack/myrdsvpc/PrivateSubnet1"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "BackStack/myrdsvpc/PrivateSubnet1/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "myrdsvpcPrivateSubnet1RouteTableC31EE1CA"
+                        },
+                        "subnetId": {
+                          "Ref": "myrdsvpcPrivateSubnet1Subnet1ACE8A6E"
+                        }
+                      }
+                    }
+                  },
+                  "DefaultRoute": {
+                    "id": "DefaultRoute",
+                    "path": "BackStack/myrdsvpc/PrivateSubnet1/DefaultRoute",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "myrdsvpcPrivateSubnet1RouteTableC31EE1CA"
+                        },
+                        "destinationCidrBlock": "0.0.0.0/0",
+                        "natGatewayId": {
+                          "Ref": "myrdsvpcPublicSubnet1NATGatewayB1E045CB"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "PrivateSubnet2": {
+                "id": "PrivateSubnet2",
+                "path": "BackStack/myrdsvpc/PrivateSubnet2",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "BackStack/myrdsvpc/PrivateSubnet2/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "cidrBlock": "10.0.192.0/18",
+                        "vpcId": {
+                          "Ref": "myrdsvpc32DA0298"
+                        },
+                        "availabilityZone": {
+                          "Fn::Select": [
+                            1,
+                            {
+                              "Fn::GetAZs": ""
+                            }
+                          ]
+                        },
+                        "mapPublicIpOnLaunch": false,
+                        "tags": [
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "Private"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Private"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "BackStack/myrdsvpc/PrivateSubnet2"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "BackStack/myrdsvpc/PrivateSubnet2/Acl"
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "BackStack/myrdsvpc/PrivateSubnet2/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "myrdsvpc32DA0298"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "BackStack/myrdsvpc/PrivateSubnet2"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "BackStack/myrdsvpc/PrivateSubnet2/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "myrdsvpcPrivateSubnet2RouteTableC5955767"
+                        },
+                        "subnetId": {
+                          "Ref": "myrdsvpcPrivateSubnet2Subnet972EB78D"
+                        }
+                      }
+                    }
+                  },
+                  "DefaultRoute": {
+                    "id": "DefaultRoute",
+                    "path": "BackStack/myrdsvpc/PrivateSubnet2/DefaultRoute",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "myrdsvpcPrivateSubnet2RouteTableC5955767"
+                        },
+                        "destinationCidrBlock": "0.0.0.0/0",
+                        "natGatewayId": {
+                          "Ref": "myrdsvpcPublicSubnet2NATGatewayDC334277"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "IGW": {
+                "id": "IGW",
+                "path": "BackStack/myrdsvpc/IGW",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::InternetGateway",
+                  "aws:cdk:cloudformation:props": {
+                    "tags": [
+                      {
+                        "key": "Name",
+                        "value": "BackStack/myrdsvpc"
+                      }
+                    ]
+                  }
+                }
+              },
+              "VPCGW": {
+                "id": "VPCGW",
+                "path": "BackStack/myrdsvpc/VPCGW",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::VPCGatewayAttachment",
+                  "aws:cdk:cloudformation:props": {
+                    "vpcId": {
+                      "Ref": "myrdsvpc32DA0298"
+                    },
+                    "internetGatewayId": {
+                      "Ref": "myrdsvpcIGWB6C64E3E"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "MySQL": {
+            "id": "MySQL",
+            "path": "BackStack/MySQL",
+            "children": {
+              "SubnetGroup": {
+                "id": "SubnetGroup",
+                "path": "BackStack/MySQL/SubnetGroup",
+                "children": {
+                  "Default": {
+                    "id": "Default",
+                    "path": "BackStack/MySQL/SubnetGroup/Default",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::RDS::DBSubnetGroup",
+                      "aws:cdk:cloudformation:props": {
+                        "dbSubnetGroupDescription": "Subnet group for MySQL database",
+                        "subnetIds": [
+                          {
+                            "Ref": "myrdsvpcPublicSubnet1SubnetA2146ADD"
+                          },
+                          {
+                            "Ref": "myrdsvpcPublicSubnet2Subnet60DD4A42"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              "SecurityGroup": {
+                "id": "SecurityGroup",
+                "path": "BackStack/MySQL/SecurityGroup",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "BackStack/MySQL/SecurityGroup/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroup",
+                      "aws:cdk:cloudformation:props": {
+                        "groupDescription": "Security group for MySQL database",
+                        "securityGroupEgress": [
+                          {
+                            "cidrIp": "0.0.0.0/0",
+                            "description": "Allow all outbound traffic by default",
+                            "ipProtocol": "-1"
+                          }
+                        ],
+                        "vpcId": {
+                          "Ref": "myrdsvpc32DA0298"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "Secret": {
+                "id": "Secret",
+                "path": "BackStack/MySQL/Secret",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "BackStack/MySQL/Secret/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::SecretsManager::Secret",
+                      "aws:cdk:cloudformation:props": {
+                        "description": {
+                          "Fn::Join": [
+                            "",
+                            [
+                              "Generated by the CDK for stack: ",
+                              {
+                                "Ref": "AWS::StackName"
+                              }
+                            ]
+                          ]
+                        },
+                        "generateSecretString": {
+                          "passwordLength": 30,
+                          "secretStringTemplate": "{\"username\":\"admin\"}",
+                          "generateStringKey": "password",
+                          "excludeCharacters": " %+~`#$&*()|[]{}:;<>?!'/@\"\\"
+                        }
+                      }
+                    }
+                  },
+                  "Attachment": {
+                    "id": "Attachment",
+                    "path": "BackStack/MySQL/Secret/Attachment",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "BackStack/MySQL/Secret/Attachment/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::SecretsManager::SecretTargetAttachment",
+                          "aws:cdk:cloudformation:props": {
+                            "secretId": {
+                              "Ref": "MySQLSecret76FDA2D7"
+                            },
+                            "targetId": {
+                              "Ref": "MySQL3B9CF5CC"
+                            },
+                            "targetType": "AWS::RDS::DBInstance"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "BackStack/MySQL/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::RDS::DBInstance",
+                  "aws:cdk:cloudformation:props": {
+                    "dbInstanceClass": "db.t3.small",
+                    "allocatedStorage": "100",
+                    "copyTagsToSnapshot": true,
+                    "dbName": "mySqlDataBase",
+                    "dbSubnetGroupName": {
+                      "Ref": "MySQLSubnetGroupA2AB7B72"
+                    },
+                    "deletionProtection": false,
+                    "enableCloudwatchLogsExports": [
+                      "audit",
+                      "error",
+                      "general"
+                    ],
+                    "enableIamDatabaseAuthentication": true,
+                    "engine": "mysql",
+                    "engineVersion": "5.6.39",
+                    "masterUsername": {
+                      "Fn::Join": [
+                        "",
+                        [
+                          "{{resolve:secretsmanager:",
+                          {
+                            "Ref": "MySQLSecret76FDA2D7"
+                          },
+                          ":SecretString:username::}}"
+                        ]
+                      ]
+                    },
+                    "masterUserPassword": {
+                      "Fn::Join": [
+                        "",
+                        [
+                          "{{resolve:secretsmanager:",
+                          {
+                            "Ref": "MySQLSecret76FDA2D7"
+                          },
+                          ":SecretString:password::}}"
+                        ]
+                      ]
+                    },
+                    "multiAz": false,
+                    "publiclyAccessible": true,
+                    "storageType": "standard",
+                    "vpcSecurityGroups": [
+                      {
+                        "Fn::GetAtt": [
+                          "MySQLSecurityGroupCAACC784",
+                          "GroupId"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "LambdaRole": {
+            "id": "LambdaRole",
+            "path": "BackStack/LambdaRole",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "BackStack/LambdaRole/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                  "aws:cdk:cloudformation:props": {
+                    "assumeRolePolicyDocument": {
+                      "Statement": [
+                        {
+                          "Action": "sts:AssumeRole",
+                          "Effect": "Allow",
+                          "Principal": {
+                            "Service": "lambda.amazonaws.com"
+                          }
+                        }
+                      ],
+                      "Version": "2012-10-17"
+                    },
+                    "managedPolicyArns": [
+                      {
+                        "Fn::Join": [
+                          "",
+                          [
+                            "arn:",
+                            {
+                              "Ref": "AWS::Partition"
+                            },
+                            ":iam::aws:policy/AmazonRDSDataFullAccess"
+                          ]
+                        ]
+                      },
+                      {
+                        "Fn::Join": [
+                          "",
+                          [
+                            "arn:",
+                            {
+                              "Ref": "AWS::Partition"
+                            },
+                            ":iam::aws:policy/service-role/AWSLambdaVPCAccessExecutionRole"
+                          ]
+                        ]
+                      }
+                    ]
+                  }
+                }
+              },
+              "DefaultPolicy": {
+                "id": "DefaultPolicy",
+                "path": "BackStack/LambdaRole/DefaultPolicy",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "BackStack/LambdaRole/DefaultPolicy/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                      "aws:cdk:cloudformation:props": {
+                        "policyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "rds-db:connect",
+                              "Effect": "Allow",
+                              "Resource": {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":rds:",
+                                    {
+                                      "Ref": "AWS::Region"
+                                    },
+                                    ":",
+                                    {
+                                      "Ref": "AWS::AccountId"
+                                    },
+                                    ":db:",
+                                    {
+                                      "Ref": "MySQL3B9CF5CC"
+                                    }
+                                  ]
+                                ]
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "policyName": "LambdaRoleDefaultPolicy75625A82",
+                        "roles": [
+                          {
+                            "Ref": "LambdaRole3A44B857"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "sna": {
+            "id": "sna",
+            "path": "BackStack/sna"
+          },
+          "HelloHandler": {
+            "id": "HelloHandler",
+            "path": "BackStack/HelloHandler",
+            "children": {
+              "Code": {
+                "id": "Code",
+                "path": "BackStack/HelloHandler/Code",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "BackStack/HelloHandler/Code/Stage"
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "BackStack/HelloHandler/Code/AssetBucket"
+                  }
+                }
+              },
+              "SecurityGroup": {
+                "id": "SecurityGroup",
+                "path": "BackStack/HelloHandler/SecurityGroup",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "BackStack/HelloHandler/SecurityGroup/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroup",
+                      "aws:cdk:cloudformation:props": {
+                        "groupDescription": "Automatic security group for Lambda Function BackStackHelloHandler4CD6E969",
+                        "securityGroupEgress": [
+                          {
+                            "cidrIp": "0.0.0.0/0",
+                            "description": "Allow all outbound traffic by default",
+                            "ipProtocol": "-1"
+                          }
+                        ],
+                        "vpcId": {
+                          "Ref": "myrdsvpc32DA0298"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "BackStack/HelloHandler/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                  "aws:cdk:cloudformation:props": {
+                    "code": {
+                      "s3Bucket": {
+                        "Ref": "AssetParameters8e49040270aecb795efa8d25f5cd9bf6942d4ae31fb4d0d56be1372dde530226S3Bucket4D4AF9AB"
+                      },
+                      "s3Key": {
+                        "Fn::Join": [
+                          "",
+                          [
+                            {
+                              "Fn::Select": [
+                                0,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParameters8e49040270aecb795efa8d25f5cd9bf6942d4ae31fb4d0d56be1372dde530226S3VersionKey2B54AA4A"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "Fn::Select": [
+                                1,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParameters8e49040270aecb795efa8d25f5cd9bf6942d4ae31fb4d0d56be1372dde530226S3VersionKey2B54AA4A"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        ]
+                      }
+                    },
+                    "role": {
+                      "Fn::GetAtt": [
+                        "LambdaRole3A44B857",
+                        "Arn"
+                      ]
+                    },
+                    "environment": {
+                      "variables": {
+                        "vala": {
+                          "Fn::Join": [
+                            "",
+                            [
+                              "{{resolve:secretsmanager:",
+                              {
+                                "Ref": "MySQLSecretAttachment426B2BAD"
+                              },
+                              ":SecretString:::}}"
+                            ]
+                          ]
+                        },
+                        "HOST": {
+                          "Fn::GetAtt": [
+                            "MySQL3B9CF5CC",
+                            "Endpoint.Address"
+                          ]
+                        }
+                      }
+                    },
+                    "handler": "index.handler",
+                    "runtime": "nodejs10.x",
+                    "timeout": 60,
+                    "vpcConfig": {
+                      "subnetIds": [
+                        {
+                          "Ref": "myrdsvpcPrivateSubnet1Subnet1ACE8A6E"
+                        },
+                        {
+                          "Ref": "myrdsvpcPrivateSubnet2Subnet972EB78D"
+                        }
+                      ],
+                      "securityGroupIds": [
+                        {
+                          "Fn::GetAtt": [
+                            "HelloHandlerSecurityGroup081795F9",
+                            "GroupId"
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "AssetParameters": {
+            "id": "AssetParameters",
+            "path": "BackStack/AssetParameters",
+            "children": {
+              "8e49040270aecb795efa8d25f5cd9bf6942d4ae31fb4d0d56be1372dde530226": {
+                "id": "8e49040270aecb795efa8d25f5cd9bf6942d4ae31fb4d0d56be1372dde530226",
+                "path": "BackStack/AssetParameters/8e49040270aecb795efa8d25f5cd9bf6942d4ae31fb4d0d56be1372dde530226",
+                "children": {
+                  "S3Bucket": {
+                    "id": "S3Bucket",
+                    "path": "BackStack/AssetParameters/8e49040270aecb795efa8d25f5cd9bf6942d4ae31fb4d0d56be1372dde530226/S3Bucket"
+                  },
+                  "S3VersionKey": {
+                    "id": "S3VersionKey",
+                    "path": "BackStack/AssetParameters/8e49040270aecb795efa8d25f5cd9bf6942d4ae31fb4d0d56be1372dde530226/S3VersionKey"
+                  },
+                  "ArtifactHash": {
+                    "id": "ArtifactHash",
+                    "path": "BackStack/AssetParameters/8e49040270aecb795efa8d25f5cd9bf6942d4ae31fb4d0d56be1372dde530226/ArtifactHash"
+                  }
+                }
+              }
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "BackStack/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "BackStack/CDKMetadata/Default"
+              },
+              "Condition": {
+                "id": "Condition",
+                "path": "BackStack/CDKMetadata/Condition"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

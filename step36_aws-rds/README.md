@@ -131,6 +131,7 @@ Add the following constructs in your stack
     // step #6: allow lambda to connect to the database instance
 
     myDBInstance.grantConnect(hello);
+    .................................
     
  
 

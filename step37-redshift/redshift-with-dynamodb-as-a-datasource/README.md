@@ -41,23 +41,27 @@ const role = new Role(this, "redshift", {
 
 const policy = new PolicyStatement({
   effect: Effect.ALLOW,
-  actions: ["s3:*", "ec2:*"],
+  actions: ["dynamodb:*", "ec2:*"],
   resources: ["*"],
 });
 
 role.addToPolicy(policy);
 ```
 
-## Upload a sample data file in s3
+## Create a dynamodb Table
 
 ```typescript
-const myBucket = new s3.Bucket(this, "Bucket");
-
-new s3deploy.BucketDeployment(this, "DeployFiles", {
-  sources: [s3deploy.Source.asset("./data")],
-  destinationBucket: myBucket,
+const lollyTable = new ddb.Table(this, "lollyTable", {
+  billingMode: ddb.BillingMode.PAY_PER_REQUEST,
+  partitionKey: {
+    name: "id",
+    type: ddb.AttributeType.STRING,
+  },
 });
 ```
+
+and add some data in the database
+e.g id: '123', name: 'name', age: 123
 
 ## To Connect to cluster
 
@@ -71,39 +75,38 @@ To create a Table Run
 
 1.
 
-```
+````sql
 CREATE SCHEMA myinternalschema
 
-```
+````
 
 2.
 
-```
-CREATE SCHEMA myinternalschema
 
-```
+````sql
 
 CREATE TABLE myinternalschema.event(
 name varchar(200),
-age varchar(200)
+age integer not null,
 city varchar(200));
 
-```
+````
 
 3.
-```
+````sql
 
 COPY myinternalschema.event FROM 's3://aws-redshift-spectrum-sample-data-us-east-1/spectrum/event/allevents_pipe.txt'
 iam_role ‘REPLACE THIS PLACEHOLDER WITH THE IAM ROLE ARN'
-delimiter '|' timeformat 'YYYY-MM-DD HH:MI:SS' region 'us-east-1'
+readratio 50;  
 
 ````
 4.Then check your data using
-```
+````sql
 SELECT * FROM myinternalschema.event
 LIMIT 10;
 
-```
+````
+
 
 # Welcome to your CDK TypeScript project!
 
@@ -113,14 +116,10 @@ The `cdk.json` file tells the CDK Toolkit how to execute your app.
 
 ## Useful commands
 
-- `npm run build` compile typescript to js
-- `npm run watch` watch for changes and compile
-- `npm run test` perform the jest unit tests
-- `cdk deploy` deploy this stack to your default AWS account/region
-- `cdk diff` compare deployed stack with current state
-- `cdk synth` emits the synthesized CloudFormation template
-
-```
-
-```
+ * `npm run build`   compile typescript to js
+ * `npm run watch`   watch for changes and compile
+ * `npm run test`    perform the jest unit tests
+ * `cdk deploy`      deploy this stack to your default AWS account/region
+ * `cdk diff`        compare deployed stack with current state
+ * `cdk synth`       emits the synthesized CloudFormation template
 ````

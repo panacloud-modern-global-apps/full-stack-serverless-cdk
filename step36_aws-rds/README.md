@@ -67,7 +67,7 @@ install & import modules:
 
 
 Add the following constructs in your stack
-```typesscript
+```javascript
 
 // step #1: create a vpc for RDS instance
 

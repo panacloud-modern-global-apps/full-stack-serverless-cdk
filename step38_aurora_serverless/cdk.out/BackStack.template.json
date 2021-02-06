@@ -1,0 +1,967 @@
+{
+  "Resources": {
+    "myrdsvpc32DA0298": {
+      "Type": "AWS::EC2::VPC",
+      "Properties": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "BackStack/myrdsvpc"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "BackStack/myrdsvpc/Resource"
+      }
+    },
+    "myrdsvpcPublicSubnet1SubnetA2146ADD": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "CidrBlock": "10.0.0.0/18",
+        "VpcId": {
+          "Ref": "myrdsvpc32DA0298"
+        },
+        "AvailabilityZone": {
+          "Fn::Select": [
+            0,
+            {
+              "Fn::GetAZs": ""
+            }
+          ]
+        },
+        "MapPublicIpOnLaunch": true,
+        "Tags": [
+          {
+            "Key": "aws-cdk:subnet-name",
+            "Value": "Public"
+          },
+          {
+            "Key": "aws-cdk:subnet-type",
+            "Value": "Public"
+          },
+          {
+            "Key": "Name",
+            "Value": "BackStack/myrdsvpc/PublicSubnet1"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "BackStack/myrdsvpc/PublicSubnet1/Subnet"
+      }
+    },
+    "myrdsvpcPublicSubnet1RouteTableDB7818CE": {
+      "Type": "AWS::EC2::RouteTable",
+      "Properties": {
+        "VpcId": {
+          "Ref": "myrdsvpc32DA0298"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "BackStack/myrdsvpc/PublicSubnet1"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "BackStack/myrdsvpc/PublicSubnet1/RouteTable"
+      }
+    },
+    "myrdsvpcPublicSubnet1RouteTableAssociationCB65386E": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "myrdsvpcPublicSubnet1RouteTableDB7818CE"
+        },
+        "SubnetId": {
+          "Ref": "myrdsvpcPublicSubnet1SubnetA2146ADD"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "BackStack/myrdsvpc/PublicSubnet1/RouteTableAssociation"
+      }
+    },
+    "myrdsvpcPublicSubnet1DefaultRouteB8A20DCB": {
+      "Type": "AWS::EC2::Route",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "myrdsvpcPublicSubnet1RouteTableDB7818CE"
+        },
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": {
+          "Ref": "myrdsvpcIGWB6C64E3E"
+        }
+      },
+      "DependsOn": [
+        "myrdsvpcVPCGW4ED3D538"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "BackStack/myrdsvpc/PublicSubnet1/DefaultRoute"
+      }
+    },
+    "myrdsvpcPublicSubnet1EIPC55EF77D": {
+      "Type": "AWS::EC2::EIP",
+      "Properties": {
+        "Domain": "vpc",
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "BackStack/myrdsvpc/PublicSubnet1"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "BackStack/myrdsvpc/PublicSubnet1/EIP"
+      }
+    },
+    "myrdsvpcPublicSubnet1NATGatewayB1E045CB": {
+      "Type": "AWS::EC2::NatGateway",
+      "Properties": {
+        "AllocationId": {
+          "Fn::GetAtt": [
+            "myrdsvpcPublicSubnet1EIPC55EF77D",
+            "AllocationId"
+          ]
+        },
+        "SubnetId": {
+          "Ref": "myrdsvpcPublicSubnet1SubnetA2146ADD"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "BackStack/myrdsvpc/PublicSubnet1"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "BackStack/myrdsvpc/PublicSubnet1/NATGateway"
+      }
+    },
+    "myrdsvpcPublicSubnet2Subnet60DD4A42": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "CidrBlock": "10.0.64.0/18",
+        "VpcId": {
+          "Ref": "myrdsvpc32DA0298"
+        },
+        "AvailabilityZone": {
+          "Fn::Select": [
+            1,
+            {
+              "Fn::GetAZs": ""
+            }
+          ]
+        },
+        "MapPublicIpOnLaunch": true,
+        "Tags": [
+          {
+            "Key": "aws-cdk:subnet-name",
+            "Value": "Public"
+          },
+          {
+            "Key": "aws-cdk:subnet-type",
+            "Value": "Public"
+          },
+          {
+            "Key": "Name",
+            "Value": "BackStack/myrdsvpc/PublicSubnet2"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "BackStack/myrdsvpc/PublicSubnet2/Subnet"
+      }
+    },
+    "myrdsvpcPublicSubnet2RouteTable7AA099AA": {
+      "Type": "AWS::EC2::RouteTable",
+      "Properties": {
+        "VpcId": {
+          "Ref": "myrdsvpc32DA0298"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "BackStack/myrdsvpc/PublicSubnet2"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "BackStack/myrdsvpc/PublicSubnet2/RouteTable"
+      }
+    },
+    "myrdsvpcPublicSubnet2RouteTableAssociation2BB2C767": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "myrdsvpcPublicSubnet2RouteTable7AA099AA"
+        },
+        "SubnetId": {
+          "Ref": "myrdsvpcPublicSubnet2Subnet60DD4A42"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "BackStack/myrdsvpc/PublicSubnet2/RouteTableAssociation"
+      }
+    },
+    "myrdsvpcPublicSubnet2DefaultRoute322CD1C1": {
+      "Type": "AWS::EC2::Route",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "myrdsvpcPublicSubnet2RouteTable7AA099AA"
+        },
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": {
+          "Ref": "myrdsvpcIGWB6C64E3E"
+        }
+      },
+      "DependsOn": [
+        "myrdsvpcVPCGW4ED3D538"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "BackStack/myrdsvpc/PublicSubnet2/DefaultRoute"
+      }
+    },
+    "myrdsvpcPublicSubnet2EIP20417D70": {
+      "Type": "AWS::EC2::EIP",
+      "Properties": {
+        "Domain": "vpc",
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "BackStack/myrdsvpc/PublicSubnet2"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "BackStack/myrdsvpc/PublicSubnet2/EIP"
+      }
+    },
+    "myrdsvpcPublicSubnet2NATGatewayDC334277": {
+      "Type": "AWS::EC2::NatGateway",
+      "Properties": {
+        "AllocationId": {
+          "Fn::GetAtt": [
+            "myrdsvpcPublicSubnet2EIP20417D70",
+            "AllocationId"
+          ]
+        },
+        "SubnetId": {
+          "Ref": "myrdsvpcPublicSubnet2Subnet60DD4A42"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "BackStack/myrdsvpc/PublicSubnet2"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "BackStack/myrdsvpc/PublicSubnet2/NATGateway"
+      }
+    },
+    "myrdsvpcPrivateSubnet1Subnet1ACE8A6E": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "CidrBlock": "10.0.128.0/18",
+        "VpcId": {
+          "Ref": "myrdsvpc32DA0298"
+        },
+        "AvailabilityZone": {
+          "Fn::Select": [
+            0,
+            {
+              "Fn::GetAZs": ""
+            }
+          ]
+        },
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+          {
+            "Key": "aws-cdk:subnet-name",
+            "Value": "Private"
+          },
+          {
+            "Key": "aws-cdk:subnet-type",
+            "Value": "Private"
+          },
+          {
+            "Key": "Name",
+            "Value": "BackStack/myrdsvpc/PrivateSubnet1"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "BackStack/myrdsvpc/PrivateSubnet1/Subnet"
+      }
+    },
+    "myrdsvpcPrivateSubnet1RouteTableC31EE1CA": {
+      "Type": "AWS::EC2::RouteTable",
+      "Properties": {
+        "VpcId": {
+          "Ref": "myrdsvpc32DA0298"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "BackStack/myrdsvpc/PrivateSubnet1"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "BackStack/myrdsvpc/PrivateSubnet1/RouteTable"
+      }
+    },
+    "myrdsvpcPrivateSubnet1RouteTableAssociation707D9C55": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "myrdsvpcPrivateSubnet1RouteTableC31EE1CA"
+        },
+        "SubnetId": {
+          "Ref": "myrdsvpcPrivateSubnet1Subnet1ACE8A6E"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "BackStack/myrdsvpc/PrivateSubnet1/RouteTableAssociation"
+      }
+    },
+    "myrdsvpcPrivateSubnet1DefaultRoute7603DD16": {
+      "Type": "AWS::EC2::Route",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "myrdsvpcPrivateSubnet1RouteTableC31EE1CA"
+        },
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "NatGatewayId": {
+          "Ref": "myrdsvpcPublicSubnet1NATGatewayB1E045CB"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "BackStack/myrdsvpc/PrivateSubnet1/DefaultRoute"
+      }
+    },
+    "myrdsvpcPrivateSubnet2Subnet972EB78D": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "CidrBlock": "10.0.192.0/18",
+        "VpcId": {
+          "Ref": "myrdsvpc32DA0298"
+        },
+        "AvailabilityZone": {
+          "Fn::Select": [
+            1,
+            {
+              "Fn::GetAZs": ""
+            }
+          ]
+        },
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+          {
+            "Key": "aws-cdk:subnet-name",
+            "Value": "Private"
+          },
+          {
+            "Key": "aws-cdk:subnet-type",
+            "Value": "Private"
+          },
+          {
+            "Key": "Name",
+            "Value": "BackStack/myrdsvpc/PrivateSubnet2"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "BackStack/myrdsvpc/PrivateSubnet2/Subnet"
+      }
+    },
+    "myrdsvpcPrivateSubnet2RouteTableC5955767": {
+      "Type": "AWS::EC2::RouteTable",
+      "Properties": {
+        "VpcId": {
+          "Ref": "myrdsvpc32DA0298"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "BackStack/myrdsvpc/PrivateSubnet2"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "BackStack/myrdsvpc/PrivateSubnet2/RouteTable"
+      }
+    },
+    "myrdsvpcPrivateSubnet2RouteTableAssociation093E696E": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "myrdsvpcPrivateSubnet2RouteTableC5955767"
+        },
+        "SubnetId": {
+          "Ref": "myrdsvpcPrivateSubnet2Subnet972EB78D"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "BackStack/myrdsvpc/PrivateSubnet2/RouteTableAssociation"
+      }
+    },
+    "myrdsvpcPrivateSubnet2DefaultRoute0EC4FE96": {
+      "Type": "AWS::EC2::Route",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": "myrdsvpcPrivateSubnet2RouteTableC5955767"
+        },
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "NatGatewayId": {
+          "Ref": "myrdsvpcPublicSubnet2NATGatewayDC334277"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "BackStack/myrdsvpc/PrivateSubnet2/DefaultRoute"
+      }
+    },
+    "myrdsvpcIGWB6C64E3E": {
+      "Type": "AWS::EC2::InternetGateway",
+      "Properties": {
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "BackStack/myrdsvpc"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "BackStack/myrdsvpc/IGW"
+      }
+    },
+    "myrdsvpcVPCGW4ED3D538": {
+      "Type": "AWS::EC2::VPCGatewayAttachment",
+      "Properties": {
+        "VpcId": {
+          "Ref": "myrdsvpc32DA0298"
+        },
+        "InternetGatewayId": {
+          "Ref": "myrdsvpcIGWB6C64E3E"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "BackStack/myrdsvpc/VPCGW"
+      }
+    },
+    "ServerlessDBSubnets0FF91B65": {
+      "Type": "AWS::RDS::DBSubnetGroup",
+      "Properties": {
+        "DBSubnetGroupDescription": "Subnets for ServerlessDB database",
+        "SubnetIds": [
+          {
+            "Ref": "myrdsvpcPrivateSubnet1Subnet1ACE8A6E"
+          },
+          {
+            "Ref": "myrdsvpcPrivateSubnet2Subnet972EB78D"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "BackStack/ServerlessDB/Subnets/Default"
+      }
+    },
+    "ServerlessDBSecretAD618695": {
+      "Type": "AWS::SecretsManager::Secret",
+      "Properties": {
+        "Description": {
+          "Fn::Join": [
+            "",
+            [
+              "Generated by the CDK for stack: ",
+              {
+                "Ref": "AWS::StackName"
+              }
+            ]
+          ]
+        },
+        "GenerateSecretString": {
+          "ExcludeCharacters": " %+~`#$&*()|[]{}:;<>?!'/@\"\\",
+          "GenerateStringKey": "password",
+          "PasswordLength": 30,
+          "SecretStringTemplate": "{\"username\":\"admin\"}"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "BackStack/ServerlessDB/Secret/Resource"
+      }
+    },
+    "ServerlessDBSecretAttachment7D5C1D40": {
+      "Type": "AWS::SecretsManager::SecretTargetAttachment",
+      "Properties": {
+        "SecretId": {
+          "Ref": "ServerlessDBSecretAD618695"
+        },
+        "TargetId": {
+          "Ref": "ServerlessDB955F8DC8"
+        },
+        "TargetType": "AWS::RDS::DBCluster"
+      },
+      "Metadata": {
+        "aws:cdk:path": "BackStack/ServerlessDB/Secret/Attachment/Resource"
+      }
+    },
+    "ServerlessDBSecurityGroupE3DAB8B8": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "RDS security group",
+        "SecurityGroupEgress": [
+          {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow all outbound traffic by default",
+            "IpProtocol": "-1"
+          }
+        ],
+        "SecurityGroupIngress": [
+          {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "from 0.0.0.0/0:3306",
+            "FromPort": 3306,
+            "IpProtocol": "tcp",
+            "ToPort": 3306
+          }
+        ],
+        "VpcId": {
+          "Ref": "myrdsvpc32DA0298"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "BackStack/ServerlessDB/SecurityGroup/Resource"
+      }
+    },
+    "ServerlessDB955F8DC8": {
+      "Type": "AWS::RDS::DBCluster",
+      "Properties": {
+        "Engine": "aurora-mysql",
+        "DatabaseName": "mysqldb",
+        "DBClusterParameterGroupName": "default.aurora-mysql5.7",
+        "DBSubnetGroupName": {
+          "Ref": "ServerlessDBSubnets0FF91B65"
+        },
+        "DeletionProtection": false,
+        "EngineMode": "serverless",
+        "EngineVersion": "5.7.12",
+        "MasterUsername": {
+          "Fn::Join": [
+            "",
+            [
+              "{{resolve:secretsmanager:",
+              {
+                "Ref": "ServerlessDBSecretAD618695"
+              },
+              ":SecretString:username::}}"
+            ]
+          ]
+        },
+        "MasterUserPassword": {
+          "Fn::Join": [
+            "",
+            [
+              "{{resolve:secretsmanager:",
+              {
+                "Ref": "ServerlessDBSecretAD618695"
+              },
+              ":SecretString:password::}}"
+            ]
+          ]
+        },
+        "ScalingConfiguration": {
+          "AutoPause": true,
+          "MaxCapacity": 32,
+          "MinCapacity": 8,
+          "SecondsUntilAutoPause": 600
+        },
+        "StorageEncrypted": true,
+        "VpcSecurityGroupIds": [
+          {
+            "Fn::GetAtt": [
+              "ServerlessDBSecurityGroupE3DAB8B8",
+              "GroupId"
+            ]
+          }
+        ]
+      },
+      "UpdateReplacePolicy": "Snapshot",
+      "Metadata": {
+        "aws:cdk:path": "BackStack/ServerlessDB/Resource"
+      }
+    },
+    "LambdaRole3A44B857": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/AmazonRDSDataFullAccess"
+              ]
+            ]
+          },
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/service-role/AWSLambdaVPCAccessExecutionRole"
+              ]
+            ]
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "BackStack/LambdaRole/Resource"
+      }
+    },
+    "HelloHandlerSecurityGroup081795F9": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "Automatic security group for Lambda Function BackStackHelloHandler4CD6E969",
+        "SecurityGroupEgress": [
+          {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow all outbound traffic by default",
+            "IpProtocol": "-1"
+          }
+        ],
+        "VpcId": {
+          "Ref": "myrdsvpc32DA0298"
+        }
+      },
+      "DependsOn": [
+        "ServerlessDB955F8DC8",
+        "ServerlessDBSecretAttachment7D5C1D40",
+        "ServerlessDBSecretAD618695",
+        "ServerlessDBSecurityGroupE3DAB8B8",
+        "ServerlessDBSubnets0FF91B65"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "BackStack/HelloHandler/SecurityGroup/Resource"
+      }
+    },
+    "HelloHandler2E4FBA4D": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "AssetParameters6ebefaf8dc891819d7be249a17b9043fd2023a9ee846407da67164bd37c51eefS3Bucket48E8ABB7"
+          },
+          "S3Key": {
+            "Fn::Join": [
+              "",
+              [
+                {
+                  "Fn::Select": [
+                    0,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameters6ebefaf8dc891819d7be249a17b9043fd2023a9ee846407da67164bd37c51eefS3VersionKeyBD627491"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "Fn::Select": [
+                    1,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameters6ebefaf8dc891819d7be249a17b9043fd2023a9ee846407da67164bd37c51eefS3VersionKeyBD627491"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        },
+        "Role": {
+          "Fn::GetAtt": [
+            "LambdaRole3A44B857",
+            "Arn"
+          ]
+        },
+        "Environment": {
+          "Variables": {
+            "vala": {
+              "Fn::Join": [
+                "",
+                [
+                  "{{resolve:secretsmanager:",
+                  {
+                    "Ref": "ServerlessDBSecretAttachment7D5C1D40"
+                  },
+                  ":SecretString:::}}"
+                ]
+              ]
+            }
+          }
+        },
+        "Handler": "index.handler",
+        "Runtime": "nodejs10.x",
+        "Timeout": 60,
+        "VpcConfig": {
+          "SecurityGroupIds": [
+            {
+              "Fn::GetAtt": [
+                "HelloHandlerSecurityGroup081795F9",
+                "GroupId"
+              ]
+            }
+          ],
+          "SubnetIds": [
+            {
+              "Ref": "myrdsvpcPrivateSubnet1Subnet1ACE8A6E"
+            },
+            {
+              "Ref": "myrdsvpcPrivateSubnet2Subnet972EB78D"
+            }
+          ]
+        }
+      },
+      "DependsOn": [
+        "LambdaRole3A44B857",
+        "ServerlessDB955F8DC8",
+        "ServerlessDBSecretAttachment7D5C1D40",
+        "ServerlessDBSecretAD618695",
+        "ServerlessDBSecurityGroupE3DAB8B8",
+        "ServerlessDBSubnets0FF91B65"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "BackStack/HelloHandler/Resource",
+        "aws:asset:path": "asset.6ebefaf8dc891819d7be249a17b9043fd2023a9ee846407da67164bd37c51eef.zip",
+        "aws:asset:property": "Code"
+      }
+    },
+    "CDKMetadata": {
+      "Type": "AWS::CDK::Metadata",
+      "Properties": {
+        "Modules": "aws-cdk=1.87.1,@aws-cdk/assets=1.87.1,@aws-cdk/aws-applicationautoscaling=1.87.1,@aws-cdk/aws-autoscaling-common=1.87.1,@aws-cdk/aws-cloudwatch=1.87.1,@aws-cdk/aws-codeguruprofiler=1.87.1,@aws-cdk/aws-ec2=1.87.1,@aws-cdk/aws-ecr=1.87.1,@aws-cdk/aws-ecr-assets=1.87.1,@aws-cdk/aws-events=1.87.1,@aws-cdk/aws-iam=1.87.1,@aws-cdk/aws-kms=1.87.1,@aws-cdk/aws-lambda=1.87.1,@aws-cdk/aws-logs=1.87.1,@aws-cdk/aws-rds=1.87.1,@aws-cdk/aws-s3=1.87.1,@aws-cdk/aws-s3-assets=1.87.1,@aws-cdk/aws-sam=1.87.1,@aws-cdk/aws-secretsmanager=1.87.1,@aws-cdk/aws-sqs=1.87.1,@aws-cdk/aws-ssm=1.87.1,@aws-cdk/cloud-assembly-schema=1.87.1,@aws-cdk/core=1.87.1,@aws-cdk/cx-api=1.87.1,@aws-cdk/region-info=1.87.1,jsii-runtime=node.js/v14.15.1"
+      },
+      "Metadata": {
+        "aws:cdk:path": "BackStack/CDKMetadata/Default"
+      },
+      "Condition": "CDKMetadataAvailable"
+    }
+  },
+  "Parameters": {
+    "AssetParameters6ebefaf8dc891819d7be249a17b9043fd2023a9ee846407da67164bd37c51eefS3Bucket48E8ABB7": {
+      "Type": "String",
+      "Description": "S3 bucket for asset \"6ebefaf8dc891819d7be249a17b9043fd2023a9ee846407da67164bd37c51eef\""
+    },
+    "AssetParameters6ebefaf8dc891819d7be249a17b9043fd2023a9ee846407da67164bd37c51eefS3VersionKeyBD627491": {
+      "Type": "String",
+      "Description": "S3 key for asset version \"6ebefaf8dc891819d7be249a17b9043fd2023a9ee846407da67164bd37c51eef\""
+    },
+    "AssetParameters6ebefaf8dc891819d7be249a17b9043fd2023a9ee846407da67164bd37c51eefArtifactHashD3B9F6EF": {
+      "Type": "String",
+      "Description": "Artifact hash for asset \"6ebefaf8dc891819d7be249a17b9043fd2023a9ee846407da67164bd37c51eef\""
+    }
+  },
+  "Conditions": {
+    "CDKMetadataAvailable": {
+      "Fn::Or": [
+        {
+          "Fn::Or": [
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-east-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-northeast-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-northeast-2"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-south-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-southeast-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ap-southeast-2"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "ca-central-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "cn-north-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "cn-northwest-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-central-1"
+              ]
+            }
+          ]
+        },
+        {
+          "Fn::Or": [
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-north-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-west-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-west-2"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "eu-west-3"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "me-south-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "sa-east-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "us-east-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "us-east-2"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "us-west-1"
+              ]
+            },
+            {
+              "Fn::Equals": [
+                {
+                  "Ref": "AWS::Region"
+                },
+                "us-west-2"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

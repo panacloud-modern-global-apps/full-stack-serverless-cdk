@@ -1,0 +1,1113 @@
+{
+  "version": "9.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "BackStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "BackStack.template.json"
+      },
+      "metadata": {
+        "/BackStack": [
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.6ebefaf8dc891819d7be249a17b9043fd2023a9ee846407da67164bd37c51eef.zip",
+              "id": "6ebefaf8dc891819d7be249a17b9043fd2023a9ee846407da67164bd37c51eef",
+              "packaging": "file",
+              "sourceHash": "6ebefaf8dc891819d7be249a17b9043fd2023a9ee846407da67164bd37c51eef",
+              "s3BucketParameter": "AssetParameters6ebefaf8dc891819d7be249a17b9043fd2023a9ee846407da67164bd37c51eefS3Bucket48E8ABB7",
+              "s3KeyParameter": "AssetParameters6ebefaf8dc891819d7be249a17b9043fd2023a9ee846407da67164bd37c51eefS3VersionKeyBD627491",
+              "artifactHashParameter": "AssetParameters6ebefaf8dc891819d7be249a17b9043fd2023a9ee846407da67164bd37c51eefArtifactHashD3B9F6EF"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/core/lib/construct-compat.ts:431:92)",
+              "LegacyStackSynthesizer.doAddFileAsset (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:171:23)",
+              "LegacyStackSynthesizer.addFileAsset (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:74:19)",
+              "BackStack.addFileAsset (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/core/lib/stack.ts:657:29)",
+              "LegacyStackSynthesizer.addFileAsset (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:78:25)",
+              "new Asset (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:151:40)",
+              "AssetCode.bind (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-lambda/lib/code.ts:251:20)",
+              "new Function (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-lambda/lib/function.ts:572:29)",
+              "new BackStack (/home/zulehuma/Desktop/rds/lib/back-stack.ts:49:19)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/myrdsvpc/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myrdsvpc32DA0298",
+            "trace": [
+              "new Vpc (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1199:21)",
+              "new BackStack (/home/zulehuma/Desktop/rds/lib/back-stack.ts:17:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/myrdsvpc/PublicSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myrdsvpcPublicSubnet1SubnetA2146ADD",
+            "trace": [
+              "new Subnet (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1533:20)",
+              "new PublicSubnet (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1748:5)",
+              "/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1379:32",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1361:28)",
+              "Vpc.createSubnets (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1356:12)",
+              "new Vpc (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1228:10)",
+              "new BackStack (/home/zulehuma/Desktop/rds/lib/back-stack.ts:17:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/myrdsvpc/PublicSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myrdsvpcPublicSubnet1RouteTableDB7818CE",
+            "trace": [
+              "new Subnet (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1551:19)",
+              "new PublicSubnet (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1748:5)",
+              "/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1379:32",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1361:28)",
+              "Vpc.createSubnets (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1356:12)",
+              "new Vpc (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1228:10)",
+              "new BackStack (/home/zulehuma/Desktop/rds/lib/back-stack.ts:17:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/myrdsvpc/PublicSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myrdsvpcPublicSubnet1RouteTableAssociationCB65386E",
+            "trace": [
+              "new Subnet (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1557:5)",
+              "new PublicSubnet (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1748:5)",
+              "/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1379:32",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1361:28)",
+              "Vpc.createSubnets (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1356:12)",
+              "new Vpc (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1228:10)",
+              "new BackStack (/home/zulehuma/Desktop/rds/lib/back-stack.ts:17:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/myrdsvpc/PublicSubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myrdsvpcPublicSubnet1DefaultRouteB8A20DCB",
+            "trace": [
+              "PublicSubnet.addDefaultInternetRoute (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1573:19)",
+              "/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1247:22",
+              "Array.forEach (<anonymous>)",
+              "new Vpc (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1246:46)",
+              "new BackStack (/home/zulehuma/Desktop/rds/lib/back-stack.ts:17:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/myrdsvpc/PublicSubnet1/EIP": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myrdsvpcPublicSubnet1EIPC55EF77D",
+            "trace": [
+              "PublicSubnet.addNatGateway (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1760:21)",
+              "NatGatewayProvider.configureNat (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/nat.ts:173:27)",
+              "Vpc.createNatGateways (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1331:14)",
+              "new Vpc (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1253:14)",
+              "new BackStack (/home/zulehuma/Desktop/rds/lib/back-stack.ts:17:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/myrdsvpc/PublicSubnet1/NATGateway": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myrdsvpcPublicSubnet1NATGatewayB1E045CB",
+            "trace": [
+              "PublicSubnet.addNatGateway (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1758:17)",
+              "NatGatewayProvider.configureNat (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/nat.ts:173:27)",
+              "Vpc.createNatGateways (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1331:14)",
+              "new Vpc (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1253:14)",
+              "new BackStack (/home/zulehuma/Desktop/rds/lib/back-stack.ts:17:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/myrdsvpc/PublicSubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myrdsvpcPublicSubnet2Subnet60DD4A42",
+            "trace": [
+              "new Subnet (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1533:20)",
+              "new PublicSubnet (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1748:5)",
+              "/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1379:32",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1361:28)",
+              "Vpc.createSubnets (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1356:12)",
+              "new Vpc (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1228:10)",
+              "new BackStack (/home/zulehuma/Desktop/rds/lib/back-stack.ts:17:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/myrdsvpc/PublicSubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myrdsvpcPublicSubnet2RouteTable7AA099AA",
+            "trace": [
+              "new Subnet (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1551:19)",
+              "new PublicSubnet (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1748:5)",
+              "/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1379:32",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1361:28)",
+              "Vpc.createSubnets (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1356:12)",
+              "new Vpc (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1228:10)",
+              "new BackStack (/home/zulehuma/Desktop/rds/lib/back-stack.ts:17:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/myrdsvpc/PublicSubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myrdsvpcPublicSubnet2RouteTableAssociation2BB2C767",
+            "trace": [
+              "new Subnet (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1557:5)",
+              "new PublicSubnet (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1748:5)",
+              "/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1379:32",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1361:28)",
+              "Vpc.createSubnets (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1356:12)",
+              "new Vpc (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1228:10)",
+              "new BackStack (/home/zulehuma/Desktop/rds/lib/back-stack.ts:17:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/myrdsvpc/PublicSubnet2/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myrdsvpcPublicSubnet2DefaultRoute322CD1C1",
+            "trace": [
+              "PublicSubnet.addDefaultInternetRoute (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1573:19)",
+              "/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1247:22",
+              "Array.forEach (<anonymous>)",
+              "new Vpc (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1246:46)",
+              "new BackStack (/home/zulehuma/Desktop/rds/lib/back-stack.ts:17:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/myrdsvpc/PublicSubnet2/EIP": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myrdsvpcPublicSubnet2EIP20417D70",
+            "trace": [
+              "PublicSubnet.addNatGateway (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1760:21)",
+              "NatGatewayProvider.configureNat (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/nat.ts:173:27)",
+              "Vpc.createNatGateways (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1331:14)",
+              "new Vpc (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1253:14)",
+              "new BackStack (/home/zulehuma/Desktop/rds/lib/back-stack.ts:17:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/myrdsvpc/PublicSubnet2/NATGateway": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myrdsvpcPublicSubnet2NATGatewayDC334277",
+            "trace": [
+              "PublicSubnet.addNatGateway (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1758:17)",
+              "NatGatewayProvider.configureNat (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/nat.ts:173:27)",
+              "Vpc.createNatGateways (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1331:14)",
+              "new Vpc (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1253:14)",
+              "new BackStack (/home/zulehuma/Desktop/rds/lib/back-stack.ts:17:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/myrdsvpc/PrivateSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myrdsvpcPrivateSubnet1Subnet1ACE8A6E",
+            "trace": [
+              "new Subnet (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1533:20)",
+              "new PrivateSubnet (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1786:5)",
+              "/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1384:33",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1361:28)",
+              "Vpc.createSubnets (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1356:12)",
+              "new Vpc (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1228:10)",
+              "new BackStack (/home/zulehuma/Desktop/rds/lib/back-stack.ts:17:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/myrdsvpc/PrivateSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myrdsvpcPrivateSubnet1RouteTableC31EE1CA",
+            "trace": [
+              "new Subnet (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1551:19)",
+              "new PrivateSubnet (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1786:5)",
+              "/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1384:33",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1361:28)",
+              "Vpc.createSubnets (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1356:12)",
+              "new Vpc (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1228:10)",
+              "new BackStack (/home/zulehuma/Desktop/rds/lib/back-stack.ts:17:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/myrdsvpc/PrivateSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myrdsvpcPrivateSubnet1RouteTableAssociation707D9C55",
+            "trace": [
+              "new Subnet (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1557:5)",
+              "new PrivateSubnet (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1786:5)",
+              "/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1384:33",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1361:28)",
+              "Vpc.createSubnets (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1356:12)",
+              "new Vpc (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1228:10)",
+              "new BackStack (/home/zulehuma/Desktop/rds/lib/back-stack.ts:17:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/myrdsvpc/PrivateSubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myrdsvpcPrivateSubnet1DefaultRoute7603DD16",
+            "trace": [
+              "PrivateSubnet.addRoute (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1619:19)",
+              "NatGatewayProvider.configureSubnet (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/nat.ts:186:12)",
+              "NatGatewayProvider.configureNat (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/nat.ts:179:12)",
+              "Vpc.createNatGateways (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1331:14)",
+              "new Vpc (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1253:14)",
+              "new BackStack (/home/zulehuma/Desktop/rds/lib/back-stack.ts:17:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/myrdsvpc/PrivateSubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myrdsvpcPrivateSubnet2Subnet972EB78D",
+            "trace": [
+              "new Subnet (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1533:20)",
+              "new PrivateSubnet (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1786:5)",
+              "/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1384:33",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1361:28)",
+              "Vpc.createSubnets (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1356:12)",
+              "new Vpc (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1228:10)",
+              "new BackStack (/home/zulehuma/Desktop/rds/lib/back-stack.ts:17:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/myrdsvpc/PrivateSubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myrdsvpcPrivateSubnet2RouteTableC5955767",
+            "trace": [
+              "new Subnet (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1551:19)",
+              "new PrivateSubnet (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1786:5)",
+              "/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1384:33",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1361:28)",
+              "Vpc.createSubnets (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1356:12)",
+              "new Vpc (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1228:10)",
+              "new BackStack (/home/zulehuma/Desktop/rds/lib/back-stack.ts:17:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/myrdsvpc/PrivateSubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myrdsvpcPrivateSubnet2RouteTableAssociation093E696E",
+            "trace": [
+              "new Subnet (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1557:5)",
+              "new PrivateSubnet (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1786:5)",
+              "/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1384:33",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1361:28)",
+              "Vpc.createSubnets (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1356:12)",
+              "new Vpc (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1228:10)",
+              "new BackStack (/home/zulehuma/Desktop/rds/lib/back-stack.ts:17:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/myrdsvpc/PrivateSubnet2/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myrdsvpcPrivateSubnet2DefaultRoute0EC4FE96",
+            "trace": [
+              "PrivateSubnet.addRoute (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1619:19)",
+              "NatGatewayProvider.configureSubnet (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/nat.ts:186:12)",
+              "NatGatewayProvider.configureNat (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/nat.ts:179:12)",
+              "Vpc.createNatGateways (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1331:14)",
+              "new Vpc (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1253:14)",
+              "new BackStack (/home/zulehuma/Desktop/rds/lib/back-stack.ts:17:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/myrdsvpc/IGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myrdsvpcIGWB6C64E3E",
+            "trace": [
+              "new Vpc (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1235:19)",
+              "new BackStack (/home/zulehuma/Desktop/rds/lib/back-stack.ts:17:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/myrdsvpc/VPCGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myrdsvpcVPCGW4ED3D538",
+            "trace": [
+              "new Vpc (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1241:19)",
+              "new BackStack (/home/zulehuma/Desktop/rds/lib/back-stack.ts:17:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/ServerlessDB/Subnets/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ServerlessDBSubnets0FF91B65",
+            "trace": [
+              "new SubnetGroup (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-rds/lib/subnet-group.ts:78:25)",
+              "new ServerlessCluster (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-rds/lib/serverless-cluster.ts:410:45)",
+              "new BackStack (/home/zulehuma/Desktop/rds/lib/back-stack.ts:21:26)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/ServerlessDB/Secret/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ServerlessDBSecretAD618695",
+            "trace": [
+              "new Secret (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-secretsmanager/lib/secret.ts:424:22)",
+              "new DatabaseSecret (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-rds/lib/database-secret.ts:60:5)",
+              "Object.renderCredentials (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-rds/lib/private/util.ts:104:7)",
+              "new ServerlessCluster (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-rds/lib/serverless-cluster.ts:424:25)",
+              "new BackStack (/home/zulehuma/Desktop/rds/lib/back-stack.ts:21:26)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/ServerlessDB/Secret/Attachment/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ServerlessDBSecretAttachment7D5C1D40",
+            "trace": [
+              "new SecretTargetAttachment (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-secretsmanager/lib/secret.ts:606:24)",
+              "DatabaseSecret.attach (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-secretsmanager/lib/secret.ts:293:12)",
+              "new ServerlessCluster (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-rds/lib/serverless-cluster.ts:474:28)",
+              "new BackStack (/home/zulehuma/Desktop/rds/lib/back-stack.ts:21:26)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/ServerlessDB/SecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ServerlessDBSecurityGroupE3DAB8B8",
+            "trace": [
+              "new SecurityGroup (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/security-group.ts:402:26)",
+              "new ServerlessCluster (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-rds/lib/serverless-cluster.ts:435:7)",
+              "new BackStack (/home/zulehuma/Desktop/rds/lib/back-stack.ts:21:26)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/ServerlessDB/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ServerlessDB955F8DC8",
+            "trace": [
+              "new ServerlessCluster (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-rds/lib/serverless-cluster.ts:441:21)",
+              "new BackStack (/home/zulehuma/Desktop/rds/lib/back-stack.ts:21:26)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/LambdaRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaRole3A44B857",
+            "trace": [
+              "new Role (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-iam/lib/role.ts:327:18)",
+              "new BackStack (/home/zulehuma/Desktop/rds/lib/back-stack.ts:36:18)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/HelloHandler/SecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HelloHandlerSecurityGroup081795F9",
+            "trace": [
+              "new SecurityGroup (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-ec2/lib/security-group.ts:402:26)",
+              "Function.configureVpc (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-lambda/lib/function.ts:862:52)",
+              "new Function (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-lambda/lib/function.ts:634:23)",
+              "new BackStack (/home/zulehuma/Desktop/rds/lib/back-stack.ts:49:19)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/HelloHandler/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HelloHandler2E4FBA4D",
+            "trace": [
+              "new Function (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-lambda/lib/function.ts:614:35)",
+              "new BackStack (/home/zulehuma/Desktop/rds/lib/back-stack.ts:49:19)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/AssetParameters/6ebefaf8dc891819d7be249a17b9043fd2023a9ee846407da67164bd37c51eef/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters6ebefaf8dc891819d7be249a17b9043fd2023a9ee846407da67164bd37c51eefS3Bucket48E8ABB7",
+            "trace": [
+              "new FileAssetParameters (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:16:32)",
+              "LegacyStackSynthesizer.doAddFileAsset (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:154:16)",
+              "LegacyStackSynthesizer.addFileAsset (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:74:19)",
+              "BackStack.addFileAsset (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/core/lib/stack.ts:657:29)",
+              "LegacyStackSynthesizer.addFileAsset (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:78:25)",
+              "new Asset (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:151:40)",
+              "AssetCode.bind (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-lambda/lib/code.ts:251:20)",
+              "new Function (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-lambda/lib/function.ts:572:29)",
+              "new BackStack (/home/zulehuma/Desktop/rds/lib/back-stack.ts:49:19)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/AssetParameters/6ebefaf8dc891819d7be249a17b9043fd2023a9ee846407da67164bd37c51eef/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters6ebefaf8dc891819d7be249a17b9043fd2023a9ee846407da67164bd37c51eefS3VersionKeyBD627491",
+            "trace": [
+              "new FileAssetParameters (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:21:31)",
+              "LegacyStackSynthesizer.doAddFileAsset (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:154:16)",
+              "LegacyStackSynthesizer.addFileAsset (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:74:19)",
+              "BackStack.addFileAsset (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/core/lib/stack.ts:657:29)",
+              "LegacyStackSynthesizer.addFileAsset (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:78:25)",
+              "new Asset (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:151:40)",
+              "AssetCode.bind (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-lambda/lib/code.ts:251:20)",
+              "new Function (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-lambda/lib/function.ts:572:29)",
+              "new BackStack (/home/zulehuma/Desktop/rds/lib/back-stack.ts:49:19)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/AssetParameters/6ebefaf8dc891819d7be249a17b9043fd2023a9ee846407da67164bd37c51eef/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters6ebefaf8dc891819d7be249a17b9043fd2023a9ee846407da67164bd37c51eefArtifactHashD3B9F6EF",
+            "trace": [
+              "new FileAssetParameters (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:26:34)",
+              "LegacyStackSynthesizer.doAddFileAsset (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:154:16)",
+              "LegacyStackSynthesizer.addFileAsset (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:74:19)",
+              "BackStack.addFileAsset (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/core/lib/stack.ts:657:29)",
+              "LegacyStackSynthesizer.addFileAsset (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:78:25)",
+              "new Asset (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:151:40)",
+              "AssetCode.bind (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-lambda/lib/code.ts:251:20)",
+              "new Function (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/aws-lambda/lib/function.ts:572:29)",
+              "new BackStack (/home/zulehuma/Desktop/rds/lib/back-stack.ts:49:19)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/rds/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata",
+            "trace": [
+              "new MetadataResource (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/core/lib/private/metadata-resource.ts:51:24)",
+              "/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/core/lib/private/synthesis.ts:140:5",
+              "visit (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/core/lib/private/synthesis.ts:200:5)",
+              "visit (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/core/lib/private/synthesis.ts:196:5)",
+              "injectMetadataResources (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/core/lib/private/synthesis.ts:131:3)",
+              "Object.synthesize (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/core/lib/private/synthesis.ts:18:3)",
+              "App.synth (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/core/lib/stage.ts:188:23)",
+              "process.<anonymous> (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/core/lib/app.ts:123:45)",
+              "Object.onceWrapper (events.js:422:26)",
+              "process.emit (events.js:315:20)",
+              "process.EventEmitter.emit (domain.js:486:12)",
+              "process.emit (/home/zulehuma/Desktop/rds/node_modules/source-map-support/source-map-support.js:495:21)"
+            ]
+          }
+        ],
+        "/BackStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable",
+            "trace": [
+              "new MetadataResource (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/core/lib/private/metadata-resource.ts:60:27)",
+              "/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/core/lib/private/synthesis.ts:140:5",
+              "visit (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/core/lib/private/synthesis.ts:200:5)",
+              "visit (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/core/lib/private/synthesis.ts:196:5)",
+              "injectMetadataResources (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/core/lib/private/synthesis.ts:131:3)",
+              "Object.synthesize (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/core/lib/private/synthesis.ts:18:3)",
+              "App.synth (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/core/lib/stage.ts:188:23)",
+              "process.<anonymous> (/home/zulehuma/Desktop/rds/node_modules/@aws-cdk/core/lib/app.ts:123:45)",
+              "Object.onceWrapper (events.js:422:26)",
+              "process.emit (events.js:315:20)",
+              "process.EventEmitter.emit (domain.js:486:12)",
+              "process.emit (/home/zulehuma/Desktop/rds/node_modules/source-map-support/source-map-support.js:495:21)"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

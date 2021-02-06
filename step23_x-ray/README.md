@@ -41,3 +41,8 @@ The compute resources running your application logic send data about their work 
 - [Traces](https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-traces)
 - [Segments](https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-segments)
 - [AWS X-Ray pricing](https://aws.amazon.com/xray/pricing/)
+
+[Step 23 Video in English on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225802789761318)
+
+[Step 23 Video in English on YouTube](https://www.youtube.com/watch?v=kUdnlL5Krhk)
+

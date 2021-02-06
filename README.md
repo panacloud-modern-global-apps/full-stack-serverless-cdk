@@ -172,6 +172,12 @@
 
 
 
+[Step 23 Video in English on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225802789761318)
+
+[Step 23 Video in English on YouTube](https://www.youtube.com/watch?v=kUdnlL5Krhk)
+
+
+
 
 
 

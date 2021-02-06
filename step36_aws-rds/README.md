@@ -107,7 +107,8 @@ Add the following constructs in your stack
       ],
     });
     
-  // step #4: create a lambda function with role and vpc to access database providing database endpoint and database credential in environmental variables. Lambda can access these through Secrets Manager too but for that lambda would require permission to access secrets manager too.
+  // step #4: create a lambda function with role and vpc to access database providing database endpoint and database credential in environmental variables. 
+  Lambda can access these through Secrets Manager too but for that lambda would require permission to access secrets manager too.
   
       const hello = new lambda.Function(this, "HelloHandler", {
       runtime: lambda.Runtime.NODEJS_10_X,

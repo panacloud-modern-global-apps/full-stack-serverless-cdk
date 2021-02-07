@@ -12,7 +12,7 @@ You run a database instance on a virtual private cloud (VPC) using the Amazon Vi
 # DB instances
 The basic building block of Amazon RDS is the DB instance. A DB instance is an isolated database environment in the AWS Cloud. Your DB instance can contain multiple user-created databases. You can access your DB instance by using the same tools and applications that you use with a standalone database instance. 
 
-# Starting an instance database
+# Starting a database instance 
 
 # install & import modules:
 

@@ -31,7 +31,7 @@ Amazon RDS for MySQL frees you up to focus on application development by managin
 Amazon RDS supports DB instances running several versions of MySQL.
 
 #### Reference
-[What is AWS Aurora](https://aws.amazon.com/rds/aurora/?aurora-whats-new.sort-by=item.additionalFields.postDateTime&aurora-whats-new.sort-order=desc)
+[What is AWS Aurora](https://aws.amazon.com/rds/aurora/?aurora-whats-new.sort-by=item.additionalFields.postDateTime&aurora-whats-new.sort-order=desc), 
 [Amazon Aurora Serverless](https://aws.amazon.com/rds/aurora/serverless/)
 
 

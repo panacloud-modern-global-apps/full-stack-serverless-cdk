@@ -65,9 +65,7 @@ To set up a instance database, define a DatabaseInstance. You must always launch
       deletionProtection: false,
       defaultDatabaseName: "mysqldb",
     });
-    
-    // step #5: create lambda once database cluster is created as we have to provide credentials
-    hello.node.addDependency(myServerlessDB);
+  
 
 ```
 

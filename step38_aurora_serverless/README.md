@@ -128,6 +128,6 @@ In this step we will access our database with Lambda using a client library. For
 To control who can access the cluster or instance, use the .connections attribute. RDS databases have a default port, so you don't need to specify the port:
 ```javascript
 
-// step #6: create a vpc for RDS instance
+// step #6: create connection
  myServerlessDB.connections.allowFromAnyIpv4('Open to the world')
 ```

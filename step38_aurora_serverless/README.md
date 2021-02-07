@@ -115,12 +115,19 @@ In this step we will access our database with Lambda using a client library. For
           SM.Secret.fromSecretAttributes(this, "dbcredentials", { secretArn: foo })
             .secretValue
         }`,
-        HOST: myDBInstance.dbInstanceEndpointAddress,
+        HOST: myServerlessDB.dbInstanceEndpointAddress,
       },
     });
     
         
     // step #5: create lambda once dbinstance is created as we have to provide credentials
-    hello.node.addDependency(myDBInstance);
+    hello.node.addDependency( myServerlessDB );
     
+```
+# Connecting
+To control who can access the cluster or instance, use the .connections attribute. RDS databases have a default port, so you don't need to specify the port:
+```javascript
+
+// step #6: create a vpc for RDS instance
+ myServerlessDB.connections.allowFromAnyIpv4('Open to the world')
 ```

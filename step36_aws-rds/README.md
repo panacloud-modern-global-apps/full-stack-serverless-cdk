@@ -129,6 +129,14 @@ In this step we will access our database with Lambda using a client library. For
     .................................
 ```
 
+# Connecting
+To control who can access the cluster or instance, use the .connections attribute. RDS databases have a default port, so you don't need to specify the port:
+```javascript
+
+// step #6: create connection
+  myDBInstance.connections.allowFromAnyIpv4('Open to the world')
+```
+
 
 #### Reference
 [What is AWS Relational Database Service](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html), 

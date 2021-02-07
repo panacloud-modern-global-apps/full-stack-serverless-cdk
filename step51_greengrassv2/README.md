@@ -26,7 +26,9 @@ chmod 400 my-ec2-key.pem
 - After launching your instance go to the EC2 dashboard and click on the security groups.
   -Find security group for your stack and click on it. After that edit the inbound rules like shown in the image
 
-[inbound rules](https://docs.aws.amazon.com/greengrass/v1/developerguide/images/gg-get-started-002.6.2.png)
+![edit_rules](img/edit_rules.png)
+
+![inbound_rules](img/inbound_rules.png)
 
 ### Step 3 (Download SSH Client)
 

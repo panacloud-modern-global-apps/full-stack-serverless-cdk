@@ -130,7 +130,7 @@ Add the following constructs in your stack
 ```
 # Accessing your database
 In order to access your MySQL database locally install MySQL Client on your system or use Online Tool MySQL Workbench using instances' endpoint(aka, host-name), database name and  password (in our case provided by AWS ).
-In this step we will access our database with Lambda using a client library. For this we will provide permissions to lambda to have full access to RDS.
+In this step we will access our database with Lambda using a client library. For this we will provide permissions to lambda to have full access to RDS. Lambda would also require permission to access VPC, wherein the Database Instance is created.
 
 
 # Welcome to your CDK TypeScript project!

@@ -82,7 +82,7 @@ export class BackStack extends cdk.Stack {
     myDBInstance.grantConnect(hello);
     // myDBInstance.connections.allowDefaultPortFromAnyIpv4;
    
-
+      myDBInstance.connections.allowFromAnyIpv4(ec2.Port.tcp(3306))
     
 
 }};

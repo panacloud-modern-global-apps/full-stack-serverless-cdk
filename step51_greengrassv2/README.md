@@ -23,6 +23,12 @@ chmod 400 my-ec2-key.pem
 - Navigate to ec2 and under instance you will find your instance.
 - After the instance status turns to running click in the instance.
 - A window will appear in the bottom which would have your public DNS name, public IPV4 adresses and other stuff
+- After launching your instance go to the EC2 dashboard and click on the security groups.
+  -Find security group for your stack and click on it. After that edit the inbound rules like shown in the image
+
+![edit_rules](img/edit_rules.png)
+
+![inbound_rules](img/inbound_rules.png)
 
 ### Step 3 (Download SSH Client)
 

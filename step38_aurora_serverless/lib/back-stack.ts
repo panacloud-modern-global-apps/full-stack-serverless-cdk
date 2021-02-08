@@ -62,5 +62,8 @@ export class BackStack extends cdk.Stack {
 
     //  create lambda once dbinstance is created
     hello.node.addDependency(myServerlessDB);
+    
+//      connection
+      myServerlessDB.connections.allowFromAnyIpv4('Open to the world');
   }
 }

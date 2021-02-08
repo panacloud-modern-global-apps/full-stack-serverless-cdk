@@ -1,56 +1,21 @@
-# AMAZON AURORA
 
-Amazon Aurora is a MySQL and PostgreSQL-compatible relational database built for the cloud, that combines the performance and availability of traditional enterprise databases with the simplicity and cost-effectiveness of open source databases. Its up to 5 times faster than standard MySQL databases and 3 times faster than standard PostgreSQL databases. It provides the security, availability, and reliability of commercial databases at 1/10th the cost and is fully managed by Amazon Relational Database Service (RDS).
-Amazon Aurora features a distributed, fault-tolerant, self-healing storage system that auto-scales up to 128TB per database instance. It delivers high performance and availability with up to 15 low-latency read replicas, point-in-time recovery, continuous backup to Amazon S3, and replication across three Availability Zones (AZs).
 
-# AMAZON AURORA SERVERLESS
+# AMAZON AURORA SERVERLESS DATA API 
 
-Amazon Aurora Serverless is an on-demand, auto-scaling configuration for Amazon Aurora. It automatically starts up, shuts down, and scales capacity up or down based on your application's needs. It enables you to run your database in the cloud without managing any database capacity. Manually managing database capacity can take up valuable time and can lead to inefficient use of database resources. With Aurora Serverless, you simply create a database endpoint, optionally specify the desired database capacity range, and connect your applications. You pay on a per-second basis for the database capacity you use when the database is active, and migrate between standard and serverless configurations with a few clicks in the Amazon RDS Management Console.
+For code that access a relational database, you open a connection, use it to process one or more SQL queries or other statements, and then close the connection. You probably used a client library that was specific to your operating system, programming language, and your database. At some point you realized that creating connections took a lot of clock time and consumed memory on the database engine, and soon after found out that you could (or had to) deal with connection pooling and other tricks.For serverless functions that are frequently invoked and that run for time intervals that range from milliseconds to minutes there is no long-running server, there’s no place to store a connection identifier for reuse.
 
-Aurora Serverless v1 is available for both Amazon Aurora with MySQL compatibility and Amazon Aurora with PostgreSQL compatibility. It's easy to get started: choose `Serverless` when creating your Aurora database cluster, optionally specify the desired range of database capacity, and connect your applications.
+By using the Data API for Aurora Serverless, you can work with a web-services interface to your Aurora Serverless DB cluster. The Data API doesn't require a persistent connection to the DB cluster. Instead, it provides a secure HTTP endpoint and integration with AWS SDKs. You can use the endpoint to run SQL statements without managing connections.
 
-# DB Cluster
+All calls to the Data API are synchronous. By default, a call times out if it's not finished processing within 45 seconds. However, you can continue running a SQL statement if the call times out by using the continueAfterTimeout parameter. Users don't need to pass credentials with calls to the Data API, because the Data API uses database credentials stored in AWS Secrets Manager. To store credentials in Secrets Manager, users must be granted the appropriate permissions to use Secrets Manager, an AWS managed policy, AmazonRDSDataFullAccess, includes permissions for the RDS Data API.
+You can enable the Data API when you create the Aurora Serverless cluster. After you enable the Data API, you can also use the query editor for Aurora Serverless. For more information, see Using the query editor for Aurora Serverless. There is no charge for the API, but you will pay the usual price for data transfer out of AWS.
 
-The basic building block of Amazon RDS is the DB instance. A database cluster means more than one database instances working together.
+we would then use RDSDataService API for connecting to a Data API enabled Aurora Serverless database from lambda.
 
-# Amazon VPC
-
-You can run a DB instance on a virtual private cloud (VPC) using the Amazon Virtual Private Cloud (Amazon VPC) service. When you use a VPC, you have control over your virtual networking environment.
-
-# Engine
-
-Amazon Aurora is a MySQL and PostgreSQL-compatible relational database.
-
-# Amazon RDS for MySql
-
-MySQL is the world's most popular open source relational database and Amazon RDS makes it easy to set up, operate, and scale MySQL deployments in the cloud. With Amazon RDS, you can deploy scalable MySQL servers in minutes with cost-efficient and resizable hardware capacity.
-
-Amazon RDS for MySQL frees you up to focus on application development by managing time-consuming database administration tasks including backups, software patching, monitoring, scaling and replication.
-Amazon RDS supports DB instances running several versions of MySQL.
-
-#### Reference
-
-[What is AWS Aurora](https://aws.amazon.com/rds/aurora/?aurora-whats-new.sort-by=item.additionalFields.postDateTime&aurora-whats-new.sort-order=desc)
-[Amazon Aurora Serverless](https://aws.amazon.com/rds/aurora/serverless/)
+[Calling Data Api](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html#data-api.calling)
 
 ## Stack Code
 
-## Step 1
-
-install & import modules:
-`"@aws-cdk/aws-rds"` ,
-`"@aws-cdk/aws-secretsmanager"` ,
-`"@aws-cdk/aws-iam"` ,
-`@aws-cdk/aws-ec2"`.
-
-Add the following constructs in your stack
-
 ```javascript
-// step #1: create a vpc for RDS instance
-
-const vpc = new ec2.Vpc(this, "myrdsvpc");
-
-// step #2: create database cluster
 
 const myServerlessDB = new rds.ServerlessCluster(this, "Database", {
   engine: rds.DatabaseClusterEngine.aurora({
@@ -68,51 +33,8 @@ const myServerlessDB = new rds.ServerlessCluster(this, "Database", {
   defaultDatabaseName: "mydb",
 });
 
-// step #3: give lambda permissions to access RDS and VPC from aws managed policy
-
-const role = new iam.Role(this, "LambdaRole", {
-  assumedBy: new iam.ServicePrincipal("lambda.amazonaws.com"),
-  managedPolicies: [
-    iam.ManagedPolicy.fromAwsManagedPolicyName("AmazonRDSDataFullAccess"),
-    iam.ManagedPolicy.fromAwsManagedPolicyName(
-      "service-role/AWSLambdaVPCAccessExecutionRole"
-    ),
-  ],
-});
-
-// step #4: create a lambda function with role and vpc to access database providing database endpoint and database credential in environmental variables. Lambda can access these through Secrets Manager too but for that lambda would require permission to access secrets manager too.
-
-const hello = new lambda.Function(this, "HelloHandler", {
-  runtime: lambda.Runtime.NODEJS_10_X,
-  code: lambda.Code.fromAsset("lambda/lambda-p.zip"),
-  handler: "index.handler",
-  timeout: cdk.Duration.minutes(1),
-  vpc,
-  role,
-  environment: {
-    INSTANCE_CREDENTIALS: `${
-      SM.Secret.fromSecretAttributes(this, "dbcredentials", { secretArn: foo })
-        .secretValue
-    }`,
-  },
-});
-
-// step #5: create lambda once database cluster is created as we have to provide credentials
-hello.node.addDependency(myServerlessDB);
-
 // either use "enable-data-api" in cluster construct or this
 cluster.grantDataApiAccess(hello);
 ```
 
-# In order to access your MySQL database locally install MySQL Client on your system or use Online Tool MySQL Workbench using clusters' endpoint(aka, host-name), database name and password (in our case provided by AWS )
 
-# Welcome to your CDK TypeScript project!
-
-## Useful commands
-
-- `npm run build` compile typescript to js
-- `npm run watch` watch for changes and compile
-- `npm run test` perform the jest unit tests
-- `cdk deploy` deploy this stack to your default AWS account/region
-- `cdk diff` compare deployed stack with current state
-- `cdk synth` emits the synthesized CloudFormation template

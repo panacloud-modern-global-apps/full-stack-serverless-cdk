@@ -26,37 +26,36 @@ npm install @aws-cdk/aws-mediapackage @aws-cdk/aws-mediapackage @aws-cdk/aws-iam
 # After Deployment !
 
 ## Install Streaming Application
-[Desktop] :  install OBS Studeio https://obsproject.com/download
-[MobileApp] : Larix Broadcaster (Android)
+- [Desktop] :  install OBS Studeio https://obsproject.com/download
+- [MobileApp] : Larix Broadcaster (Android)
 
 
 ## Manually start the Chanel 
 This Stack doesn't start your channel automatically due to costs, so open MediaLive in the AWS Console and click the Channels link in the sidebar, select "MyLieStream" and  click the orange "start" button in the top right to start the channel. 
 
-**Remember to stop your channel after you are done testing, AWS MediaLive will charges per second.
+** [Remember] to stop your channel after you are done testing, AWS MediaLive will charges per second.
 
 
 ## Setup the Streaming application !
 
 copy the RTMP link from AWS MediaLive console 
-click on the Input in the site bar and coppe the complete link from "Destination A"
-    like: [rtmp://52.202.187.209:1935/test/bootCamp123]	
-url/rmpt link : rtmp://52.202.187.209:1935/test/
-streaming key : bootCamp123
+
+- click on the Input in the site bar and coppe the complete link from "Destination A"
+-    like: [rtmp://52.202.187.209:1935/test/bootCamp123]	 (streaming key : bootCamp123)
 
 
 ### OBS Studio
 
-select the source (camera/screen) and click on "setting"
+Select the source (camera/screen) and click on "setting"
 ![obs1](img/obs1.png)
-copy the RTMP link 
+Copy the RTMP link 
 ![obs2](img/obs2.png)
 
-copy the Playback URL (you can check from console  mediaPackage/channel_Name/Endpoints Url)
+Copy the Playback URL (you can check from console  mediaPackage/channel_Name/Endpoints Url)
 ![linkTesting](img/linkTesting.png)
 
 
-### Mobile 
+## Mobile 
 
 Setting > Connections > New Connection >
 name : abcd
@@ -65,7 +64,6 @@ url : rtmp://52.202.187.209:1935/test/bootCamp123
 save & start recording
 
 
-# Enjoy the live streaming :-) 
 
 
 ## Useful commands

@@ -1,9 +1,9 @@
 
 
-# AWS Elenmental MediaLive Introduction!
+# AWS Elemental MediaLive!
 AWS Elemental MediaLive is a video processing service that enables video providers to encode high-quality live video streams for delivery to broadcast televisions and multiscreen devices. Used as a standalone service or integrated with other AWS Media Services, AWS Elemental MediaLive lets you build flexible 24x7 live video workflows or create event-based live streams with full control over encoding parameters.
 
-![obs1](img/ML.png)
+![AWS MediaLive Architecture](img/ML.png)
 
 ## MediaLive API / Documentation Referenc
 https://docs.aws.amazon.com/medialive/latest/ug/what-is.html
@@ -43,13 +43,14 @@ Copy the RTMP link from AWS MediaLive console
 - click on the Input in the site bar and coppe the complete link from "Destination A" ... like [rtmp://52.202.187.209:1935/test/bootCamp123]	 (streaming key : bootCamp123)
 
 
-### OBS Studio setup
+## OBS Studio setup
 
 Select the source (camera/screen) and click on "setting"
 ![obs1](img/obs1.png)
 Copy the RTMP link 
 ![obs2](img/obs2.png)
 
+### Testing
 Copy the Playback URL (you can check from console  mediaPackage/channel_Name/Endpoints Url)
 ![linkTesting](img/linkTesting.png)
 

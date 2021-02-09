@@ -18,7 +18,7 @@ Lambda@Edge is a feature of Amazon CloudFront that lets you run code closer to u
 `npm i @aws-cdk/aws-s3`
 
 ### Step3: Setup Your lambda Edge function
-Its setup is almost same as normal lambda function.
+Following code will create a lambda edge function.Its setup is almost same as a normal lambda function.
 ```javascript
  const myFunc = new cloudfront.experimental.EdgeFunction(this, 'MyFunction', {
       runtime: lambda.Runtime.NODEJS_10_X,
@@ -27,11 +27,12 @@ Its setup is almost same as normal lambda function.
     });
 ```
 ### Step4:Create an S3 bucket
+Following code will create and S3 bucket.
 ```javascript
     const myBucket = new s3.Bucket(this, 'myBucket');
 ```
 ### Step5:Setup cloudfront and add your lambda function
-
+Following code will deploy our lambda function to cloudfront CDN.
 ```javascript
 
     new cloudfront.Distribution(this, 'myDist', {
@@ -41,10 +42,15 @@ Its setup is almost same as normal lambda function.
 
         edgeLambdas: [
           {
-            functionVersion: myFunc.currentVersion, // Add your lambda function here
-            eventType: cloudfront.LambdaEdgeEventType.VIEWER_REQUEST,// Add your lambda edge event type here
+            functionVersion: myFunc.currentVersion, // Add your lambda function version here.This is the version of the Lambda function that will be invoked.
+            eventType: cloudfront.LambdaEdgeEventType.VIEWER_REQUEST,// Add your lambda edge event type here.This is the type of event in response to which should the function be invoked.
           }
         ],
       },
     });
 ```    
+
+## Useful links:
+
+[Lambda Edge official Docs](https://aws.amazon.com/lambda/edge/)
+

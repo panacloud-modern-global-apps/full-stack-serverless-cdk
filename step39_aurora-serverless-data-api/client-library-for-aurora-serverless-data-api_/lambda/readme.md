@@ -15,4 +15,6 @@ with its value assigned to a key that represents its data type.
 
 npm i data-api-client
 
-# [For more information](https://github.com/jeremydaly/data-api-client) 
+# For more information
+
+[Data Api Client](https://github.com/jeremydaly/data-api-client) 

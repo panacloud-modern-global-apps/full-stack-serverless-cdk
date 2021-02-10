@@ -178,6 +178,9 @@
 
 [Step 23 Video in English on YouTube](https://www.youtube.com/watch?v=kUdnlL5Krhk)
 
+[Step 23 Video in Urdu on YouTube](https://www.facebook.com/zeeshanhanif/videos/10225839661283083)
+
+[Step 23 Video in Urdu on YouTube](https://www.youtube.com/watch?v=i5QTUdZBNO0)
 
 
 [Step 24 Video in English on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225831683963655)

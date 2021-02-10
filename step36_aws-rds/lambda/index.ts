@@ -55,7 +55,7 @@ export async function handler(
   } catch (e) {
     console.log(e, "error from lambda");
     return {
-      statusCode: 200,
+      statusCode: 400,
       headers: { "Content-Type": "text/plain" },
       body: `Error creating table${JSON.stringify(e, null, 2)} \n`,
     };

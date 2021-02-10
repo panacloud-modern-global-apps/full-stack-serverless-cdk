@@ -13,7 +13,7 @@ The reason for doing this is that it helps with two of the Serverless Well Archi
 
 ## Default Configuration Settings Provided
 
-There are some variables that you can pass into the SAR app to manipulate the power tuning step function.
+There are some variables that you can pass into the SAM app to manipulate the power tuning step function.
 
 ```typescript
 let powerValues = "128,256,512,1024,1536,3008";

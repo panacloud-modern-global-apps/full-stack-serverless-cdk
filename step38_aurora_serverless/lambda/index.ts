@@ -5,16 +5,16 @@ import {
 } from "aws-lambda";
 import { env } from "process";
 
-const value = env.val || "ll";
-const envvalue2: any = JSON.parse(value);
+const value = env.val || "";
+const envvalue: any = JSON.parse(value);
 
 // Require and initialize outside of your main handler
 const mysql = require("serverless-mysql")({
   config: {
-    host: envvalue2.host,
-    database: envvalue2.dbname,
+    host: envvalue.host,
+    database: envvalue.dbname,
     user: "admin",
-    password: envvalue2.password,
+    password: envvalue.password,
   },
 });
 
@@ -42,7 +42,7 @@ export async function handler(
     // "CREATE TABLE IF NOT EXISTS new (task_id INT AUTO_INCREMENT, description TEXT, PRIMARY KEY (task_id))"
 
     // second query
-    // "insert into new (task_id, description) values(20,'humddda')",
+    // "insert into new (task_id, description) values(20,'complete the project')",
 
     // third query
     // "SELECT * FROM new"
@@ -55,9 +55,9 @@ export async function handler(
   } catch (e) {
     console.log(e, "error from lambda");
     return {
-      statusCode: 200,
+      statusCode: 400,
       headers: { "Content-Type": "text/plain" },
-      body: `Hello, CDK! You've created${JSON.stringify(e, null, 2)} \n`,
+      body: `Error creating table: ${JSON.stringify(e, null, 2)} \n`,
     };
   }
 }

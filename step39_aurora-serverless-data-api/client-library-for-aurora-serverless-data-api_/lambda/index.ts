@@ -7,8 +7,8 @@ import { env } from "process";
 
 // Require and instantiate data-api-client with secret and cluster
 
-const dbcarn = env.CLUSTER_ARN || "p";
-const dbsarn = env.SECRET_ARN || "o";
+const dbcarn = env.CLUSTER_ARN || "";
+const dbsarn = env.SECRET_ARN || "";
 
 const data = require("data-api-client")({
   secretArn: dbsarn,
@@ -20,8 +20,7 @@ export async function handler(
   event: APIGatewayProxyEvent,
   context: Context
 ): Promise<APIGatewayProxyResult> {
-  console.log(env.CLUSTER_ARN, "CLUSTER_ARN");
-  console.log(env.SECRET_ARN, "tablesecret");
+
 
   try {
     const result = await data.query(
@@ -41,7 +40,7 @@ export async function handler(
     return {
       statusCode: 400,
       headers: {},
-      body: `Hello, CDK! You've \n`,
+      body: `Error creating table`,
     };
   }
 }

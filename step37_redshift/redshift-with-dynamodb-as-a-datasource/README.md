@@ -32,7 +32,7 @@ To control who can access the cluster, use the .connections attribute. Redshift 
 cluster.connections.allowFromAnyIpv4(ec2.Port.allTraffic());
 ```
 
-## Give Permission to Redshift to Access S3 Objects
+## Give Permission to Redshift to Access DynamoDB Objects
 
 ```typescript
 const role = new Role(this, "redshift", {
@@ -75,38 +75,39 @@ To create a Table Run
 
 1.
 
-````sql
+```sql
 CREATE SCHEMA myinternalschema
 
-````
+```
 
 2.
 
-
-````sql
+```sql
 
 CREATE TABLE myinternalschema.event(
 name varchar(200),
 age integer not null,
 city varchar(200));
 
-````
+```
 
 3.
-````sql
 
-COPY myinternalschema.event FROM 's3://aws-redshift-spectrum-sample-data-us-east-1/spectrum/event/allevents_pipe.txt'
+```sql
+
+COPY myinternalschema.event FROM 'dynamodb://table-name'
 iam_role ‘REPLACE THIS PLACEHOLDER WITH THE IAM ROLE ARN'
-readratio 50;  
+readratio 50;
 
-````
+```
+
 4.Then check your data using
-````sql
+
+```sql
 SELECT * FROM myinternalschema.event
 LIMIT 10;
 
-````
-
+```
 
 # Welcome to your CDK TypeScript project!
 
@@ -116,10 +117,13 @@ The `cdk.json` file tells the CDK Toolkit how to execute your app.
 
 ## Useful commands
 
- * `npm run build`   compile typescript to js
- * `npm run watch`   watch for changes and compile
- * `npm run test`    perform the jest unit tests
- * `cdk deploy`      deploy this stack to your default AWS account/region
- * `cdk diff`        compare deployed stack with current state
- * `cdk synth`       emits the synthesized CloudFormation template
-````
+- `npm run build` compile typescript to js
+- `npm run watch` watch for changes and compile
+- `npm run test` perform the jest unit tests
+- `cdk deploy` deploy this stack to your default AWS account/region
+- `cdk diff` compare deployed stack with current state
+- `cdk synth` emits the synthesized CloudFormation template
+
+```
+
+```

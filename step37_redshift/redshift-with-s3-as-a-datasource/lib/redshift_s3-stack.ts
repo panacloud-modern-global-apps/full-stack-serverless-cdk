@@ -25,7 +25,7 @@ export class RedshiftS3Stack extends cdk.Stack {
       destinationBucket: myBucket,
     });
 
-    //providing rights to redshift to access dynamodb elements
+    //providing rights to redshift to access S3
     const role = new Role(this, "redshift", {
       assumedBy: new ServicePrincipal("redshift.amazonaws.com"),
     });

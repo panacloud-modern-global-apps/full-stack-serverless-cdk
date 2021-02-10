@@ -1,14 +1,57 @@
-# Welcome to your CDK TypeScript project!
+# Lambda Edge
 
-This is a blank project for TypeScript development with CDK.
+## Introduction 
+Lambda@Edge is a feature of Amazon CloudFront that lets you run code closer to users of your application, which improves performance and reduces latency. With Lambda@Edge, you don't have to provision or manage infrastructure in multiple locations around the world.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+[Lambda Edge official Docs](https://aws.amazon.com/lambda/edge/)
 
-## Useful commands
+[Lambda Edge CDK](https://docs.aws.amazon.com/cdk/api/latest/docs/aws-cloudfront-readme.html#lambdaedge)
 
- * `npm run build`   compile typescript to js
- * `npm run watch`   watch for changes and compile
- * `npm run test`    perform the jest unit tests
- * `cdk deploy`      deploy this stack to your default AWS account/region
- * `cdk diff`        compare deployed stack with current state
- * `cdk synth`       emits the synthesized CloudFormation template
+## Code Explanation
+### Step 1: Setup a CDK directory
+`cdk init app --language typescript`
+
+### Step2: Install following dependencies
+
+`npm i @aws-cdk/aws-lambda`
+
+`npm i @aws-cdk/aws-cloudfront`
+
+`npm i '@aws-cdk/aws-cloudfront-origins`
+
+`npm i @aws-cdk/aws-s3`
+
+### Step3: Setup Your lambda Edge function
+Following code will create a lambda edge function.Its setup is almost same as a normal lambda function.
+```javascript
+ const myFunc = new cloudfront.experimental.EdgeFunction(this, 'MyFunction', {
+      runtime: lambda.Runtime.NODEJS_10_X,
+      handler: 'index.handler',
+      code: lambda.Code.fromAsset('lambda'),
+    });
+```
+### Step4:Create an S3 bucket
+Following code will create and S3 bucket.
+```javascript
+    const myBucket = new s3.Bucket(this, 'myBucket');
+```
+### Step5:Setup cloudfront and add your lambda function
+Following code will deploy our lambda function to cloudfront CDN.
+```javascript
+
+    new cloudfront.Distribution(this, 'myDist', {
+
+      defaultBehavior: {
+        origin: new origins.S3Origin(myBucket),
+
+        edgeLambdas: [
+          {
+            functionVersion: myFunc.currentVersion, // Add your lambda function version here.This is the version of the Lambda function that will be invoked.
+            eventType: cloudfront.LambdaEdgeEventType.VIEWER_REQUEST,// Add your lambda edge event type here.This is the type of event in response to which should the function be invoked.
+          }
+        ],
+      },
+    });
+```    
+
+

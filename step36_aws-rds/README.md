@@ -56,7 +56,7 @@ To set up a instance database, define a DatabaseInstance. You must always launch
 ```
 # Construct Props include:
 
-# Instances Engine
+# Instances Engine (require)
 Each DB instance runs a DB engine. Amazon RDS currently supports the MySQL, MariaDB, PostgreSQL, Oracle, and Microsoft SQL Server DB engines. Each DB engine has its own supported features, and each version of a DB engine may include specific features. Additionally, each DB engine has a set of parameters in a DB parameter group that control the behavior of the databases that it manages.
 
 # DB instances class
@@ -70,6 +70,8 @@ Amazon cloud computing resources are housed in highly available data center faci
 
 # Setting Public Accessibility
 You can set public accessibility for the database instance or cluster using the publiclyAccessible property. If you specify true, it creates an instance with a publicly resolvable DNS name, which resolves to a public IP address. If you specify false, it creates an internal instance with a DNS name that resolves to a private IP address. The default value depends on vpcSubnets. It will be true if vpcSubnets is subnetType: SubnetType.PUBLIC, false otherwise.
+
+Available Instance Props:[DatabaseInstanceProps](https://docs.aws.amazon.com/cdk/api/latest/docs/@aws-cdk_aws-rds.DatabaseInstanceProps.html)
 
 # Database Credentials
 On creating a Database Instance, AWS will create Databse credentials with:

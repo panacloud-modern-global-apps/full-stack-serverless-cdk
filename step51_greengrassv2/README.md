@@ -6,7 +6,7 @@ AWS IoT Greengrass brings local compute, messaging, data management, sync, and M
 
 ### Step 1 (Generate Key Value Pair)
 
-- Navigate to ec2 dashboard. Uncer network and security click Key Pairs.
+- Navigate to ec2 dashboard. Under network and security click Key Pairs.
 - Generate a key pair to connect to ec2 via ssh
 - download the file with extension .pem. Let say the file name is my-ec2-key.pem
 - After download go to the location where your key has been downloaded and run

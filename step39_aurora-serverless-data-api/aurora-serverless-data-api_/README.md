@@ -13,7 +13,7 @@ we would then use RDSDataService API for connecting to a Data API enabled Aurora
 
 [Calling Data Api](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html#data-api.calling)
 
-## Creating Serverless cluster
+## Creating Serverless Cluster with Data API Enabled
 
 ```javascript
 

@@ -15,3 +15,8 @@ A function can use up to 5 layers at a time.
 
 - [Lambda Layers | Theory and Demo with Code](https://www.youtube.com/watch?v=stovPJCVXcw "Lambda Layers | Theory and Demo with Code")
 
+
+[Step 24 Video in English on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225831683963655)
+
+[Step 24 Video in English on YouTube](https://www.youtube.com/watch?v=HrvCZGKI9SE)
+

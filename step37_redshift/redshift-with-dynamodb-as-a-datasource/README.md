@@ -85,6 +85,7 @@ CREATE SCHEMA myinternalschema
 ```sql
 
 CREATE TABLE myinternalschema.event(
+id varchar(200)
 name varchar(200),
 age integer not null,
 city varchar(200));

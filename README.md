@@ -174,10 +174,15 @@
 
 [Step 22 Video in Urdu on YouTube](https://www.youtube.com/watch?v=EgYiEO8P704)
 
-
 [Step 23 Video in English on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225802789761318)
 
 [Step 23 Video in English on YouTube](https://www.youtube.com/watch?v=kUdnlL5Krhk)
+
+
+
+[Step 24 Video in English on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225831683963655)
+
+[Step 24 Video in English on YouTube](https://www.youtube.com/watch?v=HrvCZGKI9SE)
 
 
 

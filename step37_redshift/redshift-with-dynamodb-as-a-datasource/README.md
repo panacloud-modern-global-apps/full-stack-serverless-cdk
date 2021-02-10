@@ -95,7 +95,7 @@ city varchar(200));
 
 ```sql
 
-COPY myinternalschema.event FROM 's3://aws-redshift-spectrum-sample-data-us-east-1/spectrum/event/allevents_pipe.txt'
+COPY myinternalschema.event FROM 'dynamodb://table-name'
 iam_role ‘REPLACE THIS PLACEHOLDER WITH THE IAM ROLE ARN'
 readratio 50;
 

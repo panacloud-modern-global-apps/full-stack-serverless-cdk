@@ -71,37 +71,38 @@ To create a Table Run
 
 1.
 
-````sql
+```sql
 CREATE SCHEMA myinternalschema
 
-````
+```
 
 2.
-````sql
+
+```sql
 CREATE TABLE myinternalschema.event(
 name varchar(200),
 age varchar(200)
 city varchar(200));
 
-````
+```
 
 3.
-````sql
 
-COPY myinternalschema.event FROM 's3://aws-redshift-spectrum-sample-data-us-east-1/spectrum/event/allevents_pipe.txt'
+```sql
+
+COPY myinternalschema.event FROM 's3://Uri-of-file-containing-data'
 iam_role ‘REPLACE THIS PLACEHOLDER WITH THE IAM ROLE ARN'
 delimiter ',' timeformat 'YYYY-MM-DD HH:MI:SS' region 'us-east-1'
 
-````
+```
 
-4.
-Then check your data using
+4.  Then check your data using
 
-````sql
+```sql
 SELECT * FROM myinternalschema.event
 LIMIT 10;
 
-````
+```
 
 # Welcome to your CDK TypeScript project!
 
@@ -121,4 +122,7 @@ The `cdk.json` file tells the CDK Toolkit how to execute your app.
 ```
 
 ```
-````
+
+```
+
+```

@@ -31,7 +31,7 @@ Amazon Aurora is a MySQL and PostgreSQL-compatible relational database.
 Aurora Serverless clusters can specify scaling properties which will be used to automatically scale the database cluster seamlessly based on the workload.
 
 
-Available Serverless Cluster Props:[DatabaseInstanceProps](https://docs.aws.amazon.com/cdk/api/latest/docs/@aws-cdk_aws-rds.ServerlessClusterProps.html)
+Available Serverless Cluster Props:[ServerlessClusterProps](https://docs.aws.amazon.com/cdk/api/latest/docs/@aws-cdk_aws-rds.ServerlessClusterProps.html)
 
 
 # Starting an instance database

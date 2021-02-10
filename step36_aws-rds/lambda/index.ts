@@ -6,15 +6,15 @@ import {
 import { env } from "process";
 
 const value = env.vala || "none";
-const envvalue2: any = JSON.parse(value);
+const envvalue: any = JSON.parse(value);
 
 // Require and initialize outside of your main handler
 const mysql = require("serverless-mysql")({
   config: {
     host: env.HOST,
-    database: envvalue2.dbname,
+    database: envvalue.dbname,
     user: "admin",
-    password: envvalue2.password,
+    password: envvalue.password,
   },
 });
 
@@ -57,7 +57,7 @@ export async function handler(
     return {
       statusCode: 200,
       headers: { "Content-Type": "text/plain" },
-      body: `Hello, CDK! You've created${JSON.stringify(e, null, 2)} \n`,
+      body: `Error creating table${JSON.stringify(e, null, 2)} \n`,
     };
   }
 }

@@ -2,6 +2,8 @@
 
 AWS IoT Greengrass brings local compute, messaging, data management, sync, and ML inference capabilities to edge devices. This enables devices to collect and analyze data closer to the source of information, react autonomously to local events, and communicate securely with each other on local networks.
 
+![Greengrass](img/greengrass.png)
+
 ## Steps to create and deploy component from AWS Greengrass v2
 
 ### Step 1 (Generate Key Value Pair)
@@ -543,6 +545,12 @@ aws greengrassv2 create-deployment \
 ```
 tail -f /tmp/Greengrass_HelloWorld.log
 ```
+
+## Useful Links
+
+- [Amazon Greengrass v2](https://docs.aws.amazon.com/greengrass/v1/developerguide/gg-gs.html)
+
+- [Quick guide to AWS Greengrass v2](https://docs.aws.amazon.com/greengrass/v1/developerguide/quick-start.html)
 
 # Welcome to your CDK TypeScript project!
 

@@ -1,4 +1,4 @@
-
+# [AMAZON AURORA SERVERLESS](https://github.com/panacloud-modern-global-apps/full-stack-serverless-cdk/blob/main/step38_aurora_serverless/README.md)
 
 # AMAZON AURORA SERVERLESS DATA API 
 
@@ -13,7 +13,7 @@ we would then use RDSDataService API for connecting to a Data API enabled Aurora
 
 [Calling Data Api](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html#data-api.calling)
 
-## Stack Code
+## Creating Serverless cluster
 
 ```javascript
 

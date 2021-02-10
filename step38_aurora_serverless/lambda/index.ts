@@ -42,7 +42,7 @@ export async function handler(
     // "CREATE TABLE IF NOT EXISTS new (task_id INT AUTO_INCREMENT, description TEXT, PRIMARY KEY (task_id))"
 
     // second query
-    // "insert into new (task_id, description) values(20,'humddda')",
+    // "insert into new (task_id, description) values(20,'complete the project')",
 
     // third query
     // "SELECT * FROM new"

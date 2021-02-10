@@ -1,1 +1,1 @@
-![](s3.png)
+![](Amazon-Aurora-Serverless-1.jpg)

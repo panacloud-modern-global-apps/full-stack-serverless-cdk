@@ -69,6 +69,9 @@ To set up a instance database, define a DatabaseInstance. You must always launch
 
 ```
 
+Available Serverless Cluster Props:[DatabaseInstanceProps](https://docs.aws.amazon.com/cdk/api/latest/docs/@aws-cdk_aws-rds.ServerlessClusterProps.html)
+
+
 # Database Credentials
 On creating a Database Instance, AWS will create Databse credentials with:
 {username: "admin", 

@@ -64,6 +64,6 @@ export class BackStack extends cdk.Stack {
     hello.node.addDependency(myServerlessDB);
     
 //      connection
-      myServerlessDB.connections.allowFromAnyIpv4('Open to the world');
+      myServerlessDB.connections.allowFromAnyIpv4(ec2.Port.tcp(3306));
   }
 }

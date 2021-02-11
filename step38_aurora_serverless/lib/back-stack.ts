@@ -53,7 +53,7 @@ export class BackStack extends cdk.Stack {
       vpc,
       role,
       environment: {
-        val: `${
+      INSTANCE_CREDENTIALS: `${
           SM.Secret.fromSecretAttributes(this, "sec-arn", { secretArn: secarn })
             .secretValue
         }`,

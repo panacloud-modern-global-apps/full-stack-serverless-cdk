@@ -44,6 +44,7 @@ export class BackStacka extends cdk.Stack {
       ],
     });
 
+//        database cluster's secret arn
     const dbsarn = cluster.secret?.secretArn || "kk";
 
     //  create a function to access database

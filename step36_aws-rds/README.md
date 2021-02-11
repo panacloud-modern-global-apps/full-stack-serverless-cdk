@@ -132,11 +132,11 @@ In this step we will access our database with Lambda using a client library. For
 ```
 
 # Connecting
-To control who can access the cluster or instance, use the .connections attribute. RDS databases have a default port, so you don't need to specify the port:
+To control who can access the cluster or instance, use the .connections attribute. RDS databases have a default port: 3306
 ```javascript
 
 // step #6: create connection
-  myDBInstance.connections.allowFromAnyIpv4('Open to the world')
+  myDBInstance.connections.allowFromAnyIpv4(ec2.Port.tcp(3306))
 ```
 
 

@@ -105,6 +105,9 @@ In this step we will access our database with Lambda using a client library. For
      // step #4: create a lambda function with role and vpc to access database providing database endpoint and database credential in environmental variables. 
   Lambda can access these through Secrets Manager too but for that lambda would require permission to access secrets manager too.
   
+      // secret arn of database
+      const dbcreds = myDBInstance.secret?.secretArn
+      
       const hello = new lambda.Function(this, "HelloHandler", {
       runtime: lambda.Runtime.NODEJS_10_X,
       code: lambda.Code.fromAsset("lambda/lambda-p.zip"),
@@ -114,7 +117,7 @@ In this step we will access our database with Lambda using a client library. For
       role,
       environment: {
         INSTANCE_CREDENTIALS: `${
-          SM.Secret.fromSecretAttributes(this, "dbcredentials", { secretArn: foo })
+          SM.Secret.fromSecretAttributes(this, "dbcredentials", { secretArn: dbcreds })
             .secretValue
         }`,
         HOST: myDBInstance.dbInstanceEndpointAddress,

@@ -51,7 +51,7 @@ To set up a instance database, define a DatabaseInstance. You must always launch
    const vpc = new ec2.Vpc(this, "myrdsvpc");
 ```
 
-## Create a database cluster
+## Create a Serverless database cluster
 ```javascript
 
  // step #2: create database cluster

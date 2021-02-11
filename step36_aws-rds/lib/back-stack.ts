@@ -34,13 +34,6 @@ export class BackStack extends cdk.Stack {
       databaseName: "mySqlDataBase",
       deletionProtection: false,
       vpcPlacement: { subnetType: ec2.SubnetType.PUBLIC },
-      // By default DatabaseInstance create password and username:"admin" in secrets manager, can provide custom credentials after creating custom secret
-      // credentials: {
-      //   username: "admin",
-      // password: SM.Secret.fromSecretAttributes(this, "ExSecretKey", {
-      //   secretArn: secret.secretArn,
-      // }).secretValue,
-      // },
     });
 
     //  for lambda RDS and VPC access

@@ -33,7 +33,7 @@ const myServerlessDB = new rds.ServerlessCluster(this, "Database", {
   defaultDatabaseName: "mydb",
 });
 
-// either use "enable-data-api" in cluster construct or this
+// either use "enable-data-api" in cluster construct or this to give acces to lambda function named "hello"
 cluster.grantDataApiAccess(hello);
 ```
 

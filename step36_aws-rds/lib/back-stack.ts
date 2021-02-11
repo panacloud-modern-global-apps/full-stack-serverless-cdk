@@ -48,7 +48,7 @@ export class BackStack extends cdk.Stack {
     });
 
   
-    const foo = myDBInstance.secret?.secretArn || "foooo";
+    const dbcreds = myDBInstance.secret?.secretArn || "dbcreds";
 
     //  create a function to access database 
     const hello = new lambda.Function(this, "HelloHandler", {
@@ -59,8 +59,8 @@ export class BackStack extends cdk.Stack {
       vpc,
       role,
       environment: {
-        vala: `${
-          SM.Secret.fromSecretAttributes(this, "sna", { secretArn: foo })
+         INSTANCE_CREDENTIALS: `${
+          SM.Secret.fromSecretAttributes(this, "dbcredentials", { secretArn: dbcreds })
             .secretValue
         }`,
         HOST: myDBInstance.dbInstanceEndpointAddress,

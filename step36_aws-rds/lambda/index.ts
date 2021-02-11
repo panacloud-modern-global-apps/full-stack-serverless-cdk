@@ -5,7 +5,7 @@ import {
 } from "aws-lambda";
 import { env } from "process";
 
-const value = env.vala || "none";
+const value = env.INSTANCE_CREDENTIALS || "";
 const envvalue: any = JSON.parse(value);
 
 // Require and initialize outside of your main handler

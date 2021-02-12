@@ -60,7 +60,7 @@ export class BackStacka extends cdk.Stack {
       },
     });
 
-    //  create lambda once dbinstance is created
+    //  create lambda once database is created
     hello.node.addDependency(cluster);
 
     // either use "enable-data-api" in cluster construct or this

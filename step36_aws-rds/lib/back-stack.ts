@@ -73,9 +73,8 @@ export class BackStack extends cdk.Stack {
     //  allow lambda to connect to the database instance
 
     myDBInstance.grantConnect(hello);
-    // myDBInstance.connections.allowDefaultPortFromAnyIpv4;
-   
-      myDBInstance.connections.allowFromAnyIpv4(ec2.Port.tcp(3306))
+    // To control who can access the cluster or instance, use the .connections attribute. RDS databases have a default port: 3306
+   myDBInstance.connections.allowFromAnyIpv4(ec2.Port.tcp(3306))
     
 
 }};

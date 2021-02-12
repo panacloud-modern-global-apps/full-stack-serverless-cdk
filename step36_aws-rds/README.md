@@ -56,7 +56,7 @@ To set up a instance database, define a DatabaseInstance. You must always launch
 ```
 # Construct Props include:
 
-# Instances Engine (require)
+# Instances Engine (required)
 Each DB instance runs a DB engine. Amazon RDS currently supports the MySQL, MariaDB, PostgreSQL, Oracle, and Microsoft SQL Server DB engines. Each DB engine has its own supported features, and each version of a DB engine may include specific features. Additionally, each DB engine has a set of parameters in a DB parameter group that control the behavior of the databases that it manages.
 
 # DB instances class

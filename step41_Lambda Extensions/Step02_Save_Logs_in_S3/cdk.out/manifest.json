@@ -1,0 +1,470 @@
+{
+  "version": "9.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "Step02NodejsLogsWithApiExtensionAndSaveInS3Stack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "Step02NodejsLogsWithApiExtensionAndSaveInS3Stack.template.json"
+      },
+      "metadata": {
+        "/Step02NodejsLogsWithApiExtensionAndSaveInS3Stack": [
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.15f7a155b2183a36b21bb6b7166bd53088fcfbab24a6a79afbafcb99bc64c047",
+              "id": "15f7a155b2183a36b21bb6b7166bd53088fcfbab24a6a79afbafcb99bc64c047",
+              "packaging": "zip",
+              "sourceHash": "15f7a155b2183a36b21bb6b7166bd53088fcfbab24a6a79afbafcb99bc64c047",
+              "s3BucketParameter": "AssetParameters15f7a155b2183a36b21bb6b7166bd53088fcfbab24a6a79afbafcb99bc64c047S3BucketF0B81EDF",
+              "s3KeyParameter": "AssetParameters15f7a155b2183a36b21bb6b7166bd53088fcfbab24a6a79afbafcb99bc64c047S3VersionKeyA241A66D",
+              "artifactHashParameter": "AssetParameters15f7a155b2183a36b21bb6b7166bd53088fcfbab24a6a79afbafcb99bc64c047ArtifactHashB35103A3"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/construct-compat.ts:431:92)",
+              "LegacyStackSynthesizer.doAddFileAsset (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:171:23)",
+              "LegacyStackSynthesizer.addFileAsset (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:74:19)",
+              "Step02NodejsLogsWithApiExtensionAndSaveInS3Stack.addFileAsset (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/stack.ts:657:29)",
+              "LegacyStackSynthesizer.addFileAsset (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:78:25)",
+              "new Asset (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:151:40)",
+              "AssetCode.bind (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/aws-lambda/lib/code.ts:251:20)",
+              "new LayerVersion (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/aws-lambda/lib/layers.ts:181:29)",
+              "new Step02NodejsLogsWithApiExtensionAndSaveInS3Stack (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/lib/step02_nodejs_logs_with_api_extension_and_save_in_s3-stack.ts:14:25)",
+              "Object.<anonymous> (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/bin/step02_nodejs_logs_with_api_extension_and_save_in_s3.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/home/shamaz/.nvm/versions/node/v14.15.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          },
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.7372a3996ab8b6b7670c78e82aeb164d01a2e53c65c93cbbcfd2a595a43f04ad",
+              "id": "7372a3996ab8b6b7670c78e82aeb164d01a2e53c65c93cbbcfd2a595a43f04ad",
+              "packaging": "zip",
+              "sourceHash": "7372a3996ab8b6b7670c78e82aeb164d01a2e53c65c93cbbcfd2a595a43f04ad",
+              "s3BucketParameter": "AssetParameters7372a3996ab8b6b7670c78e82aeb164d01a2e53c65c93cbbcfd2a595a43f04adS3BucketBEB953F3",
+              "s3KeyParameter": "AssetParameters7372a3996ab8b6b7670c78e82aeb164d01a2e53c65c93cbbcfd2a595a43f04adS3VersionKeyC0C08E97",
+              "artifactHashParameter": "AssetParameters7372a3996ab8b6b7670c78e82aeb164d01a2e53c65c93cbbcfd2a595a43f04adArtifactHash1593FF30"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/construct-compat.ts:431:92)",
+              "LegacyStackSynthesizer.doAddFileAsset (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:171:23)",
+              "LegacyStackSynthesizer.addFileAsset (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:74:19)",
+              "Step02NodejsLogsWithApiExtensionAndSaveInS3Stack.addFileAsset (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/stack.ts:657:29)",
+              "LegacyStackSynthesizer.addFileAsset (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:78:25)",
+              "new Asset (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:151:40)",
+              "AssetCode.bind (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/aws-lambda/lib/code.ts:251:20)",
+              "new Function (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/aws-lambda/lib/function.ts:572:29)",
+              "new Step02NodejsLogsWithApiExtensionAndSaveInS3Stack (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/lib/step02_nodejs_logs_with_api_extension_and_save_in_s3-stack.ts:31:22)",
+              "Object.<anonymous> (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/bin/step02_nodejs_logs_with_api_extension_and_save_in_s3.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/home/shamaz/.nvm/versions/node/v14.15.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Step02NodejsLogsWithApiExtensionAndSaveInS3Stack/DemoBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DemoBucketD2908035",
+            "trace": [
+              "new Bucket (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:1326:22)",
+              "new Step02NodejsLogsWithApiExtensionAndSaveInS3Stack (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/lib/step02_nodejs_logs_with_api_extension_and_save_in_s3-stack.ts:12:20)",
+              "Object.<anonymous> (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/bin/step02_nodejs_logs_with_api_extension_and_save_in_s3.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/home/shamaz/.nvm/versions/node/v14.15.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Step02NodejsLogsWithApiExtensionAndSaveInS3Stack/lambdalayer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "lambdalayer5187F701",
+            "trace": [
+              "new LayerVersion (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/aws-lambda/lib/layers.ts:189:39)",
+              "new Step02NodejsLogsWithApiExtensionAndSaveInS3Stack (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/lib/step02_nodejs_logs_with_api_extension_and_save_in_s3-stack.ts:14:25)",
+              "Object.<anonymous> (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/bin/step02_nodejs_logs_with_api_extension_and_save_in_s3.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/home/shamaz/.nvm/versions/node/v14.15.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Step02NodejsLogsWithApiExtensionAndSaveInS3Stack/AssetParameters/15f7a155b2183a36b21bb6b7166bd53088fcfbab24a6a79afbafcb99bc64c047/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters15f7a155b2183a36b21bb6b7166bd53088fcfbab24a6a79afbafcb99bc64c047S3BucketF0B81EDF",
+            "trace": [
+              "new FileAssetParameters (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:16:32)",
+              "LegacyStackSynthesizer.doAddFileAsset (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:154:16)",
+              "LegacyStackSynthesizer.addFileAsset (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:74:19)",
+              "Step02NodejsLogsWithApiExtensionAndSaveInS3Stack.addFileAsset (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/stack.ts:657:29)",
+              "LegacyStackSynthesizer.addFileAsset (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:78:25)",
+              "new Asset (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:151:40)",
+              "AssetCode.bind (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/aws-lambda/lib/code.ts:251:20)",
+              "new LayerVersion (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/aws-lambda/lib/layers.ts:181:29)",
+              "new Step02NodejsLogsWithApiExtensionAndSaveInS3Stack (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/lib/step02_nodejs_logs_with_api_extension_and_save_in_s3-stack.ts:14:25)",
+              "Object.<anonymous> (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/bin/step02_nodejs_logs_with_api_extension_and_save_in_s3.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/home/shamaz/.nvm/versions/node/v14.15.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Step02NodejsLogsWithApiExtensionAndSaveInS3Stack/AssetParameters/15f7a155b2183a36b21bb6b7166bd53088fcfbab24a6a79afbafcb99bc64c047/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters15f7a155b2183a36b21bb6b7166bd53088fcfbab24a6a79afbafcb99bc64c047S3VersionKeyA241A66D",
+            "trace": [
+              "new FileAssetParameters (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:21:31)",
+              "LegacyStackSynthesizer.doAddFileAsset (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:154:16)",
+              "LegacyStackSynthesizer.addFileAsset (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:74:19)",
+              "Step02NodejsLogsWithApiExtensionAndSaveInS3Stack.addFileAsset (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/stack.ts:657:29)",
+              "LegacyStackSynthesizer.addFileAsset (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:78:25)",
+              "new Asset (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:151:40)",
+              "AssetCode.bind (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/aws-lambda/lib/code.ts:251:20)",
+              "new LayerVersion (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/aws-lambda/lib/layers.ts:181:29)",
+              "new Step02NodejsLogsWithApiExtensionAndSaveInS3Stack (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/lib/step02_nodejs_logs_with_api_extension_and_save_in_s3-stack.ts:14:25)",
+              "Object.<anonymous> (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/bin/step02_nodejs_logs_with_api_extension_and_save_in_s3.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/home/shamaz/.nvm/versions/node/v14.15.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Step02NodejsLogsWithApiExtensionAndSaveInS3Stack/AssetParameters/15f7a155b2183a36b21bb6b7166bd53088fcfbab24a6a79afbafcb99bc64c047/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters15f7a155b2183a36b21bb6b7166bd53088fcfbab24a6a79afbafcb99bc64c047ArtifactHashB35103A3",
+            "trace": [
+              "new FileAssetParameters (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:26:34)",
+              "LegacyStackSynthesizer.doAddFileAsset (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:154:16)",
+              "LegacyStackSynthesizer.addFileAsset (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:74:19)",
+              "Step02NodejsLogsWithApiExtensionAndSaveInS3Stack.addFileAsset (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/stack.ts:657:29)",
+              "LegacyStackSynthesizer.addFileAsset (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:78:25)",
+              "new Asset (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:151:40)",
+              "AssetCode.bind (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/aws-lambda/lib/code.ts:251:20)",
+              "new LayerVersion (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/aws-lambda/lib/layers.ts:181:29)",
+              "new Step02NodejsLogsWithApiExtensionAndSaveInS3Stack (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/lib/step02_nodejs_logs_with_api_extension_and_save_in_s3-stack.ts:14:25)",
+              "Object.<anonymous> (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/bin/step02_nodejs_logs_with_api_extension_and_save_in_s3.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/home/shamaz/.nvm/versions/node/v14.15.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Step02NodejsLogsWithApiExtensionAndSaveInS3Stack/AssetParameters/7372a3996ab8b6b7670c78e82aeb164d01a2e53c65c93cbbcfd2a595a43f04ad/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters7372a3996ab8b6b7670c78e82aeb164d01a2e53c65c93cbbcfd2a595a43f04adS3BucketBEB953F3",
+            "trace": [
+              "new FileAssetParameters (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:16:32)",
+              "LegacyStackSynthesizer.doAddFileAsset (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:154:16)",
+              "LegacyStackSynthesizer.addFileAsset (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:74:19)",
+              "Step02NodejsLogsWithApiExtensionAndSaveInS3Stack.addFileAsset (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/stack.ts:657:29)",
+              "LegacyStackSynthesizer.addFileAsset (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:78:25)",
+              "new Asset (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:151:40)",
+              "AssetCode.bind (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/aws-lambda/lib/code.ts:251:20)",
+              "new Function (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/aws-lambda/lib/function.ts:572:29)",
+              "new Step02NodejsLogsWithApiExtensionAndSaveInS3Stack (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/lib/step02_nodejs_logs_with_api_extension_and_save_in_s3-stack.ts:31:22)",
+              "Object.<anonymous> (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/bin/step02_nodejs_logs_with_api_extension_and_save_in_s3.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/home/shamaz/.nvm/versions/node/v14.15.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Step02NodejsLogsWithApiExtensionAndSaveInS3Stack/AssetParameters/7372a3996ab8b6b7670c78e82aeb164d01a2e53c65c93cbbcfd2a595a43f04ad/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters7372a3996ab8b6b7670c78e82aeb164d01a2e53c65c93cbbcfd2a595a43f04adS3VersionKeyC0C08E97",
+            "trace": [
+              "new FileAssetParameters (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:21:31)",
+              "LegacyStackSynthesizer.doAddFileAsset (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:154:16)",
+              "LegacyStackSynthesizer.addFileAsset (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:74:19)",
+              "Step02NodejsLogsWithApiExtensionAndSaveInS3Stack.addFileAsset (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/stack.ts:657:29)",
+              "LegacyStackSynthesizer.addFileAsset (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:78:25)",
+              "new Asset (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:151:40)",
+              "AssetCode.bind (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/aws-lambda/lib/code.ts:251:20)",
+              "new Function (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/aws-lambda/lib/function.ts:572:29)",
+              "new Step02NodejsLogsWithApiExtensionAndSaveInS3Stack (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/lib/step02_nodejs_logs_with_api_extension_and_save_in_s3-stack.ts:31:22)",
+              "Object.<anonymous> (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/bin/step02_nodejs_logs_with_api_extension_and_save_in_s3.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/home/shamaz/.nvm/versions/node/v14.15.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Step02NodejsLogsWithApiExtensionAndSaveInS3Stack/AssetParameters/7372a3996ab8b6b7670c78e82aeb164d01a2e53c65c93cbbcfd2a595a43f04ad/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters7372a3996ab8b6b7670c78e82aeb164d01a2e53c65c93cbbcfd2a595a43f04adArtifactHash1593FF30",
+            "trace": [
+              "new FileAssetParameters (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:26:34)",
+              "LegacyStackSynthesizer.doAddFileAsset (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:154:16)",
+              "LegacyStackSynthesizer.addFileAsset (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:74:19)",
+              "Step02NodejsLogsWithApiExtensionAndSaveInS3Stack.addFileAsset (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/stack.ts:657:29)",
+              "LegacyStackSynthesizer.addFileAsset (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:78:25)",
+              "new Asset (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:151:40)",
+              "AssetCode.bind (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/aws-lambda/lib/code.ts:251:20)",
+              "new Function (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/aws-lambda/lib/function.ts:572:29)",
+              "new Step02NodejsLogsWithApiExtensionAndSaveInS3Stack (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/lib/step02_nodejs_logs_with_api_extension_and_save_in_s3-stack.ts:31:22)",
+              "Object.<anonymous> (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/bin/step02_nodejs_logs_with_api_extension_and_save_in_s3.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/home/shamaz/.nvm/versions/node/v14.15.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Step02NodejsLogsWithApiExtensionAndSaveInS3Stack/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Role1ABCC5F0",
+            "trace": [
+              "new Role (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/aws-iam/lib/role.ts:327:18)",
+              "new Step02NodejsLogsWithApiExtensionAndSaveInS3Stack (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/lib/step02_nodejs_logs_with_api_extension_and_save_in_s3-stack.ts:19:18)",
+              "Object.<anonymous> (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/bin/step02_nodejs_logs_with_api_extension_and_save_in_s3.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/home/shamaz/.nvm/versions/node/v14.15.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Step02NodejsLogsWithApiExtensionAndSaveInS3Stack/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RoleDefaultPolicy5FFB7DAB",
+            "trace": [
+              "new Policy (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/aws-iam/lib/policy.ts:154:22)",
+              "Role.addToPrincipalPolicy (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/aws-iam/lib/role.ts:368:28)",
+              "Role.addToPolicy (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/aws-iam/lib/role.ts:376:17)",
+              "new Step02NodejsLogsWithApiExtensionAndSaveInS3Stack (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/lib/step02_nodejs_logs_with_api_extension_and_save_in_s3-stack.ts:28:10)",
+              "Object.<anonymous> (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/bin/step02_nodejs_logs_with_api_extension_and_save_in_s3.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/home/shamaz/.nvm/versions/node/v14.15.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Step02NodejsLogsWithApiExtensionAndSaveInS3Stack/sendlog/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "sendlogE5D6A33E",
+            "trace": [
+              "new Function (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/aws-lambda/lib/function.ts:614:35)",
+              "new Step02NodejsLogsWithApiExtensionAndSaveInS3Stack (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/lib/step02_nodejs_logs_with_api_extension_and_save_in_s3-stack.ts:31:22)",
+              "Object.<anonymous> (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/bin/step02_nodejs_logs_with_api_extension_and_save_in_s3.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/home/shamaz/.nvm/versions/node/v14.15.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/Step02NodejsLogsWithApiExtensionAndSaveInS3Stack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata",
+            "trace": [
+              "new MetadataResource (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/private/metadata-resource.ts:51:24)",
+              "/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/private/synthesis.ts:140:5",
+              "visit (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/private/synthesis.ts:200:5)",
+              "visit (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/private/synthesis.ts:196:5)",
+              "injectMetadataResources (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/private/synthesis.ts:131:3)",
+              "Object.synthesize (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/private/synthesis.ts:18:3)",
+              "App.synth (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/stage.ts:188:23)",
+              "process.<anonymous> (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/app.ts:123:45)",
+              "Object.onceWrapper (events.js:422:26)",
+              "process.emit (events.js:315:20)",
+              "process.EventEmitter.emit (domain.js:486:12)",
+              "process.emit (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/source-map-support/source-map-support.js:495:21)"
+            ]
+          }
+        ],
+        "/Step02NodejsLogsWithApiExtensionAndSaveInS3Stack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable",
+            "trace": [
+              "new MetadataResource (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/private/metadata-resource.ts:60:27)",
+              "/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/private/synthesis.ts:140:5",
+              "visit (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/private/synthesis.ts:200:5)",
+              "visit (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/private/synthesis.ts:196:5)",
+              "injectMetadataResources (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/private/synthesis.ts:131:3)",
+              "Object.synthesize (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/private/synthesis.ts:18:3)",
+              "App.synth (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/stage.ts:188:23)",
+              "process.<anonymous> (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/@aws-cdk/core/lib/app.ts:123:45)",
+              "Object.onceWrapper (events.js:422:26)",
+              "process.emit (events.js:315:20)",
+              "process.EventEmitter.emit (domain.js:486:12)",
+              "process.emit (/home/shamaz/web root/CDK Panacloud Repo/Lambda Ext/Step02_Nodejs_logs_with_api_extension_and_save_in_s3/node_modules/source-map-support/source-map-support.js:495:21)"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

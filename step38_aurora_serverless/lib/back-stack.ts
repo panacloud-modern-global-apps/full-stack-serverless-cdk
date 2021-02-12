@@ -60,7 +60,7 @@ export class BackStack extends cdk.Stack {
       },
     });
 
-    //  create lambda once dbinstance is created
+    //  create lambda once database is created
     hello.node.addDependency(myServerlessDB);
     
 //     To control who can access the cluster or instance, use the .connections attribute. RDS databases have a default port: 3306

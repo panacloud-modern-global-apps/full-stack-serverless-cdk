@@ -6,6 +6,7 @@ Amazon Kinesis makes it easy to collect, process, and analyze real-time, streami
 
 Shard is the base throughput unit of an Amazon Kinesis data stream. You specify the number of shards needed within your stream based on your throughput requirements. You are charged for each shard at an hourly rate.
 
+![Optional Text](https://d2908q01vomqb2.cloudfront.net/da4b9237bacccdf19c0760cab7aec4a8359010b0/2018/08/16/diagram-how-it-works-kinesis-data-streams.249630c459ffe210d013ad06a0f6899ebea1304b.png)
 
 # Important Features
 

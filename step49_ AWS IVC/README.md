@@ -7,8 +7,8 @@ Amazon Interactive Video Service (Amazon IVS) is a managed live streaming soluti
 
 
 ## MediaLive API / Documentation Reference
-https://docs.aws.amazon.com/ivs/latest/userguide/what-is.html
-https://docs.aws.amazon.com/ivs/latest/APIReference/Welcome.html
+- https://docs.aws.amazon.com/ivs/latest/userguide/what-is.html
+- https://docs.aws.amazon.com/ivs/latest/APIReference/Welcome.html
 
 
 ## Pricing Chart.
@@ -32,24 +32,26 @@ https://aws.amazon.com/ivs/pricing/#Live_Video_Input_Costs
 - Ingest server : use as url/server key in streaming application 
 - Stream key : use as streaming key / secret key 
 - Playback URL : for the streaming output 
+![configuration](img/configuration.png)
 
-## OBS Studio setup
+### OBS Studio setup
 
 Select the type of streaming source (camera/screen...) and click on "setting"
 ![obs1](img/obs1.png)
 Copy the "Ingest Server key" and "Streaming Key" here 
 ![obs2](img/obs2.png)
 
-## Simple Stream Testing
-Copy the Playback URL (from cdk-deploy outPut or console  IVS/channel_Name/Playback Url)
+## Testing
+### Simple Stream Testing
+Copy the Playback URL (from cdk-deploy outPut or AWS console ... IVS/channel_Name/Playback Url)
 ![linkTesting](img/linkTesting.png)
 
-## Streaming with  with push_metaData
+### Streaming with  with push_metaData
 - Step 1 : Copy the Playback URL 
 ![linkTesting](img/push_metaData.png)
 
 - Step 2 : copy and paste bellow command in terminal .. 
-aws ivs put-metadata --channel-arn arn:aws:ivs:us-east-1:abcd1234:channel/abcd1234 --metadata '{"question": "Best Streaming Service?", "correctIndex": 0, "answers": ["AWS MediaLive", "AWS IVS", "StreamYard"]}'
+- aws ivs put-metadata --channel-arn arn:aws:ivs:us-east-1:abcd1234:channel/abcd1234 --metadata '{"question": "Best Streaming Service?", "correctIndex": 0, "answers": ["AWS MediaLive", "AWS IVS", "StreamYard"]}'
 ![linkTesting](img/metaData.png)
 
 ## Result, with push_metaData
@@ -57,11 +59,11 @@ aws ivs put-metadata --channel-arn arn:aws:ivs:us-east-1:abcd1234:channel/abcd12
 
 
 
-## Mobile Application
+## Stream with Mobile Application
 
 Setting > Connections > New Connection >
 name : abcd
-url : Ingest_Server_Key/Streaming key ( rtmps://abcd1234.global-contribute.live-video.net:443/app/sk_us-east-1_abcdefg123456)
+url : Ingest_Server_Key/Streaming key (rtmps://abcd1234.global-contribute.live-video.net:443/app/sk_us-east-1_abcdefg123456)
 
 save & start recording
 

@@ -27,7 +27,7 @@ https://aws.amazon.com/ivs/pricing/#Live_Video_Input_Costs
 
 
 ## Setup the Streaming application !
-    copy the below information from AWS IVS console 
+    Copy the below information from AWS IVS console 
 
 - Ingest server : use as url/server key in streaming application 
 - Stream key : use as streaming key / secret key 
@@ -43,15 +43,16 @@ Copy the "Ingest Server key" and "Streaming Key" here
 
 ## Testing
 ### Simple Stream Testing
-Copy the Playback URL (from cdk-deploy outPut or AWS console ... IVS/channel_Name/Playback Url)
+change the Playback Url value
 ![linkTesting](img/linkTesting.png)
 
 ### Streaming with  with push_metaData
-- Step 1 : Copy the Playback URL 
+- Step 1 : change the Playback Url Vlue
 ![linkTesting](img/push_metaData.png)
 
-- Step 2 : copy and paste bellow command in terminal .. 
-- aws ivs put-metadata --channel-arn arn:aws:ivs:us-east-1:abcd1234:channel/abcd1234 --metadata '{"question": "Best Streaming Service?", "correctIndex": 0, "answers": ["AWS MediaLive", "AWS IVS", "StreamYard"]}'
+- Step 2 : copy and paste bellow command in terminal .. <br />
+ aws ivs put-metadata --channel-arn <your-channel-arn> --metadata <your-metadata> <br />
+ e-g..__ aws ivs put-metadata --channel-arn arn:aws:ivs:us-east-1:abcd1234:channel/abcd1234 --metadata '{"question": "Best Streaming Service?", "correctIndex": 0, "answers": ["AWS MediaLive", "AWS IVS", "StreamYard"]}'
 ![linkTesting](img/metaData.png)
 
 ## Result, with push_metaData
@@ -61,9 +62,9 @@ Copy the Playback URL (from cdk-deploy outPut or AWS console ... IVS/channel_Nam
 
 ## Stream with Mobile Application
 
-Setting > Connections > New Connection >
-name : abcd
-url : Ingest_Server_Key/Streaming key (rtmps://abcd1234.global-contribute.live-video.net:443/app/sk_us-east-1_abcdefg123456)
+Setting > Connections > New Connection  <br />
+name : abcd<br />
+url : Ingest_Server_Key/Streaming key (rtmps://abcd1234.global-contribute.live-video.net:443/app/sk_us-east-1_abcdefg123456)<br />
 
 save & start recording
 

@@ -9,20 +9,20 @@ Shard is the base throughput unit of an Amazon Kinesis data stream. You specify 
 
 # Important Features
 
-kinesis is a managed alternative to Apache kafka
-great for application logs, metrics, IoT, clickstreams
-great for 'real-time' big data
-great for streaming processing frameworks (Spark NiFi, etc)
-streams are divided in ordered Shard/ Partitions
-Data Retentaion is 24 hours by default, max can go up to 7 days
-data can be reprocessed
-Multiple applications can consume the same stream
-Real time processing with scale of throughput
-Once data is inserted in Kinesis it can't be deleted (immutable)
+- kinesis is a managed alternative to Apache kafka
+- great for application logs, metrics, IoT, clickstreams
+- great for 'real-time' big data
+- great for streaming processing frameworks (Spark NiFi, etc)
+- streams are divided in ordered Shard/ Partitions
+- Data Retentaion is 24 hours by default, max can go up to 7 days
+- data can be reprocessed
+- Multiple applications can consume the same stream
+- Real time processing with scale of throughput
+- Once data is inserted in Kinesis it can't be deleted (immutable)
 
 # Billing
-One stream is made of many different shards
-Billing is per shard provisioned
-Batching available or per message calls
-the number of shards can evolve over time (reshard/ merge)
-records are ordered per shard
+- One stream is made of many different shards
+- Billing is per shard provisioned
+- Batching available or per message calls
+- the number of shards can evolve over time (reshard/ merge)
+- records are ordered per shard

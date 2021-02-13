@@ -40,7 +40,7 @@ This Stack doesn't start your channel automatically due to costs, so open MediaL
 
 Copy the RTMP link from AWS MediaLive console 
 
-- click on the Input in the site bar and coppe the complete link from "Destination A" ... like [rtmp://52.202.187.209:1935/test/bootCamp123]	 (streaming key : bootCamp123)
+- click on the Input in the site bar and copy the complete link from "Destination A" ... like [rtmp://52.202.187.209:1935/test/bootCamp123]	 (streaming key : bootCamp123)
 
 
 ## OBS Studio setup
@@ -51,7 +51,7 @@ Copy the RTMP link
 ![obs2](img/obs2.png)
 
 ### Testing
-Copy the Playback URL (you can check from console  mediaPackage/channel_Name/Endpoints Url)
+Copy the Playback URL (From cdk-deploy outPut or AWS console ...  mediaPackage/channel_Name/Endpoints Url)
 ![linkTesting](img/linkTesting.png)
 
 

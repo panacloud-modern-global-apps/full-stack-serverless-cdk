@@ -31,6 +31,8 @@ AWS IoT Greengrass v2 brings local compute, messaging, data management, sync, an
 chmod 400 my-ec2-key.pem
 ```
 
+- If you do not set these permissions, then you cannot connect to your instance using this key pair.
+
 #### For Windows
 
 - You need to Install SSH client like PUTTY to connect to EC2 instance.
@@ -38,8 +40,6 @@ chmod 400 my-ec2-key.pem
 [You can download PUTTY here](https://www.chiark.greenend.org.uk/~sgtatham/putty/)
 
 - Now Follow the instructions mentioned here to connect to your EC2 instance. [Connect using PUTTY](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html)
-
-- If you do not set these permissions, then you cannot connect to your instance using this key pair.
 
 ### Step 2 (Deploy Code to AWS Using CDK)
 

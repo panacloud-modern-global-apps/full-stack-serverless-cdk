@@ -1,5 +1,4 @@
 # Lambda Extension
-![AWS WAF Diagram](lambda_ext.png)
 [Lambda Extensions](https://aws.amazon.com/blogs/compute/introducing-aws-lambda-extensions-in-preview/) help solve a common request from customers to make it easier to integrate their existing tools with Lambda. Previously, customers told us that integrating Lambda with their preferred tools required additional operational and configuration tasks. In addition, tools such as log agents, which are long-running processes, could not easily run on Lambda. 
 Extensions are a new way for tools to integrate deeply into the Lambda environment. There is no complex installation or configuration, and this simplified experience makes it easier for you to use your preferred tools across your application portfolio today. You can use extensions for use-cases such as:
 
@@ -7,7 +6,7 @@ Extensions are a new way for tools to integrate deeply into the Lambda environme
 * Automatically instrumenting your code without needing code changes
 * Fetching configuration settings or secrets before the function invocation
 * Detecting and alerting on function activity through hardened security agents, which can run as separate processes from the function
-
+![AWS WAF Diagram](image/lambda_ext.png)
 ## AWS Lambda Ready Partners extensions available at launch
 Today, you can use extensions with the following AWS and AWS Lambda Ready Partner’s tools, and there are more to come:
 * AppDynamics
@@ -31,7 +30,7 @@ Today, you can use extensions with the following AWS and AWS Lambda Ready Partne
 ## Lambda Extensions API
 The Extensions API builds on the existing Runtime API, which provides an HTTP API for custom runtimes to receive invocation events from Lambda. As an extension author, you can use the Extensions API to register for function and execution environment lifecycle events. In response to these events, you can start new processes or run logic.
 
-![AWS WAF Diagram](ext-env.png)
+![AWS WAF Diagram](image/ext-env.png)
 
 ## Key Points to remember in development of Lambda Extension
 

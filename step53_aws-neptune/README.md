@@ -177,6 +177,13 @@ export AWS_SESSION_TOKEN=AQoDYXdzEJr1K...o5OytwEXAMPLE=`
 - Create a VPC Endpoint to allow s3 to access aws neptune resources
 - [You can create vpc endpoint from here](https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-IAM.html)
 - Make sure that select your stack vpc and click all the route table options
+- Alternatively you can also create the endpoint by specifying in the stack like
+
+```typescript
+vpc.addGatewayEndpoint("gwep", {
+  service: GatewayVpcEndpointAwsService.S3,
+});
+```
 
 #### Step 6
 

@@ -15,7 +15,7 @@
 
 [AWS Free Tier](https://aws.amazon.com/free/)
 
-[GitHub Student Pack](https://education.github.com/pack)
+[GitHub Student Pack](https://education.github.com/pack) 
 
 
 ## Class Videos

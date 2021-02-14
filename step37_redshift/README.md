@@ -10,4 +10,4 @@ The first step to create a data warehouse is to launch a set of nodes, called an
 
 - [Amazon Redshift](https://docs.aws.amazon.com/redshift/latest/mgmt/welcome.html)
 - [Redshift Quick Guide](https://docs.aws.amazon.com/redshift/latest/gsg/getting-started.html)
-- [How to connect Redshift to SQL Client](https://docs.aws.amazon.com/redshift/latest/mgmt/connecting-to-cluster.html)
+- [How to connect Redshift to SQL Client](https://docs.aws.amazon.com/redshift/latest/mgmt/connecting-to-cluster.html) -[Lambda with Redshift](https://aws.amazon.com/blogs/big-data/accessing-external-components-using-amazon-redshift-lambda-udfs/)

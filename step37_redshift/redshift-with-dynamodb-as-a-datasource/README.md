@@ -82,10 +82,18 @@ CREATE SCHEMA myinternalschema
 
 2.
 
+This schame has to match all the properties in your dynamodb table
+e.g If your dynamodb contains
+id: string
+name: string
+age: number
+city: string
+then you can run this query
+
 ```sql
 
 CREATE TABLE myinternalschema.event(
-id varchar(200)
+id varchar(200),
 name varchar(200),
 age integer not null,
 city varchar(200));

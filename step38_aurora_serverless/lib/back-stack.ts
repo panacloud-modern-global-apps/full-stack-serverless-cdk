@@ -47,13 +47,13 @@ export class BackStack extends cdk.Stack {
     //  create a function to access database
     const hello = new lambda.Function(this, "HelloHandler", {
       runtime: lambda.Runtime.NODEJS_10_X,
-      code: lambda.Code.fromAsset("lambda/lambda-p.zip"),
+      code: lambda.Code.fromAsset("lambda/lambdazip.zip"),
       handler: "index.handler",
       timeout: cdk.Duration.minutes(1),
       vpc,
       role,
       environment: {
-      INSTANCE_CREDENTIALS: `${
+        INSTANCE_CREDENTIALS: `${
           SM.Secret.fromSecretAttributes(this, "sec-arn", { secretArn: secarn })
             .secretValue
         }`,
@@ -62,9 +62,9 @@ export class BackStack extends cdk.Stack {
 
     //  create lambda once database is created
     hello.node.addDependency(myServerlessDB);
-    
-//     To control who can access the cluster or instance, use the .connections attribute. RDS databases have a default port: 3306
 
-      myServerlessDB.connections.allowFromAnyIpv4(ec2.Port.tcp(3306));
+    //     To control who can access the cluster or instance, use the .connections attribute. RDS databases have a default port: 3306
+
+    myServerlessDB.connections.allowFromAnyIpv4(ec2.Port.tcp(3306));
   }
 }

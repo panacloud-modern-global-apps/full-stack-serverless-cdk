@@ -33,7 +33,9 @@ export class Step47Ec2Stack extends cdk.Stack {
 
 
     // Instance details
+    //use instance class T3 and instance size micro coz it's in free tier m
     new ec2.Instance(this, 'Instance', {
+      instanceName: 'mkk-ec2-instance' , //optional
       vpc,
       instanceType: ec2.InstanceType.of(ec2.InstanceClass.T3, ec2.InstanceSize.NANO),
       machineImage: awsAMI,

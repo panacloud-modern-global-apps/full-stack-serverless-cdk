@@ -5,7 +5,7 @@ AWS Elemental MediaLive is a video processing service that enables video provide
 
 ![AWS MediaLive Architecture](img/ML.png)
 
-## MediaLive API / Documentation Referenc
+## MediaLive API / Documentation Reference
 https://docs.aws.amazon.com/medialive/latest/ug/what-is.html
 
 
@@ -26,12 +26,12 @@ https://aws.amazon.com/medialive/pricing/#Add-On_Functionality
 # After Deployment.
 
 ## Install Streaming Application
-- [Desktop] :  install OBS Studeio https://obsproject.com/download    or
+- [Desktop] :  install OBS Studio https://obsproject.com/download    
 - [MobileApp] : Larix Broadcaster (Android)
 
 
 ## Manually start the Channel 
-This Stack doesn't start your channel automatically due to costs, so open MediaLive in the AWS Console and click the Channels link in the sidebar, select "MyLieStream" and  click the orange "start" button in the top right to start the channel. 
+This Stack doesn't start your channel automatically due to costs, so open MediaLive in the AWS Console and click the Channels link in the sidebar, select "MyLiveStream" and  click the orange "start" button in the top right to start the channel. 
 
 ** [Remember] to stop your channel after you are done testing, AWS MediaLive will charges per second.
 
@@ -57,9 +57,9 @@ Copy the Playback URL (From cdk-deploy outPut or AWS console ...  mediaPackage/c
 
 ## Mobile Application
 
-Setting > Connections > New Connection >
-name : abcd
-url : rtmp://52.202.187.209:1935/test/bootCamp123
+Setting > Connections > New Connection > <br/>
+name : abcd<br/>
+url : rtmp://52.202.187.209:1935/test/bootCamp123<br/>
 
 save & start recording
 

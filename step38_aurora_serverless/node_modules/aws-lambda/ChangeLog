@@ -1,0 +1,32 @@
+future
+- webpack embed aws-sdk/clients/lambda
+- webpack embed zip libraries native/non-native with fallback
+- memory-fs and in-memory zipping
+- webpack embed watchpack and babel it to support NodeJS < 6
+- npm install for NodeJS 8.10 and 10.x
+- multi-function config file
+- try chokidar file watcher
+
+1.0.6
+- increasex maxBuffer for exec from 1MB to 5MB
+1.0.5
+- fixes a vulnerability in function name, reported by Song Li of Johns Hopkins University
+1.0.4
+- no NodeJS 4 & 5 support ( watchpack does not support it )
+- better watch using watchpack ( used also by webpack )
+- try webpack 2.0.0-beta.10; webpack 1.x does not seem to work inside linux
+- $ lambda start --docker > in progress
+
+1.0.1
+- support for function Tags
+- $ lambda start <file>
+
+1.0.0
+- uses 2015-03-31 api version ( latest in dec.2019 )
+- support for yaml
+- support for Lambda Environmemnt Variables
+- support for Lambda Layers
+- npm tests against AWS Lambda
+
+0.1.2
+- uses AWS Lambda 2014-11-11 deprecated api

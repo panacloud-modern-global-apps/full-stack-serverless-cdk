@@ -1,8 +1,5 @@
 import * as cdk from '@aws-cdk/core';
 import * as ivs from '@aws-cdk/aws-ivs';
-const cdk_spa_deploy_1 = require("cdk-spa-deploy");
-
-const fs = require("fs");
 
 export class Step49IvcStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
@@ -12,6 +9,7 @@ export class Step49IvcStack extends cdk.Stack {
       name: "liveChanel", 
       type: "BASIC",        //Avaialbe options are STANDARD & BASIC
       latencyMode: "LOW",    //Avaialbe options are    NORMAL | LOW
+      
     //   authorized : true   *   Authorized playback requests with Tokens (JWTs) (https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html)
     
     });

@@ -22,7 +22,7 @@ https://aws.amazon.com/ivs/pricing/#Live_Video_Input_Costs
 # After Deployment.
 
 ## Install Streaming Application
-- [Desktop] :  install OBS Studeio https://obsproject.com/download    or
+- [Desktop] :  install OBS Studio https://obsproject.com/download    or
 - [MobileApp] : Larix Broadcaster (Android)
 
 

@@ -83,7 +83,7 @@ const policyName = 'MyLightBulb-policy'
 Attaches the specified principal to the specified thing.
 A principal can be X.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or federated identities.
 
-<b>Note: before attaching principal to thing. make sure you created certificate</b> and pass the certificate ARN in principal attribute
+<b>Note: before attaching principal to thing. make sure you created certificate and thing</b> and pass the certificate ARN in principal attribute
 
 ``` typescript
 const thingPrincipal = new iotCore.CfnThingPrincipalAttachment(this,"myThingPrincipal",{
@@ -98,7 +98,7 @@ to find the certificate ARN navigate to <a href="https://us-west-2.console.aws.a
 
 Attaches the specified principal to the specified policy.
 
-<b>Note: before attaching principal to thing. make sure you created certificate</b> and pass the certificate ARN in principal attribute
+<b>Note: before attaching principal to Policy. make sure you created certificate and policy</b> and pass the certificate ARN in principal attribute
 ``` typescript
 const policyPrincipal = new iotCore.CfnPolicyPrincipalAttachment(this,"myPolicyPrincipal",{
       policyName:policyName,

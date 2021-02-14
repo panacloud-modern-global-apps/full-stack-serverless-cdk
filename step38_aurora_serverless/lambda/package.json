@@ -9,7 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@aws-cdk/aws-secretsmanager": "^1.87.1",
     "serverless-mysql": "^1.5.4"
   },
   "devDependencies": {

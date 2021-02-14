@@ -20,3 +20,10 @@ A function can use up to 5 layers at a time.
 
 [Step 24 Video in English on YouTube](https://www.youtube.com/watch?v=HrvCZGKI9SE)
 
+Step 24 Video in Urdu on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225874842762598)
+
+[Step 24 Video in Urdu on YouTube]()
+
+
+
+

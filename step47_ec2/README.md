@@ -93,9 +93,9 @@ When you create a VPC, you must specify a range of IPv4 addresses for the VPC in
 ``` javascript 
     $ service httpd start//it starts server
 ```
-[!img info](./img/active.png)
-
 ## You can see running status active
+![image info](./img/active.png)
+
 # Reference
 [AWS EC2 docs](https://docs.aws.amazon.com/cdk/api/latest/docs/aws-ec2-readme.html)
 

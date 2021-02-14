@@ -1,8 +1,19 @@
 # Amazon GreenGrass v2
 
-AWS IoT Greengrass brings local compute, messaging, data management, sync, and ML inference capabilities to edge devices. This enables devices to collect and analyze data closer to the source of information, react autonomously to local events, and communicate securely with each other on local networks.
+AWS IoT Greengrass is an Internet of Things (IoT) open source edge runtime and cloud service that helps you build, deploy, and manage device software. Customers use AWS IoT Greengrass for their IoT applications on millions of devices in homes, factories, vehicles, and businesses. You can program your devices to act locally on the data they generate, execute predictions based on machine learning models, filter and aggregate device data, and only transmit necessary information to the cloud.
+[Find out more about aws greengrass here](https://docs.aws.amazon.com/greengrass/v2/developerguide/getting-started.html)
+
+AWS IoT Greengrass v2 brings local compute, messaging, data management, sync, and ML inference capabilities to edge devices. This enables devices to collect and analyze data closer to the source of information, react autonomously to local events, and communicate securely with each other on local networks.
 
 ![Greengrass](img/greengrass.png)
+
+## Useful Links
+
+- [Amazon Greengrass](https://docs.amazonaws.cn/en_us/greengrass/v1/developerguide/what-is-gg.html)
+
+- [Amazon Greengrass v2](https://docs.aws.amazon.com/greengrass/v2/developerguide/getting-started.html)
+
+- [Quick guide to AWS Greengrass](https://docs.aws.amazon.com/greengrass/v1/developerguide/quick-start.html)
 
 ## Steps to create and deploy component from AWS Greengrass v2
 
@@ -11,6 +22,9 @@ AWS IoT Greengrass brings local compute, messaging, data management, sync, and M
 - Navigate to ec2 dashboard. Under network and security click Key Pairs.
 - Generate a key pair to connect to ec2 via ssh
 - download the file with extension .pem. Let say the file name is my-ec2-key.pem
+
+#### For Ubuntu
+
 - After download go to the location where your key has been downloaded and run
 
 ```
@@ -18,6 +32,14 @@ chmod 400 my-ec2-key.pem
 ```
 
 - If you do not set these permissions, then you cannot connect to your instance using this key pair.
+
+#### For Windows
+
+- You need to Install SSH client like PUTTY to connect to EC2 instance.
+
+[You can download PUTTY here](https://www.chiark.greenend.org.uk/~sgtatham/putty/)
+
+- Now Follow the instructions mentioned here to connect to your EC2 instance. [Connect using PUTTY](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html)
 
 ### Step 2 (Deploy Code to AWS Using CDK)
 
@@ -171,6 +193,8 @@ Successfully set up Nucleus as a system service
 
 - From the earlier steps you should have downloaded two files on you computer. Move them to ec2 instance using
 
+#### For Ubuntu
+
 ```
 cd Path-to-downloaded-files
 
@@ -181,6 +205,16 @@ scp -i /path-to-your-my-ec2-key.pem/ -r (id)-setup.tar.gz ec2-user@ec2-1-1-1-1.c
 ```
 
 - You can find (publid dns name e.gec2-user@ec2-1-1-1-1.compute-1.amazonaws.com) in your ec2 instance public dns name
+
+#### For Windows
+
+```
+pscp -i C:\path\my-key-pair.ppk C:\path\Sgreengrass-(id).tar.gz my-instance-user-name@my-instance-public-dns-name:~
+
+pscp -i C:\path\my-key-pair.ppk C:\path\id)-setup.tar.gz my-instance-user-name@my-instance-public-dns-name:~
+
+
+```
 
 - Extract these two files in ec2 instance using
 
@@ -545,12 +579,6 @@ aws greengrassv2 create-deployment \
 ```
 tail -f /tmp/Greengrass_HelloWorld.log
 ```
-
-## Useful Links
-
-- [Amazon Greengrass v2](https://docs.aws.amazon.com/greengrass/v1/developerguide/gg-gs.html)
-
-- [Quick guide to AWS Greengrass v2](https://docs.aws.amazon.com/greengrass/v1/developerguide/quick-start.html)
 
 # Welcome to your CDK TypeScript project!
 

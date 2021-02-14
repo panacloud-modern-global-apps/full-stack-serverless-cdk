@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+
+<!-- # Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved. -->
+<!-- # SPDX-License-Identifier: MIT-0 -->
+
+<head>
+  <meta charset="utf-8" />
+  <!-- JQUERY -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"> </script>
+  <!-- BOOTSTRAP -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+  <style>
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background: #CCCCCC;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+    }
+
+    .video-wrapper {
+      width: 100%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      border-radius: 6px;
+      box-shadow: 0 10px 60px rgba(0, 0, 0, .15);
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    pre {
+      background: #000;
+      color: #FFF;
+      outline: 1px solid #ccc;
+      padding: 5px;
+      margin: 5px;
+      white-space: pre-wrap;
+    }
+
+    .string {
+      color: green;
+    }
+
+    .number {
+      color: darkorange;
+    }
+
+    .boolean {
+      color: blue;
+    }
+
+    .null {
+      color: magenta;
+    }
+
+    .key {
+      color: red;
+    }
+
+    .table td,
+    .table th {
+      padding: 3px 3px 6px 3px;
+      font-size: 80%;
+    }
+  </style>
+  <!-- video.js Player Code-->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.6.6/video-js.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.6.6/video.min.js"></script>
+  <!-- AMAZON IVS Player Code-->
+  <script src="https://player.live-video.net/1.0.0/amazon-ivs-videojs-tech.min.js"></script>
+  <script src="https://player.live-video.net/1.0.0/amazon-ivs-quality-plugin.min.js"></script>
+  <script>
+
+    
+    const STREAM_URL = "PLAYBACK_URL";
+
+
+    // Initialize player
+    // https://codepen.io/amazon-ivs/pen/bdc01e977102051eae5fb85482f88276
+    $(function () {
+      // Set up IVS playback tech and quality plugin
+      registerIVSTech(videojs);
+      registerIVSQualityPlugin(videojs);
+
+      // Initialize video.js player
+      const videoJSPlayer = videojs("amazon-ivs-videojs", {
+        techOrder: ["AmazonIVS"],
+        controlBar: {
+          playToggle: {
+            replay: false
+          }, // Hides the replay button for VOD
+          pictureInPictureToggle: false // Hides the PiP button
+        }
+      });
+
+      // Use the player API once the player instance's ready callback is fired
+      const readyCallback = function () {
+        // This executes after video.js is initialized and ready
+        window.videoJSPlayer = videoJSPlayer;
+
+        // Get reference to Amazon IVS player
+        const ivsPlayer = videoJSPlayer.getIVSPlayer();
+
+        // Show the "big play" button when the stream is paused
+        const videoContainerEl = document.querySelector("#amazon-ivs-videojs");
+        videoContainerEl.addEventListener("click", () => {
+          if (videoJSPlayer.paused()) {
+            videoContainerEl.classList.remove("vjs-has-started");
+          } else {
+            videoContainerEl.classList.add("vjs-has-started");
+          }
+        });
+
+        // Logs low latency setting and latency value 5s after playback starts
+        const PlayerState = videoJSPlayer.getIVSEvents().PlayerState;
+        ivsPlayer.addEventListener(PlayerState.PLAYING, () => {
+          console.log("Player State - PLAYING");
+          setTimeout(() => {
+            console.log(
+              `This stream is ${ivsPlayer.isLiveLowLatency() ? "" : "not "
+              }playing in ultra low latency mode`
+            );
+            console.log(`Stream Latency: ${ivsPlayer.getLiveLatency()}s`);
+          }, 5000);
+        });
+
+        // Log errors
+        const PlayerEventType = videoJSPlayer.getIVSEvents().PlayerEventType;
+        ivsPlayer.addEventListener(PlayerEventType.ERROR, (type, source) => {
+          console.warn("Player Event - ERROR: ", type, source);
+        });
+
+        // Log and display timed metadata
+        ivsPlayer.addEventListener(PlayerEventType.TEXT_METADATA_CUE, (cue) => {
+          const metadataText = cue.text;
+          const position = ivsPlayer.getPosition().toFixed(2);
+          console.log(
+            `Player Event - TEXT_METADATA_CUE: "${metadataText}". Observed ${position}s after playback started.`
+          );
+          // Do something with the Metadata
+          timed_metadata_action(position, metadataText);
+        });
+
+        // Enables manual quality selection plugin
+        videoJSPlayer.enableIVSQualityPlugin();
+
+        // Set volume and play default stream
+        videoJSPlayer.volume(0.5);
+        // Use HLS URL from STREAM_URL
+        videoJSPlayer.src(STREAM_URL);
+      };
+
+      // Register ready callback
+      videoJSPlayer.ready(readyCallback);
+
+    });
+
+    // TIMED METADATA CODE
+    function timed_metadata_action(metadata_time, metadata_text) {
+      var metadata = jQuery.parseJSON(metadata_text);
+      question = metadata.question;
+      current_time = metadata.current_time;
+      answers_html = '';
+      answers = metadata.answers;
+      for (const answer in answers) {
+        answers_html +=
+          `<button type="button" class="btn btn-primary" style="margin-right: 10px" onclick="button_click('${answers[answer]}','${metadata.poll_id}')";>${answers[answer]}</button>`;
+      }
+      $("#question-answers").html(answers_html);
+      $("#question-question").html(question);
+      var str = JSON.stringify(metadata, undefined, 4);
+      var metadata_html =
+        `payload from PlayerEvent.METADATA at twitchPlayer.getPosition() ${metadata_time}s: \r\n${syntaxHighlight(str)}`;
+      $("#metadata").html(metadata_html);
+    }
+    // https://stackoverflow.com/questions/4810841/pretty-print-json-using-javascript?rq=1
+    function syntaxHighlight(json) {
+      json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      return json.replace(
+        /("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g,
+        function (match) {
+          var cls = 'number';
+          if (/^"/.test(match)) {
+            if (/:$/.test(match)) {
+              cls = 'key';
+            } else {
+              cls = 'string';
+            }
+          } else if (/true|false/.test(match)) {
+            cls = 'boolean';
+          } else if (/null/.test(match)) {
+            cls = 'null';
+          }
+          return '<span class="' + cls + '">' + match + '</span>';
+        });
+    }
+
+    function button_click(response, poll_id) {
+      $("#question-answers").html('<div class="alert alert-primary" role="alert">Answer Choosen: ' + response + "</div>");
+      // TODO for YOU!
+      // Add code to respond to answered poll
+    }
+
+
+  </script>
+</head>
+
+<body>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-6">
+        <h3>Quiz Time!</h3>
+        <div id="question"></div>
+        <div class="card text-white bg-dark mb-3">
+          <div class="card-header">
+            Poll Question
+          </div>
+          <div class="card-body">
+            <p class="card-text" id="question-question"></p>
+            <div id="question-answers"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <h3>Live Video</h3>
+        <div class="video-wrapper">
+          <video id="amazon-ivs-videojs" class="video-js vjs-fluid vjs-big-play-centered" controls muted autoplay
+            playsinline></video>
+        </div>
+        <pre id="metadata"></pre>
+
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

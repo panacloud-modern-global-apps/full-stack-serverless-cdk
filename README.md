@@ -15,7 +15,7 @@
 
 [AWS Free Tier](https://aws.amazon.com/free/)
 
-[GitHub Student Pack](https://education.github.com/pack)
+[GitHub Student Pack](https://education.github.com/pack) 
 
 
 ## Class Videos
@@ -268,3 +268,4 @@ Alternatives
 
 [Deep Dive on Amazon EventBridge](https://pages.awscloud.com/Deep-Dive-on-Amazon-EventBridge_2019_0919-SRV_OD.html)
 
+# full-stack-serverless-cdk

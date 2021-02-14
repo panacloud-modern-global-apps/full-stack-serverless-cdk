@@ -1,11 +1,7 @@
- # A module for managing MySQL connections at serverless scale.
- 
-Serverless MySQL is a wrapper for mysql Node.js module called "mysql". Normally, using the mysql module with Node apps would be just fine. However, serverless functions (like AWS Lambda, Google Cloud Functions, and Azure Functions) scale almost infinitely by creating separate instances for each concurrent user. This is a MAJOR PROBLEM for RDBS solutions like MySQL, because available connections can be quickly maxed out by competing functions.
+# Amazon RDS Data Service
+Amazon RDS provides an HTTP endpoint to run SQL statements on an Amazon Aurora Serverless DB cluster. To run these statements, you work with the Data Service API.
+By using the Data API for Aurora Serverless, you can work with a web-services interface to your Aurora Serverless DB cluster. The Data API doesn't require a persistent connection to the DB cluster. Instead, it provides a secure HTTP endpoint and integration with AWS SDKs. You can use the endpoint to run SQL statements without managing connections.
 
-Serverless MySQL adds a connection management component to the mysql module that is designed specifically for use with serverless applications.In addition, Serverless MySQL also adds modern async/await support to the mysql module, eliminating callback hell or the need to wrap calls in promises. It also dramatically simplifies transactions, giving you a simple and consistent pattern to handle common workflows.
 
-# Installation
-
-`npm install serverless-mysql`
-
-[ How to use serverless-mysql](https://github.com/jeremydaly/serverless-mysql)
+[Using the Data API for Aurora Serverless](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html) , 
+[RDS Data Service](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/RDSDataService.html)

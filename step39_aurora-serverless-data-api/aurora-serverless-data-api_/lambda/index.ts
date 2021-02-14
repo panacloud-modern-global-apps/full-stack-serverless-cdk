@@ -28,7 +28,7 @@ export async function handler(
     var params: QueryParams = {
       resourceArn: dbcarn,
       secretArn: dbsarn,
-      database: "new",
+      database: "mydb",
       sql: "",
     };
     params["sql"] = "CREATE TABLE IF NOT EXISTS records (recordid INT PRIMARY KEY, title VARCHAR(255) NOT NULL, release_date DATE);";

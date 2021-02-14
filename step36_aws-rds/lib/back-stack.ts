@@ -34,13 +34,6 @@ export class BackStack extends cdk.Stack {
       databaseName: "mySqlDataBase",
       deletionProtection: false,
       vpcPlacement: { subnetType: ec2.SubnetType.PUBLIC },
-      // By default DatabaseInstance create password and username:"admin" in secrets manager, can provide custom credentials after creating custom secret
-      // credentials: {
-      //   username: "admin",
-      // password: SM.Secret.fromSecretAttributes(this, "ExSecretKey", {
-      //   secretArn: secret.secretArn,
-      // }).secretValue,
-      // },
     });
 
     //  for lambda RDS and VPC access
@@ -55,19 +48,19 @@ export class BackStack extends cdk.Stack {
     });
 
   
-    const foo = myDBInstance.secret?.secretArn || "foooo";
+    const dbcreds = myDBInstance.secret?.secretArn || "dbcreds";
 
     //  create a function to access database 
     const hello = new lambda.Function(this, "HelloHandler", {
       runtime: lambda.Runtime.NODEJS_10_X,
-      code: lambda.Code.fromAsset("lambda/lambda-p.zip"),
+      code: lambda.Code.fromAsset("lambda/lambdazip.zip"),
       handler: "index.handler",
       timeout: cdk.Duration.minutes(1),
       vpc,
       role,
       environment: {
-        vala: `${
-          SM.Secret.fromSecretAttributes(this, "sna", { secretArn: foo })
+         INSTANCE_CREDENTIALS: `${
+          SM.Secret.fromSecretAttributes(this, "dbcredentials", { secretArn: dbcreds })
             .secretValue
         }`,
         HOST: myDBInstance.dbInstanceEndpointAddress,
@@ -80,9 +73,8 @@ export class BackStack extends cdk.Stack {
     //  allow lambda to connect to the database instance
 
     myDBInstance.grantConnect(hello);
-    // myDBInstance.connections.allowDefaultPortFromAnyIpv4;
-   
-      myDBInstance.connections.allowFromAnyIpv4(ec2.Port.tcp(3306))
+    // To control who can access the cluster or instance, use the .connections attribute. RDS databases have a default port: 3306
+   myDBInstance.connections.allowFromAnyIpv4(ec2.Port.tcp(3306))
     
 
 }};

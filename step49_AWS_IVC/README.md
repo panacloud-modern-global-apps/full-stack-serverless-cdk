@@ -3,16 +3,28 @@
 # Amazon Interactive Video Service (AWS IVS)!
 Amazon Interactive Video Service (Amazon IVS) is a managed live streaming solution that is quick and easy to set up, and ideal for creating interactive video experiences. Send your live streams to Amazon IVS using streaming software and the service does everything you need to make low-latency live video available to any viewer around the world, letting you focus on building interactive experiences alongside the live video. You can easily customize and enhance the audience experience through the Amazon IVS player SDK and timed metadata APIs, allowing you to build a more valuable relationship with your viewers on your own websites and applications..
 
-![AWS MediaLive Architecture](https://d1.awsstatic.com/awselemental/Workflows/product-page-diagram_AWS_Elemental_r16_INTERACTIVE_VIDEO_SERVICE_2x.05718cda8afec531df5e284d8797d511cb7d7f0c.png)
+![AWS IVS Architecture](https://d1.awsstatic.com/awselemental/Workflows/product-page-diagram_AWS_Elemental_r16_INTERACTIVE_VIDEO_SERVICE_2x.05718cda8afec531df5e284d8797d511cb7d7f0c.png)
 
 
-## MediaLive API / Documentation Reference
+## IVS API / Documentation Reference
 - https://docs.aws.amazon.com/ivs/latest/userguide/what-is.html
 - https://docs.aws.amazon.com/ivs/latest/APIReference/Welcome.html
 
+## IVS CDK 
+- https://docs.aws.amazon.com/cdk/api/latest/docs/aws-ivs-readme.html
+
+
+
+### Careful !
+ only basic streaming type is free at free tier, standard type stream will chart $2 per hour, <br/>
+you can check the detail in below image.
+
+![price](img/price.png)
 
 ## Pricing Chart.
 https://aws.amazon.com/ivs/pricing/#Live_Video_Input_Costs
+
+
 
 ## NPM install.
 - npm install @aws-cdk/aws-ivs

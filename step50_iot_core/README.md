@@ -231,7 +231,6 @@ dynamoDbRule.node.addDependency(steps)
 thingPrincipal.node.addDependency(steps)
 policyPrincipal.node.addDependency(steps)
 ```
-# -----------------------------------------------------------------------------------------
 
 # Test the AWS IoT rule and DynamoDB table
 To test the new rule, you'll use the MQTT client to publish and subscribe to the MQTT messages used in this test.

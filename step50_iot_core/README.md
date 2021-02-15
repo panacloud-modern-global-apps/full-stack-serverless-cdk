@@ -11,6 +11,22 @@ The Message Broker is a high throughput publish/subscribe (pub/sub) message brok
 
 <img src="https://d1.awsstatic.com/IoT/diagrams/AWS%20IoT%20Core%20-%20Connect%20and%20Manage.edb43e92d542f4053727eaeda267e3776382fd06.png" />
 
+# Required AWS module
+
+<ol>
+    <li>@aws-cdk/aws-iot</li>
+    <li>@aws-cdk/aws-dynamodb</li>
+    <li>@aws-cdk/aws-iam</li>
+</ol>
+
+# for CDK Deployment
+
+<ol>
+    <li>npm install</li>
+    <li>npm run build && cdk deploy</li>
+</ol>
+
+
 # Here's how you can get started with AWS IoT Core.
 
 <h3> Step 1 (Create X.509 client certificate) </h3>
@@ -83,7 +99,7 @@ const policyName = 'MyLightBulb-policy'
 Attaches the specified principal to the specified thing.
 A principal can be X.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or federated identities.
 
-<b>Note: before attaching principal to thing. make sure you created certificate and thing</b> then pass the certificate ARN in principal attribute
+<b>Note: before attaching principal to thing. make sure you created certificate</b> then pass the certificate ARN in principal attribute
 
 ``` typescript
 const thingPrincipal = new iotCore.CfnThingPrincipalAttachment(this,"myThingPrincipal",{
@@ -98,7 +114,7 @@ to find the certificate ARN navigate to <a href="https://us-west-2.console.aws.a
 
 Attaches the specified principal to the specified policy.
 
-<b>Note: before attaching principal to Policy. make sure you created certificate and policy</b> then pass the certificate ARN in principal attribute
+<b>Note: before attaching principal to Policy. make sure you created certificate</b> then pass the certificate ARN in principal attribute
 ``` typescript
 const policyPrincipal = new iotCore.CfnPolicyPrincipalAttachment(this,"myPolicyPrincipal",{
       policyName:policyName,
@@ -197,6 +213,25 @@ FROM 'device/+/data'
 <b>After you have created Iot Rule. You can find it under Act in the left menu bar</b>
 
 <img src="./img/pic2.png"/>
+
+<h3> Step 7 (Create Concrete Dependable steps)</h3>
+
+concrete dependable is used to create steps that which action will trigger first. 
+we used it to avoid creation of principals before creation of actual thing and policy.
+
+``` typescript
+var steps = new cdk.ConcreteDependable()
+steps.add(thing)
+steps.add(myPolicy)
+myPolicy.node.addDependency(steps)
+dynamoDBTable.node.addDependency(steps)
+dynamoDbRule.node.addDependency(steps)
+
+// principals will trigger at last 
+thingPrincipal.node.addDependency(steps)
+policyPrincipal.node.addDependency(steps)
+```
+# -----------------------------------------------------------------------------------------
 
 # Test the AWS IoT rule and DynamoDB table
 To test the new rule, you'll use the MQTT client to publish and subscribe to the MQTT messages used in this test.

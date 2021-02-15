@@ -120,7 +120,7 @@ Now Stop the server
 ```
 ## Destroy
 ``` javascript 
-    $ cdk destroy //this command stop the server
+    $ cdk destroy 
 ```
 
 # Reference

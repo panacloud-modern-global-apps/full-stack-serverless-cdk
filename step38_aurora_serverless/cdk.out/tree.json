@@ -760,9 +760,9 @@
               }
             }
           },
-          "sna": {
-            "id": "sna",
-            "path": "BackStack/sna"
+          "sec-arn": {
+            "id": "sec-arn",
+            "path": "BackStack/sec-arn"
           },
           "HelloHandler": {
             "id": "HelloHandler",
@@ -816,7 +816,7 @@
                   "aws:cdk:cloudformation:props": {
                     "code": {
                       "s3Bucket": {
-                        "Ref": "AssetParameters6ebefaf8dc891819d7be249a17b9043fd2023a9ee846407da67164bd37c51eefS3Bucket48E8ABB7"
+                        "Ref": "AssetParameters16571f1b77d9b1083978810703bb587610d9f0148cc8658d7d0660f749a89844S3Bucket28783FA2"
                       },
                       "s3Key": {
                         "Fn::Join": [
@@ -829,7 +829,7 @@
                                   "Fn::Split": [
                                     "||",
                                     {
-                                      "Ref": "AssetParameters6ebefaf8dc891819d7be249a17b9043fd2023a9ee846407da67164bd37c51eefS3VersionKeyBD627491"
+                                      "Ref": "AssetParameters16571f1b77d9b1083978810703bb587610d9f0148cc8658d7d0660f749a89844S3VersionKeyA282BC85"
                                     }
                                   ]
                                 }
@@ -842,7 +842,7 @@
                                   "Fn::Split": [
                                     "||",
                                     {
-                                      "Ref": "AssetParameters6ebefaf8dc891819d7be249a17b9043fd2023a9ee846407da67164bd37c51eefS3VersionKeyBD627491"
+                                      "Ref": "AssetParameters16571f1b77d9b1083978810703bb587610d9f0148cc8658d7d0660f749a89844S3VersionKeyA282BC85"
                                     }
                                   ]
                                 }
@@ -860,7 +860,7 @@
                     },
                     "environment": {
                       "variables": {
-                        "vala": {
+                        "INSTANCE_CREDENTIALS": {
                           "Fn::Join": [
                             "",
                             [
@@ -904,21 +904,21 @@
             "id": "AssetParameters",
             "path": "BackStack/AssetParameters",
             "children": {
-              "6ebefaf8dc891819d7be249a17b9043fd2023a9ee846407da67164bd37c51eef": {
-                "id": "6ebefaf8dc891819d7be249a17b9043fd2023a9ee846407da67164bd37c51eef",
-                "path": "BackStack/AssetParameters/6ebefaf8dc891819d7be249a17b9043fd2023a9ee846407da67164bd37c51eef",
+              "16571f1b77d9b1083978810703bb587610d9f0148cc8658d7d0660f749a89844": {
+                "id": "16571f1b77d9b1083978810703bb587610d9f0148cc8658d7d0660f749a89844",
+                "path": "BackStack/AssetParameters/16571f1b77d9b1083978810703bb587610d9f0148cc8658d7d0660f749a89844",
                 "children": {
                   "S3Bucket": {
                     "id": "S3Bucket",
-                    "path": "BackStack/AssetParameters/6ebefaf8dc891819d7be249a17b9043fd2023a9ee846407da67164bd37c51eef/S3Bucket"
+                    "path": "BackStack/AssetParameters/16571f1b77d9b1083978810703bb587610d9f0148cc8658d7d0660f749a89844/S3Bucket"
                   },
                   "S3VersionKey": {
                     "id": "S3VersionKey",
-                    "path": "BackStack/AssetParameters/6ebefaf8dc891819d7be249a17b9043fd2023a9ee846407da67164bd37c51eef/S3VersionKey"
+                    "path": "BackStack/AssetParameters/16571f1b77d9b1083978810703bb587610d9f0148cc8658d7d0660f749a89844/S3VersionKey"
                   },
                   "ArtifactHash": {
                     "id": "ArtifactHash",
-                    "path": "BackStack/AssetParameters/6ebefaf8dc891819d7be249a17b9043fd2023a9ee846407da67164bd37c51eef/ArtifactHash"
+                    "path": "BackStack/AssetParameters/16571f1b77d9b1083978810703bb587610d9f0148cc8658d7d0660f749a89844/ArtifactHash"
                   }
                 }
               }

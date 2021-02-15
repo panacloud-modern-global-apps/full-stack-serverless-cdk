@@ -187,6 +187,14 @@
 
 [Step 24 Video in English on YouTube](https://www.youtube.com/watch?v=HrvCZGKI9SE)
 
+[Step 24 Video in Urdu on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225874842762598)
+
+[Step 24 Video in Urdu on YouTube](https://www.youtube.com/watch?v=fa6HHSD5Qfo)
+
+[Step 25 and 26 Video in English on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225866783121112)
+
+[Step 25 and 26 Video in English on YouTube](https://www.youtube.com/watch?v=onx7b32jRcM)
+
 
 
 

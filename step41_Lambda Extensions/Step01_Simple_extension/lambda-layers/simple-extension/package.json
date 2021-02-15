@@ -1,5 +1,5 @@
 {
-  "name": "nodejs-example-extension",
+  "name": "simple-extension",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",

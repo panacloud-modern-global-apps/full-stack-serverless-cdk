@@ -53,7 +53,7 @@ export class BackStack extends cdk.Stack {
     //  create a function to access database 
     const hello = new lambda.Function(this, "HelloHandler", {
       runtime: lambda.Runtime.NODEJS_10_X,
-      code: lambda.Code.fromAsset("lambda/lambda-p.zip"),
+      code: lambda.Code.fromAsset("lambda/lambdazip.zip"),
       handler: "index.handler",
       timeout: cdk.Duration.minutes(1),
       vpc,

@@ -1,8 +1,8 @@
 {
-  "name": "step02_nodejs_logs_with_api_extension_and_save_in_s3",
+  "name": "step02_save_logs_in_s3",
   "version": "0.1.0",
   "bin": {
-    "step02_nodejs_logs_with_api_extension_and_save_in_s3": "bin/step02_nodejs_logs_with_api_extension_and_save_in_s3.js"
+    "step02_save_logs_in_s3": "bin/step02_save_logs_in_s3.js"
   },
   "scripts": {
     "build": "tsc",
@@ -11,22 +11,21 @@
     "cdk": "cdk"
   },
   "devDependencies": {
-    "@aws-cdk/assert": "1.87.1",
+    "@aws-cdk/assert": "1.89.0",
     "@types/jest": "^26.0.10",
     "@types/node": "10.17.27",
     "jest": "^26.4.2",
     "ts-jest": "^26.2.0",
-    "aws-cdk": "1.87.1",
+    "aws-cdk": "1.89.0",
     "ts-node": "^9.0.0",
     "typescript": "~3.9.7"
   },
   "dependencies": {
-    "@aws-cdk/aws-iam": "^1.87.1",
-    "@aws-cdk/aws-lambda": "^1.87.1",
-    "@aws-cdk/aws-s3": "^1.87.1",
-    "@aws-cdk/core": "1.87.1",
-    "@types/aws-lambda": "^8.10.71",
-    "aws-lambda": "^1.0.6",
+    "@aws-cdk/aws-iam": "^1.89.0",
+    "@aws-cdk/aws-lambda": "^1.89.0",
+    "@aws-cdk/aws-s3": "^1.89.0",
+    "@aws-cdk/core": "1.89.0",
+    "@types/aws-lambda": "^8.10.72",
     "source-map-support": "^0.5.16"
   }
 }

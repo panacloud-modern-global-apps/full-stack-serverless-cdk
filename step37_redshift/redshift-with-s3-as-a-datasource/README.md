@@ -76,7 +76,9 @@ CREATE SCHEMA myinternalschema
 
 ```
 
-2.
+2.  This schema has to match the fields in you .txt file separated by comma
+    e.g if you .txt file in s3 contains name,age,city
+    then you can use this query
 
 ```sql
 CREATE TABLE myinternalschema.event(

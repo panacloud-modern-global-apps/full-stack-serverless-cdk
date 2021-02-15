@@ -6,6 +6,7 @@ Amazon Kinesis makes it easy to collect, process, and analyze real-time, streami
 
 [What is Streaming Data?](https://aws.amazon.com/streaming-data/#:~:text=Streaming%20data%20includes%20a%20wide,devices%20or%20instrumentation%20in%20data)
 
+[Streaming Data Solutions on AWS with Amazon Kinesis](https://d1.awsstatic.com/whitepapers/whitepaper-streaming-data-solutions-on-aws-with-amazon-kinesis.pdf?did=wp_card&trk=wp_card)
 
 ![Optional Text](https://d2908q01vomqb2.cloudfront.net/da4b9237bacccdf19c0760cab7aec4a8359010b0/2018/08/16/diagram-how-it-works-kinesis-data-streams.249630c459ffe210d013ad06a0f6899ebea1304b.png)
 

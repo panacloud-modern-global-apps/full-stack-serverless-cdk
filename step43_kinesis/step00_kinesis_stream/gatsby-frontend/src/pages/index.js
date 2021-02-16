@@ -86,7 +86,7 @@ export default function Home() {
       );      
       // clear record data
       recordData = [];      
-    }, 2000);
+    }, 1000);
     
   })    
   return (

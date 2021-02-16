@@ -11,10 +11,9 @@ Python uses dynamic typing, where variables may refer to a value of any type. Pa
 # Using interfaces
 Python doesn't have an interface feature as some other languages do, though it does have abstract base classes, which are similar. TypeScript, the language in which the AWS CDK is implemented, does provide interfaces, and constructs and other AWS CDK objects often require an object that adheres to a particular interface, rather than inheriting from a particular class. So the AWS CDK provides its own interface feature as part of the JSII layer.
 
-# Reference: Lambda code in Python
 # [AWS Lambda function handler in Python](https://docs.aws.amazon.com/lambda/latest/dg/python-handler.html)
 
-# Reference: If you wish to work with CDK in Python
+# If you wish to work with CDK in Python
 # AWS CDK in Python
-## [working with python in CDK](https://docs.aws.amazon.com/cdk/latest/guide/work-with-cdk-python.html)
-## [AWS CDK idioms in Python](https://docs.aws.amazon.com/cdk/latest/guide/work-with-cdk-python.html)
+ [working with python in CDK](https://docs.aws.amazon.com/cdk/latest/guide/work-with-cdk-python.html)
+ [AWS CDK idioms in Python](https://docs.aws.amazon.com/cdk/latest/guide/work-with-cdk-python.html)

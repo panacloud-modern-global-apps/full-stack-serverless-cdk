@@ -2,6 +2,7 @@
 ![](typescript-python.png)
 
 TypeScript was the first language supported for developing AWS CDK applications as CDK infrastructure is built in Typescript, and there is a substantial amount of example CDK code written in TypeScript. We have kept the main cdk stack code in Typescript and changed the rest into Python, mainly lambda function code.
+
 Reference article:
 [Which programming language is best for aws-cdk ](https://awsmaniac.com/which-programming-language-is-the-best-for-aws-cdk/)
 
@@ -11,6 +12,7 @@ Python uses dynamic typing, where variables may refer to a value of any type. Pa
 # Using interfaces
 Python doesn't have an interface feature as some other languages do, though it does have abstract base classes, which are similar. TypeScript, the language in which the AWS CDK is implemented, does provide interfaces, and constructs and other AWS CDK objects often require an object that adheres to a particular interface, rather than inheriting from a particular class. So the AWS CDK provides its own interface feature as part of the JSII layer.
 
+# [Building Lambda functions with Python](https://docs.aws.amazon.com/lambda/latest/dg/lambda-python.html)
 # [AWS Lambda function handler in Python](https://docs.aws.amazon.com/lambda/latest/dg/python-handler.html)
 
 

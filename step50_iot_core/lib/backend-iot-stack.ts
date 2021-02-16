@@ -48,7 +48,7 @@ export class BackendIotStack extends cdk.Stack {
     // A principal can be X.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or federated identities.
     // before attaching principal to thing. make sure you created certificate and pass the certificate ARN in principal attribute.
     const thingPrincipal = new iotCore.CfnThingPrincipalAttachment(this,"myThingPrincipal",{
-      principal:'your-certificate-ARN',
+      principal:'arn:aws:iot:us-west-2:215639672365:cert/00a858bcde1ea363fabc59e44972a2226e35d5f2ee4ec346873dcaac67a94cfa',
       thingName:thingName
 
     })
@@ -58,7 +58,7 @@ export class BackendIotStack extends cdk.Stack {
     // before attaching principal to policy. make sure you created certificate and pass the certificate ARN in principal attribute.
     const policyPrincipal = new iotCore.CfnPolicyPrincipalAttachment(this,"myPolicyPrincipal",{
       policyName:policyName,
-      principal:'your-certificate-ARN',
+      principal:'arn:aws:iot:us-west-2:215639672365:cert/00a858bcde1ea363fabc59e44972a2226e35d5f2ee4ec346873dcaac67a94cfa',
     })
 
     // create dynamoDb Table with these attributes to record the data from the imaginary weather sensor devices:
@@ -89,31 +89,44 @@ export class BackendIotStack extends cdk.Stack {
     //granting IAM permissions to role
     role.addToPolicy(policy);
 
-// In this rule, you'll also use a couple of Substitution templates.
-// Substitution templates are expressions that let you insert dynamic values from functions and message data.
-const dynamoDbRule = new iotCore.CfnTopicRule(this, 'wx_data_ddb', {
-  ruleName:'wx_data_ddb',
-  topicRulePayload: {
-    ruleDisabled: false,
-      sql: `SELECT temperature, humidity, barometer,
-              wind.velocity as wind_velocity,
-              wind.bearing as wind_bearing,
-            FROM 'device/+/data'`,
-      awsIotSqlVersion: '2016-03-23',
-      actions: [
-          {
-              dynamoDb : {
-                  tableName:"wx_data",
-                  hashKeyField:'sample_time', // dynamoDb table Partition Key
-                  hashKeyValue:'${timestamp()}', // dynamoDb table Partition Key value
-                  rangeKeyField:'device_id', // dynamoDb table Sort Key
-                  rangeKeyValue:'${cast(topic(2) AS DECIMAL)}', // dynamoDb table Sort Key value
-                  payloadField:'device_data', // adding column to dynamoDb table to record the data from the imaginary weather sensor devices
-                  roleArn:role.roleArn // assigned role to topicRule to access dynamoDb
+    // In this rule, you'll also use a couple of Substitution templates.
+    // Substitution templates are expressions that let you insert dynamic values from functions and message data.
+    const dynamoDbRule = new iotCore.CfnTopicRule(this, 'wx_data_ddb', {
+      ruleName:'wx_data_ddb',
+      topicRulePayload: {
+        ruleDisabled: false,
+          sql: `SELECT temperature, humidity, barometer,
+                  wind.velocity as wind_velocity,
+                  wind.bearing as wind_bearing,
+                FROM 'device/+/data'`,
+          awsIotSqlVersion: '2016-03-23',
+          actions: [
+              {
+                  dynamoDb : {
+                      tableName:"wx_data",
+                      hashKeyField:'sample_time', // dynamoDb table Partition Key
+                      hashKeyValue:'${timestamp()}', // dynamoDb table Partition Key value
+                      rangeKeyField:'device_id', // dynamoDb table Sort Key
+                      rangeKeyValue:'${cast(topic(2) AS DECIMAL)}', // dynamoDb table Sort Key value
+                      payloadField:'device_data', // adding column to dynamoDb table to record the data from the imaginary weather sensor devices
+                      roleArn:role.roleArn // assigned role to topicRule to access dynamoDb
+                  },
               },
-          },
-      ],
-  },
-});
+          ],
+      },
+    });
+      
+    // we used Concrete dependency to create steps that which action will trigger first  
+    var steps = new cdk.ConcreteDependable()
+    steps.add(thing)
+    steps.add(myPolicy)
+    myPolicy.node.addDependency(steps)
+    dynamoDBTable.node.addDependency(steps)
+    dynamoDbRule.node.addDependency(steps)
+
+    // principals will trigger at last 
+    thingPrincipal.node.addDependency(steps)
+    policyPrincipal.node.addDependency(steps)
+
   }
 }

@@ -1,19 +1,29 @@
 # AWS EC2 (Elastic compute cloud)
 Amazon Elastic Compute Cloud (EC2) is a part of Amazon Web Services (AWS), that allows users to rent virtual computers on which to run their own computer applications. EC2 encourages scalable deployment of applications by providing a web service through which a user can boot an Amazon Machine Image (AMI) to configure a virtual machine, which Amazon calls an "instance", containing any software desired. A user can create, launch, and terminate server-instances as needed, paying by the second for active servers – hence the term "elastic". EC2 provides users with control over the geographical location of instances that allows for latency optimization and high levels of redundancy.In November 2010, Amazon switched its own retail website platform to EC2 and AWS
 
+[read more about EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html)
 
 # VPC
 Amazon Virtual Private Cloud (Amazon VPC) enables you to launch AWS resources into a virtual network that you've defined. This virtual network closely resembles a traditional network that you'd operate in your own data center, with the benefits of using the scalable infrastructure of AWS.
 
+[What is VPC?](https://aws.amazon.com/vpc/?vpc-blogs.sort-by=item.additionalFields.createdDate&vpc-blogs.sort-order=desc)
+
 # Subnet
 The practice of dividing a network into two or more networks is called subnetting. AWS provides two types of subnetting one is Public which allow the internet to access the machine and another is private which is hidden from the internet. Instance is a virtual server in the AWS cloud.
+
+[what is subnet and subnet groups](https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/SubnetGroups.html)
+
+[Why we using subnets and vpcs?](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html)
 
 # Security group
 A security group acts as a virtual firewall for your EC2 instances to control incoming and outgoing traffic. ... If you don't specify a security group, Amazon EC2 uses the default security group. You can add rules to each security group that allow traffic to or from its associated instances.
 
+[Read more about Security groups](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html)
 
 # AMI (Amazon machiine images)
 An Amazon Machine Image (AMI) provides the information required to launch an instance. You must specify an AMI when you launch an instance. You can launch multiple instances from a single AMI when you need multiple instances with the same configuration. You can use different AMIs to launch instances when you need instances with different configurations.
+
+[AMI Documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html)
 
 # Install Dependencies 
 npm install @aws-cdk/aws-ec2
@@ -95,6 +105,23 @@ When you create a VPC, you must specify a range of IPv4 addresses for the VPC in
 ```
 ## You can see running status active
 ![image info](./img/active.png)
+
+## Result: 
+Paste your public IP in another tab.you'll see there apache server running
+![image info](./img/apache.png)
+
+## Useful commands
+``` javascript 
+    $ curl http://169.254.169.254/latest/meta-data/ //this command gives you all meta-data of your instance
+```
+Now Stop the server
+``` javascript 
+    $ service httdp stop //this command stop the server
+```
+## Destroy
+``` javascript 
+    $ cdk destroy 
+```
 
 # Reference
 [AWS EC2 docs](https://docs.aws.amazon.com/cdk/api/latest/docs/aws-ec2-readme.html)

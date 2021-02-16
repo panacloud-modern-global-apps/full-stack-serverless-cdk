@@ -9,6 +9,8 @@
 "In a recent informal poll, more than 66% of developers chose AWS CDK as their technology of choice for building serverless applications on AWS."
 [The CDK Patterns open source journey](https://aws.amazon.com/blogs/opensource/the-cdk-patterns-open-source-journey/)
 
+In this repo we have used TypeScript for CDK development. Because we consider it the best language for CDK the reason are listed in this [article](https://awsmaniac.com/which-programming-language-is-the-best-for-aws-cdk/). Application and Business code in the steps is implemented in both Typescript and Python.
+
 ## Get AWS Account
 
 [AWS Educate](https://aws.amazon.com/education/awseducate/)

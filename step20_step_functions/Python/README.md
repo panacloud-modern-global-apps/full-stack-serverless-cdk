@@ -13,7 +13,9 @@ Python doesn't have an interface feature as some other languages do, though it d
 
 # [AWS Lambda function handler in Python](https://docs.aws.amazon.com/lambda/latest/dg/python-handler.html)
 
-# If you wish to work with CDK in Python
+
 # AWS CDK in Python
- [working with python in CDK](https://docs.aws.amazon.com/cdk/latest/guide/work-with-cdk-python.html)
+
+If you wish to work with CDK in Python:
+ [Working with Python in CDK](https://docs.aws.amazon.com/cdk/latest/guide/work-with-cdk-python.html)
  [AWS CDK idioms in Python](https://docs.aws.amazon.com/cdk/latest/guide/work-with-cdk-python.html)

@@ -1,2 +1,2 @@
-pic
-added
+
+![](typescript-python.png)

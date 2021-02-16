@@ -1,5 +1,5 @@
 
-![](typescript-python.png =250x250)
+![](typescript-python.png | width=100)
 
 TypeScript was the first language supported for developing AWS CDK applications, and for that reason, there is a substantial amount of example CDK code written in TypeScript. we have kept the main cdk stack code in Typescript and have changed the rest into Python, mainly lambda function code.
 [Whcich programming language is best for aws-cdk ](https://awsmaniac.com/which-programming-language-is-the-best-for-aws-cdk/)

@@ -2,11 +2,13 @@
 ![](typescript-python.png)
 
 TypeScript was the first language supported for developing AWS CDK applications as CDK infrastructure is built in Typescript, and there is a substantial amount of example CDK code written in TypeScript. We have kept the main cdk stack code in Typescript and changed the rest into Python, mainly lambda function code.
+Reference article:
 [Which programming language is best for aws-cdk ](https://awsmaniac.com/which-programming-language-is-the-best-for-aws-cdk/)
 
 # CDK in Python
 
 Python is a fully-supported client language for the AWS CDK and is considered stable. Python AWS CDK applications require Python 3.6 or later. The Python package installer, pip, and virtual environment manager, virtualenv, are also required. Windows installations of compatible Python versions include these tools. On Linux, pip and virtualenv may be provided as separate packages in your package manager.
+
 [Working with the AWS CDK in Python](https://docs.aws.amazon.com/cdk/latest/guide/work-with-cdk-python.html)
 
  # Creating a project

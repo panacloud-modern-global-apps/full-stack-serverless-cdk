@@ -276,3 +276,8 @@ Alternatives
 [Deep Dive on Amazon EventBridge](https://pages.awscloud.com/Deep-Dive-on-Amazon-EventBridge_2019_0919-SRV_OD.html)
 
 
+## CDK Construction Zone: For Advanced CDK Users Directly From the CDK Team
+
+[CDK construction zone | S1 Ep 1](https://m.twitch.tv/videos/916591005)
+
+

@@ -57,6 +57,12 @@ Following code will deploy our lambda function to cloudfront CDN.
 [Step 25 and 26 Video in English on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225866783121112)
 
 [Step 25 and 26 Video in English on YouTube](https://www.youtube.com/watch?v=onx7b32jRcM)
+
+[Step 25 and 26 Video in Urdu on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225904417381945)
+
+[Step 25 and 26 Video in Urdu on Facebook](https://www.youtube.com/watch?v=LfhS4kuJTaI)
+
+
  
 
 

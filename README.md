@@ -1,13 +1,20 @@
 # Learn Full Stack Serverless Apps and API Development with CDK in Baby Steps
 
-[Repo is Part of Panacloud Bootcamp 2020](https://panacloud.github.io/bootcamp-2020/)
+[This Repo is part of the reading material for Panacloud Bootcamp 2020](https://panacloud.github.io/bootcamp-2020/)
+
+[Repo is also part of the reading material of Panacloud Bootcamp 2021](https://panacloud.github.io/bootcamp-2021/)
 
 [The Serverless Future of Supercharged Applications](https://containerjournal.com/topics/container-ecosystems/the-serverless-future-of-supercharged-applications/)
 
 [The impact of serverless on the future of cloud technology](https://cio.economictimes.indiatimes.com/news/cloud-computing/the-impact-of-serverless-on-the-future-of-cloud-technology/77275273)
 
+In this repo we are focused on Serverless, because [it is the future](https://www.devopsonline.co.uk/is-serverless-the-future/)
+
 "In a recent informal poll, more than 66% of developers chose AWS CDK as their technology of choice for building serverless applications on AWS."
 [The CDK Patterns open source journey](https://aws.amazon.com/blogs/opensource/the-cdk-patterns-open-source-journey/)
+
+In this repo we have used TypeScript for CDK development. Because we consider it the best language for CDK the reason are listed in this [article](https://awsmaniac.com/which-programming-language-is-the-best-for-aws-cdk/). Application and Business code in the steps is implemented in both Typescript and Python.
+
 
 ## Get AWS Account
 
@@ -268,4 +275,9 @@ Alternatives
 
 [Deep Dive on Amazon EventBridge](https://pages.awscloud.com/Deep-Dive-on-Amazon-EventBridge_2019_0919-SRV_OD.html)
 
-# full-stack-serverless-cdk
+
+## CDK Construction Zone: For Advanced CDK Users Directly From the CDK Team
+
+[CDK construction zone | S1 Ep 1](https://m.twitch.tv/videos/916591005)
+
+

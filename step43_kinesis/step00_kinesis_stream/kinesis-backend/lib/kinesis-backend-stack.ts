@@ -121,13 +121,20 @@ export class KinesisBackendStack extends cdk.Stack {
     //Update Lambda Permissions To Use Stream
     stream.grantReadWrite(unauthenticatedRole)
     stream.grantReadWrite(authenticatedRole)
-    stream.grantRead(myFunction)
-    //stream.grantWrite(myFunction2)
+    stream.grantRead(myFunction)    
     
     myFunction.addEventSource(new KinesisEventSource(stream, {
       batchSize: 100, // default
       startingPosition: lambda.StartingPosition.TRIM_HORIZON
     }));
+    
+      new cdk.CfnOutput(this, "IdentityPoolId", {
+      value: identityPool.ref,
+    });
+         
+    new cdk.CfnOutput(this, "StreamName", {
+      value: stream.streamName || "",
+    });
     
   }
 }

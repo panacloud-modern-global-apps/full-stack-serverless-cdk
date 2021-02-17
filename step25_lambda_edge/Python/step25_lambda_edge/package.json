@@ -1,8 +1,8 @@
 {
-  "name": "step47_ec2",
+  "name": "step25_lambda_edge",
   "version": "0.1.0",
   "bin": {
-    "step47_ec2": "bin/step47_ec2.js"
+    "step25_lambda_edge": "bin/step25_lambda_edge.js"
   },
   "scripts": {
     "build": "tsc",
@@ -21,9 +21,11 @@
     "typescript": "~3.9.7"
   },
   "dependencies": {
-    "@aws-cdk/aws-ec2": "^1.89.0",
+    "@aws-cdk/aws-cloudfront": "^1.89.0",
+    "@aws-cdk/aws-cloudfront-origins": "^1.89.0",
+    "@aws-cdk/aws-lambda": "^1.89.0",
+    "@aws-cdk/aws-s3": "^1.89.0",
     "@aws-cdk/core": "1.89.0",
-    "cdk-ec2-key-pair": "^2.1.1",
     "source-map-support": "^0.5.16"
   }
 }

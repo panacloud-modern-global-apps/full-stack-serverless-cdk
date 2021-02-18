@@ -1,0 +1,12 @@
+type Data {
+    id: ID
+    entry: String
+}
+
+type Query{
+    allData: [Data]
+}
+
+type Mutation{
+    createData(entry: String!): Data
+}

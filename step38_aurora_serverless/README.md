@@ -145,3 +145,6 @@ myServerlessDB.connections.allowFromAnyIpv4(ec2.Port.tcp(3306));
 ```
 
 .......
+
+
+[BUILD SERVERLESS APPLICATIONS USING AURORA SERVERLESS, THE DATA API AND CDK VIDEO TUTORIAL](https://www.youtube.com/watch?v=kU8nwAbA8No)

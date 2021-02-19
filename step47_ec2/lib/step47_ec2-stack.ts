@@ -27,17 +27,16 @@ export class Step47Ec2Stack extends cdk.Stack {
     });
     mySecurityGroup.addIngressRule(ec2.Peer.anyIpv4(), ec2.Port.tcp(22), 'allow public ssh access')
 
-
     // We are using the latest AMAZON LINUX AMI
     const awsAMI = new ec2.AmazonLinuxImage({ generation: ec2.AmazonLinuxGeneration.AMAZON_LINUX_2 });
 
 
     // Instance details
-    //use instance class T3 and instance size micro coz it's in free tier m
+    //use instance class T2 and instance size micro coz it's in free tier 
     new ec2.Instance(this, 'Instance', {
-      instanceName: 'mkk-ec2-instance' , //optional
+      instanceName: 'mkk-ec2-instance', //optional
       vpc,
-      instanceType: ec2.InstanceType.of(ec2.InstanceClass.T3, ec2.InstanceSize.NANO),
+      instanceType: ec2.InstanceType.of(ec2.InstanceClass.T2, ec2.InstanceSize.MICRO),
       machineImage: awsAMI,
       securityGroup: mySecurityGroup
     });

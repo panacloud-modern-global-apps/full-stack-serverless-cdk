@@ -202,6 +202,14 @@ In this repo we have used TypeScript for CDK development. Because we consider it
 
 [Step 25 and 26 Video in English on YouTube](https://www.youtube.com/watch?v=onx7b32jRcM)
 
+[Step 25 and 26 Video in Urdu on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225904417381945)
+
+[Step 25 and 26 Video in Urdu on Facebook](https://www.youtube.com/watch?v=LfhS4kuJTaI)
+
+[Step 27 Video in English on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225893868638233/)
+
+[Step 27 Video in English on YouTube](https://www.youtube.com/watch?v=MA3nAbT-5cQ)
+
 
 
 
@@ -274,5 +282,10 @@ Alternatives
 [Rethinking Serverless Architectures With Eventbridge](https://blog.thundra.io/rethinking-serverless-architectures-with-eventbridge)
 
 [Deep Dive on Amazon EventBridge](https://pages.awscloud.com/Deep-Dive-on-Amazon-EventBridge_2019_0919-SRV_OD.html)
+
+
+## CDK Construction Zone: For Advanced CDK Users Directly From the CDK Team
+
+[CDK construction zone | S1 Ep 1](https://m.twitch.tv/videos/916591005)
 
 

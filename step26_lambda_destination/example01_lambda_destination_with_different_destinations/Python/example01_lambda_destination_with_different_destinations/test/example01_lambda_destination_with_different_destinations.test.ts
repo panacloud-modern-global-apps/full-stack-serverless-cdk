@@ -1,11 +1,11 @@
 import { expect as expectCDK, matchTemplate, MatchStyle } from '@aws-cdk/assert';
 import * as cdk from '@aws-cdk/core';
-import * as Step25LambdaEdge from '../lib/step25_lambda_edge-stack';
+import * as Example01LambdaDestinationWithDifferentDestinations from '../lib/example01_lambda_destination_with_different_destinations-stack';
 
 test('Empty Stack', () => {
     const app = new cdk.App();
     // WHEN
-    const stack = new Step25LambdaEdge.Step25LambdaEdgeStack(app, 'MyTestStack');
+    const stack = new Example01LambdaDestinationWithDifferentDestinations.Example01LambdaDestinationWithDifferentDestinationsStack(app, 'MyTestStack');
     // THEN
     expectCDK(stack).to(matchTemplate({
       "Resources": {}

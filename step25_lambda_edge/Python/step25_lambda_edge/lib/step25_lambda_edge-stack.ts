@@ -11,11 +11,12 @@ export class Step25LambdaEdgeStack extends cdk.Stack {
     // The code that defines your stack goes here
     const myFunc = new cloudfront.experimental.EdgeFunction(this, 'MyFunction', {
       runtime: lambda.Runtime.PYTHON_3_7,
-      handler: 'index.handler',
+      handler: 'app.handler',
       code: lambda.Code.fromAsset('lambda'),
     });
     
     const myBucket = new s3.Bucket(this, 'myBucket');
+    
     new cloudfront.Distribution(this, 'myDist', {
       defaultBehavior: {
         origin: new origins.S3Origin(myBucket),

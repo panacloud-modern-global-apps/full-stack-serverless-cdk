@@ -67,3 +67,8 @@ docker push 123456789012.dkr.ecr.us-east-1.amazonaws.com/hello-world:latest
 [Step 27 Video in English on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225893868638233/)
 
 [Step 27 Video in English on YouTube](https://www.youtube.com/watch?v=MA3nAbT-5cQ)
+
+[Step 27 Video in Urdu on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225939772465800)
+
+[Step 27 Video in Urdu on YouTube](https://www.youtube.com/watch?v=W5GbzrWs6gw)
+

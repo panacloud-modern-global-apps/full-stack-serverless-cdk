@@ -134,3 +134,7 @@ echoLambda.addEventSource(
 ```
 cdk destroy
 ```
+
+[Step 28 and 29 Video in English on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225932463123071)
+
+[Step 28 and 29 Video in English on YouTube](https://www.youtube.com/watch?v=LCY9ssPMWYY)

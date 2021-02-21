@@ -143,12 +143,16 @@ There are two methods to access your cluster
     - after connection of EC2 instance
     - follow step 2
 
-2.Install Mongoshell on machine [see](https://askubuntu.com/questions/1127055/install-mongodb-shell-client-without-server)
+2.Install Mongoshell on machine [see how to create ec2 instance](https://askubuntu.com/questions/1127055/install-mongodb-shell-client-without-server)
 
-a) Go to (https://us-east-2.console.aws.amazon.com/docdb/home?region=us-east-2#clusters)
-b) Open cluster you created 
-c) copy url and paste your password in the command
+    - Go to (https://us-east-2.console.aws.amazon.com/docdb/home?region=us-east-2#clusters)
+    - Open cluster you created 
+    - First download the key rds-combined-ca-bundle.pem
+    - copy url and paste your password in the command
+
+
 ![image info](./img/logo.png)
+
 ## Note:
 Run the command after install mongo-shell in your machine
 

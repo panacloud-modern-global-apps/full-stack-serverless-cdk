@@ -19,7 +19,7 @@ export class BackStacka extends cdk.Stack {
       }),
       vpc,
       scaling: {
-        autoPause: cdk.Duration.minutes(10), // default is to pause after 5 minutes of idle time
+        // autoPause: cdk.Duration.minutes(10), // default is to pause after 5 minutes of idle time
         minCapacity: rds.AuroraCapacityUnit.ACU_8, // default is 2 Aurora capacity units (ACUs)
         maxCapacity: rds.AuroraCapacityUnit.ACU_32, // default is 16 Aurora capacity units (ACUs)
       },
@@ -53,6 +53,7 @@ export class BackStacka extends cdk.Stack {
 
     const hello = new lambda.Function(this, "RecordsHandler", {
       role: lambdaRole,
+      vpc,
       runtime: lambda.Runtime.NODEJS_12_X, // So we can use async in widget.js
       code: lambda.Code.fromAsset("lambda"),
       handler: "index.handler",
@@ -67,6 +68,7 @@ export class BackStacka extends cdk.Stack {
     hello.node.addDependency(cluster);
 
     // either use "enable-data-api" in cluster construct or this to grant access to lambda function
-    // cluster.grantDataApiAccess(hello);
+    cluster.grantDataApiAccess(hello);
+    cluster.connections.allowDefaultPortFromAnyIpv4()
   }
 }

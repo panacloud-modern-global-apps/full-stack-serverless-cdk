@@ -1,16 +1,13 @@
-from decimal import Decimal
-from pprint import pprint
 import boto3
 import os
 import logging
 from botocore.exceptions import ClientError
-import json
 import re
 
 dynamodb = boto3.resource('dynamodb')
 tableName = os.environ['TODOS_TABLE']
 table = dynamodb.Table(tableName)
-print(tableName)
+# print(tableName)
 
 
 def updateItem(todo):
@@ -25,12 +22,13 @@ def updateItem(todo):
             ExpressionAttributeValues={
                 ":d": todo['title']
             },
-            
+
             ReturnValues="UPDATED_NEW",
 
 
 
         )
+
+        return res
     except ClientError as e:
         logging.error(e)
-    return json.dumps(todo)

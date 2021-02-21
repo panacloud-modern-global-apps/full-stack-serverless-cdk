@@ -6,22 +6,17 @@ from updateTodo import updateItem
 import os
 import boto3
 dynamodb = boto3.resource('dynamodb')
-
-
 def handler(event, context):
 
     field = event['info']['fieldName']
-
     if field == "addTodo":
         todo = event['arguments']['todo']
-        addTodoItem(todo)
-    elif field == "getTodos":
-        getItem()
-    elif field == "deleteTodo":
+        return addTodoItem(todo)
+    if field == "getTodos":
+        return getItem()
+    if field == "deleteTodo":
         todoId = event['arguments']['todoId']
-        deleteItem(todoId)
-    elif field == "updateTodo":
+        return deleteItem(todoId)
+    if field == "updateTodo":
         todo = event['arguments']['todo']
-        updateItem(todo)
-    else:
-        print("No matched")
+        return updateItem(todo)

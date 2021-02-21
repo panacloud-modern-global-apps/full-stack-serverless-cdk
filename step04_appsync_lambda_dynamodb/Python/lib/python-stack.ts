@@ -21,7 +21,7 @@ export class PythonStack extends cdk.Stack {
     });
     
     const todosLambda = new lambda.Function(this, 'AppSyncNotesHandler', {
-      runtime: lambda.Runtime.PYTHON_3_8,
+      runtime: lambda.Runtime.PYTHON_3_6,
       handler: 'main.handler',
       code: lambda.Code.fromAsset('functions'),
       memorySize: 1024

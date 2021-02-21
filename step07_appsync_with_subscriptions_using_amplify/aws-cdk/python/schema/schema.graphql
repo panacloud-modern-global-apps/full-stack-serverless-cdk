@@ -1,0 +1,24 @@
+type Todo {
+  id: ID!
+  title: String!
+  done: Boolean!
+}
+
+input TodoInput {
+  title: String!
+  done: Boolean!
+}
+
+type Query {
+  getTodos: [Todo]
+}
+
+type Mutation {
+  addTodo(todo: TodoInput!): Todo!
+}
+
+# ref https://aws.amazon.com/blogs/mobile/building-scalable-graphql-apis-on-aws-with-cdk-and-aws-appsync/
+type Subscription {
+  onAddTodo: Todo
+    @aws_subscribe(mutations: ["addTodo"])
+}

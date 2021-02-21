@@ -47,10 +47,9 @@ export class BackStack extends cdk.Stack {
       ],
     });
 
-  
     const dbcreds = myDBInstance.secret?.secretArn || "dbcreds";
 
-    //  create a function to access database 
+    //  create a function to access database
     const hello = new lambda.Function(this, "HelloHandler", {
       runtime: lambda.Runtime.NODEJS_10_X,
       code: lambda.Code.fromAsset("lambda/lambdazip.zip"),
@@ -59,24 +58,26 @@ export class BackStack extends cdk.Stack {
       vpc,
       role,
       environment: {
-         INSTANCE_CREDENTIALS: `${
-          SM.Secret.fromSecretAttributes(this, "dbcredentials", { secretArn: dbcreds })
-            .secretValue
+        INSTANCE_CREDENTIALS: `${
+          SM.Secret.fromSecretAttributes(this, "dbcredentials", {
+            secretArn: dbcreds,
+          }).secretValue
         }`,
         HOST: myDBInstance.dbInstanceEndpointAddress,
       },
     });
 
-    //  create lambda once dbinstance is created 
+    //  create lambda once dbinstance is created
     hello.node.addDependency(myDBInstance);
 
     //  allow lambda to connect to the database instance
 
     myDBInstance.grantConnect(hello);
     // To control who can access the cluster or instance, use the .connections attribute. RDS databases have a default port: 3306
-   myDBInstance.connections.allowFromAnyIpv4(ec2.Port.tcp(3306))
-    
+    myDBInstance.connections.allowFromAnyIpv4(ec2.Port.tcp(3306));
 
-}};
-
-
+    new cdk.CfnOutput(this, "endpoint", {
+      value: myDBInstance.dbInstanceEndpointAddress,
+    });
+  }
+}

@@ -2,7 +2,7 @@
 
 In this step we will write snapshot tests for constructs.Snapshot tests test the synthesized AWS CloudFormation template against a previously-stored baseline template. This way, when you're refactoring your app, you can be sure that the refactored code works exactly the same way as the original. If the changes were intentional, you can accept a new baseline for future tests.
 
-# Code Explanation
+## Code Explanation
 
 ### Step1: Setup a CDK directory
 

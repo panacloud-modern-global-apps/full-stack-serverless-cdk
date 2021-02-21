@@ -1,0 +1,1171 @@
+{
+  "version": "9.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "BackStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "BackStack.template.json"
+      },
+      "metadata": {
+        "/BackStack": [
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.2696aae2f88ab4f925caf98fa5b774abf5349e6588f399dd7d465c3fb29addf6.zip",
+              "id": "2696aae2f88ab4f925caf98fa5b774abf5349e6588f399dd7d465c3fb29addf6",
+              "packaging": "file",
+              "sourceHash": "2696aae2f88ab4f925caf98fa5b774abf5349e6588f399dd7d465c3fb29addf6",
+              "s3BucketParameter": "AssetParameters2696aae2f88ab4f925caf98fa5b774abf5349e6588f399dd7d465c3fb29addf6S3BucketDD0BA367",
+              "s3KeyParameter": "AssetParameters2696aae2f88ab4f925caf98fa5b774abf5349e6588f399dd7d465c3fb29addf6S3VersionKeyBB5AF0FA",
+              "artifactHashParameter": "AssetParameters2696aae2f88ab4f925caf98fa5b774abf5349e6588f399dd7d465c3fb29addf6ArtifactHash4834C2F6"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/core/lib/construct-compat.ts:431:92)",
+              "LegacyStackSynthesizer.doAddFileAsset (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:171:23)",
+              "LegacyStackSynthesizer.addFileAsset (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:74:19)",
+              "BackStack.addFileAsset (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/core/lib/stack.ts:657:29)",
+              "LegacyStackSynthesizer.addFileAsset (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:78:25)",
+              "new Asset (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:151:40)",
+              "AssetCode.bind (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-lambda/lib/code.ts:251:20)",
+              "new Function (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-lambda/lib/function.ts:572:29)",
+              "new BackStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/lib/back-stack.ts:54:19)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/myrdsvpc/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myrdsvpc32DA0298",
+            "trace": [
+              "new Vpc (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1199:21)",
+              "new BackStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/lib/back-stack.ts:16:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/myrdsvpc/PublicSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myrdsvpcPublicSubnet1SubnetA2146ADD",
+            "trace": [
+              "new Subnet (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1533:20)",
+              "new PublicSubnet (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1748:5)",
+              "/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1379:32",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1361:28)",
+              "Vpc.createSubnets (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1356:12)",
+              "new Vpc (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1228:10)",
+              "new BackStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/lib/back-stack.ts:16:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/myrdsvpc/PublicSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myrdsvpcPublicSubnet1RouteTableDB7818CE",
+            "trace": [
+              "new Subnet (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1551:19)",
+              "new PublicSubnet (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1748:5)",
+              "/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1379:32",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1361:28)",
+              "Vpc.createSubnets (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1356:12)",
+              "new Vpc (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1228:10)",
+              "new BackStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/lib/back-stack.ts:16:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/myrdsvpc/PublicSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myrdsvpcPublicSubnet1RouteTableAssociationCB65386E",
+            "trace": [
+              "new Subnet (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1557:5)",
+              "new PublicSubnet (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1748:5)",
+              "/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1379:32",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1361:28)",
+              "Vpc.createSubnets (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1356:12)",
+              "new Vpc (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1228:10)",
+              "new BackStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/lib/back-stack.ts:16:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/myrdsvpc/PublicSubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myrdsvpcPublicSubnet1DefaultRouteB8A20DCB",
+            "trace": [
+              "PublicSubnet.addDefaultInternetRoute (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1573:19)",
+              "/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1247:22",
+              "Array.forEach (<anonymous>)",
+              "new Vpc (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1246:46)",
+              "new BackStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/lib/back-stack.ts:16:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/myrdsvpc/PublicSubnet1/EIP": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myrdsvpcPublicSubnet1EIPC55EF77D",
+            "trace": [
+              "PublicSubnet.addNatGateway (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1760:21)",
+              "NatGatewayProvider.configureNat (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/nat.ts:173:27)",
+              "Vpc.createNatGateways (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1331:14)",
+              "new Vpc (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1253:14)",
+              "new BackStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/lib/back-stack.ts:16:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/myrdsvpc/PublicSubnet1/NATGateway": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myrdsvpcPublicSubnet1NATGatewayB1E045CB",
+            "trace": [
+              "PublicSubnet.addNatGateway (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1758:17)",
+              "NatGatewayProvider.configureNat (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/nat.ts:173:27)",
+              "Vpc.createNatGateways (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1331:14)",
+              "new Vpc (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1253:14)",
+              "new BackStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/lib/back-stack.ts:16:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/myrdsvpc/PublicSubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myrdsvpcPublicSubnet2Subnet60DD4A42",
+            "trace": [
+              "new Subnet (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1533:20)",
+              "new PublicSubnet (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1748:5)",
+              "/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1379:32",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1361:28)",
+              "Vpc.createSubnets (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1356:12)",
+              "new Vpc (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1228:10)",
+              "new BackStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/lib/back-stack.ts:16:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/myrdsvpc/PublicSubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myrdsvpcPublicSubnet2RouteTable7AA099AA",
+            "trace": [
+              "new Subnet (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1551:19)",
+              "new PublicSubnet (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1748:5)",
+              "/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1379:32",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1361:28)",
+              "Vpc.createSubnets (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1356:12)",
+              "new Vpc (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1228:10)",
+              "new BackStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/lib/back-stack.ts:16:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/myrdsvpc/PublicSubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myrdsvpcPublicSubnet2RouteTableAssociation2BB2C767",
+            "trace": [
+              "new Subnet (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1557:5)",
+              "new PublicSubnet (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1748:5)",
+              "/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1379:32",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1361:28)",
+              "Vpc.createSubnets (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1356:12)",
+              "new Vpc (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1228:10)",
+              "new BackStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/lib/back-stack.ts:16:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/myrdsvpc/PublicSubnet2/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myrdsvpcPublicSubnet2DefaultRoute322CD1C1",
+            "trace": [
+              "PublicSubnet.addDefaultInternetRoute (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1573:19)",
+              "/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1247:22",
+              "Array.forEach (<anonymous>)",
+              "new Vpc (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1246:46)",
+              "new BackStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/lib/back-stack.ts:16:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/myrdsvpc/PublicSubnet2/EIP": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myrdsvpcPublicSubnet2EIP20417D70",
+            "trace": [
+              "PublicSubnet.addNatGateway (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1760:21)",
+              "NatGatewayProvider.configureNat (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/nat.ts:173:27)",
+              "Vpc.createNatGateways (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1331:14)",
+              "new Vpc (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1253:14)",
+              "new BackStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/lib/back-stack.ts:16:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/myrdsvpc/PublicSubnet2/NATGateway": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myrdsvpcPublicSubnet2NATGatewayDC334277",
+            "trace": [
+              "PublicSubnet.addNatGateway (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1758:17)",
+              "NatGatewayProvider.configureNat (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/nat.ts:173:27)",
+              "Vpc.createNatGateways (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1331:14)",
+              "new Vpc (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1253:14)",
+              "new BackStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/lib/back-stack.ts:16:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/myrdsvpc/PrivateSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myrdsvpcPrivateSubnet1Subnet1ACE8A6E",
+            "trace": [
+              "new Subnet (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1533:20)",
+              "new PrivateSubnet (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1786:5)",
+              "/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1384:33",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1361:28)",
+              "Vpc.createSubnets (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1356:12)",
+              "new Vpc (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1228:10)",
+              "new BackStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/lib/back-stack.ts:16:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/myrdsvpc/PrivateSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myrdsvpcPrivateSubnet1RouteTableC31EE1CA",
+            "trace": [
+              "new Subnet (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1551:19)",
+              "new PrivateSubnet (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1786:5)",
+              "/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1384:33",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1361:28)",
+              "Vpc.createSubnets (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1356:12)",
+              "new Vpc (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1228:10)",
+              "new BackStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/lib/back-stack.ts:16:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/myrdsvpc/PrivateSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myrdsvpcPrivateSubnet1RouteTableAssociation707D9C55",
+            "trace": [
+              "new Subnet (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1557:5)",
+              "new PrivateSubnet (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1786:5)",
+              "/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1384:33",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1361:28)",
+              "Vpc.createSubnets (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1356:12)",
+              "new Vpc (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1228:10)",
+              "new BackStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/lib/back-stack.ts:16:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/myrdsvpc/PrivateSubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myrdsvpcPrivateSubnet1DefaultRoute7603DD16",
+            "trace": [
+              "PrivateSubnet.addRoute (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1619:19)",
+              "NatGatewayProvider.configureSubnet (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/nat.ts:186:12)",
+              "NatGatewayProvider.configureNat (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/nat.ts:179:12)",
+              "Vpc.createNatGateways (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1331:14)",
+              "new Vpc (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1253:14)",
+              "new BackStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/lib/back-stack.ts:16:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/myrdsvpc/PrivateSubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myrdsvpcPrivateSubnet2Subnet972EB78D",
+            "trace": [
+              "new Subnet (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1533:20)",
+              "new PrivateSubnet (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1786:5)",
+              "/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1384:33",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1361:28)",
+              "Vpc.createSubnets (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1356:12)",
+              "new Vpc (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1228:10)",
+              "new BackStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/lib/back-stack.ts:16:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/myrdsvpc/PrivateSubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myrdsvpcPrivateSubnet2RouteTableC5955767",
+            "trace": [
+              "new Subnet (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1551:19)",
+              "new PrivateSubnet (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1786:5)",
+              "/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1384:33",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1361:28)",
+              "Vpc.createSubnets (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1356:12)",
+              "new Vpc (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1228:10)",
+              "new BackStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/lib/back-stack.ts:16:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/myrdsvpc/PrivateSubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myrdsvpcPrivateSubnet2RouteTableAssociation093E696E",
+            "trace": [
+              "new Subnet (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1557:5)",
+              "new PrivateSubnet (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1786:5)",
+              "/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1384:33",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1361:28)",
+              "Vpc.createSubnets (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1356:12)",
+              "new Vpc (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1228:10)",
+              "new BackStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/lib/back-stack.ts:16:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/myrdsvpc/PrivateSubnet2/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myrdsvpcPrivateSubnet2DefaultRoute0EC4FE96",
+            "trace": [
+              "PrivateSubnet.addRoute (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1619:19)",
+              "NatGatewayProvider.configureSubnet (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/nat.ts:186:12)",
+              "NatGatewayProvider.configureNat (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/nat.ts:179:12)",
+              "Vpc.createNatGateways (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1331:14)",
+              "new Vpc (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1253:14)",
+              "new BackStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/lib/back-stack.ts:16:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/myrdsvpc/IGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myrdsvpcIGWB6C64E3E",
+            "trace": [
+              "new Vpc (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1235:19)",
+              "new BackStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/lib/back-stack.ts:16:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/myrdsvpc/VPCGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myrdsvpcVPCGW4ED3D538",
+            "trace": [
+              "new Vpc (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/vpc.ts:1241:19)",
+              "new BackStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/lib/back-stack.ts:16:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/MySQL/SubnetGroup/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MySQLSubnetGroupA2AB7B72",
+            "trace": [
+              "new SubnetGroup (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-rds/lib/subnet-group.ts:78:25)",
+              "new DatabaseInstanceNew (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-rds/lib/instance.ts:641:46)",
+              "new DatabaseInstanceSource (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-rds/lib/instance.ts:814:5)",
+              "new DatabaseInstance (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-rds/lib/instance.ts:957:5)",
+              "new BackStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/lib/back-stack.ts:20:26)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/MySQL/SecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MySQLSecurityGroupCAACC784",
+            "trace": [
+              "new SecurityGroup (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/security-group.ts:402:26)",
+              "new DatabaseInstanceNew (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-rds/lib/instance.ts:648:53)",
+              "new DatabaseInstanceSource (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-rds/lib/instance.ts:814:5)",
+              "new DatabaseInstance (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-rds/lib/instance.ts:957:5)",
+              "new BackStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/lib/back-stack.ts:20:26)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/MySQL/Secret/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MySQLSecret76FDA2D7",
+            "trace": [
+              "new Secret (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-secretsmanager/lib/secret.ts:424:22)",
+              "new DatabaseSecret (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-rds/lib/database-secret.ts:60:5)",
+              "Object.renderCredentials (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-rds/lib/private/util.ts:104:7)",
+              "new DatabaseInstance (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-rds/lib/instance.ts:959:25)",
+              "new BackStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/lib/back-stack.ts:20:26)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/MySQL/Secret/Attachment/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MySQLSecretAttachment426B2BAD",
+            "trace": [
+              "new SecretTargetAttachment (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-secretsmanager/lib/secret.ts:606:24)",
+              "DatabaseSecret.attach (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-secretsmanager/lib/secret.ts:293:12)",
+              "new DatabaseInstance (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-rds/lib/instance.ts:982:28)",
+              "new BackStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/lib/back-stack.ts:20:26)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/MySQL/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MySQL3B9CF5CC",
+            "trace": [
+              "new DatabaseInstance (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-rds/lib/instance.ts:962:22)",
+              "new BackStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/lib/back-stack.ts:20:26)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/LambdaRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaRole3A44B857",
+            "trace": [
+              "new Role (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-iam/lib/role.ts:327:18)",
+              "new BackStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/lib/back-stack.ts:40:18)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/LambdaRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaRoleDefaultPolicy75625A82",
+            "trace": [
+              "new Policy (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-iam/lib/policy.ts:154:22)",
+              "Role.addToPrincipalPolicy (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-iam/lib/role.ts:368:28)",
+              "Function.addToPrincipal (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-iam/lib/grant.ts:168:61)",
+              "DatabaseInstance.grantConnect (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-rds/lib/instance.ts:164:22)",
+              "new BackStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/lib/back-stack.ts:75:18)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/HelloHandler/SecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HelloHandlerSecurityGroup081795F9",
+            "trace": [
+              "new SecurityGroup (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-ec2/lib/security-group.ts:402:26)",
+              "Function.configureVpc (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-lambda/lib/function.ts:862:52)",
+              "new Function (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-lambda/lib/function.ts:634:23)",
+              "new BackStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/lib/back-stack.ts:54:19)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/HelloHandler/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HelloHandler2E4FBA4D",
+            "trace": [
+              "new Function (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-lambda/lib/function.ts:614:35)",
+              "new BackStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/lib/back-stack.ts:54:19)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/AssetParameters/2696aae2f88ab4f925caf98fa5b774abf5349e6588f399dd7d465c3fb29addf6/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters2696aae2f88ab4f925caf98fa5b774abf5349e6588f399dd7d465c3fb29addf6S3BucketDD0BA367",
+            "trace": [
+              "new FileAssetParameters (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:16:32)",
+              "LegacyStackSynthesizer.doAddFileAsset (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:154:16)",
+              "LegacyStackSynthesizer.addFileAsset (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:74:19)",
+              "BackStack.addFileAsset (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/core/lib/stack.ts:657:29)",
+              "LegacyStackSynthesizer.addFileAsset (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:78:25)",
+              "new Asset (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:151:40)",
+              "AssetCode.bind (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-lambda/lib/code.ts:251:20)",
+              "new Function (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-lambda/lib/function.ts:572:29)",
+              "new BackStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/lib/back-stack.ts:54:19)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/AssetParameters/2696aae2f88ab4f925caf98fa5b774abf5349e6588f399dd7d465c3fb29addf6/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters2696aae2f88ab4f925caf98fa5b774abf5349e6588f399dd7d465c3fb29addf6S3VersionKeyBB5AF0FA",
+            "trace": [
+              "new FileAssetParameters (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:21:31)",
+              "LegacyStackSynthesizer.doAddFileAsset (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:154:16)",
+              "LegacyStackSynthesizer.addFileAsset (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:74:19)",
+              "BackStack.addFileAsset (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/core/lib/stack.ts:657:29)",
+              "LegacyStackSynthesizer.addFileAsset (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:78:25)",
+              "new Asset (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:151:40)",
+              "AssetCode.bind (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-lambda/lib/code.ts:251:20)",
+              "new Function (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-lambda/lib/function.ts:572:29)",
+              "new BackStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/lib/back-stack.ts:54:19)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/AssetParameters/2696aae2f88ab4f925caf98fa5b774abf5349e6588f399dd7d465c3fb29addf6/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters2696aae2f88ab4f925caf98fa5b774abf5349e6588f399dd7d465c3fb29addf6ArtifactHash4834C2F6",
+            "trace": [
+              "new FileAssetParameters (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:26:34)",
+              "LegacyStackSynthesizer.doAddFileAsset (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:154:16)",
+              "LegacyStackSynthesizer.addFileAsset (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:74:19)",
+              "BackStack.addFileAsset (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/core/lib/stack.ts:657:29)",
+              "LegacyStackSynthesizer.addFileAsset (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:78:25)",
+              "new Asset (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:151:40)",
+              "AssetCode.bind (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-lambda/lib/code.ts:251:20)",
+              "new Function (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/aws-lambda/lib/function.ts:572:29)",
+              "new BackStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/lib/back-stack.ts:54:19)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/endpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "endpoint",
+            "trace": [
+              "new BackStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/lib/back-stack.ts:79:4)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/bin/back.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/BackStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata",
+            "trace": [
+              "new MetadataResource (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/core/lib/private/metadata-resource.ts:51:24)",
+              "/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/core/lib/private/synthesis.ts:140:5",
+              "visit (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/core/lib/private/synthesis.ts:200:5)",
+              "visit (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/core/lib/private/synthesis.ts:196:5)",
+              "injectMetadataResources (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/core/lib/private/synthesis.ts:131:3)",
+              "Object.synthesize (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/core/lib/private/synthesis.ts:18:3)",
+              "App.synth (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/core/lib/stage.ts:188:23)",
+              "process.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/core/lib/app.ts:123:45)",
+              "Object.onceWrapper (events.js:422:26)",
+              "process.emit (events.js:315:20)",
+              "process.EventEmitter.emit (domain.js:486:12)",
+              "process.emit (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/source-map-support/source-map-support.js:495:21)"
+            ]
+          }
+        ],
+        "/BackStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable",
+            "trace": [
+              "new MetadataResource (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/core/lib/private/metadata-resource.ts:60:27)",
+              "/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/core/lib/private/synthesis.ts:140:5",
+              "visit (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/core/lib/private/synthesis.ts:200:5)",
+              "visit (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/core/lib/private/synthesis.ts:196:5)",
+              "injectMetadataResources (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/core/lib/private/synthesis.ts:131:3)",
+              "Object.synthesize (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/core/lib/private/synthesis.ts:18:3)",
+              "App.synth (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/core/lib/stage.ts:188:23)",
+              "process.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/@aws-cdk/core/lib/app.ts:123:45)",
+              "Object.onceWrapper (events.js:422:26)",
+              "process.emit (events.js:315:20)",
+              "process.EventEmitter.emit (domain.js:486:12)",
+              "process.emit (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step36_aws-rds/Python/node_modules/source-map-support/source-map-support.js:495:21)"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

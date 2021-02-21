@@ -1,0 +1,32 @@
+{
+  "name": "step03_alarms",
+  "version": "0.1.0",
+  "bin": {
+    "step03_alarms": "bin/step03_alarms.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest",
+    "cdk": "cdk"
+  },
+  "devDependencies": {
+    "@aws-cdk/assert": "1.87.1",
+    "@types/jest": "^26.0.10",
+    "@types/node": "10.17.27",
+    "jest": "^26.4.2",
+    "ts-jest": "^26.2.0",
+    "aws-cdk": "1.87.1",
+    "ts-node": "^9.0.0",
+    "typescript": "~3.9.7"
+  },
+  "dependencies": {
+    "@aws-cdk/core": "1.87.1",
+    "@aws-cdk/aws-cloudwatch": "^1.87.1",
+    "@aws-cdk/aws-cloudwatch-actions": "^1.87.1",
+    "@aws-cdk/aws-lambda": "^1.87.1",
+    "@aws-cdk/aws-sns": "^1.87.1",
+    "@aws-cdk/aws-sns-subscriptions": "^1.87.1",
+    "source-map-support": "^0.5.16"
+  }
+}

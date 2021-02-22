@@ -210,6 +210,14 @@ In this repo we have used TypeScript for CDK development. Because we consider it
 
 [Step 27 Video in English on YouTube](https://www.youtube.com/watch?v=MA3nAbT-5cQ)
 
+[Step 27 Video in Urdu on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225939772465800)
+
+[Step 27 Video in Urdu on YouTube](https://www.youtube.com/watch?v=W5GbzrWs6gw)
+
+[Step 28 and 29 Video in English on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225932463123071)
+
+[Step 28 and 29 Video in English on YouTube](https://www.youtube.com/watch?v=LCY9ssPMWYY)
+
 
 
 

@@ -1,0 +1,34 @@
+{
+  "name": "aws-cdk",
+  "version": "0.1.0",
+  "bin": {
+    "aws-cdk": "bin/aws-cdk.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest",
+    "cdk": "cdk"
+  },
+  "devDependencies": {
+    "@aws-cdk/assert": "1.79.0",
+    "@types/jest": "^26.0.19",
+    "@types/node": "14.14.14",
+    "aws-cdk": "1.79.0",
+    "jest": "^26.6.3",
+    "ts-jest": "^26.4.4",
+    "ts-node": "^9.1.1",
+    "typescript": "~4.1.3"
+  },
+  "dependencies": {
+    "@aws-cdk/aws-appsync": "^1.79.0",
+    "@aws-cdk/aws-cloudfront": "^1.79.0",
+    "@aws-cdk/aws-cloudfront-origins": "^1.79.0",
+    "@aws-cdk/aws-dynamodb": "^1.79.0",
+    "@aws-cdk/aws-lambda": "^1.79.0",
+    "@aws-cdk/aws-s3": "^1.79.0",
+    "@aws-cdk/aws-s3-deployment": "^1.79.0",
+    "@aws-cdk/core": "1.79.0",
+    "source-map-support": "^0.5.19"
+  }
+}

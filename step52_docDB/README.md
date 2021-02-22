@@ -144,18 +144,15 @@ There are two methods to access your cluster
     - follow step 2
 
 2.Install Mongoshell on machine 
-
-    - [on linux Ubuntu](https://askubuntu.com/questions/1127055/install-mongodb-shell-client-without-server)
-
-    - [on windows](https://www.guru99.com/installation-configuration-mongodb.html)
-
     - Go to (https://us-east-2.console.aws.amazon.com/docdb/home?region=us-east-2#clusters)
-
     - Open cluster you created 
-
     - First download the key rds-combined-ca-bundle.pem
-
     - copy url and paste your password in the command
+
+[Install mongo-shell on linux Ubuntu](https://askubuntu.com/questions/1127055/install-mongodb-shell-client-without-server)
+
+[Install mongo-shell on windows](https://www.guru99.com/installation-configuration-mongodb.html)
+
 
 
 ![image info](./img/logo.png)
@@ -170,6 +167,7 @@ Run the command after install mongo-shell in your machine
 
 # Reference
 [CRUD Operations with docdb](https://docs.aws.amazon.com/documentdb/latest/developerguide/document-database-working-with-documents.html)
+
 [Connecting to docdb ](https://medium.com/red-ventures-br-tech/connecting-to-an-aws-documentdb-database-from-outside-its-vpc-648cf56be3b9)
 
 [docdb docs](https://docs.aws.amazon.com/cdk/api/latest/docs/aws-docdb-readme.html)

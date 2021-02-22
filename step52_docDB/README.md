@@ -144,11 +144,17 @@ There are two methods to access your cluster
     - follow step 2
 
 2.Install Mongoshell on machine 
+
     - [on linux Ubuntu](https://askubuntu.com/questions/1127055/install-mongodb-shell-client-without-server)
+
     - [on windows](https://www.guru99.com/installation-configuration-mongodb.html)
+
     - Go to (https://us-east-2.console.aws.amazon.com/docdb/home?region=us-east-2#clusters)
+
     - Open cluster you created 
+
     - First download the key rds-combined-ca-bundle.pem
+
     - copy url and paste your password in the command
 
 

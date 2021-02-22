@@ -143,7 +143,7 @@ There are two methods to access your cluster
     - after connection of EC2 instance
     - follow step 2
 
-2.Install Mongoshell on machine 
+2. Install Mongoshell on machine 
     - Go to (https://us-east-2.console.aws.amazon.com/docdb/home?region=us-east-2#clusters)
     - Open cluster you created 
     - First download the key rds-combined-ca-bundle.pem

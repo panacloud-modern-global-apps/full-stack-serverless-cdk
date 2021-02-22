@@ -2,16 +2,12 @@ import * as cdk from '@aws-cdk/core';
 import * as cognito from "@aws-cdk/aws-cognito";
 import * as lambda from "@aws-cdk/aws-lambda";
 import * as iam from "@aws-cdk/aws-iam";
-
-export class Example01UserpoolWithLambdaTriggerStack extends cdk.Stack {
+export class UserpoolWithLambdaStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
-
-    // The code that defines your stack goes here
-
-
+    
     const authEmailFn = new lambda.Function(this, 'authEmailFn', {
-      runtime: lambda.Runtime.PYTHON_3_7,
+      runtime: lambda.Runtime.PYTHON_3_8,
       handler: 'index.handler',
       code: lambda.Code.fromAsset('lambda'),
     });

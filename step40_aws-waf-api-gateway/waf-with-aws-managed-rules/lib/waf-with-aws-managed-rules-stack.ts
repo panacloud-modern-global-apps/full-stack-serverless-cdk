@@ -12,7 +12,7 @@ export class WafWithAwsManagedRulesStack extends cdk.Stack {
     const wafLambda = new lambda.Function(this, "WAFLambda", {
       runtime: lambda.Runtime.NODEJS_12_X,
       handler: "index.handler",
-      code: lambda.Code.fromAsset("function"),
+      code: lambda.Code.fromAsset("lambda"),
     });
 
     const api = new apigw.LambdaRestApi(this, "LambdaAPI", {

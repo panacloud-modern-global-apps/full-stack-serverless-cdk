@@ -9,8 +9,7 @@ msg_file_path = '/mnt/msg/content'
 def handler(event, context):
     # request = event['requestContext']
     # http = request['http']
-    request = event['requestContext']
-    method = request['httpMethod']
+    method = event['requestContext']['http']['method']
     if method == 'GET':
         return getMessages()
     elif method == 'POST':

@@ -138,13 +138,14 @@ make .env on root directory
 
 ## Accessing Cluster:
 There are two methods to access your cluster
-1. via ec2 instacne [see](https://github.com/panacloud-modern-global-apps/full-stack-serverless-cdk/tree/main/step47_ec2)
+1. via ec2 instacne [see how to create ec2 instance](https://github.com/panacloud-modern-global-apps/full-stack-serverless-cdk/tree/main/step47_ec2)
     - give same vpc in both docdb and ec2
     - after connection of EC2 instance
     - follow step 2
 
-2.Install Mongoshell on machine [see how to create ec2 instance](https://askubuntu.com/questions/1127055/install-mongodb-shell-client-without-server)
-
+2.Install Mongoshell on machine 
+    - [on linux Ubuntu](https://askubuntu.com/questions/1127055/install-mongodb-shell-client-without-server)
+    - [on windows](https://www.guru99.com/installation-configuration-mongodb.html)
     - Go to (https://us-east-2.console.aws.amazon.com/docdb/home?region=us-east-2#clusters)
     - Open cluster you created 
     - First download the key rds-combined-ca-bundle.pem
@@ -162,6 +163,7 @@ Run the command after install mongo-shell in your machine
 ```
 
 # Reference
+[CRUD Operations with docdb](https://docs.aws.amazon.com/documentdb/latest/developerguide/document-database-working-with-documents.html)
 [Connecting to docdb ](https://medium.com/red-ventures-br-tech/connecting-to-an-aws-documentdb-database-from-outside-its-vpc-648cf56be3b9)
 
 [docdb docs](https://docs.aws.amazon.com/cdk/api/latest/docs/aws-docdb-readme.html)

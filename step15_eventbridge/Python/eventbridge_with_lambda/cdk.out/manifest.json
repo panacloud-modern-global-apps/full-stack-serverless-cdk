@@ -1,0 +1,784 @@
+{
+  "version": "7.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "CdkStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "CdkStack.template.json"
+      },
+      "metadata": {
+        "/CdkStack": [
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.c57712811bea660c4455f112901f0d244b88bcb888cb9319fac745c63fff5519",
+              "id": "c57712811bea660c4455f112901f0d244b88bcb888cb9319fac745c63fff5519",
+              "packaging": "zip",
+              "sourceHash": "c57712811bea660c4455f112901f0d244b88bcb888cb9319fac745c63fff5519",
+              "s3BucketParameter": "AssetParametersc57712811bea660c4455f112901f0d244b88bcb888cb9319fac745c63fff5519S3Bucket127A6480",
+              "s3KeyParameter": "AssetParametersc57712811bea660c4455f112901f0d244b88bcb888cb9319fac745c63fff5519S3VersionKey6837B7E2",
+              "artifactHashParameter": "AssetParametersc57712811bea660c4455f112901f0d244b88bcb888cb9319fac745c63fff5519ArtifactHashBD375D62"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/core/lib/construct-compat.ts:431:92)",
+              "LegacyStackSynthesizer.doAddFileAsset (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:163:23)",
+              "LegacyStackSynthesizer.addFileAsset (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:74:19)",
+              "CdkStack.addFileAsset (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/core/lib/stack.ts:651:29)",
+              "LegacyStackSynthesizer.addFileAsset (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:78:25)",
+              "new Asset (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:147:40)",
+              "AssetCode.bind (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-lambda/lib/code.ts:180:20)",
+              "new Function (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-lambda/lib/function.ts:559:29)",
+              "new CdkStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/lib/cdk-stack.ts:13:24)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/bin/cdk.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/index.ts:1043:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/index.ts:1046:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/bin.ts:225:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/bin.ts:512:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/CdkStack/producerLambda/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "producerLambdaServiceRole51681B99",
+            "trace": [
+              "new Role (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-iam/lib/role.ts:327:18)",
+              "new Function (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-lambda/lib/function.ts:539:31)",
+              "new CdkStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/lib/cdk-stack.ts:13:24)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/bin/cdk.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/index.ts:1043:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/index.ts:1046:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/bin.ts:225:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/bin.ts:512:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/CdkStack/producerLambda/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "producerLambdaServiceRoleDefaultPolicy30D41911",
+            "trace": [
+              "new Policy (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-iam/lib/policy.ts:154:22)",
+              "Role.addToPrincipalPolicy (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-iam/lib/role.ts:368:28)",
+              "Function.addToPrincipal (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-iam/lib/grant.ts:168:61)",
+              "Function.grantPutEvents (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-events/lib/event-bus.ts:150:22)",
+              "new CdkStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/lib/cdk-stack.ts:20:21)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/bin/cdk.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/index.ts:1043:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/index.ts:1046:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/bin.ts:225:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/bin.ts:512:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/CdkStack/producerLambda/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "producerLambda41DD6C47",
+            "trace": [
+              "new Function (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-lambda/lib/function.ts:593:35)",
+              "new CdkStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/lib/cdk-stack.ts:13:24)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/bin/cdk.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/index.ts:1043:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/index.ts:1046:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/bin.ts:225:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/bin.ts:512:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/CdkStack/AssetParameters/c57712811bea660c4455f112901f0d244b88bcb888cb9319fac745c63fff5519/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersc57712811bea660c4455f112901f0d244b88bcb888cb9319fac745c63fff5519S3Bucket127A6480",
+            "trace": [
+              "new FileAssetParameters (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:16:32)",
+              "LegacyStackSynthesizer.doAddFileAsset (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:150:16)",
+              "LegacyStackSynthesizer.addFileAsset (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:74:19)",
+              "CdkStack.addFileAsset (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/core/lib/stack.ts:651:29)",
+              "LegacyStackSynthesizer.addFileAsset (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:78:25)",
+              "new Asset (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:147:40)",
+              "AssetCode.bind (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-lambda/lib/code.ts:180:20)",
+              "new Function (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-lambda/lib/function.ts:559:29)",
+              "new CdkStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/lib/cdk-stack.ts:13:24)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/bin/cdk.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/index.ts:1043:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/index.ts:1046:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/bin.ts:225:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/bin.ts:512:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/CdkStack/AssetParameters/c57712811bea660c4455f112901f0d244b88bcb888cb9319fac745c63fff5519/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersc57712811bea660c4455f112901f0d244b88bcb888cb9319fac745c63fff5519S3VersionKey6837B7E2",
+            "trace": [
+              "new FileAssetParameters (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:21:31)",
+              "LegacyStackSynthesizer.doAddFileAsset (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:150:16)",
+              "LegacyStackSynthesizer.addFileAsset (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:74:19)",
+              "CdkStack.addFileAsset (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/core/lib/stack.ts:651:29)",
+              "LegacyStackSynthesizer.addFileAsset (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:78:25)",
+              "new Asset (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:147:40)",
+              "AssetCode.bind (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-lambda/lib/code.ts:180:20)",
+              "new Function (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-lambda/lib/function.ts:559:29)",
+              "new CdkStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/lib/cdk-stack.ts:13:24)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/bin/cdk.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/index.ts:1043:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/index.ts:1046:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/bin.ts:225:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/bin.ts:512:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/CdkStack/AssetParameters/c57712811bea660c4455f112901f0d244b88bcb888cb9319fac745c63fff5519/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersc57712811bea660c4455f112901f0d244b88bcb888cb9319fac745c63fff5519ArtifactHashBD375D62",
+            "trace": [
+              "new FileAssetParameters (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:26:34)",
+              "LegacyStackSynthesizer.doAddFileAsset (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:150:16)",
+              "LegacyStackSynthesizer.addFileAsset (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:74:19)",
+              "CdkStack.addFileAsset (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/core/lib/stack.ts:651:29)",
+              "LegacyStackSynthesizer.addFileAsset (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:78:25)",
+              "new Asset (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:147:40)",
+              "AssetCode.bind (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-lambda/lib/code.ts:180:20)",
+              "new Function (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-lambda/lib/function.ts:559:29)",
+              "new CdkStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/lib/cdk-stack.ts:13:24)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/bin/cdk.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/index.ts:1043:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/index.ts:1046:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/bin.ts:225:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/bin.ts:512:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/CdkStack/testApi/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "testApiD6ECAB50",
+            "trace": [
+              "new RestApi (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:683:22)",
+              "new LambdaRestApi (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/lambda-api.ts:50:5)",
+              "new CdkStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/lib/cdk-stack.ts:23:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/bin/cdk.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/index.ts:1043:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/index.ts:1046:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/bin.ts:225:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/bin.ts:512:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/CdkStack/testApi/CloudWatchRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "testApiCloudWatchRole8A11639C",
+            "trace": [
+              "new Role (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-iam/lib/role.ts:327:18)",
+              "LambdaRestApi.configureCloudWatchRole (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:490:18)",
+              "new RestApi (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:700:12)",
+              "new LambdaRestApi (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/lambda-api.ts:50:5)",
+              "new CdkStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/lib/cdk-stack.ts:23:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/bin/cdk.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/index.ts:1043:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/index.ts:1046:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/bin.ts:225:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/bin.ts:512:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/CdkStack/testApi/Account": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "testApiAccountA6723CBB",
+            "trace": [
+              "LambdaRestApi.configureCloudWatchRole (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:495:22)",
+              "new RestApi (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:700:12)",
+              "new LambdaRestApi (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/lambda-api.ts:50:5)",
+              "new CdkStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/lib/cdk-stack.ts:23:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/bin/cdk.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/index.ts:1043:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/index.ts:1046:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/bin.ts:225:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/bin.ts:512:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/CdkStack/testApi/Deployment/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "testApiDeployment3727A0B9060d8f9557db914275a479bd6959765c",
+            "trace": [
+              "new Deployment (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/deployment.ts:71:21)",
+              "LambdaRestApi.configureDeployment (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:506:32)",
+              "new RestApi (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:703:10)",
+              "new LambdaRestApi (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/lambda-api.ts:50:5)",
+              "new CdkStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/lib/cdk-stack.ts:23:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/bin/cdk.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/index.ts:1043:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/index.ts:1046:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/bin.ts:225:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/bin.ts:512:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/CdkStack/testApi/DeploymentStage.prod/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "testApiDeploymentStageprodCE051BE8",
+            "trace": [
+              "new Stage (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/stage.ts:240:22)",
+              "LambdaRestApi.configureDeployment (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:516:30)",
+              "new RestApi (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:703:10)",
+              "new LambdaRestApi (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/lambda-api.ts:50:5)",
+              "new CdkStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/lib/cdk-stack.ts:23:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/bin/cdk.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/index.ts:1043:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/index.ts:1046:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/bin.ts:225:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/bin.ts:512:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/CdkStack/testApi/Endpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "testApiEndpointC9D07ADA",
+            "trace": [
+              "LambdaRestApi.configureDeployment (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:521:7)",
+              "new RestApi (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:703:10)",
+              "new LambdaRestApi (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/lambda-api.ts:50:5)",
+              "new CdkStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/lib/cdk-stack.ts:23:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/bin/cdk.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/index.ts:1043:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/index.ts:1046:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/bin.ts:225:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/bin.ts:512:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/CdkStack/testApi/Default/{proxy+}/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "testApiproxyA0E5503A",
+            "trace": [
+              "new Resource (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:402:22)",
+              "new ProxyResource (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:474:5)",
+              "RootResource.addProxy (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:191:12)",
+              "new LambdaRestApi (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/lambda-api.ts:57:17)",
+              "new CdkStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/lib/cdk-stack.ts:23:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/bin/cdk.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/index.ts:1043:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/index.ts:1046:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/bin.ts:225:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/bin.ts:512:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/CdkStack/testApi/Default/{proxy+}/ANY/ApiPermission.CdkStacktestApiA247CD39.ANY..{proxy+}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "testApiproxyANYApiPermissionCdkStacktestApiA247CD39ANYproxy96F6E207",
+            "trace": [
+              "Function.addPermission (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-lambda/lib/function-base.ts:234:5)",
+              "LambdaIntegration.bind (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/integrations/lambda.ts:63:18)",
+              "new Method (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:197:36)",
+              "ProxyResource.addMethod (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:187:12)",
+              "ProxyResource.addMethod (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:496:18)",
+              "new ProxyResource (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:483:29)",
+              "RootResource.addProxy (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:191:12)",
+              "new LambdaRestApi (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/lambda-api.ts:57:17)",
+              "new CdkStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/lib/cdk-stack.ts:23:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/bin/cdk.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/index.ts:1043:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/index.ts:1046:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/bin.ts:225:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/bin.ts:512:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/CdkStack/testApi/Default/{proxy+}/ANY/ApiPermission.Test.CdkStacktestApiA247CD39.ANY..{proxy+}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "testApiproxyANYApiPermissionTestCdkStacktestApiA247CD39ANYproxy9BD1D428",
+            "trace": [
+              "Function.addPermission (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-lambda/lib/function-base.ts:234:5)",
+              "LambdaIntegration.bind (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/integrations/lambda.ts:71:20)",
+              "new Method (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:197:36)",
+              "ProxyResource.addMethod (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:187:12)",
+              "ProxyResource.addMethod (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:496:18)",
+              "new ProxyResource (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:483:29)",
+              "RootResource.addProxy (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:191:12)",
+              "new LambdaRestApi (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/lambda-api.ts:57:17)",
+              "new CdkStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/lib/cdk-stack.ts:23:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/bin/cdk.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/index.ts:1043:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/index.ts:1046:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/bin.ts:225:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/bin.ts:512:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/CdkStack/testApi/Default/{proxy+}/ANY/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "testApiproxyANYC53F2608",
+            "trace": [
+              "new Method (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:215:22)",
+              "ProxyResource.addMethod (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:187:12)",
+              "ProxyResource.addMethod (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:496:18)",
+              "new ProxyResource (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:483:29)",
+              "RootResource.addProxy (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:191:12)",
+              "new LambdaRestApi (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/lambda-api.ts:57:17)",
+              "new CdkStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/lib/cdk-stack.ts:23:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/bin/cdk.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/index.ts:1043:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/index.ts:1046:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/bin.ts:225:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/bin.ts:512:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/CdkStack/testApi/Default/ANY/ApiPermission.CdkStacktestApiA247CD39.ANY..": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "testApiANYApiPermissionCdkStacktestApiA247CD39ANY7AC40417",
+            "trace": [
+              "Function.addPermission (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-lambda/lib/function-base.ts:234:5)",
+              "LambdaIntegration.bind (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/integrations/lambda.ts:63:18)",
+              "new Method (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:197:36)",
+              "RootResource.addMethod (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:187:12)",
+              "ProxyResource.addMethod (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:493:29)",
+              "new ProxyResource (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:483:29)",
+              "RootResource.addProxy (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:191:12)",
+              "new LambdaRestApi (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/lambda-api.ts:57:17)",
+              "new CdkStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/lib/cdk-stack.ts:23:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/bin/cdk.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/index.ts:1043:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/index.ts:1046:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/bin.ts:225:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/bin.ts:512:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/CdkStack/testApi/Default/ANY/ApiPermission.Test.CdkStacktestApiA247CD39.ANY..": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "testApiANYApiPermissionTestCdkStacktestApiA247CD39ANY5757244D",
+            "trace": [
+              "Function.addPermission (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-lambda/lib/function-base.ts:234:5)",
+              "LambdaIntegration.bind (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/integrations/lambda.ts:71:20)",
+              "new Method (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:197:36)",
+              "RootResource.addMethod (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:187:12)",
+              "ProxyResource.addMethod (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:493:29)",
+              "new ProxyResource (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:483:29)",
+              "RootResource.addProxy (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:191:12)",
+              "new LambdaRestApi (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/lambda-api.ts:57:17)",
+              "new CdkStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/lib/cdk-stack.ts:23:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/bin/cdk.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/index.ts:1043:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/index.ts:1046:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/bin.ts:225:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/bin.ts:512:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/CdkStack/testApi/Default/ANY/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "testApiANYDC600770",
+            "trace": [
+              "new Method (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:215:22)",
+              "RootResource.addMethod (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:187:12)",
+              "ProxyResource.addMethod (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:493:29)",
+              "new ProxyResource (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:483:29)",
+              "RootResource.addProxy (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:191:12)",
+              "new LambdaRestApi (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-apigateway/lib/lambda-api.ts:57:17)",
+              "new CdkStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/lib/cdk-stack.ts:23:17)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/bin/cdk.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/index.ts:1043:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/index.ts:1046:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/bin.ts:225:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/bin.ts:512:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/CdkStack/consumerLambda/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "consumerLambdaServiceRole88BBF95B",
+            "trace": [
+              "new Role (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-iam/lib/role.ts:327:18)",
+              "new Function (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-lambda/lib/function.ts:539:31)",
+              "new CdkStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/lib/cdk-stack.ts:28:24)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/bin/cdk.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/index.ts:1043:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/index.ts:1046:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/bin.ts:225:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/bin.ts:512:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/CdkStack/consumerLambda/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "consumerLambda091FCDB7",
+            "trace": [
+              "new Function (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-lambda/lib/function.ts:593:35)",
+              "new CdkStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/lib/cdk-stack.ts:28:24)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/bin/cdk.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/index.ts:1043:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/index.ts:1046:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/bin.ts:225:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/bin.ts:512:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/CdkStack/orderPKLambda/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "orderPKLambda808C5D21",
+            "trace": [
+              "new Rule (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-events/lib/rule.ts:130:22)",
+              "new CdkStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/lib/cdk-stack.ts:35:20)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/bin/cdk.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/index.ts:1043:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/index.ts:1046:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/bin.ts:225:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/bin.ts:512:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/CdkStack/orderPKLambda/AllowEventRuleCdkStackorderPKLambda71049271": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "orderPKLambdaAllowEventRuleCdkStackorderPKLambda710492712319D4F5",
+            "trace": [
+              "Function.addPermission (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-lambda/lib/function-base.ts:234:5)",
+              "Object.addLambdaPermission (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-events-targets/lib/util.ts:40:13)",
+              "LambdaFunction.bind (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-events-targets/lib/lambda.ts:33:5)",
+              "Rule.addTarget (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-events/lib/rule.ts:166:32)",
+              "new Rule (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/aws-events/lib/rule.ts:150:12)",
+              "new CdkStack (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/lib/cdk-stack.ts:35:20)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/bin/cdk.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/index.ts:1043:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/index.ts:1046:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/bin.ts:225:14)",
+              "Object.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/ts-node/src/bin.ts:512:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/CdkStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata",
+            "trace": [
+              "new MetadataResource (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/core/lib/private/metadata-resource.ts:51:24)",
+              "/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/core/lib/private/synthesis.ts:140:5",
+              "visit (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/core/lib/private/synthesis.ts:200:5)",
+              "visit (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/core/lib/private/synthesis.ts:196:5)",
+              "injectMetadataResources (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/core/lib/private/synthesis.ts:131:3)",
+              "Object.synthesize (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/core/lib/private/synthesis.ts:18:3)",
+              "App.synth (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/core/lib/stage.ts:188:23)",
+              "process.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/core/lib/app.ts:123:45)",
+              "Object.onceWrapper (events.js:422:26)",
+              "process.emit (events.js:315:20)",
+              "process.EventEmitter.emit (domain.js:486:12)",
+              "process.emit (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/source-map-support/source-map-support.js:495:21)"
+            ]
+          }
+        ],
+        "/CdkStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable",
+            "trace": [
+              "new MetadataResource (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/core/lib/private/metadata-resource.ts:60:27)",
+              "/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/core/lib/private/synthesis.ts:140:5",
+              "visit (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/core/lib/private/synthesis.ts:200:5)",
+              "visit (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/core/lib/private/synthesis.ts:196:5)",
+              "injectMetadataResources (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/core/lib/private/synthesis.ts:131:3)",
+              "Object.synthesize (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/core/lib/private/synthesis.ts:18:3)",
+              "App.synth (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/core/lib/stage.ts:188:23)",
+              "process.<anonymous> (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/@aws-cdk/core/lib/app.ts:123:45)",
+              "Object.onceWrapper (events.js:422:26)",
+              "process.emit (events.js:315:20)",
+              "process.EventEmitter.emit (domain.js:486:12)",
+              "process.emit (/home/zulehuma/Desktop/repoagain/repo/full-stack-serverless-cdk/step15_eventbridge/Python/eventbridge_with_lambda/node_modules/source-map-support/source-map-support.js:495:21)"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

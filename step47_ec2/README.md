@@ -118,6 +118,7 @@ Now Stop the server
 ``` javascript 
     $ service httdp stop //this command stop the server
 ```
+
 ## Destroy
 ``` javascript 
     $ cdk destroy 

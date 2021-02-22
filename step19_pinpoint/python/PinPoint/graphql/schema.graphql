@@ -1,0 +1,9 @@
+type Email {
+  recipientEmail: String!
+}
+type Mutation {
+  createEmail(recipientEmail: String!): Email
+}
+type Query {
+  listEmails: [Email]
+}

@@ -1,5 +1,5 @@
 {
-  "name": "ecr-lambda",
+  "name": "lambdaimage",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "faker": "^5.1.0"
+    "random-words": "^1.1.1"
   }
 }

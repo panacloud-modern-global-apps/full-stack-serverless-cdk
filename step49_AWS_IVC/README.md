@@ -3,21 +3,31 @@
 # Amazon Interactive Video Service (AWS IVS)!
 Amazon Interactive Video Service (Amazon IVS) is a managed live streaming solution that is quick and easy to set up, and ideal for creating interactive video experiences. Send your live streams to Amazon IVS using streaming software and the service does everything you need to make low-latency live video available to any viewer around the world, letting you focus on building interactive experiences alongside the live video. You can easily customize and enhance the audience experience through the Amazon IVS player SDK and timed metadata APIs, allowing you to build a more valuable relationship with your viewers on your own websites and applications..
 
-![AWS MediaLive Architecture](https://d1.awsstatic.com/awselemental/Workflows/product-page-diagram_AWS_Elemental_r16_INTERACTIVE_VIDEO_SERVICE_2x.05718cda8afec531df5e284d8797d511cb7d7f0c.png)
+![AWS IVS Architecture](https://d1.awsstatic.com/awselemental/Workflows/product-page-diagram_AWS_Elemental_r16_INTERACTIVE_VIDEO_SERVICE_2x.05718cda8afec531df5e284d8797d511cb7d7f0c.png)
 
 
-## MediaLive API / Documentation Reference
+## AWS IVS API & Documentation Reference
 - https://docs.aws.amazon.com/ivs/latest/userguide/what-is.html
 - https://docs.aws.amazon.com/ivs/latest/APIReference/Welcome.html
+- [AWS IVS CDK ] https://docs.aws.amazon.com/cdk/api/latest/docs/aws-ivs-readme.html
 
+<br/>
+
+## Careful!
+ only basic streaming type is free at free tier, standard type stream will charge $2 per hour, <br/>
+you can check the detail in below image.
+![price](img/price.png)
 
 ## Pricing Chart.
 https://aws.amazon.com/ivs/pricing/#Live_Video_Input_Costs
+
+<br/>
 
 ## NPM install.
 - npm install @aws-cdk/aws-ivs
 - cdk bootstrap && npm run build && cdk deploy
 
+<br/>
 
 # After Deployment.
 
@@ -58,16 +68,18 @@ change the Playback Url value
 ## Result, with push_metaData
 ![linkTesting](img/result.png)
 
+<br/>
 
 
 ## Stream with Mobile Application
 
 Setting > Connections > New Connection  <br />
-name : abcd<br />
-url : Ingest_Server_Key/Streaming key (rtmps://abcd1234.global-contribute.live-video.net:443/app/sk_us-east-1_abcdefg123456)<br />
+Name : abcd<br />
+URL : Ingest_Server_Key/Streaming key (rtmps://abcd1234.global-contribute.live-video.net:443/app/sk_us-east-1_abcdefg123456)<br />
 
 save & start recording
 
+<br/>
 
 ## Useful commands
 

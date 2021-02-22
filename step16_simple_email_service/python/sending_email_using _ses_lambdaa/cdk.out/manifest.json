@@ -1,0 +1,582 @@
+{
+  "version": "9.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "PythonStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "PythonStack.template.json"
+      },
+      "metadata": {
+        "/PythonStack": [
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.dcd2c84fda5b77d0d4b17b94d3581fbec6b5bd107cd4f898c2961d5b16e24cab",
+              "id": "dcd2c84fda5b77d0d4b17b94d3581fbec6b5bd107cd4f898c2961d5b16e24cab",
+              "packaging": "zip",
+              "sourceHash": "dcd2c84fda5b77d0d4b17b94d3581fbec6b5bd107cd4f898c2961d5b16e24cab",
+              "s3BucketParameter": "AssetParametersdcd2c84fda5b77d0d4b17b94d3581fbec6b5bd107cd4f898c2961d5b16e24cabS3Bucket7CA07F13",
+              "s3KeyParameter": "AssetParametersdcd2c84fda5b77d0d4b17b94d3581fbec6b5bd107cd4f898c2961d5b16e24cabS3VersionKeyACFCB6F9",
+              "artifactHashParameter": "AssetParametersdcd2c84fda5b77d0d4b17b94d3581fbec6b5bd107cd4f898c2961d5b16e24cabArtifactHashD26B5196"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (/home/shamaz/web root/as/python/node_modules/@aws-cdk/core/lib/construct-compat.ts:431:92)",
+              "LegacyStackSynthesizer.doAddFileAsset (/home/shamaz/web root/as/python/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:171:23)",
+              "LegacyStackSynthesizer.addFileAsset (/home/shamaz/web root/as/python/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:74:19)",
+              "PythonStack.addFileAsset (/home/shamaz/web root/as/python/node_modules/@aws-cdk/core/lib/stack.ts:657:29)",
+              "LegacyStackSynthesizer.addFileAsset (/home/shamaz/web root/as/python/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:78:25)",
+              "new Asset (/home/shamaz/web root/as/python/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:151:40)",
+              "AssetCode.bind (/home/shamaz/web root/as/python/node_modules/@aws-cdk/aws-lambda/lib/code.ts:251:20)",
+              "new Function (/home/shamaz/web root/as/python/node_modules/@aws-cdk/aws-lambda/lib/function.ts:572:29)",
+              "new PythonStack (/home/shamaz/web root/as/python/lib/python-stack.ts:24:25)",
+              "Object.<anonymous> (/home/shamaz/web root/as/python/bin/python.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/shamaz/web root/as/python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/shamaz/web root/as/python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/shamaz/web root/as/python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/shamaz/web root/as/python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/home/shamaz/.nvm/versions/node/v14.15.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/PythonStack/LambdaRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaRole3A44B857",
+            "trace": [
+              "new Role (/home/shamaz/web root/as/python/node_modules/@aws-cdk/aws-iam/lib/role.ts:327:18)",
+              "new PythonStack (/home/shamaz/web root/as/python/lib/python-stack.ts:11:18)",
+              "Object.<anonymous> (/home/shamaz/web root/as/python/bin/python.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/shamaz/web root/as/python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/shamaz/web root/as/python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/shamaz/web root/as/python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/shamaz/web root/as/python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/home/shamaz/.nvm/versions/node/v14.15.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/PythonStack/LambdaRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaRoleDefaultPolicy75625A82",
+            "trace": [
+              "new Policy (/home/shamaz/web root/as/python/node_modules/@aws-cdk/aws-iam/lib/policy.ts:154:22)",
+              "Role.addToPrincipalPolicy (/home/shamaz/web root/as/python/node_modules/@aws-cdk/aws-iam/lib/role.ts:368:28)",
+              "Role.addToPolicy (/home/shamaz/web root/as/python/node_modules/@aws-cdk/aws-iam/lib/role.ts:376:17)",
+              "new PythonStack (/home/shamaz/web root/as/python/lib/python-stack.ts:21:10)",
+              "Object.<anonymous> (/home/shamaz/web root/as/python/bin/python.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/shamaz/web root/as/python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/shamaz/web root/as/python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/shamaz/web root/as/python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/shamaz/web root/as/python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/home/shamaz/.nvm/versions/node/v14.15.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/PythonStack/HandleSendEmail/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HandleSendEmailE1602486",
+            "trace": [
+              "new Function (/home/shamaz/web root/as/python/node_modules/@aws-cdk/aws-lambda/lib/function.ts:614:35)",
+              "new PythonStack (/home/shamaz/web root/as/python/lib/python-stack.ts:24:25)",
+              "Object.<anonymous> (/home/shamaz/web root/as/python/bin/python.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/shamaz/web root/as/python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/shamaz/web root/as/python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/shamaz/web root/as/python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/shamaz/web root/as/python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/home/shamaz/.nvm/versions/node/v14.15.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/PythonStack/AssetParameters/dcd2c84fda5b77d0d4b17b94d3581fbec6b5bd107cd4f898c2961d5b16e24cab/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersdcd2c84fda5b77d0d4b17b94d3581fbec6b5bd107cd4f898c2961d5b16e24cabS3Bucket7CA07F13",
+            "trace": [
+              "new FileAssetParameters (/home/shamaz/web root/as/python/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:16:32)",
+              "LegacyStackSynthesizer.doAddFileAsset (/home/shamaz/web root/as/python/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:154:16)",
+              "LegacyStackSynthesizer.addFileAsset (/home/shamaz/web root/as/python/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:74:19)",
+              "PythonStack.addFileAsset (/home/shamaz/web root/as/python/node_modules/@aws-cdk/core/lib/stack.ts:657:29)",
+              "LegacyStackSynthesizer.addFileAsset (/home/shamaz/web root/as/python/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:78:25)",
+              "new Asset (/home/shamaz/web root/as/python/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:151:40)",
+              "AssetCode.bind (/home/shamaz/web root/as/python/node_modules/@aws-cdk/aws-lambda/lib/code.ts:251:20)",
+              "new Function (/home/shamaz/web root/as/python/node_modules/@aws-cdk/aws-lambda/lib/function.ts:572:29)",
+              "new PythonStack (/home/shamaz/web root/as/python/lib/python-stack.ts:24:25)",
+              "Object.<anonymous> (/home/shamaz/web root/as/python/bin/python.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/shamaz/web root/as/python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/shamaz/web root/as/python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/shamaz/web root/as/python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/shamaz/web root/as/python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/home/shamaz/.nvm/versions/node/v14.15.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/PythonStack/AssetParameters/dcd2c84fda5b77d0d4b17b94d3581fbec6b5bd107cd4f898c2961d5b16e24cab/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersdcd2c84fda5b77d0d4b17b94d3581fbec6b5bd107cd4f898c2961d5b16e24cabS3VersionKeyACFCB6F9",
+            "trace": [
+              "new FileAssetParameters (/home/shamaz/web root/as/python/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:21:31)",
+              "LegacyStackSynthesizer.doAddFileAsset (/home/shamaz/web root/as/python/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:154:16)",
+              "LegacyStackSynthesizer.addFileAsset (/home/shamaz/web root/as/python/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:74:19)",
+              "PythonStack.addFileAsset (/home/shamaz/web root/as/python/node_modules/@aws-cdk/core/lib/stack.ts:657:29)",
+              "LegacyStackSynthesizer.addFileAsset (/home/shamaz/web root/as/python/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:78:25)",
+              "new Asset (/home/shamaz/web root/as/python/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:151:40)",
+              "AssetCode.bind (/home/shamaz/web root/as/python/node_modules/@aws-cdk/aws-lambda/lib/code.ts:251:20)",
+              "new Function (/home/shamaz/web root/as/python/node_modules/@aws-cdk/aws-lambda/lib/function.ts:572:29)",
+              "new PythonStack (/home/shamaz/web root/as/python/lib/python-stack.ts:24:25)",
+              "Object.<anonymous> (/home/shamaz/web root/as/python/bin/python.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/shamaz/web root/as/python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/shamaz/web root/as/python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/shamaz/web root/as/python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/shamaz/web root/as/python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/home/shamaz/.nvm/versions/node/v14.15.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/PythonStack/AssetParameters/dcd2c84fda5b77d0d4b17b94d3581fbec6b5bd107cd4f898c2961d5b16e24cab/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersdcd2c84fda5b77d0d4b17b94d3581fbec6b5bd107cd4f898c2961d5b16e24cabArtifactHashD26B5196",
+            "trace": [
+              "new FileAssetParameters (/home/shamaz/web root/as/python/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:26:34)",
+              "LegacyStackSynthesizer.doAddFileAsset (/home/shamaz/web root/as/python/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:154:16)",
+              "LegacyStackSynthesizer.addFileAsset (/home/shamaz/web root/as/python/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:74:19)",
+              "PythonStack.addFileAsset (/home/shamaz/web root/as/python/node_modules/@aws-cdk/core/lib/stack.ts:657:29)",
+              "LegacyStackSynthesizer.addFileAsset (/home/shamaz/web root/as/python/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:78:25)",
+              "new Asset (/home/shamaz/web root/as/python/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:151:40)",
+              "AssetCode.bind (/home/shamaz/web root/as/python/node_modules/@aws-cdk/aws-lambda/lib/code.ts:251:20)",
+              "new Function (/home/shamaz/web root/as/python/node_modules/@aws-cdk/aws-lambda/lib/function.ts:572:29)",
+              "new PythonStack (/home/shamaz/web root/as/python/lib/python-stack.ts:24:25)",
+              "Object.<anonymous> (/home/shamaz/web root/as/python/bin/python.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/shamaz/web root/as/python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/shamaz/web root/as/python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/shamaz/web root/as/python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/shamaz/web root/as/python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/home/shamaz/.nvm/versions/node/v14.15.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/PythonStack/SendEmailEndPoint/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SendEmailEndPoint55D5887C",
+            "trace": [
+              "new RestApi (/home/shamaz/web root/as/python/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:694:22)",
+              "new PythonStack (/home/shamaz/web root/as/python/lib/python-stack.ts:32:17)",
+              "Object.<anonymous> (/home/shamaz/web root/as/python/bin/python.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/shamaz/web root/as/python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/shamaz/web root/as/python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/shamaz/web root/as/python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/shamaz/web root/as/python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/home/shamaz/.nvm/versions/node/v14.15.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/PythonStack/SendEmailEndPoint/CloudWatchRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SendEmailEndPointCloudWatchRoleC53822C2",
+            "trace": [
+              "new Role (/home/shamaz/web root/as/python/node_modules/@aws-cdk/aws-iam/lib/role.ts:327:18)",
+              "RestApi.configureCloudWatchRole (/home/shamaz/web root/as/python/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:494:18)",
+              "new RestApi (/home/shamaz/web root/as/python/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:711:12)",
+              "new PythonStack (/home/shamaz/web root/as/python/lib/python-stack.ts:32:17)",
+              "Object.<anonymous> (/home/shamaz/web root/as/python/bin/python.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/shamaz/web root/as/python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/shamaz/web root/as/python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/shamaz/web root/as/python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/shamaz/web root/as/python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/home/shamaz/.nvm/versions/node/v14.15.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/PythonStack/SendEmailEndPoint/Account": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SendEmailEndPointAccount7AAD8855",
+            "trace": [
+              "RestApi.configureCloudWatchRole (/home/shamaz/web root/as/python/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:499:22)",
+              "new RestApi (/home/shamaz/web root/as/python/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:711:12)",
+              "new PythonStack (/home/shamaz/web root/as/python/lib/python-stack.ts:32:17)",
+              "Object.<anonymous> (/home/shamaz/web root/as/python/bin/python.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/shamaz/web root/as/python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/shamaz/web root/as/python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/shamaz/web root/as/python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/shamaz/web root/as/python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/home/shamaz/.nvm/versions/node/v14.15.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/PythonStack/SendEmailEndPoint/Deployment/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SendEmailEndPointDeploymentB02F3B1B8e03bd86b4d66bb1d95d9f96ad63152a",
+            "trace": [
+              "new Deployment (/home/shamaz/web root/as/python/node_modules/@aws-cdk/aws-apigateway/lib/deployment.ts:75:21)",
+              "RestApi.configureDeployment (/home/shamaz/web root/as/python/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:510:32)",
+              "new RestApi (/home/shamaz/web root/as/python/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:714:10)",
+              "new PythonStack (/home/shamaz/web root/as/python/lib/python-stack.ts:32:17)",
+              "Object.<anonymous> (/home/shamaz/web root/as/python/bin/python.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/shamaz/web root/as/python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/shamaz/web root/as/python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/shamaz/web root/as/python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/shamaz/web root/as/python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/home/shamaz/.nvm/versions/node/v14.15.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/PythonStack/SendEmailEndPoint/DeploymentStage.prod/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SendEmailEndPointDeploymentStageprodAAD8A0FD",
+            "trace": [
+              "new Stage (/home/shamaz/web root/as/python/node_modules/@aws-cdk/aws-apigateway/lib/stage.ts:240:22)",
+              "RestApi.configureDeployment (/home/shamaz/web root/as/python/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:520:30)",
+              "new RestApi (/home/shamaz/web root/as/python/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:714:10)",
+              "new PythonStack (/home/shamaz/web root/as/python/lib/python-stack.ts:32:17)",
+              "Object.<anonymous> (/home/shamaz/web root/as/python/bin/python.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/shamaz/web root/as/python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/shamaz/web root/as/python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/shamaz/web root/as/python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/shamaz/web root/as/python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/home/shamaz/.nvm/versions/node/v14.15.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/PythonStack/SendEmailEndPoint/Endpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SendEmailEndPointEndpointE6D1DD47",
+            "trace": [
+              "RestApi.configureDeployment (/home/shamaz/web root/as/python/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:525:7)",
+              "new RestApi (/home/shamaz/web root/as/python/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:714:10)",
+              "new PythonStack (/home/shamaz/web root/as/python/lib/python-stack.ts:32:17)",
+              "Object.<anonymous> (/home/shamaz/web root/as/python/bin/python.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/shamaz/web root/as/python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/shamaz/web root/as/python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/shamaz/web root/as/python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/shamaz/web root/as/python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/home/shamaz/.nvm/versions/node/v14.15.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/PythonStack/SendEmailEndPoint/Default/sendmail/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SendEmailEndPointsendmail21CF08A1",
+            "trace": [
+              "new Resource (/home/shamaz/web root/as/python/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:446:22)",
+              "RootResource.addResource (/home/shamaz/web root/as/python/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:183:12)",
+              "RootResource.resourceForPath (/home/shamaz/web root/as/python/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:362:23)",
+              "new PythonStack (/home/shamaz/web root/as/python/lib/python-stack.ts:35:8)",
+              "Object.<anonymous> (/home/shamaz/web root/as/python/bin/python.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/shamaz/web root/as/python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/shamaz/web root/as/python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/shamaz/web root/as/python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/shamaz/web root/as/python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/home/shamaz/.nvm/versions/node/v14.15.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/PythonStack/SendEmailEndPoint/Default/sendmail/POST/ApiPermission.PythonStackSendEmailEndPoint74996537.POST..sendmail": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SendEmailEndPointsendmailPOSTApiPermissionPythonStackSendEmailEndPoint74996537POSTsendmailB5AEFD2F",
+            "trace": [
+              "Function.addPermission (/home/shamaz/web root/as/python/node_modules/@aws-cdk/aws-lambda/lib/function-base.ts:245:5)",
+              "LambdaIntegration.bind (/home/shamaz/web root/as/python/node_modules/@aws-cdk/aws-apigateway/lib/integrations/lambda.ts:63:18)",
+              "new Method (/home/shamaz/web root/as/python/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:197:36)",
+              "Resource.addMethod (/home/shamaz/web root/as/python/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:187:12)",
+              "new PythonStack (/home/shamaz/web root/as/python/lib/python-stack.ts:36:8)",
+              "Object.<anonymous> (/home/shamaz/web root/as/python/bin/python.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/shamaz/web root/as/python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/shamaz/web root/as/python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/shamaz/web root/as/python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/shamaz/web root/as/python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/home/shamaz/.nvm/versions/node/v14.15.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/PythonStack/SendEmailEndPoint/Default/sendmail/POST/ApiPermission.Test.PythonStackSendEmailEndPoint74996537.POST..sendmail": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SendEmailEndPointsendmailPOSTApiPermissionTestPythonStackSendEmailEndPoint74996537POSTsendmail9BD097AB",
+            "trace": [
+              "Function.addPermission (/home/shamaz/web root/as/python/node_modules/@aws-cdk/aws-lambda/lib/function-base.ts:245:5)",
+              "LambdaIntegration.bind (/home/shamaz/web root/as/python/node_modules/@aws-cdk/aws-apigateway/lib/integrations/lambda.ts:71:20)",
+              "new Method (/home/shamaz/web root/as/python/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:197:36)",
+              "Resource.addMethod (/home/shamaz/web root/as/python/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:187:12)",
+              "new PythonStack (/home/shamaz/web root/as/python/lib/python-stack.ts:36:8)",
+              "Object.<anonymous> (/home/shamaz/web root/as/python/bin/python.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/shamaz/web root/as/python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/shamaz/web root/as/python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/shamaz/web root/as/python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/shamaz/web root/as/python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/home/shamaz/.nvm/versions/node/v14.15.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/PythonStack/SendEmailEndPoint/Default/sendmail/POST/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SendEmailEndPointsendmailPOSTAE8A0D70",
+            "trace": [
+              "new Method (/home/shamaz/web root/as/python/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:215:22)",
+              "Resource.addMethod (/home/shamaz/web root/as/python/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:187:12)",
+              "new PythonStack (/home/shamaz/web root/as/python/lib/python-stack.ts:36:8)",
+              "Object.<anonymous> (/home/shamaz/web root/as/python/bin/python.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/shamaz/web root/as/python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/shamaz/web root/as/python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/shamaz/web root/as/python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/shamaz/web root/as/python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/home/shamaz/.nvm/versions/node/v14.15.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/PythonStack/Send email endpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Sendemailendpoint",
+            "trace": [
+              "new PythonStack (/home/shamaz/web root/as/python/lib/python-stack.ts:40:5)",
+              "Object.<anonymous> (/home/shamaz/web root/as/python/bin/python.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Module.m._compile (/home/shamaz/web root/as/python/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/shamaz/web root/as/python/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "main (/home/shamaz/web root/as/python/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/home/shamaz/web root/as/python/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1063:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)",
+              "Module.load (internal/modules/cjs/loader.js:928:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:769:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)",
+              "/home/shamaz/.nvm/versions/node/v14.15.1/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/PythonStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata",
+            "trace": [
+              "new MetadataResource (/home/shamaz/web root/as/python/node_modules/@aws-cdk/core/lib/private/metadata-resource.ts:51:24)",
+              "/home/shamaz/web root/as/python/node_modules/@aws-cdk/core/lib/private/synthesis.ts:140:5",
+              "visit (/home/shamaz/web root/as/python/node_modules/@aws-cdk/core/lib/private/synthesis.ts:200:5)",
+              "visit (/home/shamaz/web root/as/python/node_modules/@aws-cdk/core/lib/private/synthesis.ts:196:5)",
+              "injectMetadataResources (/home/shamaz/web root/as/python/node_modules/@aws-cdk/core/lib/private/synthesis.ts:131:3)",
+              "Object.synthesize (/home/shamaz/web root/as/python/node_modules/@aws-cdk/core/lib/private/synthesis.ts:18:3)",
+              "App.synth (/home/shamaz/web root/as/python/node_modules/@aws-cdk/core/lib/stage.ts:188:23)",
+              "process.<anonymous> (/home/shamaz/web root/as/python/node_modules/@aws-cdk/core/lib/app.ts:123:45)",
+              "Object.onceWrapper (events.js:422:26)",
+              "process.emit (events.js:315:20)",
+              "process.EventEmitter.emit (domain.js:486:12)",
+              "process.emit (/home/shamaz/web root/as/python/node_modules/source-map-support/source-map-support.js:495:21)"
+            ]
+          }
+        ],
+        "/PythonStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable",
+            "trace": [
+              "new MetadataResource (/home/shamaz/web root/as/python/node_modules/@aws-cdk/core/lib/private/metadata-resource.ts:60:27)",
+              "/home/shamaz/web root/as/python/node_modules/@aws-cdk/core/lib/private/synthesis.ts:140:5",
+              "visit (/home/shamaz/web root/as/python/node_modules/@aws-cdk/core/lib/private/synthesis.ts:200:5)",
+              "visit (/home/shamaz/web root/as/python/node_modules/@aws-cdk/core/lib/private/synthesis.ts:196:5)",
+              "injectMetadataResources (/home/shamaz/web root/as/python/node_modules/@aws-cdk/core/lib/private/synthesis.ts:131:3)",
+              "Object.synthesize (/home/shamaz/web root/as/python/node_modules/@aws-cdk/core/lib/private/synthesis.ts:18:3)",
+              "App.synth (/home/shamaz/web root/as/python/node_modules/@aws-cdk/core/lib/stage.ts:188:23)",
+              "process.<anonymous> (/home/shamaz/web root/as/python/node_modules/@aws-cdk/core/lib/app.ts:123:45)",
+              "Object.onceWrapper (events.js:422:26)",
+              "process.emit (events.js:315:20)",
+              "process.EventEmitter.emit (domain.js:486:12)",
+              "process.emit (/home/shamaz/web root/as/python/node_modules/source-map-support/source-map-support.js:495:21)"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

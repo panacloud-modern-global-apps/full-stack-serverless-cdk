@@ -26,7 +26,7 @@ def handler(event, context):
 ```
 <br>
 
-> **Note:** Make sure do not add the axios dependency in your lambda folder. We will add the dependency with the help of lambda layer which we will cover in the next step.
+> **Note:** Make sure do not add the requests dependency in your lambda folder. We will add the dependency with the help of lambda layer which we will cover in the next step.
 
 <br>
 

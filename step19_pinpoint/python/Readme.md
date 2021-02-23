@@ -16,7 +16,7 @@ Python doesn't have an interface feature as some other languages do, though it d
 
 # [AWS Lambda function handler in Python](https://docs.aws.amazon.com/lambda/latest/dg/python-handler.html)
 
-#Boto3
+# Boto3
 
 ## We will also use boto3 in some of our lambda functions
 

@@ -1,8 +1,13 @@
-
-TypeScript was the first language supported for developing AWS CDK applications as CDK infrastructure is built in Typescript, and there is a substantial amount of example CDK code written in TypeScript. We have kept  CDK code in Typescript and changed the rest into Python, mainly lambda functions.
+TypeScript was the first language supported for developing AWS CDK applications as CDK infrastructure is built in Typescript, and there is a substantial amount of example CDK code written in TypeScript. We have kept the main cdk stack code in Typescript and changed the rest into Python, mainly lambda function code.
 
 Reference article:
-[Which programming language is best for CDK ](https://awsmaniac.com/which-programming-language-is-the-best-for-aws-cdk/)
+[Which programming language is best for aws-cdk ](https://awsmaniac.com/which-programming-language-is-the-best-for-aws-cdk/)
+
+## Why We Use EFS With Lambda
+
+Lambda function was limited to 512MB of /tmp directory storage.While this is sufficient for most use cases, it’s oftenprohibitive for use cases such as Machine Learning, asTensorflow models are often GBs in size and cannot fit into thelimited /tmp storage. Or maybe you’re processing large amounts(say, GBs) of data and need to store them in the /tmp directoryfor easier access
+
+Amazon EFS is a fully managed, elastic, shared file system designed to be consumed by other AWS services, such as Lambda. With the release of Amazon EFS for Lambda, you can now easily share data across function invocations. You can also read large reference data files, and write function output to a persistent and shared store.
 
 # Type pitfalls
 
@@ -16,35 +21,8 @@ Python doesn't have an interface feature as some other languages do, though it d
 
 # [AWS Lambda function handler in Python](https://docs.aws.amazon.com/lambda/latest/dg/python-handler.html)
 
-#Boto3
-
-## We will also use boto3 in some of our lambda functions
-
-Boto is the Amazon Web Services (AWS) SDK for Python. It enables Python developers to create, configure, and manage AWS services, such as EC2 and S3. Boto provides an easy to use, object-oriented API, as well as low-level access to AWS services.
-
-## For more information about boto3 check out this [documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html)
-
-[Boto3 Documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html)
-
 # AWS CDK in Python
 
 If you wish to work with CDK in Python:
-
 [Working with Python in CDK](https://docs.aws.amazon.com/cdk/latest/guide/work-with-cdk-python.html)
 [AWS CDK idioms in Python](https://docs.aws.amazon.com/cdk/latest/guide/work-with-cdk-python.html)
-
-
-# Welcome to your CDK TypeScript project!
-
-This is a blank project for TypeScript development with CDK.
-
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
-
-## Useful commands
-
- * `npm run build`   compile typescript to js
- * `npm run watch`   watch for changes and compile
- * `npm run test`    perform the jest unit tests
- * `cdk deploy`      deploy this stack to your default AWS account/region
- * `cdk diff`        compare deployed stack with current state
- * `cdk synth`       emits the synthesized CloudFormation template

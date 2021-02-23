@@ -1,0 +1,52 @@
+enum ACTIONS {
+  ACCEPT_BOOKING
+  REJECT_BOOKING
+  REQUEST_BOOKING
+}
+
+type Event {
+  result: String
+}
+
+type ResponseOutput {
+  timeSlotId: ID!
+  userName: String!
+  action: ACTIONS!
+}
+
+type TimeSlot {
+    id: ID!
+    from: String!
+    to: String!
+    isBooked: Boolean!
+    bookedBy: String
+    isBookingRequested: Boolean
+    bookingRequestBy: String
+}
+
+input InputTimeSlot {
+    from: String!
+    to: String!
+}
+
+type Query {
+  getTimeSlots: [TimeSlot]
+}
+
+type Mutation {
+  addTimeSlot(timeSlot: InputTimeSlot!): Event
+  deleteTimeSlot(id: ID!): Event
+  
+  bookTimeSlot(id: ID!): Event
+  addBookingRequest(id: ID!, userName:String!): Event
+  deleteBookingRequest(id: ID!): Event
+  cancelBooking(id: ID!): Event
+  resetAllBookings: Event
+    
+  generateAction(timeSlotId: ID!, userName:String!, action:ACTIONS): ResponseOutput # with no data source
+}
+
+type Subscription {
+  onGenerateAction: ResponseOutput
+    @aws_subscribe(mutations: ["generateAction"])
+}

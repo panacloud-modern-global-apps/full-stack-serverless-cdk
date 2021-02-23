@@ -12,7 +12,7 @@ Reference article:
 
 Change Runtime from NODEJS TO PYTHON in lambda function in your stack file under lib folder as we are writing our handler in python.
 
-```
+```javascript
 const Lambda = new lambda.Function(this, "Pinpoint-In-Pracitce", {
       runtime: lambda.Runtime.PYTHON_3_8,
       handler: "main.handler",
@@ -23,8 +23,17 @@ const Lambda = new lambda.Function(this, "Pinpoint-In-Pracitce", {
     
 ```
 
-
 ## Step 03
+We will use boto3 in our handler code. To install boto3 run following command
+
+```python
+
+pip install boto3
+
+```
+
+
+## Step 04
 
 Create a file pythonLambda/index.py and add handler code for your lambda function
 
@@ -91,7 +100,7 @@ def handler(event, context):
         print(error.response['Error']['Message'])
 ```
 
-## Step 04
+## Step 05
 Installing Bootstrap Stack. 
 For Lambda functions we will need to do [bootstrapping](https://docs.aws.amazon.com/cdk/latest/guide/bootstrapping.html) becuase they require [assets](https://docs.aws.amazon.com/cdk/latest/guide/assets.html) i.e. handler code that will be bundleded with the CDK library etc. and stored in S3 bootstraped bucket:
 
@@ -100,7 +109,7 @@ cdk bootstrap
 ```
 
 
-## Step 05 (optional)
+## Step 06 (optional)
 
 Run the following command to see the cloud formation template of your cdk code.
 
@@ -108,7 +117,7 @@ Run the following command to see the cloud formation template of your cdk code.
 cdk synth
 ```
 
-## Step 06 (optional)
+## Step 07 (optional)
 
 Run the following command to see the difference between the new changes that you just made and the code that has already been deployed on the cloud.
 ```
@@ -116,7 +125,7 @@ cdk diff
 ```
 
 
-## Step 07
+## Step 08
 
 Run the following command to deploy your code to the cloud. 
 

@@ -26,7 +26,7 @@ const Lambda = new lambda.Function(this, "Pinpoint-In-Pracitce", {
 ## Step 03
 We will use boto3 in our handler code. To install boto3 run following command
 
-```python
+```python3
 
 pip install boto3
 

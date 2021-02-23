@@ -11,7 +11,7 @@ Reference article:
 
 Change Runtime from NODEJS TO PYTHON in lambda function in your stack file under lib folder as we are writing our handler in python.
 
-```
+```javascript
 const helloLambda = new lambda.Function(this, "HelloHandlerLambda", {
       runtime: lambda.Runtime.PYTHON_3_8,
       code: lambda.Code.fromAsset("pythonLambda"),
@@ -23,7 +23,7 @@ const helloLambda = new lambda.Function(this, "HelloHandlerLambda", {
 
 Create a file pythonLambda/hello.py and add handler code for your lambda function
 
-```
+```javascript
 from __future__ import print_function
 
 
@@ -37,7 +37,7 @@ def handler(event, context):
 Installing Bootstrap Stack. 
 For Lambda functions we will need to do [bootstrapping](https://docs.aws.amazon.com/cdk/latest/guide/bootstrapping.html) becuase they require [assets](https://docs.aws.amazon.com/cdk/latest/guide/assets.html) i.e. handler code that will be bundleded with the CDK library etc. and stored in S3 bootstraped bucket:
 
-```
+```javascript
 cdk bootstrap
 ```
 
@@ -46,14 +46,14 @@ cdk bootstrap
 
 Run the following command to see the cloud formation template of your cdk code.
 
-```
+```javascript
 cdk synth
 ```
 
 ## Step 06 (optional)
 
 Run the following command to see the difference between the new changes that you just made and the code that has already been deployed on the cloud.
-```
+```javascript
 cdk diff
 ```
 
@@ -62,13 +62,13 @@ cdk diff
 
 Run the following command to deploy your code to the cloud. 
 
-```
+```javascript
 cdk deploy
 ```
 
 if you did not run "npm run watch" in the step 4 then you need to build the project before deployment by running the folliwng command. npm run build will also compile typescript files of the lambda function
 
-```
+```javascript
 npm run build && cdk deploy
 OR
 yarn build && cdk deploy

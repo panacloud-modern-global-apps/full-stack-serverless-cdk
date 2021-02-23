@@ -35,7 +35,7 @@ pip install boto3
 
 ## Step 04
 
-Create a file pythonLambda/index.py and add handler code for your lambda function
+Create a file lambda/main.py and add handler code for your lambda function
 
 ```javascript
 import boto3

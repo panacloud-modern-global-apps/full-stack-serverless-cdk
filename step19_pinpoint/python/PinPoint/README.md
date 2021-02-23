@@ -37,7 +37,7 @@ pip install boto3
 
 Create a file pythonLambda/index.py and add handler code for your lambda function
 
-```
+```javascript
 import boto3
 from botocore.exceptions import ClientError
 
@@ -104,7 +104,7 @@ def handler(event, context):
 Installing Bootstrap Stack. 
 For Lambda functions we will need to do [bootstrapping](https://docs.aws.amazon.com/cdk/latest/guide/bootstrapping.html) becuase they require [assets](https://docs.aws.amazon.com/cdk/latest/guide/assets.html) i.e. handler code that will be bundleded with the CDK library etc. and stored in S3 bootstraped bucket:
 
-```
+```javascript
 cdk bootstrap
 ```
 
@@ -113,14 +113,14 @@ cdk bootstrap
 
 Run the following command to see the cloud formation template of your cdk code.
 
-```
+```javascript
 cdk synth
 ```
 
 ## Step 07 (optional)
 
 Run the following command to see the difference between the new changes that you just made and the code that has already been deployed on the cloud.
-```
+```javascript
 cdk diff
 ```
 
@@ -129,13 +129,13 @@ cdk diff
 
 Run the following command to deploy your code to the cloud. 
 
-```
+```javascript
 cdk deploy
 ```
 
 if you did not run "npm run watch" in the step 4 then you need to build the project before deployment by running the folliwng command. npm run build will also compile typescript files of the lambda function
 
-```
+```javascript
 npm run build && cdk deploy
 OR
 yarn build && cdk deploy

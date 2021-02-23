@@ -81,7 +81,7 @@ def handler(event):
         result = event.client.write_records(
             DatabaseName=database, TableName=tablename, Records=records, CommonAttributes={})
         print("WriteRecords Status: [%s]" %
-              result['ResponseMetadata']['HTTPStatusCode'])
+              result)
     except ClientError as err:
         print('Failed Writing Data')
         print("Error:", err)

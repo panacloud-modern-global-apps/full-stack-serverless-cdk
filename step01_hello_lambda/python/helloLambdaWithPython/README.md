@@ -9,7 +9,7 @@ Reference article:
 
 ## Step 02
 
-Change Runtinme from NODEJS TO PYTHON in lambda function in your stack file under lib folder as we are writing our handler in python.
+Change Runtime from NODEJS TO PYTHON in lambda function in your stack file under lib folder as we are writing our handler in python.
 
 ```
 const hello = new lambda.Function(this, "HelloHandler", {

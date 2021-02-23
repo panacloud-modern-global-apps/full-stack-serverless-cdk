@@ -13,12 +13,10 @@ Reference article:
 Change Runtime from NODEJS TO PYTHON in lambda function in your stack file under lib folder as we are writing our handler in python.
 
 ```javascript
-const Lambda = new lambda.Function(this, "Pinpoint-In-Pracitce", {
+const TSlambda = new lambda.Function(this, "TSLambda", {
       runtime: lambda.Runtime.PYTHON_3_8,
-      handler: "main.handler",
-      role: role, ///Defining role to Lambda
       code: lambda.Code.fromAsset("lambda"),
-      memorySize: 1024,
+      handler: "main.handler",
     });
     
 ```
@@ -38,66 +36,57 @@ pip install boto3
 Create a file lambda/main.py and add handler code for your lambda function
 
 ```javascript
+import json
+import os
 import boto3
+from botocore.config import Config
 from botocore.exceptions import ClientError
+from datetime import datetime
 
 
-AWS_REGION = '<Region>'
+def handler(event):
+    session = boto3.Session()
+    write_client = session.client('timestream-write', config=Config(
+        read_timeout=20, max_pool_connections=5000, retries={'max-attempts': 10}))
+    current_time = datetime.now()
 
-SENDER_ADDRESS = "<Sender Email Address>"
+    database = os.environ['TS_DATABASE_NAME']
+    tablename = os.environ['TS_TABLE_NAME']
 
-APP_ID = "<APP ID>"
+    dimensions = [
+        {'Name': 'region', 'Value': 'us-west-2'},
+        {'Name': 'az', 'Value': 'az1'},
+        {'Name': 'hostname', 'Value': 'usama'}
+    ]
 
-SUBJECT = "AMAZON PINPOINT IN PRATICE WITH PYTHON"
+    cpu_utilization = {
+        'Dimensions': dimensions,
+        'MeasureName': 'cpu_utilization',
+        'MeasureValue': '13.5',
+        'MeasureValueType': 'DOUBLE',
+        'Time': current_time
+    }
 
-BODY_TEXT = "Amazon Pinpoint Test Email"
+    memory_utilization = {
+        'Dimensions': dimensions,
+        'MeasureName': 'memory_utilization',
+        'MeasureValue': '40',
+        'MeasureValueType': 'DOUBLE',
+        'Time': current_time
+    }
 
-HTML_BODY = """<html>
-<head></head>
-<body>
-<h1>Amazon Pinpoint Test</h1>
-<p>This email was sent using Amazon Pinpoint</p>
-</body>
-"""
-
-CHATSET = "UTF-8"
-
-client = boto3.client('pinpoint', region_name=AWS_REGION)
-
-
-def handler(event, context):
-    TO_ADDRESS = event['arguments']['recipientEmail']
+    records = [cpu_utilization, memory_utilization]
 
     try:
-        response = client.send_messages(
-            ApplicationId=APP_ID,
-            MessageRequest={
-                'Addresses': {
-                    TO_ADDRESS: {
-                        'ChannelType': 'EMAIL'
-                    }
-                },
-                'MessageConfiguration': {
-                    'EmailMessage': {
-                        'FromAddress': SENDER_ADDRESS,
-                        'SimpleEmail': {
-                            'Subject': {
-                                'Data': SUBJECT
-                            },
-                            'HtmlPart': {
-                                'Data': HTML_BODY
-                            },
-                            'TextPart': {
-                                'Data': BODY_TEXT
-                            }
-                        }
-                    }
-                }
-            }
-        )
-        print('Message Sent! Message ID : ' + str(response))
-    except ClientError as error:
-        print(error.response['Error']['Message'])
+        result = event.client.write_records(
+            DatabaseName=database, TableName=tablename, Records=records, CommonAttributes={})
+        print("WriteRecords Status: [%s]" %
+              result['ResponseMetadata']['HTTPStatusCode'])
+    except ClientError as err:
+        print('Failed Writing Data')
+        print("Error:", err)
+        
+        
 ```
 
 ## Step 05

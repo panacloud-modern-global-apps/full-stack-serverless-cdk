@@ -1,50 +1,143 @@
 
-TypeScript was the first language supported for developing AWS CDK applications as CDK infrastructure is built in Typescript, and there is a substantial amount of example CDK code written in TypeScript. We have kept  CDK code in Typescript and changed the rest into Python, mainly lambda functions.
+# Steps to compile the code
+
+## Step 01
+
+Our cdk code remains in typescript. We will not change it to python. Read the reference article for better understanding.
 
 Reference article:
 [Which programming language is best for CDK ](https://awsmaniac.com/which-programming-language-is-the-best-for-aws-cdk/)
 
-# Type pitfalls
+## Step 02
 
-Python uses dynamic typing, where variables may refer to a value of any type. Parameters and return values may be annotated with types, but these are "hints" and are not enforced. This means that in Python, it is easy to pass the incorrect type of value to a AWS CDK construct. Instead of getting a type error during build, as you would from a statically-typed language, you may instead get a runtime error when the JSII layer (which translates between Python and the AWS CDK's TypeScript core) is unable to deal with the unexpected type.
+Change Runtime from NODEJS TO PYTHON in lambda function in your stack file under lib folder as we are writing our handler in python.
 
-# Using interfaces
+```javascript
+const Lambda = new lambda.Function(this, "Pinpoint-In-Pracitce", {
+      runtime: lambda.Runtime.PYTHON_3_8,
+      handler: "main.handler",
+      role: role, ///Defining role to Lambda
+      code: lambda.Code.fromAsset("lambda"),
+      memorySize: 1024,
+    });
+    
+```
 
-Python doesn't have an interface feature as some other languages do, though it does have abstract base classes, which are similar. TypeScript, the language in which the AWS CDK is implemented, does provide interfaces, and constructs and other AWS CDK objects often require an object that adheres to a particular interface, rather than inheriting from a particular class. So the AWS CDK provides its own interface feature as part of the JSII layer.
+## Step 03
+We will use boto3 in our handler code. To install boto3 run following command
 
-# [Building Lambda functions with Python](https://docs.aws.amazon.com/lambda/latest/dg/lambda-python.html)
+```python3
 
-# [AWS Lambda function handler in Python](https://docs.aws.amazon.com/lambda/latest/dg/python-handler.html)
+pip install boto3
 
-#Boto3
-
-## We will also use boto3 in some of our lambda functions
-
-Boto is the Amazon Web Services (AWS) SDK for Python. It enables Python developers to create, configure, and manage AWS services, such as EC2 and S3. Boto provides an easy to use, object-oriented API, as well as low-level access to AWS services.
-
-## For more information about boto3 check out this [documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html)
-
-[Boto3 Documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html)
-
-# AWS CDK in Python
-
-If you wish to work with CDK in Python:
-
-[Working with Python in CDK](https://docs.aws.amazon.com/cdk/latest/guide/work-with-cdk-python.html)
-[AWS CDK idioms in Python](https://docs.aws.amazon.com/cdk/latest/guide/work-with-cdk-python.html)
+```
 
 
-# Welcome to your CDK TypeScript project!
+## Step 04
 
-This is a blank project for TypeScript development with CDK.
+Create a file lambda/main.py and add handler code for your lambda function
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+```javascript
+import boto3
+from botocore.exceptions import ClientError
 
-## Useful commands
 
- * `npm run build`   compile typescript to js
- * `npm run watch`   watch for changes and compile
- * `npm run test`    perform the jest unit tests
- * `cdk deploy`      deploy this stack to your default AWS account/region
- * `cdk diff`        compare deployed stack with current state
- * `cdk synth`       emits the synthesized CloudFormation template
+AWS_REGION = '<Region>'
+
+SENDER_ADDRESS = "<Sender Email Address>"
+
+APP_ID = "<APP ID>"
+
+SUBJECT = "AMAZON PINPOINT IN PRATICE WITH PYTHON"
+
+BODY_TEXT = "Amazon Pinpoint Test Email"
+
+HTML_BODY = """<html>
+<head></head>
+<body>
+<h1>Amazon Pinpoint Test</h1>
+<p>This email was sent using Amazon Pinpoint</p>
+</body>
+"""
+
+CHATSET = "UTF-8"
+
+client = boto3.client('pinpoint', region_name=AWS_REGION)
+
+
+def handler(event, context):
+    TO_ADDRESS = event['arguments']['recipientEmail']
+
+    try:
+        response = client.send_messages(
+            ApplicationId=APP_ID,
+            MessageRequest={
+                'Addresses': {
+                    TO_ADDRESS: {
+                        'ChannelType': 'EMAIL'
+                    }
+                },
+                'MessageConfiguration': {
+                    'EmailMessage': {
+                        'FromAddress': SENDER_ADDRESS,
+                        'SimpleEmail': {
+                            'Subject': {
+                                'Data': SUBJECT
+                            },
+                            'HtmlPart': {
+                                'Data': HTML_BODY
+                            },
+                            'TextPart': {
+                                'Data': BODY_TEXT
+                            }
+                        }
+                    }
+                }
+            }
+        )
+        print('Message Sent! Message ID : ' + str(response))
+    except ClientError as error:
+        print(error.response['Error']['Message'])
+```
+
+## Step 05
+Installing Bootstrap Stack. 
+For Lambda functions we will need to do [bootstrapping](https://docs.aws.amazon.com/cdk/latest/guide/bootstrapping.html) becuase they require [assets](https://docs.aws.amazon.com/cdk/latest/guide/assets.html) i.e. handler code that will be bundleded with the CDK library etc. and stored in S3 bootstraped bucket:
+
+```javascript
+cdk bootstrap
+```
+
+
+## Step 06 (optional)
+
+Run the following command to see the cloud formation template of your cdk code.
+
+```javascript
+cdk synth
+```
+
+## Step 07 (optional)
+
+Run the following command to see the difference between the new changes that you just made and the code that has already been deployed on the cloud.
+```javascript
+cdk diff
+```
+
+
+## Step 08
+
+Run the following command to deploy your code to the cloud. 
+
+```javascript
+cdk deploy
+```
+
+if you did not run "npm run watch" in the step 4 then you need to build the project before deployment by running the folliwng command. npm run build will also compile typescript files of the lambda function
+
+```javascript
+npm run build && cdk deploy
+OR
+yarn build && cdk deploy
+```
+

@@ -129,6 +129,7 @@ export class FrontEnd extends cdk.Stack {
       value: `https://${distribution.domainName}`
     })
 
+
     const websiteDeployment = new s3deploy.BucketDeployment(this, 'DeployWebsite', {
       sources: [s3deploy.Source.asset('./frontend')],
       destinationBucket: websiteBucket,
@@ -175,3 +176,8 @@ BackEndStack.DistributionDomainName = https://dpiuy6ggai1qv.cloudfront.net`. Cop
 
 - Now you can deploy both the stacks by running this command `cdk deploy --all` or you can simply deploy your frontend by running this command `cdk deploy FrontEndStack`. Once your frontend stack deployed, you will get output like this `Outputs:
 FrontEndStack.DistributionDomainName = https://d1n3jxrnp6pe1v.cloudfront.net`. You can access your frontend by this url.
+
+[Step 30 and 31 Video in English on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225959184311084)
+
+[Step 30 and 31 Video in English on YouTube](https://www.youtube.com/watch?v=9qvCPzMOOrk)
+

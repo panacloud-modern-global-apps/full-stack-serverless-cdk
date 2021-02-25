@@ -2,11 +2,11 @@ import boto3
 from botocore.exceptions import ClientError
 
 
-AWS_REGION = 'us-west-2'
+AWS_REGION = '<Region>'
 
-SENDER_ADDRESS = "utahir662@gmail.com"
+SENDER_ADDRESS = "<Sender Email Address>"
 
-APP_ID = "7a30dfc5b4cb4a3695975b9977bfeb49"
+APP_ID = "<APP ID>"
 
 SUBJECT = "AMAZON PINPOINT IN PRATICE WITH PYTHON"
 

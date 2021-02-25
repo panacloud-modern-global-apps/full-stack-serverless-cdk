@@ -53,60 +53,66 @@ npm install @aws-cdk/aws-s3-deployment
 Add the following constructs in your stack
 ```typesscript
 // create a bucket to upload your app files
-const websiteBucket = new s3.Bucket(this, "WebsiteBucket", {
-  versioned: true,
-});
+    const websiteBucket = new s3.Bucket(this, "WebsiteBucket", {
+      versioned: true,
+    });
 
-// create a CDN to deploy your website
+    //creating hosted zone for our domain
+    const myZone = new route53.PublicHostedZone(this, "HostedZone", {
+      zoneName: "panacloud.tk",
+    }) as IHostedZone;
 
-const distribution = new cloudfront.Distribution(this, "Distribution", {
-  defaultBehavior: {
-    origin: new origins.S3Origin(websiteBucket),
+    //ssl ceritificate
+    const certificate = new acm.DnsValidatedCertificate(
+      this,
+      "CrossRegionCertificate",
+      {
+        domainName: "panacloud.tk",
+        hostedZone: myZone,
+        region: "us-east-1",
+      }
+    ) as ICertificate;
 
-    
-  },
-  defaultRootObject: "index.html",
-  enableIpv6:true,
-  
+    // create a CDN to deploy your website
+    const distribution = new cloudfront.Distribution(this, "Distribution", {
+      defaultBehavior: {
+        origin: new origins.S3Origin(websiteBucket),
+      },
+      defaultRootObject: "index.html",
+      enableIpv6: true,
+      domainNames: ["panacloud.tk"],
+      certificate: certificate as any,
+    });
 
-  
-});
+    // housekeeping for uploading the data in bucket
+    new s3deploy.BucketDeployment(this, "DeployWebsite", {
+      sources: [s3deploy.Source.asset("./frontend")],
+      destinationBucket: websiteBucket,
+      distribution,
+      distributionPaths: ["/*"],
+    });
 
-
-// housekeeping for uploading the data in bucket 
-new s3deploy.BucketDeployment(this, "DeployWebsite", {
-  sources: [s3deploy.Source.asset("./website")],
-  destinationBucket: websiteBucket,
-  distribution,
-  distributionPaths: ["/*"],
-});
-
-//creating hosted zone for our domain
-const myZone= new route53.PublicHostedZone(this, 'HostedZone', {
-  zoneName: 'panacloud.tk',
-
-
-});
-
-// Adding AAAA(ipv6) record
-new route53.AaaaRecord(this, 'Alias', {
-  zone: myZone,
-  target: route53.RecordTarget.fromAlias(new targets.CloudFrontTarget(distribution)),
-
-});
-
-// Adding A(ipv4) record
-new route53.ARecord(this, 'AliasA', {
-  zone: myZone,
-  target: route53.RecordTarget.fromAlias(new targets.CloudFrontTarget(distribution)),
-
-});
-
+    // Adding A(ipv4) record
+    new route53.ARecord(this, "AliasA", {
+      zone: myZone,
+      target: route53.RecordTarget.fromAlias(
+        new targets.CloudFrontTarget(distribution)
+      ),
+    });
+    //Adding ipv6 record
+    new route53.AaaaRecord(this, "Alias", {
+      zone: myZone,
+      target: route53.RecordTarget.fromAlias(
+        new targets.CloudFrontTarget(distribution)
+      ),
+    });
 ```
 ## Step 3
 Create frontend of your website in my case, I created `website` folder in my root directory and simply created a `Hello World` file inside of it.
 
 Now build the project and deploy it on cloudformation
+
+#### Note: If you are getting error while deploying it don't panic It can take 30 minutes or longer for the changes to propagate and for AWS to validate the domain and issue the certificate. you can check the status of validation from aws certificate manager console
 
 
 ## Step 4

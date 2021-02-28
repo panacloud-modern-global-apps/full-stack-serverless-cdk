@@ -27,6 +27,7 @@ An Amazon Machine Image (AMI) provides the information required to launch an ins
 
 # Install Dependencies 
 npm install @aws-cdk/aws-ec2
+
 npm i cdk-ec2-key-pair
 
 # Create VPC
@@ -93,7 +94,10 @@ When you create a VPC, you must specify a range of IPv4 addresses for the VPC in
 
 ## Accessing instance from Linux Machine:
 We need a key-pair value to access ec2 instance from linux machine
+
 [Key-pair value and ec2 instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html)
+
+[Access ec2 instance from windows](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html)
 
 # Create key-pair:
 ``` javascript 

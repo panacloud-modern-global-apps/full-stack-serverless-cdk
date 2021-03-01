@@ -181,3 +181,7 @@ FrontEndStack.DistributionDomainName = https://d1n3jxrnp6pe1v.cloudfront.net`. Y
 
 [Step 30 and 31 Video in English on YouTube](https://www.youtube.com/watch?v=9qvCPzMOOrk)
 
+[Step 30 and 31 Video in Urdu on Facebook](https://www.facebook.com/zeeshanhanif/videos/10226003175610839)
+
+[Step 30 and 31 Video in Urdu on YouTube](https://www.youtube.com/watch?v=IuGThHadaj0)
+

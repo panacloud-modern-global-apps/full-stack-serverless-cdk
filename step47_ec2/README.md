@@ -28,6 +28,8 @@ An Amazon Machine Image (AMI) provides the information required to launch an ins
 # Install Dependencies 
 npm install @aws-cdk/aws-ec2
 
+npm i cdk-ec2-key-pair
+
 # Create VPC
 A virtual private cloud (VPC) is a virtual network dedicated to your AWS account. It is logically isolated from other virtual networks in the AWS Cloud. You can launch your AWS resources, such as Amazon EC2 instances, into your VPC.
 
@@ -79,7 +81,7 @@ When you create a VPC, you must specify a range of IPv4 addresses for the VPC in
     $ sudo npm run build && cdk deploy
 ```
 
-## Accessing instance:
+## Accessing instance from Console:
 
 1. Go to ec2 dashboard (https://us-east-2.console.aws.amazon.com/ec2/v2/home?region=us-east-2#Home:)
 2. Select instance (only ruuning one)
@@ -89,6 +91,36 @@ When you create a VPC, you must specify a range of IPv4 addresses for the VPC in
 
 ## Result: 
 ![image info](./img/simple.png)
+
+## Accessing instance from Linux Machine:
+We need a key-pair value to access ec2 instance from linux machine
+
+[Key-pair value and ec2 instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html)
+
+[Access ec2 instance from windows](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html)
+
+# Create key-pair:
+``` javascript 
+     // Create the Key Pair
+    const key = new KeyPair(this, 'A-Key-Pair', {
+      name: 'a-key-pair',
+      description: 'This is a Key Pair',
+      storePublicKey: true, // by default the public key will not be stored in Secrets Manager
+    });
+```
+# Download key-pair:
+``` javascript
+aws secretsmanager get-secret-value \
+  --secret-id ec2-ssh-key/a-key-pair/private \
+  --query SecretString \
+  --output text > a-key-pair.pem
+```
+# Open Terminal:
+``` javascript
+    ssh -i "a-key-pair.pem" ec2-user@ec2-3-133-155-16.us-east-2.compute.amazonaws.com
+```
+# Result:
+![image info](./img/linux.png)
 
 # Setup Server
 ``` javascript 

@@ -14,29 +14,6 @@ export const handler = async (event: PayloadType, context: Context) => {
 
     try {
 
-
-        if (event.customerEmail){
-            var params = {
-                Destination: {
-                  ToAddresses: [event.customerEmail!],
-                },
-                Message: {
-                  Body: {
-                    Text: {
-                      Data: event.SnsMessage!,
-                    },
-                  },
-          
-                  Subject: { Data: "BOOKING REQUEST UPDATE" },
-                },
-                Source: process.env.OWNER_EMAIL!,
-              }
-          
-              const email = await ses.sendEmail(params).promise()
-              console.log(email)
-            } 
-        
-
         if (event.SnsMessage && !event.customerEmail) {
             // sending message to TOPIC ARN
             await sns.publish({

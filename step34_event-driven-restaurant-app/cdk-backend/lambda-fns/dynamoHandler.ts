@@ -54,8 +54,11 @@ export const handler = async (event: EventBridgeEvent<string, any>, context: Con
               const result:any =  await dynamoClient.update(params).promise();
          
               returningPayload.SnsMessage = "your booking request has been accepted"
-          returningPayload.customerEmail = result.Attributes.bookingRequestBy;
-          return returningPayload
+                returningPayload.customerEmail = result.Attributes.bookingRequestBy;
+                console.log(event["detail-type"])
+                console.log(returningPayload);
+
+                return returningPayload
 
             }
         }
@@ -73,8 +76,12 @@ export const handler = async (event: EventBridgeEvent<string, any>, context: Con
                 ReturnValues: "UPDATED_NEW" // NONE | ALL_OLD | UPDATED_OLD | ALL_NEW | UPDATED_NEW,
             };
             await dynamoClient.update(params).promise();
+
             // adding sns message
             returningPayload.SnsMessage = 'Request of booking timeSlot';
+
+            console.log(event["detail-type"])
+            console.log(returningPayload);
         }
 
         //////////////  deleting booking time slot request /////////////////////////
@@ -94,16 +101,22 @@ export const handler = async (event: EventBridgeEvent<string, any>, context: Con
 
           returningPayload.SnsMessage = "your booking request has been declined"
          returningPayload.customerEmail = result.Attributes.bookingRequestBy;
+
+         console.log(returningPayload);
+         console.log(event["detail-type"])
          return returningPayload
      
 
         }
 
-     
+        console.log(returningPayload);
+
         //////////////////////////////////  Returning Final Response ///////////////////////////////////////
         return returningPayload;
 
     } catch (error) {
+        console.log(returningPayload);
+
         console.log("ERROR ====>", error);
         returningPayload.operationSuccessful = false;
         return returningPayload;

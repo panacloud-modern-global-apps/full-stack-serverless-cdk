@@ -2,6 +2,7 @@ const AWS = require('aws-sdk');
 const https = require('https');
 
 exports.handler = async (event: any) => {
+  const body = JSON.parse(event.body);
   try {
     /**
      * Recommended Timestream write client SDK configuration:
@@ -36,7 +37,7 @@ exports.handler = async (event: any) => {
       const cpuUtilization = {
         Dimensions: dimensions,
         MeasureName: 'cpu_utilization',
-        MeasureValue: '13.6',
+        MeasureValue: `${body.cpu}`,
         MeasureValueType: 'DOUBLE',
         Time: currentTime.toString(),
       };
@@ -44,7 +45,7 @@ exports.handler = async (event: any) => {
       const memoryUtilization = {
         Dimensions: dimensions,
         MeasureName: 'memory_utilization',
-        MeasureValue: '40',
+        MeasureValue: `${body.memory}`,
         MeasureValueType: 'DOUBLE',
         Time: currentTime.toString(),
       };
@@ -59,15 +60,16 @@ exports.handler = async (event: any) => {
 
       await writeClient.writeRecords(params).promise();
 
-      return {
-        "isBase64Encoded" : true,
-        "statusCode": 200,
-        "headers": { 
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*'
-        },
-        "body": "Saved"
-      }
+    }
+
+    return {
+      "isBase64Encoded" : true,
+      "statusCode": 200,
+      "headers": { 
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+      },
+      "body": "Saved"
     }
   } catch (err) {
     console.log(err);

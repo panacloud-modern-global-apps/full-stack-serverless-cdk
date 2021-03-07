@@ -1,18 +1,43 @@
 import { Context } from 'aws-lambda';
-import { SNS } from 'aws-sdk';
+import { SNS,SES } from 'aws-sdk';
 import { PayloadType } from './dynamoHandler';
 
 const sns = new SNS();
+var ses = new SES({ region: process.env.OUR_REGION });
 
 export const handler = async (event: PayloadType, context: Context) => {
-    console.log(JSON.stringify(event, null, 2));
+    console.log("event",event);
 
-    if (event.operationSuccessful) {
-        return { message: "operation not successful" }
-    }
+    // if (!event.operationSuccessful) {
+    //     return { message: "operation not successful" }
+    // }
 
     try {
-        if (event.SnsMessage) {
+
+
+        if (event.customerEmail){
+            var params = {
+                Destination: {
+                  ToAddresses: [event.customerEmail!],
+                },
+                Message: {
+                  Body: {
+                    Text: {
+                      Data: event.SnsMessage!,
+                    },
+                  },
+          
+                  Subject: { Data: "BOOKING REQUEST UPDATE" },
+                },
+                Source: process.env.OWNER_EMAIL!,
+              }
+          
+              const email = await ses.sendEmail(params).promise()
+              console.log(email)
+            } 
+        
+
+        if (event.SnsMessage && !event.customerEmail) {
             // sending message to TOPIC ARN
             await sns.publish({
                 TopicArn: process.env.SNS_TOPIC_ARN,

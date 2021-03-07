@@ -43,7 +43,7 @@ const CustomerPage: FC<{ user: CognitoUser }> = ({ user }) => {
         try {
             const data = await API.graphql({
                 query: generateAction,
-                variables: { timeSlotId, userName: user.username, action },
+                variables: { timeSlotId, userName: user.attributes.email, action },
             })
         } catch (e) { console.log("ERROR in generate action mutation", e) }
     }
@@ -52,7 +52,7 @@ const CustomerPage: FC<{ user: CognitoUser }> = ({ user }) => {
         try {
             const data = await API.graphql({
                 query: addBookingRequest,
-                variables: { id, userName: user.username },
+                variables: { id, userName: user.attributes.email },
             })
             getAllTimeSlots();
             handleGenerateAction("REQUEST_BOOKING", id);

@@ -11,3 +11,11 @@ In this step we are going to make an event driven decoupled restaurant app. For 
 - https://github.com/panacloud-modern-global-apps/full-stack-serverless-cdk/tree/main/step15_eventbridge
 
 [Operating Lambda: Design principles in event-driven architectures – Part 2](https://aws.amazon.com/blogs/compute/operating-lambda-design-principles-in-event-driven-architectures-part-2/)
+
+[Step 34 Video in English on Facebook](https://www.facebook.com/zeeshanhanif/videos/10226050958845390)
+
+[Step 34 Video in English on YouTube](https://www.youtube.com/watch?v=wN9-XYyecPI)
+
+[Step 34 Video in Urdu on Facebook](https://www.facebook.com/zeeshanhanif/videos/10226060184996038)
+
+[Step 34 Video in Urdu on YouTube](https://www.youtube.com/watch?v=JCu31cqUrPM)

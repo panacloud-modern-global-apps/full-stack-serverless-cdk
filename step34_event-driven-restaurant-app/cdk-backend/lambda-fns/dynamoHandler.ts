@@ -8,6 +8,7 @@ const TABLE_NAME = process.env.DYNAMO_TABLE_NAME as string;
 export type PayloadType = {
     operationSuccessful: boolean,
     SnsMessage?: string,
+    customerEmail?:string
 }
 
 export const handler = async (event: EventBridgeEvent<string, any>, context: Context) => {
@@ -26,16 +27,7 @@ export const handler = async (event: EventBridgeEvent<string, any>, context: Con
             await dynamoClient.put(params).promise();
         }
 
-        //////////////  deleting time slot /////////////////////////
-        else if (event["detail-type"] === "deleteTimeSlot") {
-            // console.log("detail===>", JSON.stringify(event.detail, null, 2));
-            const params = {
-                TableName: TABLE_NAME,
-                Key: { id: event.detail.id },
-            }
-            await dynamoClient.delete(params).promise();
-        }
-
+     
         //////////////  booking time slot /////////////////////////
         else if (event["detail-type"] === "bookTimeSlot") {
             // geting the time slot by id
@@ -59,9 +51,15 @@ export const handler = async (event: EventBridgeEvent<string, any>, context: Con
                     },
                     ReturnValues: "UPDATED_NEW" // NONE | ALL_OLD | UPDATED_OLD | ALL_NEW | UPDATED_NEW,
                 };
-                await dynamoClient.update(params).promise();
-                // adding sns message
-                returningPayload.SnsMessage = 'Request of booking timeSlot';
+              const result:any =  await dynamoClient.update(params).promise();
+         
+              returningPayload.SnsMessage = "your booking request has been accepted"
+                returningPayload.customerEmail = result.Attributes.bookingRequestBy;
+                console.log(event["detail-type"])
+                console.log(returningPayload);
+
+                return returningPayload
+
             }
         }
 
@@ -78,8 +76,12 @@ export const handler = async (event: EventBridgeEvent<string, any>, context: Con
                 ReturnValues: "UPDATED_NEW" // NONE | ALL_OLD | UPDATED_OLD | ALL_NEW | UPDATED_NEW,
             };
             await dynamoClient.update(params).promise();
+
             // adding sns message
             returningPayload.SnsMessage = 'Request of booking timeSlot';
+
+            console.log(event["detail-type"])
+            console.log(returningPayload);
         }
 
         //////////////  deleting booking time slot request /////////////////////////
@@ -92,57 +94,29 @@ export const handler = async (event: EventBridgeEvent<string, any>, context: Con
                     ":booleanValue": false,
                     ":userName": ''
                 },
-                ReturnValues: "UPDATED_NEW" // NONE | ALL_OLD | UPDATED_OLD | ALL_NEW | UPDATED_NEW,
+                ReturnValues: "UPDATED_OLD" // NONE | ALL_OLD | UPDATED_OLD | ALL_NEW | UPDATED_NEW,
             };
-            await dynamoClient.update(params).promise();
-            // adding sns message
-            returningPayload.SnsMessage = 'Request of booking timeSlot';
+          const result:any=   await dynamoClient.update(params).promise();
+          
+
+          returningPayload.SnsMessage = "your booking request has been declined"
+         returningPayload.customerEmail = result.Attributes.bookingRequestBy;
+
+         console.log(returningPayload);
+         console.log(event["detail-type"])
+         return returningPayload
+     
+
         }
 
-        //////////////  canceling booked time slot /////////////////////////
-        else if (event["detail-type"] === "cancelBooking") {
-            const params = {
-                TableName: TABLE_NAME,
-                Key: { "id": event.detail.id },
-                UpdateExpression: "set isBooked = :_isBooked, bookedBy = :_bookedBy",
-                ExpressionAttributeValues: {
-                    ":_isBooked": false,
-                    ":_bookedBy": "",
-                },
-                ReturnValues: "UPDATED_NEW" // NONE | ALL_OLD | UPDATED_OLD | ALL_NEW | UPDATED_NEW,
-            };
-            await dynamoClient.update(params).promise();
-            // adding sns message
-            returningPayload.SnsMessage = 'Request of canceling timeSlot';
-        }
-
-        //////////////  canceling all booked time slots /////////////////////////
-        else if (event["detail-type"] === "resetAllBookings") {
-
-            const data = await dynamoClient.scan({ TableName: TABLE_NAME }).promise()
-
-            data.Items?.forEach(async ({ id }) => {
-                console.log("ID ===>> ", id)
-                const params = {
-                    TableName: TABLE_NAME,
-                    Key: { "id": id },
-                    UpdateExpression: "set isBooked = :_isBooked, bookedBy = :_bookedBy, isBookingRequested = :_isBookingRequested, bookingRequestBy = :_bookingRequestBy",
-                    ExpressionAttributeValues: {
-                        ":_isBooked": false,
-                        ":_bookedBy": "",
-                        ":_isBookingRequested": false,
-                        ":_bookingRequestBy": ""
-                    },
-                    ReturnValues: "NONE" // NONE | ALL_OLD | UPDATED_OLD | ALL_NEW | UPDATED_NEW,
-                };
-                await dynamoClient.update(params).promise();
-            })
-        }
+        console.log(returningPayload);
 
         //////////////////////////////////  Returning Final Response ///////////////////////////////////////
         return returningPayload;
 
     } catch (error) {
+        console.log(returningPayload);
+
         console.log("ERROR ====>", error);
         returningPayload.operationSuccessful = false;
         return returningPayload;

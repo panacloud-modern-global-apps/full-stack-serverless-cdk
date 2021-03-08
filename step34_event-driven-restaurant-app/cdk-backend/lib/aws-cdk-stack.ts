@@ -174,7 +174,7 @@ export class AwsCdkStack extends cdk.Stack {
     });
     const policy = new iam.PolicyStatement({
       effect: iam.Effect.ALLOW,
-      actions: ["SNS:Publish", "logs:*"],
+      actions: ["SNS:Publish", "logs:*","ses:SendEmail"],
       resources: ['*']
     });
     role.addToPolicy(policy);
@@ -186,7 +186,9 @@ export class AwsCdkStack extends cdk.Stack {
       handler: 'snsHandler.handler',
       environment: {
         SNS_TOPIC_ARN: snsTopic.topicArn,
-        PHONE_NUMBER: phoneNoParam.valueAsString
+        PHONE_NUMBER: phoneNoParam.valueAsString,
+        OUR_REGION:this.region,
+        OWNER_EMAIL: email.valueAsString
       },
       timeout: cdk.Duration.seconds(10),
       role: role,

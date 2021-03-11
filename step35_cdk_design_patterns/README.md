@@ -22,6 +22,14 @@ CDK essentially follows Composite Design Pattern and applies it on AWS infrastru
 
 [Aspect implement the Visitor Pattern](https://en.wikipedia.org/wiki/Visitor_pattern)
 
+[Step 35 Video in English on Facebook](https://www.facebook.com/zeeshanhanif/videos/10226081386086052)
+
+[Step 35 Video in English on YouTube](https://www.youtube.com/watch?v=MUDYeQ2HSLs)
+
+[Step 35 Video in Urdu on Facebook](https://www.facebook.com/zeeshanhanif/videos/10226089243162474)
+
+[Step 35 Video in Urdu on YouTube](https://www.youtube.com/watch?v=OgvmM1f-OjI)
+
 
 
 # Welcome to your CDK TypeScript project!
@@ -38,3 +46,4 @@ The `cdk.json` file tells the CDK Toolkit how to execute your app.
  * `cdk deploy`      deploy this stack to your default AWS account/region
  * `cdk diff`        compare deployed stack with current state
  * `cdk synth`       emits the synthesized CloudFormation template
+

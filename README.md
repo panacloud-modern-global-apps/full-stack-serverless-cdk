@@ -245,6 +245,15 @@ In this repo we have used TypeScript for CDK development. Because we consider it
 
 [Step 34 Video in Urdu on YouTube](https://www.youtube.com/watch?v=JCu31cqUrPM)
 
+[Step 35 Video in English on Facebook](https://www.facebook.com/zeeshanhanif/videos/10226081386086052)
+
+[Step 35 Video in English on YouTube](https://www.youtube.com/watch?v=MUDYeQ2HSLs)
+
+[Step 35 Video in Urdu on Facebook](https://www.facebook.com/zeeshanhanif/videos/10226089243162474)
+
+[Step 35 Video in Urdu on YouTube](https://www.youtube.com/watch?v=OgvmM1f-OjI)
+
+
 
 
 

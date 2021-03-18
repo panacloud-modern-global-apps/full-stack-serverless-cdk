@@ -97,3 +97,13 @@
 
 [Amazon Neptune ML](https://aws.amazon.com/neptune/machine-learning/)
 
+## Class Videos
+
+[Step 45 Part I Video in English on Facebook](https://www.facebook.com/zeeshanhanif/videos/10226147281253390)
+
+[Step 45 Part I Video in English on YouTube](https://www.youtube.com/watch?v=-1Prdv-hhG4)
+
+[Step 45 Part I Video in Urdu on Facebook](https://www.facebook.com/zeeshanhanif/videos/10226153456967779)
+
+[Step 45 Part I Video in Urdu on YouTube](https://www.youtube.com/watch?v=nySxSG9nqfU)
+

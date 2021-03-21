@@ -8,7 +8,7 @@
 
 [The impact of serverless on the future of cloud technology](https://cio.economictimes.indiatimes.com/news/cloud-computing/the-impact-of-serverless-on-the-future-of-cloud-technology/77275273)
 
-In this repo we are focused on Serverless, because [it is the future](https://www.devopsonline.co.uk/is-serverless-the-future/)
+In this repo we are focused on Serverless, because [it is the future](https://www.devopsonline.co.uk/is-serverless-the-future/). [Cloud 2.0: Serverless architecture and the next wave of enterprise offerings](https://www.mckinsey.com/business-functions/mckinsey-digital/our-insights/tech-forward/cloud-20-serverless-architecture-and-the-next-wave-of-enterprise-offerings). [Why Serverless is Cloud 2.0](http://serverlesscomputing.london/wp-content/uploads/2019/06/Paul-Johnston-Why-Serverless-is-Cloud-2.0.pdf).
 
 "In a recent informal poll, more than 66% of developers chose AWS CDK as their technology of choice for building serverless applications on AWS."
 [The CDK Patterns open source journey](https://aws.amazon.com/blogs/opensource/the-cdk-patterns-open-source-journey/)
@@ -26,6 +26,8 @@ In this repo we have used TypeScript for CDK development. Because we consider it
 
 
 ## Class Videos
+
+[Werner Vogels on the AWS Cloud Development Kit (AWS CDK)](https://www.youtube.com/watch?v=AYYTrDaEwLs)
 
 [Overview Class Video in English on Facebook](https://www.facebook.com/zeeshanhanif/videos/10225155745305611)
 
@@ -269,9 +271,6 @@ In this repo we have used TypeScript for CDK development. Because we consider it
 [Step 45 Part I Video in Urdu on Facebook](https://www.facebook.com/zeeshanhanif/videos/10226153456967779)
 
 [Step 45 Part I Video in Urdu on YouTube](https://www.youtube.com/watch?v=nySxSG9nqfU)
-
-
-
 
 
 

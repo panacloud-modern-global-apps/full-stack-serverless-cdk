@@ -272,9 +272,13 @@ In this repo we have used TypeScript for CDK development. Because we consider it
 
 [Step 45 Part I Video in Urdu on YouTube](https://www.youtube.com/watch?v=nySxSG9nqfU)
 
-[Step 45 Part 1I Video in English on Facebook](https://www.facebook.com/zeeshanhanif/videos/10226182818781806)
+[Step 45 Part II Video in English on Facebook](https://www.facebook.com/zeeshanhanif/videos/10226182818781806)
 
-[Step 45 Part 1I Video in English on YouTube](https://www.youtube.com/watch?v=GzDkFWM7KAs)
+[Step 45 Part II Video in English on YouTube](https://www.youtube.com/watch?v=GzDkFWM7KAs)
+
+[Step 45 Part II Video in Urdu on Facebook](https://www.facebook.com/zeeshanhanif/videos/10226190729259563)
+
+[Step 45 Part II Video in Urdu on YouTube](https://www.youtube.com/watch?v=rPx5SpBa0Ec)
 
 
 

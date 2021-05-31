@@ -2,18 +2,15 @@ import * as cdk from '@aws-cdk/core';
 import * as cognito from '@aws-cdk/aws-cognito';
 import * as iam from "@aws-cdk/aws-iam";
 import * as s3 from "@aws-cdk/aws-s3";
+import { WebIdentityPrincipal } from '@aws-cdk/aws-iam';
+import { BlockPublicAccess } from '@aws-cdk/aws-s3';
 
 export class Example04UserpoolWithIdentityPoolStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    // The code that defines your stack goes here
-
-    // const bucket = new s3.Bucket(this, "new_bucket", {
-    //   bucketName: "upload-bucket"
-    // })
-
     const bucket = new s3.Bucket(this, "Uploads", {
+      blockPublicAccess: BlockPublicAccess.BLOCK_ALL, //block all public access to bucket, as we only want logged in cognito users from our gatsby frontend, to be able to access (upload files) to this bucket
       cors: [
         {
           allowedOrigins: ["*"],
@@ -23,7 +20,7 @@ export class Example04UserpoolWithIdentityPoolStack extends cdk.Stack {
       ],
     });
 
-    const userPool = new cognito.UserPool(this, 'chat-app-user-pool', {
+    const userPool = new cognito.UserPool(this, 'upload-app-user-pool', {
       selfSignUpEnabled: true,
       accountRecovery: cognito.AccountRecovery.PHONE_AND_EMAIL,
       signInAliases: {
@@ -47,6 +44,7 @@ export class Example04UserpoolWithIdentityPoolStack extends cdk.Stack {
       userPool
     });
 
+    //create an identity pool with CognitoIdentityProvider i.e. an identity pool corresponding to the above user pool and its app client
     const identityPool = new cognito.CfnIdentityPool(this, "IdentityPool", {
       allowUnauthenticatedIdentities: false, // Don't allow unathenticated users
       cognitoIdentityProviders: [
@@ -57,35 +55,15 @@ export class Example04UserpoolWithIdentityPoolStack extends cdk.Stack {
       ],
     });
 
+    // Create a role of type WebIdentityPrinicipal (the third option on the Create Role Screen in AWS Console) 
+    // to allow users federated by the specified provider (cognito identity provider in our case as defined above ) 
+    // to assume this role to perform actions in your account.
     const role = new iam.Role(this, "CognitoDefaultAuthenticatedRole", {
-      assumedBy: new iam.FederatedPrincipal(
-        "cognito-identity.amazonaws.com",
-        {
-          StringEquals: {
-            "cognito-identity.amazonaws.com:aud": identityPool.ref,
-          },
-          "ForAnyValue:StringLike": {
-            "cognito-identity.amazonaws.com:amr": "authenticated",
-          },
-        },
-        "sts:AssumeRoleWithWebIdentity"
-      ),
-    });
-
-    ///Attach particular role to identity pool
-    role.addToPolicy(
-        new iam.PolicyStatement({
-            effect: iam.Effect.ALLOW,
-            actions: [
-              "mobileanalytics:PutEvents",
-              "cognito-sync:*",
-              "cognito-identity:*",
-            ],
-            resources: ["*"],
-        })
-    );
+      assumedBy: new WebIdentityPrincipal('cognito-identity.amazonaws.com'),
     
-    ///Attach particular role to identity pool
+    });
+    
+    ///Attach role to identity pool AND only for authenticated users (users that will sign in from the frontend) 
     new cognito.CfnIdentityPoolRoleAttachment(
         this,
         "IdentityPoolRoleAttachment",
@@ -96,12 +74,17 @@ export class Example04UserpoolWithIdentityPoolStack extends cdk.Stack {
     );
 
     role.addToPolicy(
-      // IAM policy granting users permission to a specific folder in the S3 bucket
+      // IAM policy granting users permission to have access to S3 bucket
+      // We specify the bucket in the resources as well so that the role only has permission to this specific bucket, not all the buckets 
       new iam.PolicyStatement({
         actions: ["s3:*"],
         effect: iam.Effect.ALLOW,
         resources: [
-          bucket.bucketArn + "/private/${cognito-identity.amazonaws.com:sub}/*",
+          bucket.bucketArn + "/*",
+          // Incase we want to give permssion to upload to a user-specific folder we can define the resource as follows
+          // where cognito-identity.amazonaws.com:sub value is the identity ID for the individual user, not the identifier of their login account (such as an email address):
+          // bucket.bucketArn + "/users/${cognito-identity.amazonaws.com:sub}/*",
+          
         ],
       })
     );
@@ -121,10 +104,6 @@ export class Example04UserpoolWithIdentityPoolStack extends cdk.Stack {
 
     new cdk.CfnOutput(this, "userPoolProviderName", {
       value: userPool.userPoolProviderName
-    });
-
-    new cdk.CfnOutput(this, "Ref", {
-      value: identityPool.ref
     });
 
     new cdk.CfnOutput(this, "bucketName", {

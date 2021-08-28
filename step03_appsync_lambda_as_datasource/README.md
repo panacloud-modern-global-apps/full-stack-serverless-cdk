@@ -11,6 +11,7 @@ First we will learn about GraphQL:
 [Schema](https://graphql.org/learn/schema/)
 
 [AppSync](https://aws.amazon.com/appsync/)
+
 [AppSync Docs](https://docs.aws.amazon.com/appsync/latest/devguide/welcome.html)
 
 ## Why AppSync?

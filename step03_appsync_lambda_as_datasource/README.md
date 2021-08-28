@@ -2,7 +2,13 @@
 
 ![alt text](https://github.com/panacloud-modern-global-apps/full-stack-serverless-cdk/blob/main/step03_appsync_lambda_as_datasource/img/img1.png)
 
-First we will learn about GraphQL for [here](https://graphql.org/learn/)
+First we will learn about GraphQL:
+
+[Start Learning](https://graphql.org/learn/)
+
+[Queries](https://graphql.org/learn/queries/)
+
+[Schema](https://graphql.org/learn/schema/)
 
 [AppSync](https://aws.amazon.com/appsync/)
 [AppSync Docs](https://docs.aws.amazon.com/appsync/latest/devguide/welcome.html)

@@ -38,6 +38,8 @@ StepxxAppsyncDynamodbAsDatasourceStack.GraphQLAPIKey = -------------------------
 
 2. Setup Postman as outlined in Postman's Using [GraphQL Instructions](https://learning.postman.com/docs/sending-requests/supported-api-frameworks/graphql/)
 
+[Install Postman App](https://www.postman.com/downloads/)
+
 3. Set POST request URL, x-api-key and Content-Type
     - x-api-key = 'your API Key'
     - Content-Type = application/graphql

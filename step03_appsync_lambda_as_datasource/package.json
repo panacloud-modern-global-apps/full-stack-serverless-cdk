@@ -1,6 +1,6 @@
 {
   "name": "step04_appsync_lambda_as_datasource",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "bin": {
     "step04_appsync_lambda_as_datasource": "bin/step04_appsync_lambda_as_datasource.js"
   },
@@ -11,19 +11,19 @@
     "cdk": "cdk"
   },
   "devDependencies": {
-    "@aws-cdk/assert": "1.73.0",
+    "@aws-cdk/assert": "1.121.0",
     "@types/jest": "^26.0.10",
     "@types/node": "10.17.27",
-    "aws-cdk": "1.73.0",
+    "aws-cdk": "1.121.0",
     "jest": "^26.4.2",
     "ts-jest": "^26.2.0",
     "ts-node": "^8.1.0",
     "typescript": "~3.9.7"
   },
   "dependencies": {
-    "@aws-cdk/aws-appsync": "1.74.0",
-    "@aws-cdk/aws-lambda": "1.74.0",
-    "@aws-cdk/core": "1.74.0",
+    "@aws-cdk/aws-appsync": "1.121.0",
+    "@aws-cdk/aws-lambda": "1.121.0",
+    "@aws-cdk/core": "1.121.0",
     "source-map-support": "^0.5.16"
   }
 }

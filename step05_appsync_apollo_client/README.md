@@ -2,6 +2,10 @@
 
 ## Introduction
 
+[Introduction to Apollo Client](https://www.apollographql.com/docs/react/)
+
+[Get started with Apollo Client](https://www.apollographql.com/docs/react/get-started/)
+
 By this time we have had a lot of practice with gatsby and using GraphQL APIs made with `Apollo-Server`. Then we used them in the frontend with the help of `Apollo-Client`, `ApolloProvider` and `wrap-root-element` of gatsby.
 
 The difference with AppSync is that we usually add some form of _authorization_. For now we have added `API_KEY` as the authorization type.

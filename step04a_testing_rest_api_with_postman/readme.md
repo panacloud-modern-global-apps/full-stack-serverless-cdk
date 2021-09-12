@@ -2,6 +2,10 @@
 
 [Download and install the Postman App](https://www.postman.com/downloads/)
 
+[The Future of Software Development and APIs, with Postman CTO Ankit Sobti](https://www.youtube.com/watch?v=qIgnVczcFgY)
+
+[REST vs GraphQL](https://www.youtube.com/watch?v=eqnjWkVGvYw)
+
 [We will be doing Introduction to Postman course](https://github.com/vdespa/introduction-to-postman-course)
 
 [Watch Postman Beginner's Course - API Testing](https://www.youtube.com/watch?v=VywxIQ2ZXw4)

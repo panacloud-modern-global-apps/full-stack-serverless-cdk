@@ -107,6 +107,8 @@
 
 [Graph queries, schemas and standards](https://www.dcs.bbk.ac.uk/site/assets/files/4579/graph-queries-schemas-and-standards.pdf)
 
+[Graph databases must meet developers and business analysts on their own turf](https://www.zdnet.com/article/graph-databases-must-meet-developers-and-business-analysts-on-their-own-turf/)
+
 ## Class Videos
 
 [Step 45 Part I Video in English on Facebook](https://www.facebook.com/zeeshanhanif/videos/10226147281253390)

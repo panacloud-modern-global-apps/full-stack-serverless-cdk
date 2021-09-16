@@ -97,6 +97,16 @@
 
 [Amazon Neptune ML](https://aws.amazon.com/neptune/machine-learning/)
 
+## Property Graphs need a Schema
+
+[Property Graphs need a Schema](https://www.w3.org/Data/events/data-ws-2019/assets/position/Juan%20Sequeda.txt)
+
+[Defining Graph Database Schemas by using the GraphQL Schema Definition Language](https://blog.liu.se/olafhartig/documents/graphql-schemas-for-property-graphs/)
+
+[Schema Validation and Evolution for Graph Databases](https://hal.archives-ouvertes.fr/hal-02138771/document)
+
+[Graph queries, schemas and standards](https://www.dcs.bbk.ac.uk/site/assets/files/4579/graph-queries-schemas-and-standards.pdf)
+
 ## Class Videos
 
 [Step 45 Part I Video in English on Facebook](https://www.facebook.com/zeeshanhanif/videos/10226147281253390)

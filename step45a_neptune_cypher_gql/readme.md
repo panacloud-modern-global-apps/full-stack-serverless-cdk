@@ -1,5 +1,6 @@
 # Graph Databases, AWS Nepture, Open Cypher, and Ghaph Query Language (GQL)
 
+[Why developers should use graph databases](https://www.infoworld.com/article/3567771/why-developers-should-use-graph-databases.html)
 
 ## Overview
 

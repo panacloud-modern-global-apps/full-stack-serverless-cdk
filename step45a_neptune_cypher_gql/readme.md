@@ -2,6 +2,20 @@
 
 [Why developers should use graph databases](https://www.infoworld.com/article/3567771/why-developers-should-use-graph-databases.html)
 
+Here’s how the query in Cypher for extracting friends and friends of friends looks:
+
+MATCH (me:Person {name:'Rosa'})-[:FRIEND*1..2]->(f:Person)
+
+WHERE me <> f
+
+RETURN f
+
+Here’s how to understand this query:
+
+1. Find me the pattern where there is a node with label Person and a property name:'Rosa’, and bind that to the variable “me.” The query specifies that “me” has an outgoing FRIEND relationship at depth 1 or 2 to any other node with a Person label, and binds those matches to variable “f.”
+2. Make sure “me” is not equal “f,” because I’m a friend of my friends!
+3. Return all the friends and friends of friends
+
 ## Overview
 
 [What is a graph database?](https://venturebeat.com/2021/02/08/what-is-a-graph-database/)

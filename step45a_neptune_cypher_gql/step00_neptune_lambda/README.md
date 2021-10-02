@@ -2,7 +2,7 @@
 
 [Using AWS Lambda functions in Amazon Neptune](https://docs.aws.amazon.com/neptune/latest/userguide/lambda-functions.html)
 
-
+[This Example uses the HTTPS protocol to access neptune with openCypher](https://docs.aws.amazon.com/neptune/latest/userguide/access-graph-opencypher-queries.html)
 
 # Welcome to your CDK TypeScript project!
 

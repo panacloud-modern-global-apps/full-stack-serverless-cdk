@@ -1,0 +1,20 @@
+* GETTING STARTED WITH 'CYPHER'
+***********************************************
+https://neo4j.com/developer/cypher/intro-cypher
+***********************************************
+
+
+
+
+* SQL -> CYPHER
+******************************************************
+https://neo4j.com/developer/cypher/guide-sql-to-cypher
+******************************************************
+
+
+
+
+* QUERIES
+****************************************************
+https://neo4j.com/docs/cypher-manual/current/clauses
+****************************************************

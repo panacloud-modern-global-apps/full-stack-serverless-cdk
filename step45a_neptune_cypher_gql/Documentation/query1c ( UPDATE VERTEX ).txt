@@ -1,0 +1,14 @@
+* add label on vertex
+*************************
+MATCH (ali {name: 'ALI'})
+SET    ali:user
+*************************
+
+
+
+
+* remove label on vertex
+*************************
+MATCH (ali {name: 'ALI'})
+REMOVE ali:user
+*************************

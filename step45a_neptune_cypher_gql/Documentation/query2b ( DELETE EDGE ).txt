@@ -1,0 +1,40 @@
+* delete edge
+*******************************************************************
+MATCH (:user {name: 'ALI'})-[rel: brothers]->(:user {name: 'FAIZ'})
+DELETE rel
+*******************************************************************
+
+
+
+
+* delete all edges of particular label of particular vertex
+***********************************************
+MATCH (:user {name: 'ALI'})-[rel: brothers]->()
+DELETE rel
+***********************************************
+
+
+
+
+* delete all edges of particular vertex
+****************************************************
+MATCH (:user {name: 'ALI'})-[rel]->()
+DELETE rel
+****************************************************
+
+
+
+* delete all edges of particular label
+****************************
+MATCH ()-[rel: brothers]->()
+DELETE rel
+****************************
+
+
+
+
+* delete all edges
+******************
+MATCH ()-[rel]->()
+DELETE rel
+******************

@@ -1,0 +1,23 @@
+* get vertex ( having outgoing edge of particular vertex & so on )
+****************************************************************
+MATCH (:user {name: 'ALI'})-[: brothers]->()-[: brothers]->(fof)
+RETURN fof
+****************************************************************
+
+
+
+
+* get vertex ( having incoming edge of particular vertex & so on )
+***************************************************************
+MATCH (:user {name: 'ALI'})<-[: brothers]-()-[: brothers]-(fof)
+RETURN fof
+***************************************************************
+
+
+
+
+* get vertex ( having unconfirmed direction edge of particular vertex & so on )
+**************************************************************
+MATCH (:user {name: 'ALI'})-[: brothers]-()-[: brothers]-(fof)
+RETURN fof
+**************************************************************

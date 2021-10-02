@@ -1,0 +1,95 @@
+* create vertex
+**************
+CREATE (:user)
+**************
+
+
+
+
+* create multiple vertices
+***********************
+CREATE (:user), (:boss)
+***********************
+
+
+
+
+* create vertex with property
+****************************
+CREATE (:user {name: 'ALI'})
+****************************
+
+
+
+
+* create vertex with multiple properties
+*************************************
+CREATE (:user {name: 'ALI', age: 22})
+*************************************
+
+
+
+
+* create vertex of multiple labels
+*******************
+CREATE (:user:male)
+*******************
+
+
+
+
+* create vertex of variable
+******************
+CREATE (ali: user)
+******************
+
+
+
+
+* create vertex & return vertex
+********************************
+CREATE (ali: user {name: 'ALI'})
+RETURN ali
+********************************
+
+
+
+
+* create vertex with assigned separately properties defined
+**********************
+{
+    "props": {
+        "name": 'ALI',
+        "age": 22
+    }
+}
+
+CREATE (:user $props)
+**********************
+
+
+
+
+* create multiple vertices with assigned separately properties defined
+*****************************
+{
+    "props": [
+        {
+            "name": 'ALI',
+            "age": 22
+        },
+        {
+            "name": 'FAIZ',
+            "age": 21
+        },
+        {
+            "name": 'SALMAN',
+            "age": 17
+        }
+    ]
+}
+
+UNWIND $props AS map
+CREATE (newUser: user)
+SET newUser = map
+*****************************

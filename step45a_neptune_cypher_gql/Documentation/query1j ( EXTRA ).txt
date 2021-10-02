@@ -1,0 +1,53 @@
+* add vertex property ( using conditon )
+*********************************************************
+MATCH (ali: user {name: 'ALI'})
+SET   (CASE WHEN ali.gender = 'male' THEN n END).age = 22
+*********************************************************
+
+
+
+
+* update vertex property ( using conditon )
+**************************************************************
+MATCH (ali: user {name: 'ALI'})
+SET   (CASE WHEN ali.gender = 'male' THEN n END).name = 'ALEE'
+**************************************************************
+
+
+
+
+* delete vertex property ( using conditon )
+***********************************************************
+MATCH (ali: user {name: 'ALI'})
+SET   (CASE WHEN ali.gender = 'male' THEN n END).age = null
+***********************************************************
+
+
+
+
+* vertex property exist?
+*************************
+MATCH (ali {name: 'ALI'})
+WHERE ali.age IS NOT NULL
+RETURN ali
+*************************
+
+
+
+
+* random query ( for get vertex of holding particular property value & coming to another particular vertex )
+************************************************************
+MATCH  (ali: user {name: 'ALI'}), (other: user)
+WHERE   other.name IN ['FAIZ', 'SALMAN'] AND (other)-->(ali)
+RETURN  other
+************************************************************
+
+
+
+
+* random query ( for get not coming to particular vertex )
+**************************************************
+MATCH     (other: user), (ali: user {name: 'ALI'})
+WHERE NOT (other)-->(ali)
+RETURN     other
+**************************************************

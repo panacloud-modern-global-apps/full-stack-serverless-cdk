@@ -1,0 +1,33 @@
+* get vertex
+******************************
+MATCH (ali:user {name: 'ALI'})
+RETURN ali
+******************************
+
+
+
+
+* get multiple vertices ( using condition )
+********************************
+MATCH (n)
+WHERE  n.name IN ['ALI', 'FAIZ']
+RETURN n
+********************************
+
+
+
+
+* get all vertices
+*********
+MATCH (n)
+RETURN n
+*********
+
+
+
+
+* get all vertices of specific label
+**************
+MATCH (n:user)
+RETURN n
+**************

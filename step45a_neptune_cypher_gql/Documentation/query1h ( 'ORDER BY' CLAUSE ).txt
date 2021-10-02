@@ -1,0 +1,44 @@
+* get all vertices ( 'BY ORDER' CLAUSE ) - **default** ascending order
+**************
+MATCH (n)
+RETURN n
+ORDER BY n.age
+**************
+
+
+
+
+* get all vertices ( 'BY ORDER' CLAUSE ) - descending order
+*******************
+MATCH (n)
+RETURN n
+ORDER BY n.age DESC
+*******************
+
+
+
+
+* get all vertices ( 'BY ORDER' CLAUSE ) - ascending order
+---( when sorting the result set, null will always come at the end for ascending )
+---( when sorting the result set, null will always come at the first for descending )
+
+eg :-
+/*
+    v1 --- {name: 'SALMAN', gender: 'male', age: 17}
+    v2 --- {name: 'FAIZ', gender: 'male'}
+    v3 --- {name: 'ALI', gender: 'male', age: 22}
+*/
+
+query :-
+******************
+MATCH (n)
+RETURN n
+ORDER BY n.age ASC
+******************
+
+result :-
+[
+    {name: 'SALMAN', gender: 'male', age: 17}
+    {name: 'ALI', gender: 'male', age: 22}
+    {name: 'FAIZ', gender: 'male'}
+]

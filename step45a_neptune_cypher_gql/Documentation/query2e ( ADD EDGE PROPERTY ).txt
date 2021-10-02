@@ -1,0 +1,19 @@
+* add edge property
+*******************************************************************
+MATCH (:user {name: 'ALI'})-[rel: brothers]->(:user {name: 'FAIZ'})
+SET     rel.status = 'MIDDLECLASS'
+*******************************************************************
+
+
+
+
+* add edge multiple properties
+*******************************************************************
+MATCH (:user {name: 'ALI'})-[rel: brothers]->(:user {name: 'FAIZ'})
+SET     rel.status = 'MIDDLECLASS', rel.generation = 'LATEST'
+*******************************************************************
+/* OR */
+********************************************************************
+MATCH (:user {name: 'ALI'})-[rel: brothers]->(:user {name: 'FAIZ'})
+SET     rel += {status: 'MIDDLECLASS', generation: 'LATEST'}
+********************************************************************

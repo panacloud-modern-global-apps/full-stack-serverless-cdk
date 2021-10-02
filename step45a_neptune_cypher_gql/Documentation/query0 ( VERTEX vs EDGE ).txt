@@ -1,0 +1,16 @@
+VERTEX
+**************************************************************
+()                   //anonymous vertex (no label or variable)
+(: user)             //no variable, label user
+(u: Person)          //using variable u, and label user
+**************************************************************
+
+
+
+
+EDGE
+************************************************************
+[]                   //anonymous edge (no label or variable)
+[: brothers]         //no variable, label brothers
+[b: brothers]        //using variable b, and label brothers
+************************************************************

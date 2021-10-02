@@ -1,0 +1,28 @@
+* update vertex property
+*******************************
+MATCH (ali: user {name: 'ALI'})
+SET    ali.name = 'ALEE'
+*******************************
+
+
+
+
+* update vertex multiple properties
+***************************************
+MATCH (ali: user {name: 'ALI'})
+SET    ali.name = 'ALEE', ali.age = 100
+***************************************
+/* OR */
+**************************************
+MATCH (ali: user {name: 'ALI'})
+SET    ali += {name: 'ALEE', age: 100}
+**************************************
+
+
+
+
+* update vertex all properties
+*****************************************************
+MATCH (ali: user {name: 'ALI'})
+SET    ali = {name: 'ALEE', gender: 'male', age: 100}
+*****************************************************

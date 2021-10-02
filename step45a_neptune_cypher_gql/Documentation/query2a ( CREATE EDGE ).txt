@@ -1,0 +1,71 @@
+* create edge
+*************************************************************
+MATCH  (ali: user {name: 'ALI'}), (faiz: user {name: 'FAIZ'})
+CREATE (ali)-[: brothers]->(faiz)
+*************************************************************
+
+
+
+
+* create edge b/w multiple vertices
+**********************************************************************************************
+MATCH  (ali: user {name: 'ALI'}), (faiz: user {name: 'FAIZ'}), (salman: user {name: 'SALMAN'})
+CREATE (ali)-[: brothers]->(faiz)-[: brothers]->(salman)
+**********************************************************************************************
+
+
+
+
+* create edge with property
+*************************************************************
+MATCH  (ali: user {name: 'ALI'}), (faiz: user {name: 'FAIZ'})
+CREATE (ali)-[: brothers {fathername: 'SARWAR'}]->(faiz)
+*************************************************************
+
+
+
+
+* create edge with multiple properties
+***************************************************************************
+MATCH  (ali: user {name: 'ALI'}), (faiz: user {name: 'FAIZ'})
+CREATE (ali)-[: brothers {fathername: 'SARWAR', religion: 'ISLAM'}]->(faiz)
+***************************************************************************
+
+
+
+
+* create edge & return relation
+*************************************************************
+MATCH  (ali: user {name: 'ALI'}), (faiz: user {name: 'FAIZ'})
+CREATE (ali)-[rel: brothers]->(faiz)
+RETURN  type(rel)
+*************************************************************
+
+
+
+
+* create vertex & create edge at time
+*****************************************************************
+CREATE (:user {name: 'ALI'})-[: brothers]->(:user {name: 'FAIZ'})
+*****************************************************************
+/* OR */
+**********************************
+CREATE (ali: user {name: 'ALI'})
+CREATE (faiz: user {name: 'FAIZ'})
+CREATE (ali)-[: brothers]->(faiz)
+**********************************
+
+
+
+
+* create edge ( already created vertex + newly created vertex )
+*************************************************
+MATCH  (ali: user {name: 'ALI'})
+CREATE (ali)-[: brothers]->(:user {name: 'FAIZ'})
+*************************************************
+/* OR */
+**********************************
+MATCH  (ali: user {name: 'ALI'})
+CREATE (faiz: user {name: 'FAIZ'})
+CREATE (ali)-[: brothers]->(faiz)
+**********************************

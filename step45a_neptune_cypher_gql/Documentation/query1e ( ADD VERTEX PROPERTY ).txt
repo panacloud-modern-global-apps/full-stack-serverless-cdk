@@ -1,0 +1,19 @@
+* add vertex property
+*******************************
+MATCH (ali: user {name: 'ALI'})
+SET    ali.age = 22
+*******************************
+
+
+
+
+* add vertex multiple properties
+****************************************
+MATCH (ali: user {name: 'ALI'})
+SET    ali.age = 22, ali.gender = 'male'
+****************************************
+/* OR */
+***************************************
+MATCH (ali: user {name: 'ALI'})
+SET    ali += {age: 22, gender: 'male'}
+***************************************

@@ -1,0 +1,23 @@
+* delete edge property
+*******************************************************************
+MATCH (:user {name: 'ALI'})-[rel: brothers]->(:user {name: 'FAIZ'})
+REMOVE  rel.status
+*******************************************************************
+
+
+
+
+* delete edge multiple properties
+*******************************************************************
+MATCH (:user {name: 'ALI'})-[rel: brothers]->(:user {name: 'FAIZ'})
+REMOVE  rel.status, rel.generation
+*******************************************************************
+
+
+
+
+* delete edge all properties
+*****************************************************************
+MATCH (user {name: 'ALI'})-[rel: brothers]->(user {name: 'FAIZ'})
+SET    rel = {}
+*****************************************************************

@@ -1,0 +1,50 @@
+* get outgoing edge
+*******************************************************************
+MATCH (:user {name: 'ALI'})-[rel: brothers]->(:user {name: 'FAIZ'})
+RETURN rel
+*******************************************************************
+
+
+
+
+* get incoming edge
+*******************************************************************
+MATCH (:user {name: 'ALI'})<-[rel: brothers]-(:user {name: 'FAIZ'})
+RETURN rel
+*******************************************************************
+
+
+
+
+* get unconfirmed direction edge
+******************************************************************
+MATCH (:user {name: 'ALI'})-[rel: brothers]-(:user {name: 'FAIZ'})
+RETURN rel
+******************************************************************
+
+
+
+
+* get all outgoing edges' vertices of particular vertex
+******************************************************
+MATCH (:user {name: 'ALI'})-[rel: brothers]->(u: user)
+RETURN u
+******************************************************
+
+
+
+
+* get all incoming edges' vertices of particular vertex
+*******************************************************
+MATCH (ali: user {name: 'ALI'})<-[: brothers]-(u: user)
+RETURN u
+*******************************************************
+
+
+
+
+* get unconfirmed edges' vertices of particular vertex
+******************************************************
+MATCH (ali: user {name: 'ALI'})-[: brothers]-(u: user)
+RETURN u
+******************************************************

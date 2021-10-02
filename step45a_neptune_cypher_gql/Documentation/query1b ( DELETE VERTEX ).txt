@@ -1,0 +1,50 @@
+* delete vertex
+*******************************
+MATCH (ali: user {name: 'ALI'})
+DELETE ali
+*******************************
+
+
+
+
+* delete vertex & its edges
+*******************************
+MATCH (ali: user {name: 'ALI'})
+DETACH DELETE ali
+*******************************
+
+
+
+
+* delete all vertices
+*********
+MATCH (n)
+DELETE n
+*********
+
+
+
+
+* delete all vertices & their edges
+***************
+MATCH (n)
+DETACH DELETE n
+***************
+
+
+
+
+* delete all vertices of specific label
+***************
+MATCH (n: user)
+DELETE n
+***************
+
+
+
+
+* delete all vertices of specific label & their edges
+***************
+MATCH (n: user)
+DETACH DELETE n
+***************

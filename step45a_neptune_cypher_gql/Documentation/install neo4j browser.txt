@@ -1,0 +1,46 @@
+--> ARTICLE ( how to install neo4j browser )
+**************************************************************************************
+https://www.digitalocean.com/community/tutorials/how-to-install-neo4j-on-an-ubuntu-vps
+**************************************************************************************
+
+--> VIDEO ( how to install neo4j browser )
+*******************************************
+https://www.youtube.com/watch?v=M2JSvN1Afw8
+*******************************************
+
+--> VIDEO ( how to use neo4j browser )
+*******************************************
+https://www.youtube.com/watch?v=IShRYPsmiR8
+*******************************************
+
+
+
+
+-----------------------STEP0 — Installing Java-------------------------
+***********************************************************************
+https://www.youtube.com/watch?v=IJ-PJbvJBGs                 ( windows )
+https://www.youtube.com/watch?v=tWS4lyqHJ10&list=LL&index=7 ( ubuntu  )
+***********************************************************************
+
+
+
+
+-----------------------------STEP1 — Installing Neo4j-------------------------------
+************************************************************************************
+sudo su
+wget -O - http://debian.neo4j.org/neotechnology.gpg.key | apt-key add -
+echo 'deb http://debian.neo4j.org/repo stable/' > /etc/apt/sources.list.d/neo4j.list
+exit
+
+sudo apt-get update
+
+sudo apt-get install neo4j
+************************************************************************************
+
+
+
+
+--------------------------STEP-2 — Starting Neo4j Browser---------------------------
+************************************************************************************
+sudo service neo4j restart
+************************************************************************************

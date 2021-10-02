@@ -1,0 +1,23 @@
+* delete vertex property
+********************************
+MATCH  (ali: user {name: 'ALI'})
+REMOVE  ali.age
+********************************
+
+
+
+
+* delete vertex multiple properties
+********************************
+MATCH  (ali: user {name: 'ALI'})
+REMOVE  ali.age, ali.gender
+********************************
+
+
+
+
+* delete vertex all properties
+*******************************
+MATCH (ali: user {name: 'ALI'})
+SET    ali = {}
+*******************************

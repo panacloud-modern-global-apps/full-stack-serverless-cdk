@@ -1,0 +1,26 @@
+* filter vertex ( to get of particular label )
+*************
+MATCH (n)
+WHERE  n:user
+RETURN n
+*************
+
+
+
+
+* filter vertex of particular label ( to get only if particular property exist & have not same value )
+*********************
+MATCH    (n:user)
+WHERE NOT n.age > 20
+RETURN    n
+*********************
+
+
+
+
+* filter edge ( to get only if particular property exist & have same value )
+****************************************************************************
+MATCH (ali: user {name: 'ALI'})-[rel: brothers]->(faiz: user {name: 'FAIZ'})
+WHERE rel.fathername = 'SARWAR'
+RETURN faiz
+****************************************************************************

@@ -1,0 +1,27 @@
+type userType {
+    id: ID!
+    name: String!
+    age: Int!
+}
+
+type Query {
+    allUsers: [userType!]
+    getUser(id: ID!): userType
+}
+
+input userInput {
+    name: String!
+    age: Int!
+}
+
+type Mutation {
+    createUser(user: userInput!): String
+    deleteUser(id: ID!): String
+}
+
+type Subscription {
+    onCreateUser: String
+       @aws_subscribe(mutations: ["createUser"])
+    onDeleteUser: String
+       @aws_subscribe(mutations: ["deleteUser"])
+}

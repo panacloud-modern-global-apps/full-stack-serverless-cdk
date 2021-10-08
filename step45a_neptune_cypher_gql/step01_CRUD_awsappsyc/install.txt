@@ -1,0 +1,15 @@
+***************************************************
+npm install @aws-cdk/aws-appsync
+npm install @aws-cdk/aws-lambda
+npm install @aws-cdk/aws-ec2
+npm install @aws-cdk/aws-neptune
+/*
+mkdir lambda-layers
+cd lambda-layers
+mkdir nodejs
+cd nodejs
+*/
+npm init --yes
+npm install axios
+npm install nanoid
+***************************************************

@@ -9,7 +9,7 @@ Install the following packages:
 ```
 
 yarn add @aws-amplify/ui-react
-yarn add @aws-amplify
+yarn add aws-amplify
 ```
 
 ## Step 2

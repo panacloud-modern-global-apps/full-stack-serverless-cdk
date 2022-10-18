@@ -1,5 +1,3 @@
-[CDK for beginners](https://levelup.gitconnected.com/aws-cdk-for-beginners-e6c05ad91895)
-
 [AWS Lambda is winning, but first it had to die](https://acloudguru.com/blog/engineering/aws-lambda-is-winning-but-first-it-had-to-die)
 
 [Study AWS CDK Workshop follow the TypeScript Path](https://cdkworkshop.com/)
